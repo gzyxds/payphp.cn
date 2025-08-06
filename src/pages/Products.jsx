@@ -10,7 +10,6 @@ import {
 } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
-const { TabPane } = Tabs;
 
 const Products = () => {
   const products = [
@@ -167,32 +166,49 @@ const Products = () => {
             我们的产品基于先进的技术架构，提供稳定、安全、高效的支付服务
           </Paragraph>
 
-          <Tabs defaultActiveKey="1" centered style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <TabPane tab="高可用架构" key="1">
-              <div style={{ padding: '32px 0', textAlign: 'center' }}>
-                <Title level={4} style={{ marginBottom: '16px' }}>99.99% 系统可用性</Title>
-                <Paragraph style={{ color: 'var(--text-secondary)' }}>
-                  采用分布式架构和多重容灾备份，确保系统7*24小时稳定运行，交易实时处理，无延迟
-                </Paragraph>
-              </div>
-            </TabPane>
-            <TabPane tab="安全防护" key="2">
-              <div style={{ padding: '32px 0', textAlign: 'center' }}>
-                <Title level={4} style={{ marginBottom: '16px' }}>全方位安全保障</Title>
-                <Paragraph style={{ color: 'var(--text-secondary)' }}>
-                  通过PCI DSS认证，采用银行级加密技术，多层次风控体系，保障交易和资金安全
-                </Paragraph>
-              </div>
-            </TabPane>
-            <TabPane tab="开放能力" key="3">
-              <div style={{ padding: '32px 0', textAlign: 'center' }}>
-                <Title level={4} style={{ marginBottom: '16px' }}>丰富的API接口</Title>
-                <Paragraph style={{ color: 'var(--text-secondary)' }}>
-                  提供标准化、易用的API接口和完善的开发文档，支持多种编程语言，快速集成
-                </Paragraph>
-              </div>
-            </TabPane>
-          </Tabs>
+          <Tabs 
+            defaultActiveKey="1" 
+            centered 
+            style={{ maxWidth: '800px', margin: '0 auto' }}
+            items={[
+              {
+                key: '1',
+                label: '高可用架构',
+                children: (
+                  <div style={{ padding: '32px 0', textAlign: 'center' }}>
+                    <Title level={4} style={{ marginBottom: '16px' }}>99.99% 系统可用性</Title>
+                    <Paragraph style={{ color: 'var(--text-secondary)' }}>
+                      采用分布式架构和多重容灾备份，确保系统7*24小时稳定运行，交易实时处理，无延迟
+                    </Paragraph>
+                  </div>
+                )
+              },
+              {
+                key: '2',
+                label: '安全防护',
+                children: (
+                  <div style={{ padding: '32px 0', textAlign: 'center' }}>
+                    <Title level={4} style={{ marginBottom: '16px' }}>全方位安全保障</Title>
+                    <Paragraph style={{ color: 'var(--text-secondary)' }}>
+                      通过PCI DSS认证，采用银行级加密技术，多层次风控体系，保障交易和资金安全
+                    </Paragraph>
+                  </div>
+                )
+              },
+              {
+                key: '3',
+                label: '开放能力',
+                children: (
+                  <div style={{ padding: '32px 0', textAlign: 'center' }}>
+                    <Title level={4} style={{ marginBottom: '16px' }}>丰富的API接口</Title>
+                    <Paragraph style={{ color: 'var(--text-secondary)' }}>
+                      提供标准化、易用的API接口和完善的开发文档，支持多种编程语言，快速集成
+                    </Paragraph>
+                  </div>
+                )
+              }
+            ]}
+          />
         </div>
       </section>
 

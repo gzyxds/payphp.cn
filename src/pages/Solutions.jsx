@@ -14,7 +14,6 @@ import {
 } from '@ant-design/icons';
 
 const { Title, Paragraph, Text } = Typography;
-const { TabPane } = Tabs;
 
 const Solutions = () => {
   const industries = [
@@ -159,17 +158,20 @@ const Solutions = () => {
       {/* 行业解决方案 */}
       <section className="section">
         <div className="container">
-          <Tabs defaultActiveKey="0" centered tabPosition="top" style={{ marginBottom: '48px' }}>
-            {industries.map((industry, index) => (
-              <TabPane 
-                tab={
-                  <span>
-                    <span style={{ marginRight: '8px', color: 'var(--primary-color)' }}>{industry.icon}</span>
-                    {industry.title}
-                  </span>
-                } 
-                key={index}
-              >
+          <Tabs 
+            defaultActiveKey="0" 
+            centered 
+            tabPosition="top" 
+            style={{ marginBottom: '48px' }}
+            items={industries.map((industry, index) => ({
+              key: String(index),
+              label: (
+                <span>
+                  <span style={{ marginRight: '8px', color: 'var(--primary-color)' }}>{industry.icon}</span>
+                  {industry.title}
+                </span>
+              ),
+              children: (
                 <Row gutter={[48, 32]} align="middle">
                   <Col xs={24} md={12}>
                     <div>
@@ -211,9 +213,9 @@ const Solutions = () => {
                     />
                   </Col>
                 </Row>
-              </TabPane>
-            ))}
-          </Tabs>
+              )
+            }))}
+          />
         </div>
       </section>
 

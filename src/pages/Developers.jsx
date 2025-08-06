@@ -17,7 +17,6 @@ import {
 import SEO from '../components/SEO';
 
 const { Title, Paragraph, Text } = Typography;
-const { TabPane } = Tabs;
 const { Panel } = Collapse;
 
 const Developers = () => {
@@ -295,9 +294,13 @@ const Developers = () => {
             详细的API接口说明，帮助开发者快速理解和使用我们的服务
           </Paragraph>
 
-          <Tabs defaultActiveKey="0" centered>
-            {apiCategories.map((category, index) => (
-              <TabPane tab={category.title} key={index}>
+          <Tabs 
+            defaultActiveKey="0" 
+            centered
+            items={apiCategories.map((category, index) => ({
+              key: index,
+              label: category.title,
+              children: (
                 <Card 
                   style={{ 
                     borderRadius: 'var(--radius-large)',
@@ -335,9 +338,9 @@ const Developers = () => {
                     )}
                   />
                 </Card>
-              </TabPane>
-            ))}
-          </Tabs>
+              )
+            }))}
+          />
 
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
             <Button type="primary" size="large">

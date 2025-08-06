@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Typography, Row, Col, Card, Button, Tabs, List, Space, Tag, Pagination, Input } from 'antd';
 import SEO from '../components/SEO';
 import { 
@@ -12,7 +12,6 @@ import {
 } from '@ant-design/icons';
 
 const { Title, Paragraph, Text } = Typography;
-const { TabPane } = Tabs;
 const { Search } = Input;
 
 const News = () => {
@@ -31,7 +30,7 @@ const News = () => {
     {
       id: 2,
       title: 'PayPay支付荣获"2023年度最佳支付创新奖"',
-      summary: 'PayPay支付凭借其创新的跨境支付解决方案，在2023年金融科技创新大会上荣获"年度最佳支付创新奖"。',
+      summary: 'PayPay支付凭借其创新的跨境支付解决方案，在2023年金融科技创新大会中获得"年度最佳支付创新奖"。',
       date: '2023-05-20',
       category: '公司荣誉',
       image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80',
@@ -173,216 +172,228 @@ const News = () => {
       {/* 新闻与活动内容 */}
       <section className="section">
         <div className="container">
-          <Tabs defaultActiveKey="1" centered>
-            <TabPane 
-              tab={
-                <span>
-                  <NotificationOutlined style={{ marginRight: '8px' }} />
-                  公司新闻
-                </span>
-              } 
-              key="1"
-            >
-              <div style={{ marginBottom: '32px' }}>
-                <Search
-                  placeholder="搜索新闻"
-                  enterButton={<SearchOutlined />}
-                  size="large"
-                  style={{ maxWidth: '600px', margin: '0 auto', display: 'block' }}
-                />
-              </div>
+          <Tabs 
+            defaultActiveKey="1" 
+            centered
+            items={[
+              {
+                key: '1',
+                label: (
+                  <span>
+                    <NotificationOutlined style={{ marginRight: '8px' }} />
+                    公司新闻
+                  </span>
+                ),
+                children: (
+                  <div>
+                    <div style={{ marginBottom: '32px' }}>
+                      <Search
+                        placeholder="搜索新闻"
+                        enterButton={<SearchOutlined />}
+                        size="large"
+                        style={{ maxWidth: '600px', margin: '0 auto', display: 'block' }}
+                      />
+                    </div>
 
-              <Row gutter={[32, 32]}>
-                {newsData.map((news, index) => (
-                  <Col xs={24} sm={12} md={8} key={index}>
-                    <Card 
-                      hoverable
-                      cover={
-                        <div style={{ height: '200px', overflow: 'hidden' }}>
-                          <img 
-                            alt={news.title} 
-                            src={news.image} 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                        </div>
-                      }
-                      style={{ 
-                        height: '100%', 
-                        borderRadius: 'var(--radius-large)',
-                        boxShadow: 'var(--shadow-1)',
-                        border: 'none'
-                      }}
-                    >
-                      <div style={{ marginBottom: '12px' }}>
-                        <Tag color="blue">{news.category}</Tag>
-                      </div>
-                      <Title level={4} style={{ marginBottom: '12px' }}>{news.title}</Title>
-                      <Paragraph 
-                        ellipsis={{ rows: 3 }}
-                        style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}
-                      >
-                        {news.summary}
-                      </Paragraph>
-                      <div style={{ 
-                        display: 'flex', 
-                        justifyContent: 'space-between',
-                        alignItems: 'center'
-                      }}>
-                        <Space>
-                          <CalendarOutlined style={{ color: 'var(--text-tertiary)' }} />
-                          <Text type="secondary">{news.date}</Text>
-                        </Space>
-                        <Space>
-                          <EyeOutlined style={{ color: 'var(--text-tertiary)' }} />
-                          <Text type="secondary">{news.views}</Text>
-                        </Space>
-                      </div>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-
-              <div style={{ textAlign: 'center', marginTop: '48px' }}>
-                <Pagination 
-                  current={currentPage} 
-                  total={50} 
-                  onChange={setCurrentPage} 
-                  showSizeChanger={false}
-                />
-              </div>
-            </TabPane>
-
-            <TabPane 
-              tab={
-                <span>
-                  <CalendarOutlined style={{ marginRight: '8px' }} />
-                  活动日历
-                </span>
-              } 
-              key="2"
-            >
-              <Row gutter={[32, 32]}>
-                {eventsData.map((event, index) => (
-                  <Col xs={24} md={8} key={index}>
-                    <Card 
-                      hoverable
-                      cover={
-                        <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
-                          <img 
-                            alt={event.title} 
-                            src={event.image} 
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          />
-                          <div style={{ 
-                            position: 'absolute', 
-                            top: '16px', 
-                            right: '16px',
-                            background: 'rgba(22, 93, 255, 0.9)',
-                            color: 'white',
-                            padding: '8px 16px',
-                            borderRadius: 'var(--radius-small)'
-                          }}>
-                            {event.date}
+                    <Row gutter={[32, 32]}>
+                      {newsData.map((news, index) => (
+                        <Col xs={24} sm={12} md={8} key={index}>
+                          <Card 
+                            hoverable
+                            cover={
+                              <div style={{ height: '200px', overflow: 'hidden' }}>
+                                <img 
+                                  alt={news.title} 
+                                  src={news.image} 
+                                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
+                              </div>
+                            }
+                            style={{ 
+                              height: '100%', 
+                              borderRadius: 'var(--radius-large)',
+                              boxShadow: 'var(--shadow-1)',
+                              border: 'none'
+                            }}
+                          >
+                          <div style={{ marginBottom: '12px' }}>
+                            <Tag color="blue">{news.category}</Tag>
                           </div>
-                        </div>
-                      }
-                      style={{ 
-                        height: '100%', 
-                        borderRadius: 'var(--radius-large)',
-                        boxShadow: 'var(--shadow-1)',
-                        border: 'none'
-                      }}
-                    >
-                      <div style={{ marginBottom: '12px' }}>
-                        <Tag color={event.type === '线上活动' ? 'green' : 'blue'}>{event.type}</Tag>
-                        <Tag>{event.location}</Tag>
-                      </div>
-                      <Title level={4} style={{ marginBottom: '12px' }}>{event.title}</Title>
-                      <Paragraph 
-                        ellipsis={{ rows: 3 }}
-                        style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}
-                      >
-                        {event.summary}
-                      </Paragraph>
-                      <Button type="primary">
-                        立即报名
-                      </Button>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-
-              <div style={{ textAlign: 'center', marginTop: '48px' }}>
-                <Button type="primary">
-                  查看更多活动
-                </Button>
-              </div>
-            </TabPane>
-
-            <TabPane 
-              tab={
-                <span>
-                  <FileTextOutlined style={{ marginRight: '8px' }} />
-                  资源中心
-                </span>
-              } 
-              key="3"
-            >
-              <Row gutter={[32, 32]}>
-                {resourcesData.map((resource, index) => (
-                  <Col xs={24} sm={12} key={index}>
-                    <Card 
-                      hoverable
-                      style={{ 
-                        height: '100%', 
-                        borderRadius: 'var(--radius-large)',
-                        boxShadow: 'var(--shadow-1)',
-                        border: 'none'
-                      }}
-                    >
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ 
-                          marginRight: '16px',
-                          width: '48px',
-                          height: '48px',
-                          background: 'var(--primary-light)',
-                          borderRadius: 'var(--radius-small)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '24px',
-                          color: 'var(--primary-color)'
-                        }}>
-                          {resource.icon}
-                        </div>
-                        <div style={{ flex: 1 }}>
-                          <div style={{ marginBottom: '8px' }}>
-                            <Tag color="blue">{resource.type}</Tag>
-                          </div>
-                          <Title level={4} style={{ marginBottom: '12px' }}>{resource.title}</Title>
+                          <Title level={4} style={{ marginBottom: '12px' }}>{news.title}</Title>
                           <Paragraph 
-                            ellipsis={{ rows: 2 }}
+                            ellipsis={{ rows: 3 }}
                             style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}
                           >
-                            {resource.summary}
+                            {news.summary}
                           </Paragraph>
-                          <Button type="link" style={{ padding: 0 }}>
-                            立即下载 <RightOutlined />
-                          </Button>
-                        </div>
-                      </div>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
+                          <div style={{ 
+                            display: 'flex', 
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
+                          }}>
+                            <Space>
+                              <CalendarOutlined style={{ color: 'var(--text-tertiary)' }} />
+                              <Text type="secondary">{news.date}</Text>
+                            </Space>
+                            <Space>
+                              <EyeOutlined style={{ color: 'var(--text-tertiary)' }} />
+                              <Text type="secondary">{news.views}</Text>
+                            </Space>
+                          </div>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
 
-              <div style={{ textAlign: 'center', marginTop: '48px' }}>
-                <Button type="primary">
-                  查看更多资源
-                </Button>
-              </div>
-            </TabPane>
-          </Tabs>
+                  <div style={{ textAlign: 'center', marginTop: '48px' }}>
+                      <Pagination 
+                        current={currentPage} 
+                        total={50} 
+                        onChange={setCurrentPage} 
+                        showSizeChanger={false}
+                      />
+                    </div>
+                   </div>
+                )
+              },
+              
+              {
+                key: '2',
+                label: (
+                  <span>
+                    <CalendarOutlined style={{ marginRight: '8px' }} />
+                    活动日历
+                  </span>
+                ),
+                children: (
+                  <div>
+                    <Row gutter={[32, 32]}>
+                    {eventsData.map((event, index) => (
+                      <Col xs={24} md={8} key={index}>
+                        <Card 
+                          hoverable
+                          cover={
+                            <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                              <img 
+                                alt={event.title} 
+                                src={event.image} 
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                              />
+                              <div style={{ 
+                                position: 'absolute', 
+                                top: '16px', 
+                                right: '16px',
+                                background: 'rgba(22, 93, 255, 0.9)',
+                                color: 'white',
+                                padding: '8px 16px',
+                                borderRadius: 'var(--radius-small)'
+                              }}>
+                                {event.date}
+                              </div>
+                            </div>
+                          }
+                          style={{ 
+                            height: '100%', 
+                            borderRadius: 'var(--radius-large)',
+                            boxShadow: 'var(--shadow-1)',
+                            border: 'none'
+                          }}
+                        >
+                          <div style={{ marginBottom: '12px' }}>
+                            <Tag color={event.type === '线上活动' ? 'green' : 'blue'}>{event.type}</Tag>
+                            <Tag>{event.location}</Tag>
+                          </div>
+                          <Title level={4} style={{ marginBottom: '12px' }}>{event.title}</Title>
+                          <Paragraph 
+                            ellipsis={{ rows: 3 }}
+                            style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}
+                          >
+                            {event.summary}
+                          </Paragraph>
+                          <Button type="primary">
+                            立即报名
+                          </Button>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+
+                  <div style={{ textAlign: 'center', marginTop: '48px' }}>
+                      <Button type="primary">
+                        查看更多活动
+                      </Button>
+                    </div>
+                   </div>
+                )
+              },
+              {
+                key: '3',
+                label: (
+                  <span>
+                    <FileTextOutlined style={{ marginRight: '8px' }} />
+                    资源中心
+                  </span>
+                ),
+                children: (
+                  <div>
+                    <Row gutter={[32, 32]}>
+                    {resourcesData.map((resource, index) => (
+                      <Col xs={24} sm={12} key={index}>
+                        <Card 
+                          hoverable
+                          style={{ 
+                            height: '100%', 
+                            borderRadius: 'var(--radius-large)',
+                            boxShadow: 'var(--shadow-1)',
+                            border: 'none'
+                          }}
+                        >
+                          <div style={{ display: 'flex' }}>
+                            <div style={{ 
+                              marginRight: '16px',
+                              width: '48px',
+                              height: '48px',
+                              background: 'var(--primary-light)',
+                              borderRadius: 'var(--radius-small)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              fontSize: '24px',
+                              color: 'var(--primary-color)'
+                            }}>
+                              {resource.icon}
+                            </div>
+                            <div style={{ flex: 1 }}>
+                              <div style={{ marginBottom: '8px' }}>
+                                <Tag color="blue">{resource.type}</Tag>
+                              </div>
+                              <Title level={4} style={{ marginBottom: '12px' }}>{resource.title}</Title>
+                              <Paragraph 
+                                ellipsis={{ rows: 2 }}
+                                style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}
+                              >
+                                {resource.summary}
+                              </Paragraph>
+                              <Button type="link" style={{ padding: 0 }}>
+                                立即下载 <RightOutlined />
+                              </Button>
+                            </div>
+                          </div>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+
+                  <div style={{ textAlign: 'center', marginTop: '48px' }}>
+                    <Button type="primary">
+                      查看更多资源
+                    </Button>
+                  </div>
+                  </div>
+                )
+              }
+            ]}
+          />
         </div>
       </section>
 

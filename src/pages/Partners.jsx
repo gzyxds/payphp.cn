@@ -13,7 +13,6 @@ import {
 } from '@ant-design/icons';
 
 const { Title, Paragraph, Text } = Typography;
-const { TabPane } = Tabs;
 
 const Partners = () => {
   const partnerTypes = [
@@ -154,17 +153,18 @@ const Partners = () => {
             我们提供多种合作模式，满足不同伙伴的需求，共创双赢
           </Paragraph>
 
-          <Tabs defaultActiveKey="0" centered>
-            {partnerTypes.map((type, index) => (
-              <TabPane 
-                tab={
-                  <span>
-                    <span style={{ marginRight: '8px', color: 'var(--primary-color)' }}>{type.icon}</span>
-                    {type.title}
-                  </span>
-                } 
-                key={index}
-              >
+          <Tabs 
+            defaultActiveKey="0" 
+            centered
+            items={partnerTypes.map((type, index) => ({
+              key: String(index),
+              label: (
+                <span>
+                  <span style={{ marginRight: '8px', color: 'var(--primary-color)' }}>{type.icon}</span>
+                  {type.title}
+                </span>
+              ),
+              children: (
                 <Card 
                   style={{ 
                     borderRadius: 'var(--radius-large)',
@@ -232,9 +232,9 @@ const Partners = () => {
                     </Col>
                   </Row>
                 </Card>
-              </TabPane>
-            ))}
-          </Tabs>
+              )
+            }))}
+          />
         </div>
       </section>
 

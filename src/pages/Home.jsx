@@ -120,6 +120,7 @@ const Home = () => {
             <Col xs={24} md={12} className="animate-fadeIn delay-1">
               <div style={{ position: 'relative', height: '480px' }}>
                 {/* 主图 */}
+                {/* 模拟支付应用界面 */}
                 <div style={{ 
                   position: 'absolute',
                   right: 0,
@@ -130,17 +131,183 @@ const Home = () => {
                   justifyContent: 'center',
                   alignItems: 'flex-end'
                 }}>
-                  <img 
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
-                    alt="支付解决方案" 
-                    style={{ 
-                      maxWidth: '100%',
-                      maxHeight: '100%',
-                      objectFit: 'contain',
-                      borderRadius: '8px',
-                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)'
-                    }} 
-                  />
+                  {/* 模拟应用界面容器 */}
+                   <div style={{ 
+                     width: '250px',
+                     height: '500px',
+                     background: 'white',
+                     borderRadius: '20px',
+                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+                     overflow: 'hidden',
+                     border: '6px solid #333',
+                     position: 'relative'
+                   }}>
+                    {/* 应用顶部状态栏 */}
+                     <div style={{ 
+                       height: '40px', 
+                       background: '#165dff', 
+                       display: 'flex',
+                       alignItems: 'center',
+                       justifyContent: 'space-between',
+                       padding: '0 12px',
+                       color: 'white'
+                     }}>
+                      <div>9:41</div>
+                      <div style={{ display: 'flex', gap: '4px' }}>
+                        <span>📶</span>
+                        <span>🔋</span>
+                      </div>
+                    </div>
+                    
+                    {/* 应用内容区 */}
+                     <div style={{ padding: '12px' }}>
+                      {/* 应用标题 */}
+                       <div style={{ 
+                         display: 'flex', 
+                         alignItems: 'center', 
+                         marginBottom: '16px',
+                         gap: '6px'
+                       }}>
+                         <div style={{ 
+                           width: '28px', 
+                           height: '28px', 
+                           borderRadius: '6px', 
+                           background: '#165dff',
+                           display: 'flex',
+                           alignItems: 'center',
+                           justifyContent: 'center',
+                           color: 'white',
+                           fontWeight: 'bold',
+                           fontSize: '14px'
+                         }}>P</div>
+                         <div style={{ fontWeight: 'bold', fontSize: '16px' }}>PayPay</div>
+                      </div>
+                      
+                      {/* 余额卡片 */}
+                       <div style={{ 
+                         background: 'linear-gradient(135deg, #165dff 0%, #4080ff 100%)',
+                         borderRadius: '12px',
+                         padding: '16px',
+                         color: 'white',
+                         marginBottom: '16px'
+                       }}>
+                         <div style={{ fontSize: '12px', marginBottom: '6px' }}>我的余额</div>
+                         <div style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '16px' }}>¥ 8,659.20</div>
+                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                           <Button size="small" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none', fontSize: '12px', height: '24px', padding: '0 8px' }}>充值</Button>
+                           <Button size="small" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none', fontSize: '12px', height: '24px', padding: '0 8px' }}>提现</Button>
+                         </div>
+                      </div>
+                      
+                      {/* 功能按钮区 */}
+                       <div style={{ marginBottom: '16px' }}>
+                         <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '12px' }}>快捷功能</div>
+                         <Row gutter={[12, 12]}>
+                           {[
+                            { icon: '￥', label: '付款' },
+                            { icon: '⊞', label: '扫码' },
+                            { icon: '⇄', label: '转账' },
+                            { icon: '≡', label: '账单' }
+                          ].map((item, index) => (
+                             <Col span={6} key={index}>
+                               <div style={{ textAlign: 'center' }}>
+                                 <div style={{ 
+                                   width: '36px', 
+                                   height: '36px', 
+                                   borderRadius: '10px',
+                                   background: '#f5f7fa',
+                                   display: 'flex',
+                                   alignItems: 'center',
+                                   justifyContent: 'center',
+                                   fontSize: '18px',
+                                   margin: '0 auto 6px'
+                                 }}>
+                                   {item.icon}
+                                 </div>
+                                 <div style={{ fontSize: '10px' }}>{item.label}</div>
+                               </div>
+                             </Col>
+                           ))}
+                         </Row>
+                       </div>
+                      
+                      {/* 最近交易 */}
+                       <div>
+                         <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '12px' }}>最近交易</div>
+                         {[
+                            { icon: '◎', name: '网上商城', amount: '-¥128.50', time: '今天 14:30' },
+                            { icon: '◇', name: '餐饮消费', amount: '-¥45.00', time: '昨天 12:15' },
+                            { icon: '△', name: '工资入账', amount: '+¥6,000.00', time: '10月15日' }
+                          ].map((item, index) => (
+                           <div key={index} style={{ 
+                             display: 'flex', 
+                             alignItems: 'center', 
+                             justifyContent: 'space-between',
+                             padding: '8px 0',
+                             borderBottom: index < 2 ? '1px solid #f0f0f0' : 'none'
+                           }}>
+                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                               <div style={{ 
+                                 width: '28px', 
+                                 height: '28px', 
+                                 borderRadius: '6px',
+                                 background: '#f5f7fa',
+                                 display: 'flex',
+                                 alignItems: 'center',
+                                 justifyContent: 'center',
+                                 fontSize: '14px'
+                               }}>
+                                 {item.icon}
+                               </div>
+                               <div>
+                                 <div style={{ fontWeight: 'medium', fontSize: '12px' }}>{item.name}</div>
+                                 <div style={{ fontSize: '10px', color: '#999' }}>{item.time}</div>
+                               </div>
+                             </div>
+                             <div style={{ 
+                               fontWeight: 'bold', 
+                               fontSize: '12px',
+                               color: item.amount.startsWith('+') ? '#52c41a' : '#333'
+                             }}>
+                               {item.amount}
+                             </div>
+                           </div>
+                         ))}
+                       </div>
+                    </div>
+                    
+                    {/* 底部导航栏 */}
+                     <div style={{ 
+                       position: 'absolute',
+                       bottom: 0,
+                       left: 0,
+                       right: 0,
+                       height: '48px',
+                       background: 'white',
+                       borderTop: '1px solid #f0f0f0',
+                       display: 'flex',
+                       justifyContent: 'space-around',
+                       alignItems: 'center',
+                       padding: '0 10px'
+                     }}>
+                       {[
+                         { icon: '⌂', label: '首页', active: true },
+                         { icon: '○', label: '资产', active: false },
+                         { icon: '◎', label: '发现', active: false },
+                         { icon: '⊙', label: '我的', active: false }
+                       ].map((item, index) => (
+                         <div key={index} style={{ 
+                           display: 'flex', 
+                           flexDirection: 'column', 
+                           alignItems: 'center',
+                           color: item.active ? '#165dff' : '#999'
+                         }}>
+                           <div style={{ fontSize: '16px', marginBottom: '2px' }}>{item.icon}</div>
+                           <div style={{ fontSize: '10px' }}>{item.label}</div>
+                         </div>
+                       ))}
+                     </div>
+                  </div>
                 </div>
                 
                 {/* 浮动元素1 - 支付安全 */}
@@ -213,30 +380,77 @@ const Home = () => {
           </Row>
         </div>
         
-        {/* 波浪形底部过渡 */}
+        {/* 几何图形底部过渡 */}
         <div style={{ 
           position: 'relative',
-          height: '120px',
-          marginTop: '40px'
+          height: '100px',
+          marginTop: '40px',
+          overflow: 'hidden'
         }}>
-          <svg 
-            viewBox="0 0 1440 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              width: '100%',
-              height: '100%'
-            }}
-          >
-            <path 
-              d="M0 120L48 110C96 100 192 80 288 70C384 60 480 60 576 65C672 70 768 80 864 85C960 90 1056 90 1152 80C1248 70 1344 50 1392 40L1440 30V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0Z" 
-              fill="white"
+          {/* 主背景层 */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(135deg, #f7f9fc 0%, #e8f2ff 100%)'
+          }} />
+          
+          {/* 几何装饰元素 */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'white',
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 40%, 85% 30%, 70% 45%, 55% 25%, 40% 35%, 25% 20%, 10% 30%, 0 25%)'
+          }} />
+          
+          {/* 渐变装饰条 */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: '10%',
+            width: '80%',
+            height: '4px',
+            background: 'linear-gradient(90deg, transparent 0%, #165dff 20%, #4080ff 50%, #165dff 80%, transparent 100%)',
+            borderRadius: '2px'
+          }} />
+          
+          {/* 浮动圆点装饰 */}
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                bottom: `${20 + Math.random() * 40}px`,
+                left: `${10 + i * 10}%`,
+                width: `${4 + Math.random() * 6}px`,
+                height: `${4 + Math.random() * 6}px`,
+                borderRadius: '50%',
+                background: `rgba(22, 93, 255, ${0.1 + Math.random() * 0.3})`,
+                animation: `float ${2 + Math.random() * 2}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 2}s`
+              }}
             />
-          </svg>
+          ))}
         </div>
+        
+        {/* 添加浮动动画样式 */}
+         <style dangerouslySetInnerHTML={{
+           __html: `
+             @keyframes float {
+               0%, 100% {
+                 transform: translateY(0px);
+               }
+               50% {
+                 transform: translateY(-10px);
+               }
+             }
+           `
+         }} />
       </section>
 
       {/* 核心优势 */}
