@@ -19,9 +19,9 @@ const Home = () => {
   return (
     <div>
       <SEO 
-        title="首页"
-        description="支付宝开放平台为企业提供一站式支付服务，助力商业数字化转型，连接全球支付网络，打造安全、高效、智能的支付体验"
-        keywords="支付平台,支付解决方案,全球支付,支付API,支付接口,电子支付,移动支付"
+        title="payphp_码支付_易支付官网_支付系统源码"
+        description="payphp是一个基于php的支付系统，提供支付宝、微信支付、银联支付等多种支付方式，支持PC端、移动端支付，支付系统源码开放，可根据需求定制化开发"
+        keywords="支付平台,支付系统,支付解决方案,全球支付,支付API,支付接口,电子支付,移动支付"
         canonicalUrl="https://www.paypay.com/"
         ogData={{
           image: "https://www.paypay.com/images/home-og.jpg",
