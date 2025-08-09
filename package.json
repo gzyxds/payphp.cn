@@ -11,9 +11,8 @@
     "dev:debug": "NODE_OPTIONS='--inspect' next dev",
     "local": "next dev -p 3000",
     "serve": "next dev",
-    "build": "set NEXT_STATIC_EXPORT=true && next build && npm run postbuild",
-    "build:static": "set NEXT_STATIC_EXPORT=true && next build && npm run postbuild",
-    "postbuild": "if exist out rmdir /s /q out && mkdir out && xcopy .next\\server\\app\\*.html out\\ /s /y && xcopy .next\\static out\\_next\\static\\ /e /i /y",
+    "build": "next build",
+    "build:static": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "start:prod": "next start -p 3000",
@@ -21,7 +20,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
-    "clean": "if exist .next rmdir /s /q .next && if exist out rmdir /s /q out && if exist dist rmdir /s /q dist",
+    "clean": "rm -rf .next out dist",
     "test:cms": "node scripts/test-connections.js"
   },
   "dependencies": {
