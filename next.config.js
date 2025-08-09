@@ -20,9 +20,8 @@ const nextConfig = {
   // 强制启用静态导出（EdgeOne 需要）
   output: 'export',
   trailingSlash: true,
-  assetPrefix: './',
-  // 明确指定输出目录
-  distDir: '.next',
+  // 移除 assetPrefix 或使用正确的格式
+  // assetPrefix: '', // 留空或使用绝对路径
   
   images: {
     // 禁用图片优化以支持静态导出
