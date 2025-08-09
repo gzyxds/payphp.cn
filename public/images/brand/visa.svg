@@ -1,0 +1,16 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Visa蓝色背景 -->
+  <rect width="50" height="50" rx="8" fill="#1A1F71"/>
+  
+  <!-- VISA文字 -->
+  <g transform="translate(8, 18)">
+    <!-- V -->
+    <path d="M0 0L3 14h2L8 0H6L4 10L2 0H0z" fill="white"/>
+    <!-- I -->
+    <rect x="10" y="0" width="2" height="14" fill="white"/>
+    <!-- S -->
+    <path d="M14 0h6v2h-4v4h3v2h-3v4h4v2h-6V0z" fill="white"/>
+    <!-- A -->
+    <path d="M22 0L26 14h-2l-1-3h-3l-1 3h-2L21 0h1zm0 3l-1 6h2l-1-6z" fill="white"/>
+  </g>
+</svg>
