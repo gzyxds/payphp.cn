@@ -2,6 +2,8 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  distDir: 'out',
   images: {
     domains: ["localhost"],
     remotePatterns: [
@@ -11,6 +13,7 @@ const nextConfig = {
         port: "",
       },
     ],
+    unoptimized: true
   }
 };
 
