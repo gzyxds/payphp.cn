@@ -18,10 +18,31 @@ export async function generateStaticParams() {
     // 添加子分类路径
     'introduction', 'setup', 'basic', 'advanced'
   ];
-  const existingSlugs = new Set(mdxDocs.map(doc => doc.slug));
   
-  // 合并文档中的 slug 和静态定义的 slug
-  const allSlugs = [...new Set([...existingSlugs, ...staticSlugs])];
+  // 从 mdxDocs 中提取 slug
+  const mdxSlugs = mdxDocs.map(doc => doc.slug);
+  
+  // 合并所有 slug 并去重
+  const slugMap: {[key: string]: boolean} = {};
+  const allSlugs: string[] = [];
+  
+  // 添加 mdxSlugs
+  for (let i = 0; i < mdxSlugs.length; i++) {
+    const slug = mdxSlugs[i];
+    if (!slugMap[slug]) {
+      slugMap[slug] = true;
+      allSlugs.push(slug);
+    }
+  }
+  
+  // 添加 staticSlugs
+  for (let i = 0; i < staticSlugs.length; i++) {
+    const slug = staticSlugs[i];
+    if (!slugMap[slug]) {
+      slugMap[slug] = true;
+      allSlugs.push(slug);
+    }
+  }
   
   return allSlugs.map((slug) => ({ slug }));
 }
