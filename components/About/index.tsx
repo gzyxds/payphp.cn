@@ -303,41 +303,42 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group"
                 >
-                  {/* 白底灰边卡片设计 */}
-                  <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
-                    {/* 顶部装饰条 */}
-                    <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-8"></div>
-                    
-                    {/* 头部信息 */}
-                    <div className="flex items-start justify-between mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
-                          {renderIcon(milestone.iconType, "w-6 h-6")}
-                        </div>
-                        <div>
-                          <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-1">
-                            {milestone.title}
-                          </h3>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">
-                            {milestone.year}
-                          </p>
+                  <div className="group">
+                    {/* 白底灰边卡片设计 */}
+                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                      {/* 顶部装饰条 */}
+                      <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-8"></div>
+                      
+                      {/* 头部信息 */}
+                      <div className="flex items-start justify-between mb-8">
+                        <div className="flex items-center gap-4">
+                          <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
+                            {renderIcon(milestone.iconType, "w-6 h-6")}
+                          </div>
+                          <div>
+                            <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-1">
+                              {milestone.title}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                              {milestone.year}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* 描述内容 */}
-                    <div className="mb-8">
-                      <p className="text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
-                        {milestone.description}
-                      </p>
-                    </div>
+                      {/* 描述内容 */}
+                      <div className="mb-8">
+                        <p className="text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                          {milestone.description}
+                        </p>
+                      </div>
 
-                    {/* 底部操作区域 */}
-                    <div className="pt-6 border-t border-gray-100 dark:border-gray-700">
-                      <div className="text-[#0055ff] text-sm md:text-base font-medium">
-                        {milestone.year} 年
+                      {/* 底部操作区域 */}
+                      <div className="pt-6 border-t border-gray-100 dark:border-gray-700">
+                        <div className="text-[#0055ff] text-sm md:text-base font-medium">
+                          {milestone.year} 年
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -366,24 +367,25 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group"
                 >
-                  {/* 白底灰边卡片设计 */}
-                  <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
-                    {/* 图标区域 */}
-                    <div className="mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
-                        {renderIcon(value.iconType, "w-6 h-6")}
+                  <div className="group">
+                    {/* 白底灰边卡片设计 */}
+                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                      {/* 图标区域 */}
+                      <div className="mb-6">
+                        <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
+                          {renderIcon(value.iconType, "w-6 h-6")}
+                        </div>
                       </div>
+                      
+                      {/* 内容区域 */}
+                      <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {value.description}
+                      </p>
                     </div>
-                    
-                    {/* 内容区域 */}
-                    <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-3">
-                      {value.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {value.description}
-                    </p>
                   </div>
                 </motion.div>
               ))}
