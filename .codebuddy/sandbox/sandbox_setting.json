@@ -6,7 +6,7 @@
     "spaceKey": "693a265c72f74ae58dbd9dff97fb9425",
     "connections": {
       "webIDE": "https://693a265c72f74ae58dbd9dff97fb9425.ap-singapore.cloudstudio.club",
-      "preview": "https://693a265c72f74ae58dbd9dff97fb9425--{port}.ap-singapore.cloudstudio.club",
+      "preview": "",
       "api": "https://693a265c72f74ae58dbd9dff97fb9425--api.ap-singapore.cloudstudio.club",
       "pty": "https://693a265c72f74ae58dbd9dff97fb9425--pty.ap-singapore.cloudstudio.club"
     }

@@ -26,8 +26,8 @@ const nextConfig = {
   trailingSlash: true,
   
   images: {
-    // 静态导出时禁用图片优化
-    ...(isStaticExport && { unoptimized: true }),
+    // 禁用图片优化以支持静态导出
+    unoptimized: true,
     // 使用 remotePatterns 替代已弃用的 domains 配置
     remotePatterns: [
       {
