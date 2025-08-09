@@ -1,11 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getAllDocs, getDocsByCategory } from '@/lib/mdx';
 
-// 配置为静态路由，支持静态导出
-export const dynamic = 'force-static';
-// 禁用路由缓存
-export const revalidate = false;
-
 /**
  * GET /api/docs - 获取所有文档的元数据列表
  * 支持查询参数：

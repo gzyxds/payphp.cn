@@ -3,9 +3,9 @@
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    // 配置MDX插件
-    remarkPlugins: [],
-    rehypePlugins: [],
+    // 暂时移除插件以避免ES模块问题
+    // remarkPlugins: [],
+    // rehypePlugins: [],
   },
 })
 
@@ -18,16 +18,12 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   
   // 根据环境决定是否配置静态导出
-  ...(isStaticExport ? {
+  ...(isStaticExport && {
     // 启用静态导出
     output: 'export',
     // 配置 trailing slash
     trailingSlash: true,
-  } : {}),
-  
-  // Next.js 15已默认启用appDir，不需要显式配置
-  // 移除可能导致问题的实验性配置
-
+  }),
   
   images: {
     // 静态导出时禁用图片优化
