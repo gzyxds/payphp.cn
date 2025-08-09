@@ -16,8 +16,6 @@ const nextConfig = {
   reactStrictMode: true,
   // 配置页面扩展名以包含 MDX
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  // 使用新的构建目录名称以避免权限问题
-  distDir: '.next-build',
   
   // 根据环境决定是否配置输出目录
   ...(isStaticExport && {
