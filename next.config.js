@@ -2,7 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: ["localhost"],
     remotePatterns: [
@@ -12,7 +11,7 @@ const nextConfig = {
         port: "",
       },
     ],
-  },
+  }
 };
 
 module.exports = nextConfig;
