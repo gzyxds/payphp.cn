@@ -18,13 +18,12 @@ const nextConfig = {
   // 配置页面扩展名以包含 MDX
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   
-  // 根据环境决定是否配置静态导出
-  ...(isStaticExport && {
-    // 启用静态导出
-    output: 'export',
-    // 配置 trailing slash
-    trailingSlash: true,
-  }),
+  // 启用静态导出（EdgeOne 需要）
+  output: 'export',
+  // 配置输出目录
+  distDir: 'out',
+  // 配置 trailing slash
+  trailingSlash: true,
   
   images: {
     // 静态导出时禁用图片优化
