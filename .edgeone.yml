@@ -1,4 +1,0 @@
-# EdgeOne Pages 配置文件
-# 指定构建输出目录为 'out'，确保只部署最终的静态文件
-build:
-  outputDir: out
