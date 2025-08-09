@@ -9,7 +9,21 @@ export async function generateStaticParams() {
   // 获取 MDX 文档
   const mdxDocs = getAllDocs();
   
-  return mdxDocs.map((doc) => ({ slug: doc.slug }));
+  // 确保包含必要的静态路径
+  const staticSlugs = [
+    'system', 'installation', 'features', 'configuration', 
+    'dashboard', 'payment', 'api', 'plugins',
+    // 添加分类路径
+    'getting-started', 'user-guide',
+    // 添加子分类路径
+    'introduction', 'setup', 'basic', 'advanced'
+  ];
+  const existingSlugs = new Set(mdxDocs.map(doc => doc.slug));
+  
+  // 合并文档中的 slug 和静态定义的 slug
+  const allSlugs = [...new Set([...existingSlugs, ...staticSlugs])];
+  
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 // 生成元数据

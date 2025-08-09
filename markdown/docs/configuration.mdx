@@ -1,0 +1,354 @@
+---
+# 页面元数据配置
+title: "系统配置" # 页面标题
+description: "PayPHP码支付系统的配置指南" # 页面描述
+date: "2024-01-20" # 最后更新日期
+category: "安装配置" # 文档分类
+subcategory: "基础配置" # 文档子分类
+order: 2 # 文档排序
+icon: "⚙️" # 文档图标
+---
+
+# PayPHP 码支付系统配置指南
+
+本文档将指导您完成 PayPHP 码支付系统的基础配置和高级配置，确保系统能够正常运行并满足您的业务需求。
+
+## 基础配置
+
+### 系统环境配置
+
+安装完成后，您需要进行一些基本的系统环境配置，以确保系统能够正常运行。
+
+#### 1. 配置文件设置
+
+系统的主要配置文件位于 `config` 目录下，包括：
+
+- `config.php` - 系统核心配置
+- `database.php` - 数据库配置
+- `payment.php` - 支付渠道配置
+- `security.php` - 安全相关配置
+
+#### 2. 网站基本信息设置
+
+登录管理后台，进入 "系统设置" → "网站设置"，配置以下信息：
+
+- 网站名称
+- 网站描述
+- 管理员邮箱
+- 系统时区
+- 货币符号
+- 默认语言
+
+![网站设置界面](https://placeholder-image.com/website-settings.jpg)
+
+#### 3. 安全设置
+
+进入 "系统设置" → "安全设置"，配置以下安全选项：
+
+- 登录验证码
+- 密码强度要求
+- 登录失败锁定
+- IP白名单
+- 敏感操作二次验证
+
+### 支付渠道配置
+
+#### 1. 微信支付配置
+
+进入 "支付设置" → "微信支付"，配置以下信息：
+
+- 商户ID (mch_id)
+- 商户密钥 (key)
+- APPID
+- 证书文件（API证书）
+
+配置示例：
+
+```php
+'wechat' => [
+    'mch_id' => '1900000109',
+    'key' => 'a5f3f71efb96fe68b1b8f3791a1e2e1d',
+    'app_id' => 'wx8888888888888888',
+    'cert_path' => '/path/to/cert/apiclient_cert.pem',
+    'key_path' => '/path/to/cert/apiclient_key.pem',
+]
+```
+
+#### 2. 支付宝配置
+
+进入 "支付设置" → "支付宝"，配置以下信息：
+
+- 应用ID (app_id)
+- 商户私钥 (private_key)
+- 支付宝公钥 (alipay_public_key)
+
+配置示例：
+
+```php
+'alipay' => [
+    'app_id' => '2016082000295641',
+    'private_key' => 'MIIEpAIBAAKCAQEAyC...',
+    'alipay_public_key' => 'MIIBIjANBgkqhkiG9w0BA...',
+    'return_url' => 'https://your-domain.com/return',
+    'notify_url' => 'https://your-domain.com/notify',
+]
+```
+
+#### 3. QQ钱包配置
+
+进入 "支付设置" → "QQ钱包"，配置以下信息：
+
+- 商户ID
+- 商户密钥
+- 应用ID
+
+#### 4. 银联支付配置
+
+进入 "支付设置" → "银联支付"，配置以下信息：
+
+- 商户号
+- 证书路径
+- 证书密码
+
+### 通知配置
+
+#### 1. 邮件通知
+
+进入 "系统设置" → "通知设置" → "邮件通知"，配置以下信息：
+
+- SMTP服务器
+- SMTP端口
+- 发件人邮箱
+- 发件人名称
+- SMTP用户名
+- SMTP密码
+- 是否启用SSL
+
+配置示例：
+
+```php
+'mail' => [
+    'host' => 'smtp.example.com',
+    'port' => 465,
+    'username' => 'notification@example.com',
+    'password' => 'your-password',
+    'encryption' => 'ssl',
+    'from' => [
+        'address' => 'notification@example.com',
+        'name' => 'PayPHP系统通知',
+    ],
+]
+```
+
+#### 2. 短信通知
+
+进入 "系统设置" → "通知设置" → "短信通知"，配置以下信息：
+
+- 短信服务提供商
+- API密钥
+- API密钥
+- 短信签名
+- 短信模板ID
+
+## 高级配置
+
+### 系统性能优化
+
+#### 1. 缓存配置
+
+编辑 `config/cache.php` 文件，配置缓存驱动：
+
+```php
+'default' => 'redis',  // 可选: file, redis, memcached
+
+'stores' => [
+    'file' => [
+        'driver' => 'file',
+        'path' => storage_path('framework/cache'),
+    ],
+    'redis' => [
+        'driver' => 'redis',
+        'connection' => 'cache',
+    ],
+    'memcached' => [
+        'driver' => 'memcached',
+        'servers' => [
+            [
+                'host' => '127.0.0.1',
+                'port' => 11211,
+                'weight' => 100,
+            ],
+        ],
+    ],
+],
+```
+
+#### 2. 队列配置
+
+编辑 `config/queue.php` 文件，配置队列驱动：
+
+```php
+'default' => 'redis',  // 可选: sync, database, redis
+
+'connections' => [
+    'sync' => [
+        'driver' => 'sync',
+    ],
+    'database' => [
+        'driver' => 'database',
+        'table' => 'jobs',
+        'queue' => 'default',
+        'retry_after' => 90,
+    ],
+    'redis' => [
+        'driver' => 'redis',
+        'connection' => 'default',
+        'queue' => 'default',
+        'retry_after' => 90,
+    ],
+],
+```
+
+### 防掉单配置
+
+PayPHP 码支付系统提供了三重防掉单技术，确保交易安全可靠。您可以在 "系统设置" → "高级设置" → "防掉单配置" 中进行设置：
+
+1. **主动回调检测**：系统主动向支付平台查询订单状态
+2. **异步通知处理**：接收支付平台的异步通知
+3. **定时任务检测**：定期检查未完成的订单状态
+
+配置示例：
+
+```php
+'anti_drop' => [
+    'active_check' => true,  // 启用主动回调检测
+    'check_interval' => 60,  // 检测间隔（秒）
+    'max_check_times' => 10, // 最大检测次数
+    'async_notify' => true,  // 启用异步通知处理
+    'cron_check' => true,    // 启用定时任务检测
+],
+```
+
+### API配置
+
+#### 1. API访问控制
+
+进入 "系统设置" → "API设置"，配置以下信息：
+
+- API访问密钥
+- IP白名单
+- 请求频率限制
+- 接口权限控制
+
+#### 2. Webhook配置
+
+进入 "系统设置" → "Webhook设置"，配置以下信息：
+
+- 回调URL
+- 签名密钥
+- 重试次数
+- 重试间隔
+
+### 多商户配置
+
+如果您需要启用多商户功能，请进入 "系统设置" → "商户设置"，配置以下信息：
+
+- 商户注册开关
+- 商户审核方式
+- 默认商户等级
+- 结算周期
+- 手续费率
+
+## 配置文件详解
+
+### config.php
+
+```php
+return [
+    // 应用名称
+    'name' => 'PayPHP码支付系统',
+    
+    // 应用环境
+    'env' => 'production',  // 可选: local, development, production
+    
+    // 调试模式
+    'debug' => false,
+    
+    // 时区设置
+    'timezone' => 'Asia/Shanghai',
+    
+    // URL配置
+    'url' => [
+        'base' => 'https://your-domain.com',
+        'admin' => 'https://your-domain.com/admin',
+        'api' => 'https://your-domain.com/api',
+    ],
+    
+    // 日志配置
+    'log' => [
+        'level' => 'warning',  // 可选: debug, info, notice, warning, error, critical
+        'days' => 7,  // 日志保留天数
+    ],
+    
+    // 上传配置
+    'upload' => [
+        'disk' => 'local',  // 存储磁盘
+        'max_size' => 10240,  // 最大上传大小（KB）
+        'allowed_types' => ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'doc', 'docx', 'xls', 'xlsx'],
+    ],
+];
+```
+
+### database.php
+
+```php
+return [
+    'default' => 'mysql',
+    
+    'connections' => [
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => 'localhost',
+            'port' => 3306,
+            'database' => 'payphp',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+    ],
+];
+```
+
+## 常见问题
+
+### 配置文件修改后不生效
+
+1. 检查文件权限是否正确
+2. 清除系统缓存：进入管理后台，点击 "系统工具" → "清除缓存"
+3. 重启Web服务器
+
+### 支付接口配置错误
+
+1. 仔细核对支付平台提供的参数信息
+2. 检查证书文件路径是否正确
+3. 确认服务器时间是否准确（部分支付接口对时间敏感）
+
+### 邮件发送失败
+
+1. 检查SMTP配置是否正确
+2. 确认服务器是否允许外发邮件
+3. 尝试更换端口或启用/禁用SSL
+
+## 配置优化建议
+
+1. **使用Redis缓存**：提高系统响应速度
+2. **启用HTTPS**：增强数据传输安全性
+3. **配置定时任务**：自动处理订单状态检查、数据统计等
+4. **设置合理的日志级别**：避免日志文件过大
+5. **配置CDN**：加速静态资源加载
+
+按照本文档的指导完成配置后，您的PayPHP码支付系统将能够高效、安全地运行，为您的业务提供可靠的支付服务。如有更多问题，请参考其他文档或联系技术支持。

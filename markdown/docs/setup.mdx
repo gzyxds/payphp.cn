@@ -1,0 +1,247 @@
+---
+title: "安装配置"
+description: "PayPHP码支付系统安装配置指南"
+date: "2024-01-17"
+category: "开始使用"
+subcategory: "安装配置"
+order: 2
+icon: "⚙️"
+---
+
+# PayPHP 码支付系统安装配置
+
+本节将详细介绍 PayPHP 码支付系统的安装和配置过程，帮助您快速部署系统。
+
+## 安装前准备
+
+在开始安装之前，请确保您的服务器满足以下要求：
+
+### 系统要求
+
+- **操作系统**：Linux（推荐 CentOS 7+、Ubuntu 18.04+）或 Windows Server
+- **Web 服务器**：Nginx 或 Apache
+- **PHP 版本**：PHP 7.4 或更高版本
+- **数据库**：MySQL 5.7 或更高版本
+- **其他要求**：
+  - PHP 扩展：curl, gd, mbstring, openssl, pdo, pdo_mysql, xml, zip
+  - Composer 2.0+
+  - SSL 证书（用于安全支付）
+
+### 域名准备
+
+- 准备一个已备案的域名（中国大陆服务器必须）
+- 配置域名解析到您的服务器 IP
+- 申请并安装 SSL 证书
+
+### 支付渠道准备
+
+根据您的需求，准备以下支付渠道的相关资料：
+
+- **微信支付**：
+  - 微信商户号
+  - API 密钥
+  - 证书文件
+  
+- **支付宝**：
+  - 支付宝应用 ID
+  - 应用私钥
+  - 支付宝公钥
+
+## 安装步骤
+
+### 1. 获取系统文件
+
+有两种方式获取系统文件：
+
+#### 方式一：使用 Composer 安装
+
+```bash
+composer create-project payphp/payphp your-project-name
+```
+
+#### 方式二：下载安装包
+
+1. 访问官方网站下载最新版安装包
+2. 解压安装包到网站根目录
+3. 设置目录权限：
+   ```bash
+   chmod -R 755 your-project-name
+   chmod -R 777 your-project-name/storage
+   chmod -R 777 your-project-name/bootstrap/cache
+   ```
+
+### 2. 配置 Web 服务器
+
+#### Nginx 配置示例
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name your-domain.com;
+    
+    ssl_certificate /path/to/your/certificate.crt;
+    ssl_certificate_key /path/to/your/private.key;
+    
+    root /path/to/your-project-name/public;
+    index index.php index.html;
+    
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    
+    location ~ /\.ht {
+        deny all;
+    }
+}
+```
+
+#### Apache 配置示例
+
+确保 `.htaccess` 文件存在于 `public` 目录中，并且 Apache 已启用 `mod_rewrite` 模块。
+
+### 3. 配置环境变量
+
+1. 复制 `.env.example` 文件为 `.env`：
+   ```bash
+   cp .env.example .env
+   ```
+
+2. 生成应用密钥：
+   ```bash
+   php artisan key:generate
+   ```
+
+3. 编辑 `.env` 文件，配置数据库连接：
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=payphp
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
+
+### 4. 安装依赖
+
+```bash
+composer install --no-dev
+```
+
+### 5. 运行数据库迁移
+
+```bash
+php artisan migrate
+```
+
+### 6. 初始化系统
+
+```bash
+php artisan payphp:install
+```
+
+此命令将引导您完成系统初始化，包括创建管理员账户、配置系统参数等。
+
+### 7. 配置定时任务
+
+编辑 crontab 文件：
+
+```bash
+crontab -e
+```
+
+添加以下内容：
+
+```
+* * * * * cd /path/to/your-project-name && php artisan schedule:run >> /dev/null 2>&1
+```
+
+## 系统配置
+
+完成安装后，您需要进行以下配置：
+
+### 1. 基本设置
+
+登录管理后台，进入"系统设置"，配置以下内容：
+
+- 网站名称和描述
+- 管理员邮箱
+- 系统时区
+- 日志保留天数
+
+### 2. 支付渠道配置
+
+进入"支付设置"，配置各支付渠道的参数：
+
+#### 微信支付配置
+
+- 商户号
+- API 密钥
+- 上传证书文件
+- 配置回调地址
+
+#### 支付宝配置
+
+- 应用 ID
+- 设置应用私钥和支付宝公钥
+- 配置回调地址
+
+### 3. 通知设置
+
+配置交易通知方式：
+
+- 邮件通知
+- 短信通知
+- 微信通知
+
+### 4. 安全设置
+
+配置系统安全参数：
+
+- IP 白名单
+- 登录保护
+- 操作日志
+
+## 验证安装
+
+完成安装和配置后，您可以通过以下步骤验证系统是否正常工作：
+
+1. 访问管理后台，确认可以正常登录
+2. 创建测试商品和订单
+3. 使用测试模式进行支付测试
+4. 检查订单状态和通知是否正常
+
+## 常见问题
+
+### 安装过程中的问题
+
+1. **权限问题**：确保 storage 和 bootstrap/cache 目录可写
+2. **数据库连接失败**：检查数据库配置是否正确
+3. **500 错误**：查看 storage/logs 下的日志文件
+
+### 配置问题
+
+1. **支付回调失败**：检查回调 URL 是否正确，服务器是否可访问
+2. **定时任务不执行**：检查 crontab 配置是否正确
+
+## 下一步
+
+完成安装和配置后，您可以参考以下文档继续了解系统：
+
+- [控制面板使用](/docs/dashboard) - 了解系统控制面板的使用方法
+- [支付管理](/docs/payment) - 学习如何管理支付订单和交易
+- [API接口使用](/docs/api) - 了解如何使用系统提供的API接口
+
+如果您在安装或配置过程中遇到任何问题，请参考我们的文档或联系技术支持。

@@ -180,8 +180,8 @@ const About = () => {
 
         <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           
-          {/* 页面标题部分 - 左右布局设计，参考 Industry 组件 */}
-          <div className="mb-20">
+          {/* 英雄 - 左右布局设计，参考 Industry 组件 */}
+          <div className="mt-20 mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* 左侧：主标题和副标题 */}
               <motion.div
@@ -211,19 +211,15 @@ const About = () => {
                      创新驱动未来
                    </div>
                   
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    <span className="relative bg-[#0055ff] text-white px-4 py-2 text-sm font-medium border border-[#0055ff] hover:bg-[#0055ff]/90 transition-colors duration-300">
-                      <span className="relative">开源精神</span>
-                    </span>
-                    <span className="relative bg-[#0055ff] text-white px-4 py-2 text-sm font-medium border border-[#0055ff] hover:bg-[#0055ff]/90 transition-colors duration-300">
-                      <span className="relative">开发者优先</span>
-                    </span>
-                    <span className="relative bg-[#0055ff] text-white px-4 py-2 text-sm font-medium border border-[#0055ff] hover:bg-[#0055ff]/90 transition-colors duration-300">
-                      <span className="relative">持续创新</span>
-                    </span>
-                    <span className="relative bg-[#0055ff] text-white px-4 py-2 text-sm font-medium border border-[#0055ff] hover:bg-[#0055ff]/90 transition-colors duration-300">
-                      <span className="relative">安全可靠</span>
-                    </span>
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                    {['开源精神', '开发者优先', '持续创新', '安全可靠'].map((tag) => (
+                      <span 
+                        key={tag} 
+                        className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>

@@ -19,81 +19,19 @@ export default function SidebarLink() {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    // 检查是否为静态导出模式
-    const isStaticExport = process.env.NODE_ENV === 'production' || typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+    // 始终使用静态数据，无论是开发模式还是生产模式
+    const staticCategories = getStaticCategoriesData();
+    const staticDocs = getStaticDocsData();
     
-    if (isStaticExport) {
-      // 静态导出模式：使用静态数据
-      const staticCategories = getStaticCategoriesData();
-      const staticDocs = getStaticDocsData();
-      
-      setCategories(staticCategories);
-      setFlatDocs(staticDocs);
-      
-      // 默认展开第一个分类
-      if (staticCategories.length > 0) {
-        setExpandedCategories(new Set([staticCategories[0].slug]));
-      }
-    } else {
-      // 开发模式：从API获取数据
-      // 从API获取分类文档列表
-      const fetchCategorizedDocs = () => {
-        fetch('/api/docs?grouped=true')
-          .then(response => response.json())
-          .then(result => {
-            if (result.success && result.data) {
-              setCategories(result.data);
-              // 默认展开第一个分类
-              if (result.data.length > 0) {
-                setExpandedCategories(new Set([result.data[0].slug]));
-              }
-            }
-          })
-          .catch(error => {
-            console.error('获取分类文档列表失败:', error);
-          });
-      };
-
-      // 从API获取扁平文档列表
-      const fetchFlatDocs = () => {
-        fetch('/api/docs?grouped=false')
-          .then(response => response.json())
-          .then(result => {
-            if (result.success && result.data) {
-              setFlatDocs(result.data);
-            }
-          })
-          .catch(error => {
-            console.error('获取文档列表失败:', error);
-            // 使用静态数据作为后备
-            setFlatDocs([
-              {
-                slug: 'system',
-                title: 'Peak码支付系统介绍',
-                description: '了解Peak码支付系统的核心功能和特性',
-                date: '2024-01-15',
-                category: '系统介绍',
-                subcategory: '默认',
-                order: 1,
-                icon: '📖'
-              },
-              {
-                slug: 'user-guide',
-                title: 'Peak码支付系统使用指南',
-                description: '详细的系统使用教程和配置指南',
-                date: '2024-01-16',
-                category: '功能使用',
-                subcategory: '默认',
-                order: 1,
-                icon: '📄'
-              }
-            ]);
-          });
-      };
-
-      fetchCategorizedDocs();
-      fetchFlatDocs();
-    }
+    console.log('静态分类数据:', staticCategories);
+    console.log('静态文档数据:', staticDocs);
+    
+    setCategories(staticCategories);
+    setFlatDocs(staticDocs);
+    
+    // 默认展开所有分类
+    const allCategorySlugs = staticCategories.map(cat => cat.slug);
+    setExpandedCategories(new Set(allCategorySlugs));
   }, []);
 
   // 切换分类展开状态
