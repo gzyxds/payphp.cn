@@ -17,10 +17,8 @@ const nextConfig = {
   // 配置页面扩展名以包含 MDX
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   
-  // 根据环境决定是否配置输出目录
+  // 根据环境决定是否配置静态导出
   ...(isStaticExport && {
-    // 配置输出目录为 dist（适用于某些部署平台）
-    distDir: 'dist',
     // 启用静态导出
     output: 'export',
     // 配置 trailing slash
