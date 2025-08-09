@@ -10,7 +10,8 @@ const withMDX = require('@next/mdx')({
 })
 
 // 检查是否需要静态导出
-const isStaticExport = process.env.NEXT_STATIC_EXPORT === 'true';
+// 对于 EdgeOne 部署，默认启用静态导出
+const isStaticExport = process.env.NEXT_STATIC_EXPORT === 'true' || process.env.EDGEONE_DEPLOY === 'true';
 
 const nextConfig = {
   reactStrictMode: true,
