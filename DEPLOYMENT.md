@@ -10,6 +10,7 @@
 2. **简化了构建流程**
 3. **添加了 Vercel 配置文件**
 4. **配置了 npm 依赖安装选项**
+5. **修复了函数运行时配置错误**
 
 ### 部署步骤
 
@@ -49,15 +50,19 @@ NEXT_PUBLIC_SITE_NAME=PayPHP.cn
 - ✅ **已修复**: 移除了 Windows 特定的 postbuild 脚本
 - 确保使用 `npm install --legacy-peer-deps` 安装依赖
 
-**2. 依赖安装失败**
+**2. 函数运行时错误：Function Runtimes must have a valid version**
+- ✅ **已修复**: 移除了不必要的函数运行时配置
+- Vercel 会自动检测 Next.js 项目的运行时
+
+**3. 依赖安装失败**
 - 检查 `.npmrc` 文件是否包含正确的配置
 - 确保使用 `--legacy-peer-deps` 标志
 
-**3. TypeScript 错误**
+**4. TypeScript 错误**
 - 运行 `npm run type-check` 检查类型错误
 - 确保所有类型定义正确
 
-**4. MDX 相关错误**
+**5. MDX 相关错误**
 - 检查 `markdown/` 目录中的文件格式
 - 确保 front matter 格式正确
 
