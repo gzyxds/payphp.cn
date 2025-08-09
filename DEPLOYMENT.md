@@ -54,15 +54,19 @@ NEXT_PUBLIC_SITE_NAME=PayPHP.cn
 - ✅ **已修复**: 移除了不必要的函数运行时配置
 - Vercel 会自动检测 Next.js 项目的运行时
 
-**3. 依赖安装失败**
+**3. 输出目录错误：Output dir out not found**
+- ✅ **已修复**: 移除了手动指定的 outputDirectory 配置
+- 让 Vercel 自动检测 Next.js 的标准输出目录 (.next)
+
+**4. 依赖安装失败**
 - 检查 `.npmrc` 文件是否包含正确的配置
 - 确保使用 `--legacy-peer-deps` 标志
 
-**4. TypeScript 错误**
+**5. TypeScript 错误**
 - 运行 `npm run type-check` 检查类型错误
 - 确保所有类型定义正确
 
-**5. MDX 相关错误**
+**6. MDX 相关错误**
 - 检查 `markdown/` 目录中的文件格式
 - 确保 front matter 格式正确
 

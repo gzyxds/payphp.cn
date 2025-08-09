@@ -19,6 +19,7 @@ git commit -m "Fix Vercel deployment issues
 - Simplify build process
 - Add Vercel configuration
 - Fix function runtime configuration
+- Fix output directory configuration
 - Add npm configuration for legacy peer deps"
 
 # 推送到远程仓库
