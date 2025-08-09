@@ -19,6 +19,8 @@ export interface DocSubcategory {
   slug: string;
   name: string;
   docs: DOC[];
+  icon?: string;
+  order?: number;
 }
 
 /**
@@ -28,5 +30,6 @@ export interface DocCategory {
   slug: string;
   name: string;
   icon?: string;
+  order?: number;
   subcategories: DocSubcategory[];
 }
