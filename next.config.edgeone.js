@@ -9,15 +9,12 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-// 检查是否需要静态导出
-const isStaticExport = process.env.EDGEONE_DEPLOY === 'true';
-
 const nextConfig = {
   reactStrictMode: true,
   // 配置页面扩展名以包含 MDX
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   
-  // 强制启用静态导出（EdgeOne 需要）
+  // 启用静态导出（EdgeOne 专用）
   output: 'export',
   trailingSlash: true,
   assetPrefix: './',
@@ -25,7 +22,6 @@ const nextConfig = {
   images: {
     // 禁用图片优化以支持静态导出
     unoptimized: true,
-    // 使用 remotePatterns 替代已弃用的 domains 配置
     remotePatterns: [
       {
         protocol: 'http',
@@ -39,16 +35,15 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      // 可以在这里添加其他需要的图片域名
     ],
   },
   
-  // 禁用 ESLint 在构建时的检查（可选）
+  // 禁用 ESLint 在构建时的检查
   eslint: {
     ignoreDuringBuilds: true,
   },
   
-  // 禁用 TypeScript 错误检查（可选，如果有类型错误）
+  // 禁用 TypeScript 错误检查
   typescript: {
     ignoreBuildErrors: true,
   },

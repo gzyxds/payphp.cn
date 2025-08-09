@@ -11,9 +11,10 @@
     "dev:debug": "NODE_OPTIONS='--inspect' next dev",
     "local": "next dev -p 3000",
     "serve": "next dev",
-    "build": "EDGEONE_DEPLOY=true next build",
-    "build:static": "EDGEONE_DEPLOY=true next build",
-    "build:edgeone": "EDGEONE_DEPLOY=true next build",
+    "build": "set EDGEONE_DEPLOY=true && next build",
+    "build:static": "set EDGEONE_DEPLOY=true && next build",
+    "build:edgeone": "next build --experimental-build-mode=compile",
+    "build:edgeone-static": "next build -c next.config.edgeone.js",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "start:prod": "next start -p 3000",
@@ -22,7 +23,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf .next out dist",
+    "clean": "rmdir /s /q .next out dist 2>nul || echo cleaned",
     "test:cms": "node scripts/test-connections.js"
   },
   "dependencies": {
