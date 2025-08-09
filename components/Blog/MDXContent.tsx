@@ -1,7 +1,9 @@
 "use client";
 
 import React from 'react';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { compile } from '@mdx-js/mdx';
+import { evaluate } from '@mdx-js/react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import remarkGfm from 'remark-gfm';
@@ -132,8 +134,69 @@ interface MDXContentProps {
 }
 
 const MDXContent: React.FC<MDXContentProps> = ({ content }) => {
-  // 简单的错误处理
-  if (!content) {
+  const [mdxModule, setMdxModule] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const renderMDX = async () => {
+      if (!content) {
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        setError(null);
+
+        // 使用简单的 HTML 渲染 Markdown
+        const markdownContent = content
+          .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+          .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+          .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+          .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+          .replace(/\*(.*)\*/gim, '<em>$1</em>')
+          .replace(/\n/gim, '<br />');
+
+        const contentDiv = document.createElement('div');
+        contentDiv.innerHTML = markdownContent;
+        
+        setMdxModule({ default: () => <div dangerouslySetInnerHTML={{ __html: markdownContent }} /> });
+        setIsLoading(false);
+      } catch (err) {
+        console.error('MDX 渲染错误:', err);
+        setError('内容加载失败，请稍后重试。');
+        setIsLoading(false);
+      }
+    };
+
+    renderMDX();
+  }, [content]);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        <span className="ml-3 text-body-color dark:text-body-color-dark">加载中...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <div className="text-red-500 mb-4">⚠️ {error}</div>
+        <button 
+          onClick={() => window.location.reload()} 
+          className="text-primary hover:text-primary/80 underline"
+        >
+          重新加载
+        </button>
+      </div>
+    );
+  }
+
+  if (!mdxModule) {
     return (
       <div className="text-center py-12">
         <div className="text-body-color dark:text-body-color-dark">暂无内容</div>
@@ -141,21 +204,11 @@ const MDXContent: React.FC<MDXContentProps> = ({ content }) => {
     );
   }
 
+  const MDXContent = mdxModule.default;
+
   return (
     <div className="blog-details prose prose-lg max-w-none dark:prose-invert">
-      <div className="mdx-content">
-        {/* 使用 React Server Components 版本的 MDXRemote */}
-        <MDXRemote 
-          source={content} 
-          components={components}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [remarkGfm],
-              format: 'mdx'
-            }
-          }}
-        />
-      </div>
+      <MDXContent components={components} />
     </div>
   );
 };
