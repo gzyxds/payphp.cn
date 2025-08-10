@@ -52,7 +52,7 @@ function MyComponent() {
 ```tsx
 <Qrcode 
   qrcodeUrl="/images/qrcode.png" 
-  title="关注我们的微信公众号"
+  title="扫码联系客服"
   description="扫描上方二维码，获取最新资讯"
 />
 ```

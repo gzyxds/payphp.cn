@@ -67,25 +67,24 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "用户中心",
+    title: "购买源码",
     newTab: false,
-    submenu: [
-      {
-        id: 41,
-        title: "购买源码",
-        newTab: false,
-        path: "/auth",
-      },
-      {
-        id: 42,
-        title: "用户注册",
-        newTab: false,
-        path: "/auth/signup",
-      },
-    ],
+    path: "/auth",
   },
   {
     id: 5,
+    title: "艺创AI", 
+    newTab: true,
+    path: "https://urlnet.cn/",
+  },
+  {
+    id: 7,
+    title: "优刻云计算",
+    newTab: true,
+    path: "https://www.cloudcvm.com/",
+  },
+  {
+    id: 6,
     title: "关于我们",
     newTab: false,
     path: "/about",

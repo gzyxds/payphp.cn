@@ -137,11 +137,11 @@ const Products = () => {
                 专业支付解决方案
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white tracking-tight leading-tight">
-                产品与
-                <span className="relative inline-block ml-3">
-                  服务
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#05f] rounded-full"></div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
+                <span className="relative">
+                  <span className="relative z-10 text-black dark:text-white">产品</span>
+                  <span className="relative z-10 bg-gradient-to-br from-[#05f] to-[#60a5fa] bg-clip-text text-transparent">与服务</span>
+                  <div className="absolute -bottom-2 left-0 w-full h-3 bg-[#05f]/10 -skew-x-12 transform"></div>
                 </span>
               </h1>
 
@@ -171,14 +171,15 @@ const Products = () => {
                 <Button 
                   className="bg-[#05f] hover:bg-[#05f]/90 text-white px-8 py-6 rounded-lg font-medium"
                   size="lg"
+                  onClick={() => window.open('https://merch.payphp.cn/', '_blank')}
                 >
-                  立即体验
+                  立即接入
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 
                 <Qrcode 
                   qrcodeUrl="/images/about/weixin.png" 
-                  title="关注我们的微信公众号"
+                  title="扫码联系客服"
                   description="扫描二维码，获取最新产品资讯"
                   buttonText="了解更多"
                   buttonVariant="outline"

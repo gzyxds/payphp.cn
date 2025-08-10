@@ -45,11 +45,11 @@ const Solution = () => {
                 <div className="space-y-4">
                   {/* 特点1：多渠道支付 */}
                   <motion.div 
-                    className="bg-white p-5 border-l-4 border-[#165dff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#165dff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-[#165dff] flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#165dff] rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
@@ -65,11 +65,11 @@ const Solution = () => {
                   
                   {/* 特点2：安全保障 */}
                   <motion.div 
-                    className="bg-white p-5 border-l-4 border-[#4080ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#4080ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-[#4080ff] flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#4080ff] rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
@@ -85,11 +85,11 @@ const Solution = () => {
                   
                   {/* 特点3：快速结算 */}
                   <motion.div 
-                    className="bg-white p-5 border-l-4 border-[#6aa1ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#6aa1ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-[#6aa1ff] flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[#6aa1ff] rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -106,22 +106,21 @@ const Solution = () => {
                 
                 {/* 数据统计 - 更简约无阴影 */}
                 <div className="mt-8 grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 bg-white border border-[#e6f0ff]">
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
                     <div className="text-2xl font-bold text-[#165dff] mb-1">99.9%</div>
                     <div className="text-xs text-[#4e5969]">系统稳定性</div>
                   </div>
-                  <div className="text-center p-3 bg-white border border-[#e6f0ff]">
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
                     <div className="text-2xl font-bold text-[#165dff] mb-1">300+</div>
                     <div className="text-xs text-[#4e5969]">商户接入</div>
                   </div>
-                  <div className="text-center p-3 bg-white border border-[#e6f0ff]">
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
                     <div className="text-2xl font-bold text-[#165dff] mb-1">10亿+</div>
                     <div className="text-xs text-[#4e5969]">年交易额</div>
                   </div>
                 </div>
               </div>
             </motion.div>
-
             {/* 右侧内容区域 */}
             <motion.div
               variants={{
@@ -167,7 +166,7 @@ const Solution = () => {
               {/* 行业特性列表 - 采用现代卡片设计 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div 
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#165dff] text-white flex-shrink-0">
@@ -197,7 +196,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#4080ff] text-white flex-shrink-0">
@@ -227,7 +226,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#6aa1ff] text-white flex-shrink-0">
@@ -257,7 +256,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#0f1423] text-white flex-shrink-0">
@@ -342,7 +341,7 @@ const Solution = () => {
               <div className="text-center lg:text-left">
                 <motion.a
                   href="#"
-                  className="group inline-flex items-center gap-3 rounded-xl bg-[#165dff] px-6 py-3 text-white font-medium transition-all duration-300"
+                  className="group inline-flex items-center gap-3 rounded bg-[#165dff] px-6 py-3 text-white font-medium transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -381,7 +380,7 @@ const Solution = () => {
               {/* 极简容器设计 */}
               <div className="relative w-full">
                 {/* 主要内容容器 - 纯净白色风格 */}
-                <div className="relative z-10 rounded-xl bg-white border border-[#e6f0ff] overflow-hidden">
+                <div className="relative z-10 rounded-lg bg-white border border-[#e6f0ff] overflow-hidden">
                   {/* 极简标题栏 */}
                   <div className="px-6 py-4 bg-[#f5f9ff] border-b border-[#e6f0ff]">
                     <div className="flex items-center justify-between">
@@ -398,10 +397,10 @@ const Solution = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {/* 微信支付 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-[#f5f9ff] border border-[#e6f0ff] hover:bg-[#ecf3ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-[#f5f9ff] border border-[#e6f0ff] hover:bg-[#ecf3ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#165dff] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#165dff] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
@@ -414,10 +413,10 @@ const Solution = () => {
 
                       {/* 支付宝支付 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#4080ff] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#4080ff] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                           </svg>
@@ -430,10 +429,10 @@ const Solution = () => {
 
                       {/* QQ支付 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#6aa1ff] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#6aa1ff] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                           </svg>
@@ -446,10 +445,10 @@ const Solution = () => {
 
                       {/* 二维码收款 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#0f1423] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#0f1423] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                           </svg>
@@ -462,10 +461,10 @@ const Solution = () => {
 
                       {/* 个人码收款 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#165dff] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#165dff] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
@@ -478,10 +477,10 @@ const Solution = () => {
 
                       {/* 商家码收款 */}
                       <motion.div 
-                        className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-[#4080ff] flex items-center justify-center flex-shrink-0">
+                        <div className="h-10 w-10 rounded bg-[#4080ff] flex items-center justify-center flex-shrink-0">
                           <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                           </svg>
@@ -495,25 +494,25 @@ const Solution = () => {
                     
                     {/* 支付特性展示 */}
                     <div className="mt-4 grid grid-cols-2 gap-2">
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         <span className="text-xs text-[#1d2129]">实时到账</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         <span className="text-xs text-[#1d2129]">安全保障</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span className="text-xs text-[#1d2129]">快速接入</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded-lg">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
@@ -549,7 +548,7 @@ const Solution = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="bg-white rounded-lg border border-[#e6f0ff] px-3 py-2">
+                  <div className="bg-white rounded border border-[#e6f0ff] px-3 py-2">
                     <div className="text-center">
                       <div className="text-lg font-bold text-[#165dff]">5min</div>
                       <div className="text-xs text-[#4e5969]">快速集成</div>

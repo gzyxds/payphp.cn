@@ -13,7 +13,7 @@ const QrcodeExample: React.FC = () => {
         <h3 className="text-lg font-semibold mb-2">基本用法</h3>
         <Qrcode 
           qrcodeUrl="/images/about/weixin.png" 
-          title="关注我们的微信公众号"
+          title="扫码联系客服"
           description="扫描上方二维码，获取最新资讯"
           buttonClassName="px-6 py-3 text-lg font-medium"
         />

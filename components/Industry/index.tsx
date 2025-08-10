@@ -221,7 +221,7 @@ const Industry = () => {
             {CORE_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white border border-gray-200 p-6 md:p-8 text-center dark:bg-black dark:border-gray-700 hover:border-[#0055ff]/30 transition-colors duration-200"
+                className="bg-white border border-gray-200 p-6 md:p-8 text-center dark:bg-black dark:border-gray-700"
               >
                 <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0055ff] mb-2">
                   {stat.value}
@@ -240,7 +240,7 @@ const Industry = () => {
             {INDUSTRY_DATA.map((industry) => (
               <article
                 key={industry.id}
-                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 hover:border-[#0055ff]/30 transition-all duration-200 group"
+                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group"
               >
                 {/* 装饰线 */}
                 <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-6" />
@@ -310,7 +310,7 @@ const Industry = () => {
             {TECH_FEATURES.map((feature) => (
               <div
                 key={feature.title}
-                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 hover:border-[#0055ff]/30 transition-all duration-200 group"
+                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="text-[#0055ff] group-hover:scale-110 transition-transform duration-200">
