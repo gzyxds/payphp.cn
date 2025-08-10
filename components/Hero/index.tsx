@@ -76,34 +76,18 @@ const Hero = () => {
               <div className="space-y-6">
                 {/* CTA按钮组 */}
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Qrcode 
-                    qrcodeUrl="/images/about/weixin.png" 
-                    title="获取产品演示"
-                    description="扫描二维码，立即体验产品演示"
-                    buttonText="获取演示"
-                    buttonClassName="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg w-full sm:w-auto"
-                  />
-                  <Qrcode 
-                    qrcodeUrl="/images/about/weixin.png" 
-                    title="购买源码"
-                    description="扫描二维码，联系我们购买完整源码"
-                    buttonText="购买源码"
-                    buttonVariant="outline"
-                    buttonClassName="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors w-full sm:w-auto"
-                  />
-                  <Qrcode 
-                    qrcodeUrl="/images/about/weixin.png" 
-                    title="联系客服"
-                    description="扫描二维码，获取专业客服支持"
-                    buttonText="联系客服"
-                    buttonVariant="ghost"
-                    buttonClassName="text-gray-600 dark:text-gray-300 px-4 py-3 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
-                    buttonIcon={
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                      </svg>
-                    }
-                  />
+                  <button className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg">
+                    获取演示
+                  </button>
+                  <button className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors">
+                    购买源码
+                  </button>
+                  <button className="text-gray-600 dark:text-gray-300 px-4 py-3 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2">
+                    联系客服
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                  </button>
                 </div>
 
                 {/* 免费试用说明 */}

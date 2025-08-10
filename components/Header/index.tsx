@@ -196,16 +196,16 @@ const Header = () => {
           <div className="hidden items-center space-x-4 md:flex">
             <ThemeToggler />
             <Link
-              href="/auth/signup"
+              href="https://merch.payphp.cn"
               className="rounded-md px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-primary dark:text-gray-200"
             >
-              注册
+            立即接入
             </Link>
             <Link
-              href="/auth/auth"
+              href="https://merch.payphp.cn"
               className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition-all hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
-              授权
+              登入注册
             </Link>
           </div>
 
@@ -358,18 +358,18 @@ const Header = () => {
               <ThemeToggler />
             </div>
             <Link
-              href="/auth/signup"
+              href="https://merch.payphp.cn"
               className="block rounded-md bg-gray-100 px-3 py-2 text-center text-base font-medium text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-[#05f] dark:hover:bg-gray-700"
               onClick={closeMenu}
             >
-              注册
+              登入注册
             </Link>
             <Link
-              href="/auth/auth"
+              href="https://merch.payphp.cn"
               className="block rounded-md bg-primary px-3 py-2 text-center text-base font-medium text-white hover:bg-opacity-90"
               onClick={closeMenu}
             >
-              授权
+              立即接入
             </Link>
           </div>
         </div>

@@ -3,8 +3,8 @@ import { getAllBlogs, getBlogStats } from "@/lib/blog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "博客页面 - PayPHP NextJS",
-  description: "这是 PayPHP NextJS 的博客页面，包含最新的技术文章和行业洞察",
+  title: "博客页面 - PayPHP ",
+  description: "PayPHP，包含最新的技术文章和行业洞察",
   // other metadata
 };
 
