@@ -74,7 +74,7 @@ const menuData: Menu[] = [
         id: 41,
         title: "购买源码",
         newTab: false,
-        path: "/auth/auth",
+        path: "/auth",
       },
       {
         id: 42,

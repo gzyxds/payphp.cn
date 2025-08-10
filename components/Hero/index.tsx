@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Qrcode from "@/components/Qrcode";
 
 const Hero = () => {
 
@@ -73,37 +74,55 @@ const Hero = () => {
 
               {/* CTA操作区域 */}
               <div className="space-y-6">
-                {/* 主要操作按钮 */}
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <button
-                    aria-label="立即体验按钮"
-                    className="rounded-xl bg-[#165dff] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:bg-[#1451e6] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#165dff]/50 active:scale-95"
-                  >
-                    立即体验
-                  </button>
-                  <button
-                    aria-label="了解更多按钮"
-                    className="rounded-xl border-2 border-[#165dff] px-8 py-4 font-semibold text-[#165dff] transition-all duration-200 hover:bg-[#165dff] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#165dff]/50 active:scale-95"
-                  >
-                    了解更多
-                  </button>
+                {/* CTA按钮组 */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <Qrcode 
+                    qrcodeUrl="/images/about/weixin.png" 
+                    title="获取产品演示"
+                    description="扫描二维码，立即体验产品演示"
+                    buttonText="获取演示"
+                    buttonClassName="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg w-full sm:w-auto"
+                  />
+                  <Qrcode 
+                    qrcodeUrl="/images/about/weixin.png" 
+                    title="购买源码"
+                    description="扫描二维码，联系我们购买完整源码"
+                    buttonText="购买源码"
+                    buttonVariant="outline"
+                    buttonClassName="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors w-full sm:w-auto"
+                  />
+                  <Qrcode 
+                    qrcodeUrl="/images/about/weixin.png" 
+                    title="联系客服"
+                    description="扫描二维码，获取专业客服支持"
+                    buttonText="联系客服"
+                    buttonVariant="ghost"
+                    buttonClassName="text-gray-600 dark:text-gray-300 px-4 py-3 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
+                    buttonIcon={
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                      </svg>
+                    }
+                  />
                 </div>
 
                 {/* 免费试用说明 */}
                 <p className="text-sm text-gray-500">
-                  💡 免费试用30天，无需信用卡，专业技术支持
+                免费试用30天，无需信用卡，专业技术支持
                 </p>
 
                 {/* 快速入口按钮组 */}
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff]">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     产品文档
                   </button>
+
+                 {/* 快速入口按钮组 */}
                   <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff]">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                     在线咨询

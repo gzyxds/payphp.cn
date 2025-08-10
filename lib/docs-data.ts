@@ -17,8 +17,8 @@ export function getStaticCategoriesData(): DocCategory[] {
           docs: [
             {
               slug: 'system',
-              title: 'Peak码支付系统介绍',
-              description: '了解Peak码支付系统的核心功能和特性',
+              title: '系统介绍',
+              description: '了解Pay系统的核心功能和特性',
               date: '2024-01-15',
               category: '系统介绍',
               subcategory: '介绍',
@@ -28,7 +28,7 @@ export function getStaticCategoriesData(): DocCategory[] {
             {
               slug: 'features',
               title: '功能特性',
-              description: 'Peak码支付系统的主要功能和特性概述',
+              description: 'Pay系统的主要功能和特性概述',
               date: '2024-01-16',
               category: '系统介绍',
               subcategory: '介绍',
@@ -44,7 +44,7 @@ export function getStaticCategoriesData(): DocCategory[] {
             {
               slug: 'installation',
               title: '安装指南',
-              description: '如何安装和部署Peak码支付系统',
+              description: '如何安装和部署Payphp系统',
               date: '2024-01-17',
               category: '开始使用',
               subcategory: '安装配置',

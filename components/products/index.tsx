@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Qrcode from "@/components/Qrcode";
 import { 
   CreditCard, 
   Shield, 
@@ -15,7 +16,18 @@ import {
   CheckCircle
 } from "lucide-react";
 
-// 产品数据类型定义
+/**
+ * 产品数据接口定义
+ * @interface Product
+ * @property {string} id - 产品唯一标识
+ * @property {string} title - 产品标题
+ * @property {string} description - 产品描述
+ * @property {string} category - 产品分类
+ * @property {React.ReactNode} icon - 产品图标
+ * @property {string} price - 产品价格
+ * @property {string[]} features - 产品特性列表
+ * @property {boolean} [popular] - 是否为热门产品
+ */
 interface Product {
   id: string;
   title: string;
@@ -27,7 +39,10 @@ interface Product {
   popular?: boolean;
 }
 
-// 示例产品数据
+/**
+ * 产品数据集合
+ * 包含所有支付相关产品信息
+ */
 const productData: Product[] = [
   {
     id: "1",
@@ -86,39 +101,42 @@ const productData: Product[] = [
   }
 ];
 
-// 获取所有产品分类
+/**
+ * 提取所有产品分类并添加"全部"选项
+ */
 const categories = ["全部", ...Array.from(new Set(productData.map(product => product.category)))];
 
+/**
+ * 产品展示组件
+ * 展示所有产品并支持按分类筛选
+ */
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("全部");
 
-  // 根据分类筛选产品
+  // 根据当前选中分类筛选产品
   const filteredProducts = activeCategory === "全部" 
     ? productData 
     : productData.filter(product => product.category === activeCategory);
 
   return (
     <section className="py-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* 几何背景装饰 */}
+      {/* 背景装饰元素 */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#05f]/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#05f]/5 rounded-full blur-2xl"></div>
       </div>
 
-      {/* 头部区域 */}
+      {/* 头部区域 - 产品介绍 */}
       <div className="w-full bg-gray-50 dark:bg-gray-900/30 py-20 mb-16">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[500px]">
-            
             {/* 左侧内容区域 */}
             <div className="space-y-8">
-              {/* 顶部标签 */}
               <div className="inline-flex items-center bg-[#05f]/10 text-[#05f] px-4 py-2 rounded-full text-sm font-medium">
                 <div className="w-2 h-2 bg-[#05f] rounded-full mr-2"></div>
                 专业支付解决方案
               </div>
 
-              {/* 主标题 */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-black dark:text-white tracking-tight leading-tight">
                 产品与
                 <span className="relative inline-block ml-3">
@@ -127,13 +145,12 @@ const Products = () => {
                 </span>
               </h1>
 
-              {/* 副标题 */}
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 提供全方位的支付解决方案，满足您的各种业务需求，
                 助力企业数字化转型与业务增长
               </p>
 
-              {/* 统计数据卡片 */}
+              {/* 核心数据展示 */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="bg-white dark:bg-gray-900/50 px-6 py-4 rounded-lg border border-gray-100 dark:border-gray-800 text-center">
                   <div className="text-2xl font-bold text-[#05f] mb-1">6+</div>
@@ -149,7 +166,7 @@ const Products = () => {
                 </div>
               </div>
 
-              {/* 行动按钮 */}
+              {/* CTA按钮区 */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   className="bg-[#05f] hover:bg-[#05f]/90 text-white px-8 py-6 rounded-lg font-medium"
@@ -158,22 +175,22 @@ const Products = () => {
                   立即体验
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button 
-                  variant="outline"
-                  className="border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-8 py-6 rounded-lg font-medium"
-                  size="lg"
-                >
-                  了解更多
-                </Button>
+                
+                <Qrcode 
+                  qrcodeUrl="/images/about/weixin.png" 
+                  title="关注我们的微信公众号"
+                  description="扫描二维码，获取最新产品资讯"
+                  buttonText="了解更多"
+                  buttonVariant="outline"
+                  buttonClassName="border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-8 py-6 rounded-lg font-medium"
+                />
               </div>
             </div>
 
-            {/* 右侧视觉区域 */}
+            {/* 右侧视觉区域 - 产品卡片展示 */}
             <div className="relative">
               <div className="relative">
                 <div className="absolute inset-0 bg-[#05f]/5 rounded-full blur-3xl scale-110"></div>
-                
-                {/* 产品卡片堆叠效果 */}
                 <div className="relative space-y-4">
                   {/* 第一张卡片 */}
                   <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-transform duration-300">
@@ -232,15 +249,16 @@ const Products = () => {
         </div>
       </div>
 
+      {/* 产品展示区域 */}
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
-        {/* 产品分类选项卡 */}
-        <div className="mb-16 flex justify-center">
+        {/* 分类筛选器 */}
+        <div className="mb-16 flex justify-center overflow-x-auto">
           <div className="inline-flex bg-gray-50 dark:bg-gray-900/30 p-1 rounded-full">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-10 py-2.5 text-base font-medium transition-all duration-200 rounded-full ${
+                className={`px-6 md:px-10 py-2.5 text-base font-medium transition-all duration-200 rounded-full whitespace-nowrap ${
                   activeCategory === category 
                   ? 'bg-[#05f] text-white' 
                   : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50'
@@ -257,7 +275,7 @@ const Products = () => {
           {filteredProducts.map((product) => (
             <div key={product.id}>
               <Card className="group relative h-full border border-gray-100 dark:border-gray-800 bg-white dark:bg-black overflow-hidden transition-all duration-300 hover:border-[#05f]/30 dark:hover:border-[#05f]/30 rounded-xl">
-                {/* 几何切片装饰 */}
+                {/* 装饰元素 */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-[#05f]/5 transform rotate-45 translate-x-10 -translate-y-10"></div>
                 
                 {/* 热门标签 */}
@@ -318,10 +336,10 @@ const Products = () => {
           ))}
         </div>
 
-        {/* 行动召唤区域 */}
+        {/* CTA区域 */}
         <div className="mt-16">
-          <Card className="relative bg-[#05f] border-0 text-white overflow-hidden rounded-xl border border-[#05f]/20">
-            {/* 几何装饰 */}
+          <Card className="relative bg-[#05f] border-0 text-white overflow-hidden rounded-xl">
+            {/* 装饰元素 */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 transform rotate-45 translate-x-16 -translate-y-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 transform rotate-45 -translate-x-12 translate-y-12"></div>
             
