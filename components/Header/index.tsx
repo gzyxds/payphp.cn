@@ -76,7 +76,7 @@ const Header = () => {
       }`}
       ref={navRef}
     >
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={closeMenu}>

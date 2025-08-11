@@ -815,8 +815,8 @@ const PaymentAuth = () => {
                 style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
               >
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-black dark:text-white mb-2">演示地址</h3>
-                  <div className="text-gray-500 dark:text-gray-400 mb-2">体验版应用</div>
+                  <h3 className="text-lg font-bold text-black dark:text-white mb-2">商户地址</h3>
+                  <div className="text-gray-500 dark:text-gray-400 mb-2">立即接入</div>
                   <div className="text-2xl font-bold text-gray-600 dark:text-gray-300 mb-4">￥0</div>
                   
                   {/* 特性列表 - 简化样式 */}
@@ -825,7 +825,7 @@ const PaymentAuth = () => {
                       <svg className="w-3 h-3 text-[#0055ff] adaptive-dark-exclude" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span className="text-gray-600 dark:text-gray-300">前台地址：merchant.payphp.cn</span>
+                      <span className="text-gray-600 dark:text-gray-300">前台地址：merch.payphp.cn</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -885,7 +885,7 @@ const PaymentAuth = () => {
                 <div className="text-center">
                   <h3 className="text-lg font-bold text-black dark:text-white mb-2">单域名授权</h3>
                   <div className="text-gray-500 dark:text-gray-400 mb-2">个人/小型企业</div>
-                  <div className="text-2xl font-bold text-[#0055ff] mb-4">￥998</div>
+                  <div className="text-2xl font-bold text-[#0055ff] mb-4">￥699</div>
                   
                   {/* 特性列表 - 简化样式 */}
                   <div className="space-y-2 mb-6 text-left">
@@ -923,7 +923,7 @@ const PaymentAuth = () => {
                   
                   <div className="flex gap-2">
                     <a
-                      href="https://wpa.qq.com/msgrd?v=3&uin=34831999&site=qq&menu=yes"
+                      href="https://wpa.qq.com/msgrd?v=3&uin=236749035&site=qq&menu=yes"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0055ff] text-white py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/90 text-center inline-block"
@@ -931,7 +931,7 @@ const PaymentAuth = () => {
                       联系客服
                     </a>
                     <a
-                      href="https://www.payphp.cn/buy"
+                      href="https://merch.payphp.cn/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0055ff]/10 text-[#0055ff] py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/20 text-center inline-block"
@@ -996,7 +996,7 @@ const PaymentAuth = () => {
                   </div>
                   <div className="flex gap-2">
                     <a
-                      href="https://wpa.qq.com/msgrd?v=3&uin=34831999&site=qq&menu=yes"
+                      href="https://wpa.qq.com/msgrd?v=3&uin=236749035&site=qq&menu=yes"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0055ff] text-white py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/90 text-center inline-block"
@@ -1004,7 +1004,7 @@ const PaymentAuth = () => {
                       联系客服
                     </a>
                     <a
-                      href="https://www.payphp.cn/buy"
+                      href="https://merch.payphp.cn/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#0055ff]/10 text-[#0055ff] py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/20 text-center inline-block"

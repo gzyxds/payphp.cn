@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
   // 线性图标渲染函数 - 统一设计风格，采用填充样式与 Industry 保持一致
@@ -161,94 +159,6 @@ const About = () => {
     { year: "2022", title: "Packagist月度热门包" }
   ];
 
-  // 核心团队成员数据
-  const teamMembers = [
-    {
-      name: "张明",
-      role: "创始人 & 首席技术官",
-      avatar: "/images/team/avatar1.jpg",
-      description: "拥有15年PHP开发经验，曾任职于阿里巴巴和腾讯，负责核心支付系统架构",
-      social: {
-        github: "https://github.com/zhangming",
-        twitter: "https://twitter.com/zhangming"
-      }
-    },
-    {
-      name: "李华",
-      role: "联合创始人 & 产品总监",
-      avatar: "/images/team/avatar2.jpg",
-      description: "前支付宝产品经理，精通支付流程设计和用户体验优化",
-      social: {
-        github: "https://github.com/lihua",
-        twitter: "https://twitter.com/lihua"
-      }
-    },
-    {
-      name: "王强",
-      role: "高级架构师",
-      avatar: "/images/team/avatar3.jpg",
-      description: "分布式系统专家，负责PayPHP的高可用架构和性能优化",
-      social: {
-        github: "https://github.com/wangqiang",
-        twitter: "https://twitter.com/wangqiang"
-      }
-    },
-    {
-      name: "赵芳",
-      role: "安全总监",
-      avatar: "/images/team/avatar4.jpg",
-      description: "网络安全专家，确保支付系统的安全性和合规性",
-      social: {
-        github: "https://github.com/zhaofang",
-        twitter: "https://twitter.com/zhaofang"
-      }
-    }
-  ];
-
-  // 合作伙伴数据
-  const partners = [
-    { name: "阿里云", logo: "/images/partners/alicloud.svg" },
-    { name: "腾讯云", logo: "/images/partners/tencentcloud.svg" },
-    { name: "华为云", logo: "/images/partners/huaweicloud.svg" },
-    { name: "百度云", logo: "/images/partners/baiducloud.svg" },
-    { name: "京东云", logo: "/images/partners/jdcloud.svg" },
-    { name: "七牛云", logo: "/images/partners/qiniucloud.svg" }
-  ];
-
-  // 技术栈数据
-  const techStack = [
-    { name: "PHP 8.2", icon: "php", percentage: 90 },
-    { name: "Laravel", icon: "laravel", percentage: 85 },
-    { name: "MySQL", icon: "mysql", percentage: 80 },
-    { name: "Redis", icon: "redis", percentage: 75 },
-    { name: "Docker", icon: "docker", percentage: 70 },
-    { name: "Kubernetes", icon: "kubernetes", percentage: 65 }
-  ];
-
-  // 常见问题数据
-  const faqs = [
-    {
-      question: "PayPHP支持哪些支付渠道？",
-      answer: "PayPHP目前支持支付宝、微信支付、银联、PayPal、Stripe等国内外主流支付渠道，并且持续增加新的支付方式。"
-    },
-    {
-      question: "如何快速集成PayPHP到我的项目中？",
-      answer: "只需通过Composer安装PayPHP包，按照文档配置支付参数，几行代码即可完成集成。我们提供了详细的快速入门指南和示例代码。"
-    },
-    {
-      question: "PayPHP的安全性如何保障？",
-      answer: "PayPHP采用银行级安全标准，包括数据加密、签名验证、防重放攻击等多重安全机制，并通过了PCI DSS安全认证。"
-    },
-    {
-      question: "是否提供企业级技术支持？",
-      answer: "是的，我们为企业用户提供专业的技术支持服务，包括定制开发、性能优化、安全审计等，确保您的支付系统稳定可靠。"
-    },
-    {
-      question: "PayPHP是否支持国际化支付？",
-      answer: "支持，PayPHP设计之初就考虑了国际化需求，支持多币种结算、跨境支付、国际支付渠道对接等功能。"
-    }
-  ];
-
   return (
     <>
       {/* 现代化简洁设计 - 主色调 #0055ff，参考 Industry 组件布局 */}
@@ -375,7 +285,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 发展历程
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 从想法到现实，见证PayPHP如何改变PHP支付开发
               </p>
             </div>
@@ -439,8 +349,8 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 核心理念
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                我们的核心价值观指引着每一个决策和行动
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                驱动我们不断前进的技术信念与产品哲学
               </p>
             </div>
 
@@ -484,8 +394,8 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 社区认可
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                我们获得的荣誉是对技术创新和服务质量的认可
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                来自全球开发者社区的认可与技术成就
               </p>
             </div>
 
@@ -523,190 +433,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* 团队介绍区域 */}
-          <div className="mb-24">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-                核心团队
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                由行业专家组成的精英团队，致力于推动支付技术创新
-              </p>
-            </div>
-
-            {/* 团队成员卡片网格 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="group">
-                    {/* 成员卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
-                      {/* 头像区域 */}
-                      <div className="mb-6 flex justify-center">
-                        <div className="w-24 h-24 rounded-full bg-[#0055ff]/10 overflow-hidden relative">
-                          <div className="absolute inset-0 flex items-center justify-center text-[#0055ff] text-2xl font-bold">
-                            {member.name.charAt(0)}
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* 个人信息 */}
-                      <div className="text-center mb-4">
-                        <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1">
-                          {member.name}
-                        </h3>
-                        <p className="text-sm text-[#0055ff] font-medium">
-                          {member.role}
-                        </p>
-                      </div>
-                      
-                      {/* 个人描述 */}
-                      <p className="text-sm text-gray-600 dark:text-gray-300 text-center mb-6">
-                        {member.description}
-                      </p>
-                      
-                      {/* 社交链接 */}
-                      <div className="flex justify-center gap-4">
-                        <a href={member.social.github} className="text-gray-500 hover:text-[#0055ff] transition-colors">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                          </svg>
-                        </a>
-                        <a href={member.social.twitter} className="text-gray-500 hover:text-[#0055ff] transition-colors">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* 合作伙伴区域 */}
-          <div className="mb-24">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-                合作伙伴
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                解答您关心的问题，帮助您更好地了解PayPHP
-              </p>
-            </div>
-
-            {/* 合作伙伴Logo展示 */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="bg-white border border-gray-200 p-6 h-24 flex items-center justify-center dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
-                    <div className="text-center">
-                      <div className="text-lg font-medium text-gray-800 dark:text-gray-200">{partner.name}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* 技术栈展示区域 */}
-          <div className="mb-24">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-                技术栈
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                与行业领先企业携手，共同打造支付生态
-              </p>
-            </div>
-
-            {/* 合作伙伴网格 - 两排两行布局 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1390 mx-auto">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="mb-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 bg-[#0055ff]/10 rounded-md flex items-center justify-center text-[#0055ff]">
-                          <div className="w-3 h-3 bg-[#0055ff] rounded-sm"></div>
-                        </div>
-                        <span className="font-medium text-black dark:text-white">{tech.name}</span>
-                      </div>
-                      <span className="text-sm text-[#0055ff] font-medium">{tech.percentage}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
-                      <div 
-                        className="bg-[#0055ff] h-full rounded-full" 
-                        style={{ width: `${tech.percentage}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* 常见问题区域 */}
-          <div className="mb-24">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
-                常见问题
-              </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                基于现代化技术栈，构建高性能、可扩展的支付系统
-              </p>
-            </div>
-
-            {/* 技术栈进度条展示 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1390 mx-auto">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="mb-4"
-                >
-                  <div className="border border-gray-200 dark:border-gray-700">
-                    <div className="p-6">
-                      <div className="flex justify-between items-center cursor-pointer">
-                        <h3 className="text-lg font-medium text-black dark:text-white">{faq.question}</h3>
-                        <div className="w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center text-[#0055ff]">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="mt-4 text-gray-600 dark:text-gray-300">
-                        {faq.answer}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
           {/* CTA区域 - 参考 Industry 组件设计 */}
           <div className="text-center">
             <div className="bg-white border border-gray-200 p-12 lg:p-16 dark:bg-black dark:border-gray-700">
@@ -719,7 +445,7 @@ const About = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
                   加入PayPHP开发者社区
                 </h3>
-                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-c-1390 mx-auto">
+                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
                   与全球10万+开发者一起，构建下一代支付应用
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">

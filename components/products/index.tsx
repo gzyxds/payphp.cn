@@ -13,234 +13,261 @@ import {
   Smartphone, 
   Globe,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Zap,
+  Users,
+  BookOpen,
+  Heart,
+  Star,
+  TrendingUp,
+  Clock,
+  Award
 } from "lucide-react";
 
-/**
- * 产品数据接口定义
- * @interface Product
- * @property {string} id - 产品唯一标识
- * @property {string} title - 产品标题
- * @property {string} description - 产品描述
- * @property {string} category - 产品分类
- * @property {React.ReactNode} icon - 产品图标
- * @property {string} price - 产品价格
- * @property {string[]} features - 产品特性列表
- * @property {boolean} [popular] - 是否为热门产品
- */
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  icon: React.ReactNode;
-  price: string;
-  features: string[];
-  popular?: boolean;
-}
-
-/**
- * 产品数据集合
- * 包含所有支付相关产品信息
- */
-const productData: Product[] = [
-  {
-    id: "1",
-    title: "企业支付解决方案",
-    description: "为企业提供全面的支付处理服务，支持多种支付方式和货币",
-    category: "支付",
-    icon: <CreditCard className="w-5 h-5" />,
-    price: "¥2,999/月起",
-    features: ["多渠道支付", "实时交易监控", "自动对账", "定制化报表"],
-    popular: true
-  },
-  {
-    id: "2",
-    title: "跨境电商支付",
-    description: "专为跨境电商设计的支付解决方案，支持全球主流支付方式",
-    category: "支付",
-    icon: <Globe className="w-5 h-5" />,
-    price: "¥3,999/月起",
-    features: ["多币种结算", "汇率优化", "合规性保障", "低手续费"]
-  },
-  {
-    id: "3",
-    title: "智能风控系统",
-    description: "基于AI的风险控制系统，实时监控交易风险，保障支付安全",
-    category: "安全",
-    icon: <Shield className="w-5 h-5" />,
-    price: "¥5,999/月起",
-    features: ["AI风险评估", "异常交易检测", "实时预警", "风险分析报告"]
-  },
-  {
-    id: "4",
-    title: "商户管理平台",
-    description: "一站式商户管理解决方案，简化商户入驻和管理流程",
-    category: "管理",
-    icon: <Settings className="w-5 h-5" />,
-    price: "¥1,999/月起",
-    features: ["商户入驻", "账户管理", "结算管理", "数据分析"]
-  },
-  {
-    id: "5",
-    title: "支付API接口",
-    description: "灵活易用的支付API接口，快速集成各类支付功能",
-    category: "开发",
-    icon: <Code className="w-5 h-5" />,
-    price: "按调用次数计费",
-    features: ["简单集成", "丰富文档", "开发者支持", "沙箱环境"]
-  },
-  {
-    id: "6",
-    title: "移动支付SDK",
-    description: "为移动应用提供的支付SDK，支持iOS和Android平台",
-    category: "开发",
-    icon: <Smartphone className="w-5 h-5" />,
-    price: "¥999/月起",
-    features: ["快速集成", "安全加密", "用户体验优化", "多平台支持"]
-  }
-];
-
-/**
- * 提取所有产品分类并添加"全部"选项
- */
-const categories = ["全部", ...Array.from(new Set(productData.map(product => product.category)))];
-
-/**
- * 产品展示组件
- * 展示所有产品并支持按分类筛选
- */
 const Products = () => {
-  const [activeCategory, setActiveCategory] = useState("全部");
+  const [activeTab, setActiveTab] = useState(0);
 
-  // 根据当前选中分类筛选产品
-  const filteredProducts = activeCategory === "全部" 
-    ? productData 
-    : productData.filter(product => product.category === activeCategory);
+  // 功能亮点数据
+  const features = [
+    {
+      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      title: "高性能框架",
+      description: "基于全新speedPHP框架开发，性能卓越，响应迅速"
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      title: "多线程检测",
+      description: "使用多线程Curl检测账单回调，效率提高上百倍"
+    },
+    {
+      icon: <Globe className="w-6 h-6 text-blue-600" />,
+      title: "多协议支持",
+      description: "支持多种支付最新协议，云端技术保障稳定运行"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+      title: "三重防护",
+      description: "三重防掉单技术，确保每笔交易安全可靠"
+    }
+  ];
+
+  // 应用场景数据
+  const scenarios = [
+    {
+      title: "知识付费平台",
+      description: "为内容创作者提供便捷的收费工具，支持多种支付方式，满足用户多样化的支付需求。",
+      icon: <BookOpen className="w-12 h-12 text-blue-600" />,
+      benefits: ["多种支付方式", "便捷收费工具", "用户体验优化"]
+    },
+    {
+      title: "在线教育",
+      description: "为在线教育机构提供稳定可靠的支付解决方案，保障学员支付体验。",
+      icon: <Users className="w-12 h-12 text-blue-600" />,
+      benefits: ["稳定可靠", "支付保障", "学员体验"]
+    },
+    {
+      title: "运营赞助",
+      description: "为各种运营活动提供赞助支付功能，简化赞助流程，提高赞助效率。",
+      icon: <Heart className="w-12 h-12 text-blue-600" />,
+      benefits: ["简化流程", "提高效率", "灵活配置"]
+    }
+  ];
+
+  // 技术优势数据
+  const techAdvantages = [
+    {
+      icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
+      title: "性能提升",
+      value: "100+倍",
+      description: "相比传统系统"
+    },
+    {
+      icon: <Clock className="w-8 h-8 text-blue-600" />,
+      title: "响应时间",
+      value: "<100ms",
+      description: "毫秒级响应"
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-blue-600" />,
+      title: "安全等级",
+      value: "99.9%",
+      description: "交易成功率"
+    },
+    {
+      icon: <Award className="w-8 h-8 text-blue-600" />,
+      title: "服务保障",
+      value: "24/7",
+      description: "全天候支持"
+    }
+  ];
+
+  // 服务保障数据
+  const serviceGuarantees = [
+    {
+      title: "免费升级",
+      description: "持续修复程序bug和更新功能，提供免费升级服务，让您永远享受最新的Payphp2.0体验。",
+      icon: <ArrowRight className="w-6 h-6 text-blue-600" />
+    },
+    {
+      title: "售后无忧",
+      description: "提供专属客服、售后技术、论坛等全方位的售后服务，确保您的正常使用体验。",
+      icon: <Users className="w-6 h-6 text-blue-600" />
+    },
+    {
+      title: "保障服务",
+      description: "免费获取后期软件升级的新功能，无需额外付费。",
+      icon: <Shield className="w-6 h-6 text-blue-600" />
+    },
+    {
+      title: "商用授权",
+      description: "购买商业授权后，获得Payphp码支付商业使用授权，让您更加放心地使用。",
+      icon: <Award className="w-6 h-6 text-blue-600" />
+    }
+  ];
 
   return (
-    <section className="py-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* 背景装饰元素 */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#05f]/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#05f]/5 rounded-full blur-2xl"></div>
-      </div>
-
-      {/* 头部区域 - 产品介绍 */}
-      <div className="w-full bg-gray-50 dark:bg-gray-900/30 py-20 mb-16">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[500px]">
-            {/* 左侧内容区域 */}
+    <div className="min-h-screen bg-white">
+      {/* 1. Hero区域 - 系统简介（首屏核心展示） */}
+      <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4 overflow-hidden">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* 左侧：核心信息区 */}
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-[#05f]/10 text-[#05f] px-4 py-2 rounded-full text-sm font-medium">
-                <div className="w-2 h-2 bg-[#05f] rounded-full mr-2"></div>
-                专业支付解决方案
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    聚合免签
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    高性能
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                    轻量化UI
+                  </Badge>
+                </div>
+                
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Payphp<span className="text-blue-600">码支付</span>
+                </h1>
+                
+                <h2 className="text-xl lg:text-2xl text-gray-600 font-medium">
+                  专为个人站长打造的聚合免签系统
+                </h2>
+                
+                <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                  拥有卓越的性能和丰富的功能，用全新轻量化的界面UI，让您可以更加方便快捷地解决知识付费和运营赞助的难题。
+                  基于高性能SpeedPHP+Layui+PearAdmin架构，提供实时监控和管理。
+                </p>
               </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
-                <span className="relative">
-                  <span className="relative z-10 text-black dark:text-white">产品</span>
-                  <span className="relative z-10 bg-gradient-to-br from-[#05f] to-[#60a5fa] bg-clip-text text-transparent">与服务</span>
-                  <div className="absolute -bottom-2 left-0 w-full h-3 bg-[#05f]/10 -skew-x-12 transform"></div>
-                </span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-                提供全方位的支付解决方案，满足您的各种业务需求，
-                助力企业数字化转型与业务增长
-              </p>
-
-              {/* 核心数据展示 */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="bg-white dark:bg-gray-900/50 px-6 py-4 rounded-lg border border-gray-100 dark:border-gray-800 text-center">
-                  <div className="text-2xl font-bold text-[#05f] mb-1">6+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">核心产品</div>
-                </div>
-                <div className="bg-white dark:bg-gray-900/50 px-6 py-4 rounded-lg border border-gray-100 dark:border-gray-800 text-center">
-                  <div className="text-2xl font-bold text-[#05f] mb-1">99.9%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">服务可用性</div>
-                </div>
-                <div className="bg-white dark:bg-gray-900/50 px-6 py-4 rounded-lg border border-gray-100 dark:border-gray-800 text-center">
-                  <div className="text-2xl font-bold text-[#05f] mb-1">24/7</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">技术支持</div>
-                </div>
-              </div>
-
-              {/* CTA按钮区 */}
+              
+              {/* 行动按钮 */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  className="bg-[#05f] hover:bg-[#05f]/90 text-white px-8 py-6 rounded-lg font-medium"
-                  size="lg"
-                  onClick={() => window.open('https://merch.payphp.cn/', '_blank')}
-                >
-                  立即接入
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                  立即体验
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                
-                <Qrcode 
-                  qrcodeUrl="/images/about/weixin.png" 
-                  title="扫码联系客服"
-                  description="扫描二维码，获取最新产品资讯"
-                  buttonText="了解更多"
-                  buttonVariant="outline"
-                  buttonClassName="border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-8 py-6 rounded-lg font-medium"
-                />
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
+                  了解更多
+                </Button>
               </div>
             </div>
-
-            {/* 右侧视觉区域 - 产品卡片展示 */}
+            
+            {/* 右侧：简洁界面展示 */}
             <div className="relative">
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#05f]/5 rounded-full blur-3xl scale-110"></div>
-                <div className="relative space-y-4">
-                  {/* 第一张卡片 */}
-                  <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-[#05f]/10 rounded-lg flex items-center justify-center text-[#05f] mr-3">
-                        <CreditCard className="w-5 h-5" />
+              {/* 主要展示面板 - 简洁设计 */}
+              <div className="p-6">
+                {/* 面板标题 */}
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-1">码支付管理面板</h3>
+                  <p className="text-xs text-gray-500">一站式数据财务管理</p>
+                </div>
+                
+                {/* 支付方式列表 */}
+                <div className="space-y-3">
+                  {/* 支付宝免挂 */}
+                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-3">
+                        {/* 支付宝图标 */}
+                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                          <CreditCard className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">支付宝免挂</h4>
+                          <p className="text-xs text-gray-500">提升收银效率</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-medium text-black dark:text-white">企业支付解决方案</h3>
-                        <p className="text-sm text-gray-500">¥2,999/月起</p>
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 font-medium">在线</span>
                       </div>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                      <CheckCircle className="w-4 h-4 text-[#05f] mr-2" />
-                      多渠道支付支持
-                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      免输入金额，实时秒回调，降低收银成本
+                    </p>
                   </div>
-
-                  {/* 第二张卡片 */}
-                  <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 transform -rotate-2 hover:rotate-0 transition-transform duration-300 ml-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-[#05f]/10 rounded-lg flex items-center justify-center text-[#05f] mr-3">
-                        <Shield className="w-5 h-5" />
+                  
+                  {/* 微信免挂 */}
+                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-3">
+                        {/* 微信图标 */}
+                        <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                          <Smartphone className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">微信免挂</h4>
+                          <p className="text-xs text-gray-500">无需软件挂机</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-medium text-black dark:text-white">智能风控系统</h3>
-                        <p className="text-sm text-gray-500">¥5,999/月起</p>
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 font-medium">在线</span>
                       </div>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                      <CheckCircle className="w-4 h-4 text-[#05f] mr-2" />
-                      AI风险评估
-                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      免输入金额，实时秒回调，无需繁琐操作
+                    </p>
                   </div>
-
-                  {/* 第三张卡片 */}
-                  <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 transform rotate-1 hover:rotate-0 transition-transform duration-300 mr-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-[#05f]/10 rounded-lg flex items-center justify-center text-[#05f] mr-3">
-                        <Code className="w-5 h-5" />
+                  
+                  {/* QQ钱包免挂 */}
+                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-3">
+                        {/* QQ钱包图标 */}
+                        <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
+                          <Globe className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">QQ钱包免挂</h4>
+                          <p className="text-xs text-gray-500">免签约个人支付</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-medium text-black dark:text-white">支付API接口</h3>
-                        <p className="text-sm text-gray-500">按调用次数计费</p>
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 font-medium">在线</span>
                       </div>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                      <CheckCircle className="w-4 h-4 text-[#05f] mr-2" />
-                      简单快速集成
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      免签约个人支付，免软件挂机，实时监控
+                    </p>
+                  </div>
+                </div>
+                
+                {/* 底部统计信息 */}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-base font-bold text-gray-800">99.9%</div>
+                      <div className="text-xs text-gray-500">成功率</div>
+                    </div>
+                    <div>
+                      <div className="text-base font-bold text-gray-800">&lt;1s</div>
+                      <div className="text-xs text-gray-500">响应时间</div>
+                    </div>
+                    <div>
+                      <div className="text-base font-bold text-gray-800">24/7</div>
+                      <div className="text-xs text-gray-500">在线监控</div>
                     </div>
                   </div>
                 </div>
@@ -248,121 +275,305 @@ const Products = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 产品展示区域 */}
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
-        {/* 分类筛选器 */}
-        <div className="mb-16 flex justify-center overflow-x-auto">
-          <div className="inline-flex bg-gray-50 dark:bg-gray-900/30 p-1 rounded-full">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 md:px-10 py-2.5 text-base font-medium transition-all duration-200 rounded-full whitespace-nowrap ${
-                  activeCategory === category 
-                  ? 'bg-[#05f] text-white' 
-                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50'
-                }`}
-              >
-                {category}
-              </button>
+      {/* 2. 功能亮点区（模块化展示） */}
+      <section className="py-20 px-4 bg-white">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          {/* 区域标题 */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              核心功能亮点
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Payphp系统采用先进技术架构，为您提供卓越的支付解决方案
+            </p>
+          </div>
+          
+          {/* 功能卡片网格 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="group transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                <CardContent className="p-8 text-center">
+                  <div className="flex items-center justify-center space-x-3 mb-6">
+                    <div className="p-2 transition-colors">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* 产品卡片网格 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => (
-            <div key={product.id}>
-              <Card className="group relative h-full border border-gray-100 dark:border-gray-800 bg-white dark:bg-black overflow-hidden transition-all duration-300 hover:border-[#05f]/30 dark:hover:border-[#05f]/30 rounded-xl">
-                {/* 装饰元素 */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-[#05f]/5 transform rotate-45 translate-x-10 -translate-y-10"></div>
-                
-                {/* 热门标签 */}
-                {product.popular && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-[#05f] text-white border-0 text-xs font-medium">
-                      热门
-                    </Badge>
-                  </div>
-                )}
-
-                <CardHeader className="pb-4">
-                  {/* 图标和分类 */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 bg-[#05f]/10 rounded-lg flex items-center justify-center text-[#05f]">
-                      {product.icon}
-                    </div>
-                    <Badge variant="outline" className="text-xs bg-transparent border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400">
-                      {product.category}
-                    </Badge>
+      {/* 3. 项目及技术应用场景区 */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              多场景应用解决方案
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              从个人创作者到企业级应用，Payphp码支付为不同规模的业务提供专业的支付解决方案
+            </p>
+          </div>
+          
+          <div className="space-y-16">
+            {scenarios.map((scenario, index) => (
+              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                {/* 场景描述 */}
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="mb-6">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                      {scenario.title}
+                    </h3>
+                    <div className="w-16 h-1 bg-blue-600 rounded-full"></div>
                   </div>
                   
-                  <CardTitle className="text-xl font-medium text-black dark:text-white mb-2">
-                    {product.title}
-                  </CardTitle>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {scenario.description}
+                  </p>
                   
-                  <CardDescription className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="pt-0">
-                  {/* 功能特性列表 */}
-                  <div className="space-y-2 mb-6">
-                    {product.features.map((feature, index) => (
-                      <div key={index} className="flex items-center text-sm">
-                        <CheckCircle className="w-4 h-4 text-[#05f] mr-3 flex-shrink-0" />
-                        <span className="text-gray-600 dark:text-gray-400">{feature}</span>
+                  <div className="space-y-3">
+                    {scenario.benefits.map((benefit, benefitIndex) => (
+                      <div key={benefitIndex} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700 leading-relaxed">{benefit}</span>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-
-                <CardFooter className="pt-0 border-t border-gray-100 dark:border-gray-800">
-                  <div className="flex items-center w-full">
-                    <Button 
-                      variant="ghost" 
-                      size="sm"
-                      className="text-gray-600 dark:text-gray-400 hover:text-[#05f] dark:hover:text-[#05f] p-0 h-auto font-medium"
-                    >
-                      了解详情
-                      <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  
+                  <div className="pt-4">
+                    <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+                      了解更多
+                      <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </div>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
+                </div>
+                
+                {/* 场景图示 - 重新设计的文案展示 */}
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="bg-white rounded-2xl p-6">
+                    {/* 标题区域 */}
+                    <div className="text-center mb-4">
+                      <h4 className="text-lg font-bold text-gray-900 mb-1">
+                        {scenario.title}解决方案
+                      </h4>
+                      <div className="w-12 h-0.5 bg-blue-600 mx-auto"></div>
+                    </div>
+                    
+                    {/* 核心价值展示 */}
+                    <div className="space-y-3 mb-4">
+                      <div className="bg-blue-50 rounded-lg p-3 text-center">
+                        <div className="text-xl font-bold text-blue-600 mb-1">
+                          专业级
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          支付解决方案
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-gray-50 rounded-lg p-2 text-center">
+                          <div className="text-base font-semibold text-gray-900">
+                            99.9%
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            系统稳定性
+                          </div>
+                        </div>
+                        <div className="bg-gray-50 rounded-lg p-2 text-center">
+                          <div className="text-base font-semibold text-gray-900">
+                            24/7
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            技术支持
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* 特性列表 */}
+                    <div className="space-y-1.5 mb-4">
+                      {scenario.benefits.slice(0, 3).map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center space-x-2 text-sm">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                          <span className="text-gray-600">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* 底部状态 */}
+                    <div className="border-t border-gray-100 pt-3">
+                      <div className="flex items-center justify-between text-xs">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-gray-500">服务运行中</span>
+                        </div>
+                        <span className="text-gray-400">
+                          已服务 10,000+ 用户
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* CTA区域 */}
-        <div className="mt-16">
-          <Card className="relative bg-[#05f] border-0 text-white overflow-hidden rounded-xl">
-            {/* 装饰元素 */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 transform rotate-45 translate-x-16 -translate-y-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 transform rotate-45 -translate-x-12 translate-y-12"></div>
-            
-            <CardContent className="relative z-10 text-center py-12 px-8">
-              <h3 className="text-2xl md:text-3xl font-light mb-4">
-                需要定制化的支付解决方案？
-              </h3>
-              <p className="text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-                我们的专业团队可以根据您的业务需求，提供量身定制的支付解决方案，助力您的业务增长。
-              </p>
-              <Button 
-                className="bg-white text-[#05f] hover:bg-gray-50 border-0 px-8 py-6 font-medium rounded-lg"
-                size="lg"
-              >
-                联系我们了解更多
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </CardContent>
-          </Card>
+      {/* 4. 技术优势/数据支撑区 */}
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-blue-800">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              技术优势
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              基于先进技术架构，为您提供卓越的性能表现
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {techAdvantages.map((advantage, index) => (
+              <div key={index} className="text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="p-4 bg-white bg-opacity-20 rounded-full">
+                    {advantage.icon}
+                  </div>
+                </div>
+                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
+                  {advantage.value}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {advantage.title}
+                </h3>
+                <p className="text-blue-100">
+                  {advantage.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* 5. 服务保障区 */}
+      <section className="py-12 px-4 bg-white">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              服务保障
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              全方位的服务支持，让您使用无忧
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {serviceGuarantees.map((guarantee, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    {guarantee.icon}
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {guarantee.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {guarantee.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. 行动转化区（CTA区域） - 现代化卡片式简约风格 */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          {/* 主要CTA卡片 */}
+          <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden">
+            <div className="p-12 text-center">
+              {/* 标题区域 */}
+              <div className="mb-8">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  立即开始使用
+                </h2>
+                <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6">
+                  Payphp码支付
+                </div>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                  提升您的支付效率，解决知识付费和运营赞助难题
+                </p>
+              </div>
+              
+              {/* 按钮区域 */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
+                  点击购买
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 px-12 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
+                  观看演示
+                </Button>
+              </div>
+              
+              {/* 特性标签 */}
+              <div className="flex flex-wrap justify-center gap-6 text-sm">
+                <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span className="text-gray-700 font-medium">无需信用卡</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span className="text-gray-700 font-medium">快速部署</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span className="text-gray-700 font-medium">专业支持</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* 辅助信息卡片 */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">安全可靠</h3>
+              <p className="text-gray-600 text-sm">银行级安全保障，数据加密传输</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ArrowRight className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">简单易用</h3>
+              <p className="text-gray-600 text-sm">5分钟快速接入，无需复杂配置</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">全天候支持</h3>
+              <p className="text-gray-600 text-sm">24/7技术支持，随时为您服务</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
