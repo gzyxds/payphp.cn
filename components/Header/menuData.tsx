@@ -78,6 +78,14 @@ const menuData: Menu[] = [
   },
   {
     id: 5,
+    title: "官网文档",
+    newTab: true,
+    path: "https://e.payphp.cn/help",
+    // SEO优化：联系页面增强用户信任度
+  },
+
+  {
+    id: 5,
     title: "艺创AI", 
     newTab: true,
     path: "https://urlnet.cn/",
