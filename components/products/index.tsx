@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Qrcode from "@/components/Qrcode";
+import Image from "next/image";
 import { 
   CreditCard, 
   Shield, 
@@ -55,7 +56,7 @@ const Products = () => {
   const scenarios = [
     {
       title: "知识付费平台",
-      description: "为内容创作者提供便捷的收费工具，支持多种支付方式，满足用户多样化的支付需求。",
+      description: "为内容创作者提供便捷的收费工具，支持多种支付方式，满足用户多样化支付需求。",
       icon: <BookOpen className="w-12 h-12 text-blue-600" />,
       benefits: ["多种支付方式", "便捷收费工具", "用户体验优化"]
     },
@@ -146,8 +147,24 @@ const Products = () => {
                   </Badge>
                 </div>
                 
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Payphp<span className="text-blue-600">码支付</span>
+                <h1 className="flex items-center justify-center lg:justify-start text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  {/* Logo图片 - 支持深色和浅色主题 */}
+                  <Image
+                    src="/images/logo/logo-dark.svg"
+                    alt="Payphp码支付"
+                    width={280}
+                    height={70}
+                    className="hidden dark:block"
+                    priority
+                  />
+                  <Image
+                    src="/images/logo/logo-light.svg"
+                    alt="Payphp码支付"
+                    width={280}
+                    height={70}
+                    className="block dark:hidden"
+                    priority
+                  />
                 </h1>
                 
                 <h2 className="text-xl lg:text-2xl text-gray-600 font-medium">
@@ -508,21 +525,28 @@ const Products = () => {
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   立即开始使用
                 </h2>
-                <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-6">
-                  Payphp码支付
-                </div>
+                
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                   提升您的支付效率，解决知识付费和运营赞助难题
                 </p>
               </div>
               
               {/* 按钮区域 */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
-                  点击购买
-                  <ArrowRight className="ml-2 w-5 h-5" />
+              <div className="flex gap-4 justify-center mb-8">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2"
+                >
+                  <span className="flex items-center">
+                    点击购买
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </span>
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 px-12 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
                   观看演示
                 </Button>
               </div>
