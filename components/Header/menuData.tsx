@@ -99,6 +99,14 @@ const menuData: Menu[] = [
     // SEO优化：外部链接使用新窗口打开
   },
   {
+    id: 8,
+    title: "免费领流量卡",
+    newTab: true,
+    path: "https://www.urlka.cn/",
+    // SEO优化：联系页面增强用户信任度
+  },
+
+  {
     id: 6,
     title: "关于我们",
     newTab: false,
