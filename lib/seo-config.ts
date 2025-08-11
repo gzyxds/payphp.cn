@@ -80,7 +80,7 @@ export function generatePageMetadata(
   const metadata: Metadata = {
     title: pageConfig.title,
     description: pageConfig.description,
-    keywords: pageConfig.keywords,
+    keywords: [...pageConfig.keywords], // 修复：将readonly数组转换为可变数组
     openGraph: {
       title: pageConfig.title,
       description: pageConfig.description,

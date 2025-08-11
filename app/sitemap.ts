@@ -72,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogs = getAllBlogs();
   const blogPages = blogs.map((blog) => ({
     url: `${SITE_URL}/blog/${blog.slug}`,
-    lastModified: new Date(blog.date),
+    lastModified: new Date(blog.publishedAt), // 修复：使用publishedAt而不是date
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 生成博客分类页面
-  const blogCategories = [...new Set(blogs.map(blog => blog.category))];
+  const blogCategories = Array.from(new Set(blogs.map(blog => blog.category).filter(Boolean))); // 修复：使用Array.from替代扩展运算符
   const categoryPages = blogCategories.map((category) => ({
     url: `${SITE_URL}/blog/category/${encodeURIComponent(category)}`,
     lastModified: new Date(),

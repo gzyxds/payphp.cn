@@ -5,7 +5,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline';
+// 使用lucide-react替代@heroicons/react，因为项目中已安装lucide-react
+import { ChevronRight, Home } from 'lucide-react';
 
 export interface BreadcrumbItem {
   name: string;
@@ -38,7 +39,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
             className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
             aria-label="返回首页"
           >
-            <HomeIcon className="w-4 h-4 mr-2" />
+            <Home className="w-4 h-4 mr-2" />
             首页
           </Link>
         </li>
@@ -46,7 +47,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
         {/* 面包屑项目 */}
         {items.map((item, index) => (
           <li key={item.href} className="inline-flex items-center">
-            <ChevronRightIcon className="w-4 h-4 text-gray-400 mx-1" />
+            <ChevronRight className="w-4 h-4 text-gray-400 mx-1" />
             {item.current ? (
               <span 
                 className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"
