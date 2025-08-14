@@ -102,9 +102,25 @@ export default function RootLayout({
         {/* DNS预解析 */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//hm.baidu.com" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
+        
+        {/* 百度统计 - 放在 body 末尾以优化页面加载性能 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?c82a4b12523c32f4ebd3850b994d5770";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );
