@@ -85,7 +85,7 @@ const menuData: Menu[] = [
   },
 
   {
-    id: 5,
+    id: 9,
     title: "艺创AI", 
     newTab: true,
     path: "https://urlnet.cn/",
