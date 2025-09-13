@@ -12,85 +12,6 @@ const Contact = () => {
     return null;
   }
 
-  /**
-   * 生成简单的二维码SVG
-   * @param size 二维码尺寸
-   * @param text 二维码下方的文字
-   * @returns SVG元素
-   */
-  const generateQRCode = (size: number = 120, text: string) => (
-    <div className="flex flex-col items-center">
-      <svg width={size} height={size} viewBox="0 0 120 120" className="border border-gray-300 dark:border-gray-600 rounded-lg">
-        {/* 简化的二维码图案 */}
-        <rect width="120" height="120" fill="white" />
-        {/* 左上角定位点 */}
-        <rect x="8" y="8" width="28" height="28" fill="black" />
-        <rect x="12" y="12" width="20" height="20" fill="white" />
-        <rect x="16" y="16" width="12" height="12" fill="black" />
-        
-        {/* 右上角定位点 */}
-        <rect x="84" y="8" width="28" height="28" fill="black" />
-        <rect x="88" y="12" width="20" height="20" fill="white" />
-        <rect x="92" y="16" width="12" height="12" fill="black" />
-        
-        {/* 左下角定位点 */}
-        <rect x="8" y="84" width="28" height="28" fill="black" />
-        <rect x="12" y="88" width="20" height="20" fill="white" />
-        <rect x="16" y="92" width="12" height="12" fill="black" />
-        
-        {/* 数据模块 - 简化的图案 */}
-        <rect x="48" y="16" width="4" height="4" fill="black" />
-        <rect x="56" y="16" width="4" height="4" fill="black" />
-        <rect x="64" y="16" width="4" height="4" fill="black" />
-        <rect x="72" y="16" width="4" height="4" fill="black" />
-        
-        <rect x="16" y="48" width="4" height="4" fill="black" />
-        <rect x="24" y="48" width="4" height="4" fill="black" />
-        <rect x="32" y="48" width="4" height="4" fill="black" />
-        
-        <rect x="48" y="48" width="4" height="4" fill="black" />
-        <rect x="56" y="48" width="4" height="4" fill="black" />
-        <rect x="64" y="48" width="4" height="4" fill="black" />
-        <rect x="72" y="48" width="4" height="4" fill="black" />
-        <rect x="80" y="48" width="4" height="4" fill="black" />
-        <rect x="88" y="48" width="4" height="4" fill="black" />
-        <rect x="96" y="48" width="4" height="4" fill="black" />
-        
-        <rect x="48" y="56" width="4" height="4" fill="black" />
-        <rect x="64" y="56" width="4" height="4" fill="black" />
-        <rect x="80" y="56" width="4" height="4" fill="black" />
-        <rect x="96" y="56" width="4" height="4" fill="black" />
-        
-        <rect x="16" y="64" width="4" height="4" fill="black" />
-        <rect x="32" y="64" width="4" height="4" fill="black" />
-        <rect x="48" y="64" width="4" height="4" fill="black" />
-        <rect x="72" y="64" width="4" height="4" fill="black" />
-        <rect x="88" y="64" width="4" height="4" fill="black" />
-        
-        <rect x="24" y="72" width="4" height="4" fill="black" />
-        <rect x="40" y="72" width="4" height="4" fill="black" />
-        <rect x="56" y="72" width="4" height="4" fill="black" />
-        <rect x="80" y="72" width="4" height="4" fill="black" />
-        <rect x="96" y="72" width="4" height="4" fill="black" />
-        
-        <rect x="48" y="80" width="4" height="4" fill="black" />
-        <rect x="64" y="80" width="4" height="4" fill="black" />
-        <rect x="80" y="80" width="4" height="4" fill="black" />
-        
-        <rect x="48" y="88" width="4" height="4" fill="black" />
-        <rect x="56" y="88" width="4" height="4" fill="black" />
-        <rect x="72" y="88" width="4" height="4" fill="black" />
-        <rect x="88" y="88" width="4" height="4" fill="black" />
-        
-        <rect x="48" y="96" width="4" height="4" fill="black" />
-        <rect x="64" y="96" width="4" height="4" fill="black" />
-        <rect x="80" y="96" width="4" height="4" fill="black" />
-        <rect x="96" y="96" width="4" height="4" fill="black" />
-      </svg>
-      <p className="mt-3 text-sm font-medium text-black dark:text-white">{text}</p>
-    </div>
-  );
-
   // 联系方式数据
   const contactMethods = [
     {
@@ -278,24 +199,45 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                 {/* 微信客服二维码 */}
                 <div className="flex flex-col items-center">
-                  {generateQRCode(140, "微信客服")}
-                  <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img 
+                      src="/images/about/wx.png" 
+                      alt="微信客服二维码" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">微信客服</p>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     7×24小时在线服务
                   </p>
                 </div>
 
                 {/* 商务合作二维码 */}
                 <div className="flex flex-col items-center">
-                  {generateQRCode(140, "商务合作")}
-                  <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img 
+                      src="/images/about/payphp.jpg" 
+                      alt="商务合作二维码" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">商务合作</p>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     业务咨询与合作洽谈
                   </p>
                 </div>
 
                 {/* 技术支持二维码 */}
                 <div className="flex flex-col items-center">
-                  {generateQRCode(140, "技术支持")}
-                  <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img 
+                      src="/images/about/qq.png" 
+                      alt="技术支持二维码" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">技术支持</p>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     接入指导与技术答疑
                   </p>
                 </div>
