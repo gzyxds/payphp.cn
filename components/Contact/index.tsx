@@ -31,7 +31,7 @@ const Contact = () => {
       ]
     },
     {
-      title: "技术支持", 
+      title: "技术支持",
       description: "获取技术帮助、问题排查、故障处理",
       items: [
         {
@@ -129,8 +129,8 @@ const Contact = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {contactMethods.map((method, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden"
                 >
                   <div className="p-6">
@@ -139,11 +139,11 @@ const Contact = () => {
                         {method.title}
                       </h3>
                     </div>
-                    
+
                     <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm">
                       {method.description}
                     </p>
-                    
+
                     <div className="space-y-4">
                       {method.items.map((item, itemIndex) => (
                         <div key={itemIndex} className="flex flex-col">
@@ -151,15 +151,15 @@ const Contact = () => {
                             {item.label}
                           </span>
                           {item.type === "email" ? (
-                            <a 
-                              href={`mailto:${item.value}`} 
+                            <a
+                              href={`mailto:${item.value}`}
                               className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <a 
-                              href={`tel:${item.value}`} 
+                            <a
+                              href={`tel:${item.value}`}
                               className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
                             >
                               {item.value}
@@ -196,17 +196,17 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
                 扫码联系我们
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
                 {/* 微信客服二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
-                    <img 
-                      src="/images/about/wx.png" 
-                      alt="微信客服二维码" 
+                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/about/qq.png"
+                      alt="微信客服二维码"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <p className="mt-3 text-sm font-medium text-black dark:text-white">微信客服</p>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">联系客服</p>
                   <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     7×24小时在线服务
                   </p>
@@ -214,31 +214,46 @@ const Contact = () => {
 
                 {/* 商务合作二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
-                    <img 
-                      src="/images/about/payphp.jpg" 
-                      alt="商务合作二维码" 
+                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/about/qqq.png"
+                      alt="商户交流"
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <p className="mt-3 text-sm font-medium text-black dark:text-white">商务合作</p>
                   <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                    业务咨询与合作洽谈
+                    商户运营交流
                   </p>
                 </div>
 
                 {/* 技术支持二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-32 h-32 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
-                    <img 
-                      src="/images/about/qq.png" 
-                      alt="技术支持二维码" 
+                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/about/qq.png"
+                      alt="技术支持二维码"
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <p className="mt-3 text-sm font-medium text-black dark:text-white">技术支持</p>
                   <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     接入指导与技术答疑
+                  </p>
+                </div>
+
+                {/* 公众号二维码 */}
+                <div className="flex flex-col items-center">
+                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/about/gzh.jpg"
+                      alt="公众号二维码"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">官方公众号</p>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                    获取最新资讯与动态
                   </p>
                 </div>
               </div>
@@ -267,8 +282,8 @@ const Contact = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {officeLocations.map((office, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 dark:border-gray-700 p-6"
                 >
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -281,8 +296,8 @@ const Contact = () => {
                     <svg className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
-                    <a 
-                      href={`tel:${office.phone}`} 
+                    <a
+                      href={`tel:${office.phone}`}
                       className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
                     >
                       {office.phone}
