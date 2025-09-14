@@ -221,7 +221,7 @@ const Contact = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <p className="mt-3 text-sm font-medium text-black dark:text-white">商务合作</p>
+                  <p className="mt-3 text-sm font-medium text-black dark:text-white">商务交流</p>
                   <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                     商户运营交流
                   </p>
