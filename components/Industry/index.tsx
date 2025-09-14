@@ -17,7 +17,7 @@ const INDUSTRY_DATA = [
       stats: { value: "99.9%", label: "成功率" },
       features: [
         "主流渠道收款，契合银行实时到账",
-        "订单营销分账统一化管理", 
+        "订单营销分账统一化管理",
         "高效安全的资金统筹"
       ]
     },
@@ -64,7 +64,7 @@ const INDUSTRY_DATA = [
       subtitle: "Content Payment",
       stats: { value: "500M+", label: "交易额" },
       features: [
-        "支付接入门槛低，到账速度实时及次日可选",
+        "支付接入门槛低，实时到账",
         "资金到账速度快",
         "网文小说，动漫文章都覆盖"
       ]
@@ -202,18 +202,18 @@ const Industry = () => {
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#0055ff]/5 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0055ff]/3 rounded-full blur-3xl" />
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
-          <div 
-            className="w-full h-full" 
+          <div
+            className="w-full h-full"
             style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
               backgroundSize: '40px 40px'
-            }} 
+            }}
           />
         </div>
       </div>
 
       <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          
+
           {/* 英雄区 */}
         <header className="mt-8 md:mt-12 lg:mt-16 mb-16 lg:mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -224,7 +224,7 @@ const Industry = () => {
                 <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full" />
                 专业支付服务商
               </div>
-              
+
               {/* 主标题 */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                 <span className="relative inline-block">
@@ -234,18 +234,18 @@ const Industry = () => {
                 <br />
                 解决方案
               </h1>
-              
+
               {/* 副标题 */}
               <div className="text-lg md:text-xl text-[#0055ff] font-medium mb-6 flex items-center justify-center lg:justify-start gap-3">
                 <div className="w-6 h-px bg-[#0055ff]" />
                 多行业覆盖
               </div>
-              
+
               {/* 行业标签 */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
                 {['电商支付', '游戏支付', '社交支付', '内容支付'].map((tag) => (
-                  <span 
-                    key={tag} 
+                  <span
+                    key={tag}
                     className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
                   >
                     {tag}
@@ -259,7 +259,7 @@ const Industry = () => {
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                 统一的API和SDK，集成多环节应用的接口，简化商户对接流程。专业支持合规电商，游戏，内容，社交等多种数娱行业，为企业提供安全、稳定、高效的支付服务。
               </p>
-              
+
               {/* 核心特性列表 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
@@ -287,7 +287,7 @@ const Industry = () => {
           </div>
         </header>
         {/* 英雄区结束 */}
-      
+
 
         {/* 核心统计数据展示 */}
         <section className="mb-16 lg:mb-20">
@@ -364,7 +364,7 @@ const Industry = () => {
               >
                 {/* 装饰线 */}
                 <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-6" />
-                
+
                 {/* 行业信息头部 */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -380,7 +380,7 @@ const Industry = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* 关键指标 */}
                   <div className="text-right flex-shrink-0">
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0055ff]">

@@ -40,11 +40,11 @@ const Solution = () => {
                     为您的业务提供全方位的支付服务，满足各种场景需求，提升用户体验与转化率。
                   </p>
                 </div>
-                
+
                 {/* 特点卡片 - 几何切片卡片设计 - 更简约无阴影 */}
                 <div className="space-y-4">
                   {/* 特点1：多渠道支付 */}
-                  <motion.div 
+                  <motion.div
                     className="bg-white p-5 rounded-lg border-l-4 border-[#165dff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
@@ -62,9 +62,9 @@ const Solution = () => {
                       </div>
                     </div>
                   </motion.div>
-                  
+
                   {/* 特点2：安全保障 */}
-                  <motion.div 
+                  <motion.div
                     className="bg-white p-5 rounded-lg border-l-4 border-[#4080ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
@@ -82,9 +82,9 @@ const Solution = () => {
                       </div>
                     </div>
                   </motion.div>
-                  
+
                   {/* 特点3：快速结算 */}
-                  <motion.div 
+                  <motion.div
                     className="bg-white p-5 rounded-lg border-l-4 border-[#6aa1ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
                     whileHover={{ x: 4 }}
                   >
@@ -103,7 +103,7 @@ const Solution = () => {
                     </div>
                   </motion.div>
                 </div>
-                
+
                 {/* 数据统计 - 更简约无阴影 */}
                 <div className="mt-8 grid grid-cols-3 gap-3">
                   <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
@@ -150,7 +150,7 @@ const Solution = () => {
                   行业支付解决方案
                 </span>
               </div>
-              
+
               <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left">
                 提供
                 <span className="relative inline-block ml-2 text-[#165dff]">
@@ -158,14 +158,14 @@ const Solution = () => {
                 </span>
                 支付解决方案
               </h2>
-              
+
               <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left">
                 针对不同行业特点，提供专业定制化的支付解决方案，满足各行业的特殊需求
               </p>
 
               {/* 行业特性列表 - 采用现代卡片设计 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
@@ -195,7 +195,7 @@ const Solution = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
@@ -225,7 +225,7 @@ const Solution = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
@@ -255,7 +255,7 @@ const Solution = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
                   whileHover={{ y: -4 }}
                 >
@@ -275,7 +275,7 @@ const Solution = () => {
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#0f1423]"></div>
-                        到账速度实时及次日可选
+                        实时到账
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#0f1423]"></div>
@@ -324,19 +324,19 @@ const Solution = () => {
                   主流支付接口
                 </span>
               </div>
-              
+
               <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left">
-                全面支持各个终端 
+                全面支持各个终端
                 <span className="relative inline-block ml-2 text-[#165dff]">
                   数据同步
                 </span>
               </h2>
-              
+
               <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left">
                 提供完整的API文档和SDK，支持快速集成，
                 让开发者能够轻松接入各种支付功能，缩短开发周期。
               </p>
-              
+
               {/* 了解更多按钮 */}
               <div className="text-center lg:text-left">
                 <motion.a
@@ -396,7 +396,7 @@ const Solution = () => {
                   <div className="p-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {/* 微信支付 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-[#f5f9ff] border border-[#e6f0ff] hover:bg-[#ecf3ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -412,7 +412,7 @@ const Solution = () => {
                       </motion.div>
 
                       {/* 支付宝支付 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -428,7 +428,7 @@ const Solution = () => {
                       </motion.div>
 
                       {/* QQ支付 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -444,7 +444,7 @@ const Solution = () => {
                       </motion.div>
 
                       {/* 二维码收款 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -460,7 +460,7 @@ const Solution = () => {
                       </motion.div>
 
                       {/* 个人码收款 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -476,7 +476,7 @@ const Solution = () => {
                       </motion.div>
 
                       {/* 商家码收款 */}
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
                         whileHover={{ y: -2 }}
                       >
@@ -491,7 +491,7 @@ const Solution = () => {
                         </div>
                       </motion.div>
                     </div>
-                    
+
                     {/* 支付特性展示 */}
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
@@ -537,12 +537,12 @@ const Solution = () => {
                 </div>
 
                 {/* 单个悬浮标签 - 极简设计，移动端隐藏 */}
-                <motion.div 
+                <motion.div
                   className="absolute right-4 top-6 z-20 hidden md:block"
-                  animate={{ 
+                  animate={{
                     y: [0, -3, 0]
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut"

@@ -34,34 +34,39 @@ const Pricing = () => {
             {/* <!-- Pricing Item --> */}
             <div className="animate_top group relative rounded-lg border border-stroke bg-white p-4 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[45%] lg:w-1/3 sm:p-6 xl:p-12.5">
               <h3 className="mb-4 text-2xl font-bold text-black dark:text-white sm:mb-7.5 sm:text-3xl xl:text-sectiontitle3">
-                0.6%{" "}
+                ¥0{" "}
                 <span className="text-sm text-waterloo dark:text-manatee sm:text-regular">
-                  /笔
+                  /7天
                 </span>
               </h3>
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                基础版
+                体验套餐
               </h4>
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">适合初创企业和小型商户，快速接入支付服务。</p>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">体验套餐无售后</p>
 
               <div className="mt-6 border-t border-stroke pb-8 pt-6 dark:border-strokedark sm:mt-9 sm:pb-12.5 sm:pt-9">
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    月交易额 ≤ 10万
+                    费率 3.00%
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    支持微信、支付宝
+                    每日限额 100元
                   </li>
-                  <li className="text-sm text-black opacity-40 dark:text-manatee sm:text-base">
-                    T+1 结算
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    每月限额 1000元
                   </li>
-                  <li className="text-sm text-black opacity-40 dark:text-manatee sm:text-base">
-                    专属客服支持
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    通道数无限制
+                  </li>
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    通道账号无限制
                   </li>
                 </ul>
               </div>
-
-              <button
+              <a
+                href="https://merch.payphp.cn/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="选择基础版按钮"
                 className="group/btn inline-flex items-center gap-2 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary sm:gap-2.5"
               >
@@ -79,7 +84,7 @@ const Pricing = () => {
                     fill="currentColor"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* <!-- Pricing Item --> */}
@@ -89,34 +94,39 @@ const Pricing = () => {
               </div>
 
               <h3 className="mb-4 text-2xl font-bold text-black dark:text-white sm:mb-7.5 sm:text-3xl xl:text-sectiontitle3">
-                0.45%{" "}
+                ¥19.89{" "}
                 <span className="text-sm text-waterloo dark:text-manatee sm:text-regular">
-                  /笔
+                  /30天
                 </span>
               </h3>
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                专业版
+                月度会员
               </h4>
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">适合成长型企业，提供全面的支付解决方案。</p>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">套餐说明月度会员</p>
 
               <div className="mt-6 border-t border-stroke pb-8 pt-6 dark:border-strokedark sm:mt-9 sm:pb-12.5 sm:pt-9">
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    月交易额 ≤ 100万
+                    费率 0.50%
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    支持全渠道支付
+                    每日限额无限制
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    T+0 快速结算
+                    每月限额无限制
                   </li>
-                  <li className="text-sm text-black opacity-40 dark:text-manatee sm:text-base">
-                    专属客户经理
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    通道数无限制
+                  </li>
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    通道账号无限制
                   </li>
                 </ul>
               </div>
-
-              <button
+              <a
+                href="https://merch.payphp.cn/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="选择专业版按钮"
                 className="group/btn inline-flex items-center gap-2 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary sm:gap-2.5"
               >
@@ -134,40 +144,46 @@ const Pricing = () => {
                     fill="currentColor"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
 
-            {/* <!-- Pricing Item --> */}
+            {/* <!-- 季度会员  --> */}
             <div className="animate_top group relative rounded-lg border border-stroke bg-white p-4 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[45%] lg:w-1/3 sm:p-6 xl:p-12.5">
               <h3 className="mb-4 text-2xl font-bold text-black dark:text-white sm:mb-7.5 sm:text-3xl xl:text-sectiontitle3">
-                0.3%{" "}
+                ¥199{" "}
                 <span className="text-sm text-waterloo dark:text-manatee sm:text-regular">
-                  /笔
+                  /90天
                 </span>
               </h3>
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                企业版
+                季度会员
               </h4>
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">适合大型企业，提供定制化支付解决方案。</p>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">套餐说明季度会员</p>
 
               <div className="mt-6 border-t border-stroke pb-8 pt-6 dark:border-strokedark sm:mt-9 sm:pb-12.5 sm:pt-9">
                 <ul className="space-y-3 sm:space-y-4">
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    无交易额限制
+                    费率 0.20%
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    国际支付通道
+                    每日限额无限制
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    实时结算服务
+                    每月限额无限制
                   </li>
                   <li className="text-sm text-black dark:text-manatee sm:text-base">
-                    定制化开发支持
+                    通道数无限制
+                  </li>
+                  <li className="text-sm text-black dark:text-manatee sm:text-base">
+                    通道账号无限制
                   </li>
                 </ul>
               </div>
 
-              <button
+              <a
+                href="https://merch.payphp.cn/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="选择企业版按钮"
                 className="group/btn inline-flex items-center gap-2 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary sm:gap-2.5"
               >
@@ -185,7 +201,7 @@ const Pricing = () => {
                     fill="currentColor"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>

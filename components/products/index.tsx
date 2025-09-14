@@ -6,12 +6,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import Qrcode from "@/components/Qrcode";
 import Image from "next/image";
-import { 
-  CreditCard, 
-  Shield, 
-  Settings, 
-  Code, 
-  Smartphone, 
+import {
+  CreditCard,
+  Shield,
+  Settings,
+  Code,
+  Smartphone,
   Globe,
   ArrowRight,
   CheckCircle,
@@ -22,7 +22,8 @@ import {
   Star,
   TrendingUp,
   Clock,
-  Award
+  Award,
+  ShoppingCart
 } from "lucide-react";
 
 const Products = () => {
@@ -146,7 +147,7 @@ const Products = () => {
                     轻量化UI
                   </Badge>
                 </div>
-                
+
                 <h1 className="flex items-center justify-center lg:justify-start text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   {/* Logo图片 - 支持深色和浅色主题 */}
                   <Image
@@ -166,17 +167,17 @@ const Products = () => {
                     priority
                   />
                 </h1>
-                
+
                 <h2 className="text-xl lg:text-2xl text-gray-600 font-medium">
                   专为个人站长打造的聚合免签系统
                 </h2>
-                
+
                 <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
                   拥有卓越的性能和丰富的功能，用全新轻量化的界面UI，让您可以更加方便快捷地解决知识付费和运营赞助的难题。
                   基于高性能SpeedPHP+Layui+PearAdmin架构，提供实时监控和管理。
                 </p>
               </div>
-              
+
               {/* 行动按钮 */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
@@ -188,89 +189,128 @@ const Products = () => {
                 </Button>
               </div>
             </div>
-            
+
             {/* 右侧：简洁界面展示 */}
             <div className="relative">
               {/* 主要展示面板 - 简洁设计 */}
               <div className="p-6">
                 {/* 面板标题 */}
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">码支付管理面板</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-1">PaYphp管理面板</h3>
                   <p className="text-xs text-gray-500">一站式数据财务管理</p>
                 </div>
-                
-                {/* 支付方式列表 */}
-                <div className="space-y-3">
+
+                {/* 支付方式列表 - 三排三列网格布局 */}
+                <div className="grid grid-cols-3 gap-2">
                   {/* 支付宝免挂 */}
-                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-3">
-                        {/* 支付宝图标 */}
-                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                          <CreditCard className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-800 text-sm">支付宝免挂</h4>
-                          <p className="text-xs text-gray-500">提升收银效率</p>
-                        </div>
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* 支付宝图标 */}
+                      <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mb-2">
+                        <CreditCard className="w-4 h-4 text-white" />
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs text-green-600 font-medium">在线</span>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">支付宝免挂</h4>
+                        <p className="text-xs text-gray-500">提升收银效率</p>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      免输入金额，实时秒回调，降低收银成本
-                    </p>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
                   </div>
-                  
+
                   {/* 微信免挂 */}
-                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-3">
-                        {/* 微信图标 */}
-                        <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                          <Smartphone className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-800 text-sm">微信免挂</h4>
-                          <p className="text-xs text-gray-500">无需软件挂机</p>
-                        </div>
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* 微信图标 */}
+                      <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mb-2">
+                        <Smartphone className="w-4 h-4 text-white" />
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs text-green-600 font-medium">在线</span>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">微信免挂</h4>
+                        <p className="text-xs text-gray-500">无需软件挂机</p>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      免输入金额，实时秒回调，无需繁琐操作
-                    </p>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
                   </div>
-                  
+
                   {/* QQ钱包免挂 */}
-                  <div className="p-4 hover:bg-gray-50 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-3">
-                        {/* QQ钱包图标 */}
-                        <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
-                          <Globe className="w-4 h-4 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-800 text-sm">QQ钱包免挂</h4>
-                          <p className="text-xs text-gray-500">免签约个人支付</p>
-                        </div>
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* QQ钱包图标 */}
+                      <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mb-2">
+                        <Globe className="w-4 h-4 text-white" />
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-xs text-green-600 font-medium">在线</span>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">QQ钱包免挂</h4>
+                        <p className="text-xs text-gray-500">免签约个人支付</p>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      免签约个人支付，免软件挂机，实时监控
-                    </p>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
+                  </div>
+
+                  {/* 云闪付 */}
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* 云闪付图标 */}
+                      <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mb-2">
+                        <Zap className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">云闪付</h4>
+                        <p className="text-xs text-gray-500">快捷支付体验</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
+                  </div>
+
+                  {/* 银联支付 */}
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* 银联支付图标 */}
+                      <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center mb-2">
+                        <CreditCard className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">银联支付</h4>
+                        <p className="text-xs text-gray-500">安全便捷支付</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
+                  </div>
+
+                  {/* 京东支付 */}
+                  <div className="p-3 hover:bg-gray-50 transition-all duration-300 rounded-lg border border-gray-100">
+                    <div className="flex flex-col items-center mb-2">
+                      {/* 京东支付图标 */}
+                      <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center mb-2">
+                        <ShoppingCart className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="font-semibold text-gray-800 text-sm">京东支付</h4>
+                        <p className="text-xs text-gray-500">电商支付方案</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center space-x-1 mt-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-green-600 font-medium">在线</span>
+                    </div>
                   </div>
                 </div>
-                
+
                 {/* 底部统计信息 */}
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="grid grid-cols-3 gap-4 text-center">
@@ -306,7 +346,7 @@ const Products = () => {
               Payphp系统采用先进技术架构，为您提供卓越的支付解决方案
             </p>
           </div>
-          
+
           {/* 功能卡片网格 */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
@@ -341,7 +381,7 @@ const Products = () => {
               从个人创作者到企业级应用，Payphp码支付为不同规模的业务提供专业的支付解决方案
             </p>
           </div>
-          
+
           <div className="space-y-16">
             {scenarios.map((scenario, index) => (
               <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
@@ -353,11 +393,11 @@ const Products = () => {
                     </h3>
                     <div className="w-16 h-1 bg-blue-600 rounded-full"></div>
                   </div>
-                  
+
                   <p className="text-lg text-gray-600 leading-relaxed">
                     {scenario.description}
                   </p>
-                  
+
                   <div className="space-y-3">
                     {scenario.benefits.map((benefit, benefitIndex) => (
                       <div key={benefitIndex} className="flex items-start space-x-3">
@@ -366,7 +406,7 @@ const Products = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="pt-4">
                     <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
                       了解更多
@@ -374,7 +414,7 @@ const Products = () => {
                     </Button>
                   </div>
                 </div>
-                
+
                 {/* 场景图示 - 重新设计的文案展示 */}
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="bg-white rounded-2xl p-6">
@@ -385,7 +425,7 @@ const Products = () => {
                       </h4>
                       <div className="w-12 h-0.5 bg-blue-600 mx-auto"></div>
                     </div>
-                    
+
                     {/* 核心价值展示 */}
                     <div className="space-y-3 mb-4">
                       <div className="bg-blue-50 rounded-lg p-3 text-center">
@@ -396,7 +436,7 @@ const Products = () => {
                           支付解决方案
                         </div>
                       </div>
-                      
+
                       <div className="grid grid-cols-2 gap-2">
                         <div className="bg-gray-50 rounded-lg p-2 text-center">
                           <div className="text-base font-semibold text-gray-900">
@@ -416,7 +456,7 @@ const Products = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* 特性列表 */}
                     <div className="space-y-1.5 mb-4">
                       {scenario.benefits.slice(0, 3).map((benefit, benefitIndex) => (
@@ -426,7 +466,7 @@ const Products = () => {
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* 底部状态 */}
                     <div className="border-t border-gray-100 pt-3">
                       <div className="flex items-center justify-between text-xs">
@@ -458,7 +498,7 @@ const Products = () => {
               基于先进技术架构，为您提供卓越的性能表现
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {techAdvantages.map((advantage, index) => (
               <div key={index} className="text-center">
@@ -493,7 +533,7 @@ const Products = () => {
               全方位的服务支持，让您使用无忧
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceGuarantees.map((guarantee, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300">
@@ -525,16 +565,16 @@ const Products = () => {
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                   立即开始使用
                 </h2>
-                
+
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                   提升您的支付效率，解决知识付费和运营赞助难题
                 </p>
               </div>
-              
+
               {/* 按钮区域 */}
               <div className="flex gap-4 justify-center mb-8">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2"
                 >
                   <span className="flex items-center">
@@ -542,15 +582,15 @@ const Products = () => {
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-blue-600 text-blue-600 hover:bg-blue-50"
                 >
                   观看演示
                 </Button>
               </div>
-              
+
               {/* 特性标签 */}
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-full">
@@ -568,7 +608,7 @@ const Products = () => {
               </div>
             </div>
           </div>
-          
+
           {/* 辅助信息卡片 */}
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
@@ -578,7 +618,7 @@ const Products = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">安全可靠</h3>
               <p className="text-gray-600 text-sm">银行级安全保障，数据加密传输</p>
             </div>
-            
+
             <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ArrowRight className="w-6 h-6 text-blue-600" />
@@ -586,7 +626,7 @@ const Products = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">简单易用</h3>
               <p className="text-gray-600 text-sm">5分钟快速接入，无需复杂配置</p>
             </div>
-            
+
             <div className="bg-white rounded-2xl p-6 border border-gray-100 text-center transition-all duration-300">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-6 h-6 text-blue-600" />

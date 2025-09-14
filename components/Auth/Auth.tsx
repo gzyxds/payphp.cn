@@ -300,20 +300,127 @@ const PaymentAuth = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2 sm:space-y-3">
-                    {[
-                      { name: '微信支付', status: '在线' },
-                      { name: '支付宝', status: '在线' },
-                      { name: '银联支付', status: '在线' }
-                    ].map((payment, index) => (
-                      <div key={index} className="flex items-center justify-between p-2.5 sm:p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
-                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-medium">{payment.name}</span>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                          <span className="text-green-500 font-medium text-xs sm:text-sm">{payment.status}</span>
+                  {/* 支付方式列表 - 三排三列网格布局 */}
+                  <div className="grid grid-cols-3 gap-2">
+                    {/* 微信支付 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* 微信图标 */}
+                        <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">微信支付</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">无需软件挂机</p>
                         </div>
                       </div>
-                    ))}
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
+
+                    {/* 支付宝 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* 支付宝图标 */}
+                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">支付宝</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">提升收银效率</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
+
+                    {/* 银联支付 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* 银联支付图标 */}
+                        <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">银联支付</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">安全便捷支付</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
+
+                    {/* 云闪付 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* 云闪付图标 */}
+                        <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">云闪付</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">快捷支付体验</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
+
+                    {/* QQ钱包 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* QQ钱包图标 */}
+                        <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">QQ钱包</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">免签约个人支付</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
+
+                    {/* 京东支付 */}
+                    <div className="p-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg border border-gray-100 dark:border-gray-700">
+                      <div className="flex flex-col items-center mb-2">
+                        {/* 京东支付图标 */}
+                        <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center mb-2">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                          </svg>
+                        </div>
+                        <div className="text-center">
+                          <h4 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">京东支付</h4>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">电商支付方案</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-1 mt-1">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">在线</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
