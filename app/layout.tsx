@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StructuredData from "@/components/SEO/StructuredData";
-import { 
-  generateOrganizationStructuredData, 
-  generateWebSiteStructuredData 
+import {
+  generateOrganizationStructuredData,
+  generateWebSiteStructuredData
 } from "@/lib/seo-config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,15 +12,15 @@ const inter = Inter({ subsets: ["latin"] });
 // 元数据配置
 export const metadata: Metadata = {
   title: {
-    default: "PayPHP.cn - 专业的支付解决方案",
-    template: "%s | PayPHP.cn"
+    default: "PaYphp.cn - 专业的在线支付解决方案",
+    template: "%s | PaYphp.cn"
   },
-  description: "PayPHP.cn 提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
-  keywords: ["支付", "PayPHP", "支付解决方案", "在线支付", "支付接口", "聚合支付", "免签支付"],
-  authors: [{ name: "PayPHP Team" }],
-  creator: "PayPHP Team",
-  publisher: "PayPHP.cn",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://payphp.cn'),
+  description: "PayPHP支付系统是专业的在线支付解决方案提供商，支持微信支付、支付宝支付、QQ支付、银联支付等多种支付方式。提供免挂免输、云端本地、自研协议、无封号风险等核心优势，实现聚合支付、多渠道收款、实时到账、自动分账功能。为电商、游戏、社交、动漫等行业提供安全稳定、高效便捷的支付接口和支付系统开发服务，助力企业快速搭建支付平台，提升收款效率",
+  keywords: ["支付", "PaYphp", "支付解决方案", "在线支付", "支付接口", "聚合支付", "免签支付"],
+  authors: [{ name: "PaYphp Team" }],
+  creator: "PaYphp Team",
+  publisher: "PaYphp.cn",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://PaYphp.cn'),
   alternates: {
     canonical: "/",
   },
@@ -28,23 +28,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     url: "/",
-    title: "PayPHP.cn - 专业的支付解决方案",
-    description: "PayPHP.cn 提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
-    siteName: "PayPHP.cn",
+    title: "PaYphp.cn - 专业的在线支付解决方案",
+    description: "PayPHP支付系统是专业的在线支付解决方案提供商，支持微信支付、支付宝支付、QQ支付、银联支付等多种支付方式。提供免挂免输、云端本地、自研协议、无封号风险等核心优势，实现聚合支付、多渠道收款、实时到账、自动分账功能。为电商、游戏、社交、动漫等行业提供安全稳定、高效便捷的支付接口和支付系统开发服务，助力企业快速搭建支付平台，提升收款效率",
+    siteName: "PaYphp.cn",
     images: [
       {
-        url: "/images/logo/logo-og.png", // 需要创建OG图片
-        width: 1200,
-        height: 630,
-        alt: "PayPHP.cn - 专业的支付解决方案",
+        url: "/images/logo/logo-dark.svg",
+        width: 800,
+        height: 400,
+        alt: "PaYphp.cn - 专业的在线支付解决方案",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PayPHP.cn - 专业的支付解决方案",
-    description: "PayPHP.cn 提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
-    images: ["/images/logo/logo-og.png"],
+    title: "PaYphp.cn - 专业的在线支付解决方案",
+    description: "PaYphp.cn 提供专业的支付解决方案，集成多种支付方式，安全稳定，快速部署，满足企业全方位支付需求。",
+    images: ["/images/logo/logo-dark.svg"],
   },
   robots: {
     index: true,
@@ -90,15 +90,15 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        
+
         {/* 结构化数据 */}
         <StructuredData data={generateOrganizationStructuredData()} />
         <StructuredData data={generateWebSiteStructuredData()} />
-        
+
         {/* 预连接到外部资源 */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* DNS预解析 */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -106,7 +106,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
-        
+
         {/* 百度统计 - 放在 body 末尾以优化页面加载性能 */}
         <script
           dangerouslySetInnerHTML={{
