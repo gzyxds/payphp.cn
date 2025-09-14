@@ -65,7 +65,7 @@ const Footer = () => {
                   href="#"
                   className="text-itemtitle font-medium text-black dark:text-white break-all"
                 >
-                 payphp@.cn
+                 PaYphp@.cn
                 </a>
               </motion.div>
 
@@ -351,7 +351,7 @@ const Footer = () => {
                   <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
                     联系我们
                   </h4>
-                  
+
                   <div className="flex flex-row gap-4 lg:gap-6">
                     <div className="flex flex-col items-center">
                       <Image
@@ -363,7 +363,7 @@ const Footer = () => {
                       />
                       <p className="mt-2 text-sm text-center">联系我们</p>
                     </div>
-                    
+
                     <div className="flex flex-col items-center">
                       <Image
                         width={100}
@@ -439,9 +439,9 @@ const Footer = () => {
               viewport={{ once: true }}
               className="animate_top"
             >
-              <a 
-                href="https://beian.miit.gov.cn/" 
-                target="_blank" 
+              <a
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-center break-all"
               >
@@ -469,7 +469,7 @@ const Footer = () => {
               className="animate_top"
             >
               <p className="text-xs sm:text-sm text-center">
-                &copy; 2024 PayPHP. 保留所有权利。
+                &copy; 2024 PaYphp. 保留所有权利。
               </p>
             </motion.div>
           </div>

@@ -179,8 +179,8 @@ const About = () => {
       avatar: "/images/team/avatar2.jpg",
       description: "前支付宝产品经理，精通支付流程设计和用户体验优化",
       social: {
-        github: "https://github.com/lihua",
-        twitter: "https://twitter.com/lihua"
+        github: "https://payphp.cn/",
+        twitter: "https://payphp.cn/"
       }
     },
     {
@@ -269,7 +269,7 @@ const About = () => {
         </div>
 
         <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          
+
           {/* 英雄 - 左右布局设计，参考 Industry 组件 */}
           <div className="mt-20 mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -285,7 +285,7 @@ const About = () => {
                     <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full"></div>
                     关于PayPHP
                   </div>
-                  
+
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                     <span className="relative">
                       重新定义
@@ -295,16 +295,16 @@ const About = () => {
                     <br />
                     支付体验
                   </h1>
-                  
+
                   <div className="text-xl md:text-2xl text-[#0055ff] font-medium mb-6 flex items-center gap-3">
                      <div className="w-6 h-px bg-[#0055ff]"></div>
                      创新驱动未来
                    </div>
-                  
+
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
                     {['开源精神', '开发者优先', '持续创新', '安全可靠'].map((tag) => (
-                      <span 
-                        key={tag} 
+                      <span
+                        key={tag}
                         className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
                       >
                         {tag}
@@ -324,7 +324,7 @@ const About = () => {
                   我们致力于打造下一代智能支付生态系统，通过创新技术让每一笔交易都变得简单、安全、高效。
                   专注于PHP生态的支付解决方案，为全球开发者提供专业的支付服务。
                 </p>
-                
+
                 {/* 核心特色功能列表 - 两排两行布局 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex items-start gap-4 group">
@@ -395,7 +395,7 @@ const About = () => {
                     <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                       {/* 顶部装饰条 */}
                       <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-8"></div>
-                      
+
                       {/* 头部信息 */}
                       <div className="flex items-start justify-between mb-8">
                         <div className="flex items-center gap-4">
@@ -463,7 +463,7 @@ const About = () => {
                           {renderIcon(value.iconType, "w-6 h-6")}
                         </div>
                       </div>
-                      
+
                       {/* 内容区域 */}
                       <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-3">
                         {value.title}
@@ -506,7 +506,7 @@ const About = () => {
                       <div className="w-10 h-10 bg-[#0055ff]/10 flex items-center justify-center text-[#0055ff] flex-shrink-0">
                         {renderIcon("trophy", "w-5 h-5")}
                       </div>
-                      
+
                       {/* 奖项信息 */}
                       <div className="flex-1 min-w-0">
                         <div className="text-xs text-[#0055ff] font-medium mb-1">
@@ -555,7 +555,7 @@ const About = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* 个人信息 */}
                       <div className="text-center mb-4">
                         <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1">
@@ -565,12 +565,12 @@ const About = () => {
                           {member.role}
                         </p>
                       </div>
-                      
+
                       {/* 个人描述 */}
                       <p className="text-sm text-gray-600 dark:text-gray-300 text-center mb-6">
                         {member.description}
                       </p>
-                      
+
                       {/* 社交链接 */}
                       <div className="flex justify-center gap-4">
                         <a href={member.social.github} className="text-gray-500 hover:text-[#0055ff] transition-colors">
@@ -654,8 +654,8 @@ const About = () => {
                       <span className="text-sm text-[#0055ff] font-medium">{tech.percentage}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
-                      <div 
-                        className="bg-[#0055ff] h-full rounded-full" 
+                      <div
+                        className="bg-[#0055ff] h-full rounded-full"
                         style={{ width: `${tech.percentage}%` }}
                       ></div>
                     </div>
@@ -710,7 +710,7 @@ const About = () => {
           {/* CTA区域 - 参考 Industry 组件设计 */}
           <div className="text-center">
             <div className="bg-white border border-gray-200 p-12 lg:p-16 dark:bg-black dark:border-gray-700">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
