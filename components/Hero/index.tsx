@@ -10,7 +10,7 @@ const Hero = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-35 md:pt-40 xl:pb-32 xl:pt-48">
         {/* 背景装饰元素 */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23165dff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
-        
+
         <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex lg:items-center lg:gap-12 xl:gap-20">
             {/* 左侧内容区域 */}
@@ -76,24 +76,24 @@ const Hero = () => {
               <div className="space-y-6">
                 {/* CTA按钮组 */}
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <a 
+                  <a
                     href="https://merch.payphp.cn"
                     target="_blank"
-                    rel="noopener noreferrer" 
+                    rel="noopener noreferrer"
                     className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg text-center"
                   >
                     立即接入
                   </a>
 
-                  <a 
+                  <a
                     href="/auth"
                     className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors text-center"
                   >
                     购买源码
                   </a>
-                  
-                  <Qrcode 
-                    qrcodeUrl="/images/about/weixin.png" 
+
+                  <Qrcode
+                    qrcodeUrl="/images/about/weixin.png"
                     title="扫码联系客服"
                     description="扫描上方二维码，获取最新资讯"
                     buttonText="联系客服"
@@ -164,7 +164,7 @@ const Hero = () => {
                         <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                           <span className="text-blue-600 font-bold text-sm">P</span>
                         </div>
-                        <span className="text-white font-semibold text-lg">PayPay</span>
+                        <span className="text-white font-semibold text-lg">PaYphp</span>
                       </div>
 
                       {/* 余额卡片 */}
@@ -182,7 +182,7 @@ const Hero = () => {
 
                         <div className="text-white/80 text-sm mb-2">我的余额</div>
                         <div className="text-white text-3xl font-bold mb-4">¥ 8,659.20</div>
-                        
+
                         <div className="flex gap-3">
                           <button className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white text-sm font-medium">
                             充值
@@ -206,7 +206,7 @@ const Hero = () => {
                             </div>
                             <span className="text-white text-xs">付款</span>
                           </div>
-                          
+
                           {/* 扫码 */}
                           <div className="text-center">
                             <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
@@ -216,7 +216,7 @@ const Hero = () => {
                             </div>
                             <span className="text-white text-xs">扫码</span>
                           </div>
-                          
+
                           {/* 转账 */}
                           <div className="text-center">
                             <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
@@ -226,7 +226,7 @@ const Hero = () => {
                             </div>
                             <span className="text-white text-xs">转账</span>
                           </div>
-                          
+
                           {/* 账单 */}
                           <div className="text-center">
                             <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
@@ -313,7 +313,7 @@ const Hero = () => {
                 {/* 装饰性元素 */}
                 <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#165dff]/20 to-blue-300/20 blur-xl"></div>
                 <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/50 to-[#165dff]/10 blur-2xl"></div>
-                
+
                 {/* 浮动数据卡片 */}
                 <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white p-4 shadow-lg border border-gray-100">
                   <div className="text-xs text-gray-500 mb-1">日交易量</div>
