@@ -148,7 +148,7 @@ const Footer = () => {
                       <AccordionContent>
                         <ul>
                           <li>
-                            <a href="#" className="mb-3 inline-block hover:text-primary">
+                            <a href="https://doc.payphp.cn/" className="mb-3 inline-block hover:text-primary">
                               帮助文档
                             </a>
                           </li>
@@ -315,7 +315,7 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a href="#" className="mb-3 inline-block hover:text-primary">
+                      <a href="https://doc.payphp.cn/" className="mb-3 inline-block hover:text-primary">
                         帮助文档
                       </a>
                     </li>
