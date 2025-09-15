@@ -448,6 +448,229 @@ const Industry = () => {
           </div>
         </section>
 
+      {/*自定义插件 */}
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-1 sm:px-2 lg:px-3">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">支付插件系统</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-1">
+              强大的插件生态系统，满足各类支付场景需求，轻松扩展您的支付功能
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+            {/* 插件头部信息 */}
+            <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col gap-4">
+                <div>
+                  <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                    <span className="text-[#0055ff] bg-blue-100 dark:bg-blue-900/30 p-1.5 sm:p-2 rounded-md flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">测试插件</h3>
+                    <span className="bg-green-100 text-green-800 text-xs font-medium px-2 sm:px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                      v1.0.1
+                    </span>
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2">监控插件 - 由 PaYphp 开发</p>
+                </div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                  <a href="https://payphp.cn" target="_blank" rel="noopener noreferrer" className="text-[#0055ff] hover:underline flex items-center gap-1 text-sm sm:text-base">
+                    <span>开发者主页</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <button className="bg-[#0055ff] hover:bg-[#0044cc] text-white px-4 py-2 rounded-md transition-colors text-sm sm:text-base w-full sm:w-auto">
+                    安装插件
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* 插件支持的支付通道和代码示例 */}
+            <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6">
+                {/* 左侧：支付通道信息 */}
+                <div className="order-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">支持的支付通道</h4>
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4">
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                      <div className="flex justify-between items-center mb-2 sm:mb-3">
+                        <span className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">测试插件</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">demo</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">绑定支付方式:</span>
+                          <div className="flex flex-wrap gap-1">
+                            <span className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">支付宝</span>
+                            <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded dark:bg-green-900 dark:text-green-300">微信支付</span>
+                            <span className="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">银行卡</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">支持功能:</span>
+                          <div className="flex flex-wrap gap-1">
+                            <span className="bg-gray-100 text-gray-800 text-xs px-2 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">接口上报</span>
+                            <span className="bg-gray-100 text-gray-800 text-xs px-2 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">解析上报</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 代码示例 */}
+                  <div className="mt-3 sm:mt-4 bg-gray-900 dark:bg-gray-800 rounded-lg p-3 sm:p-4 overflow-x-auto">
+                    <div className="text-xs text-gray-400 mb-2">支付回调示例</div>
+                    <pre className="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed">
+{`-- 支付回调
+function plugin.notify(request, orderInfo, params, pluginOptions)
+    -- 失败返回
+    return json.encode({
+            error_code = 500,
+            error_message = "签名校验失败"
+        })
+    -- 成功返回
+    return json.encode({
+        error_code = 200,
+        error_message = "支付成功",
+        response = "我是支付响应结果,用于输出给调用方,不填写则默认success",
+    })
+end`}
+                    </pre>
+                  </div>
+                </div>
+
+                {/* 右侧：定时任务代码示例 */}
+                <div className="order-2">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">定时任务代码示例</h4>
+                  <div className="bg-gray-900 dark:bg-gray-800 rounded-lg p-3 sm:p-4 overflow-x-auto">
+                    <div className="text-xs text-gray-400 mb-2">Lua Script</div>
+                    <pre className="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed">
+{`-- 订单创建使用此接口 pOrderInfo: 订单信息 pluginOptions: 用户配置的支付通道信息
+内容格式为json
+function plugin.create(pOrderInfo, pluginOptions, ...)
+    return json.encode({
+            -- 返回支付类型 可选项:pre(需要预处理 如需要微信先登录获取openId等)
+            -- html(渲染html) qrcode(显示二维码) jump(跳转)
+            type = "html",
+            -- 返回二维码内容
+            qrcode = "",
+            -- jump 的url地址
+            url = "",
+            -- html content
+            content = content,
+            -- 返回错误码 200 为正确
+            err_code = 200,
+            -- 返回错误信息
+            err_message = ""
+        })
+end`}
+                    </pre>
+                  </div>
+                  <div className="mt-2 sm:mt-3 text-xs text-gray-500 dark:text-gray-400">
+                    <div className="space-y-1">
+                      <div>• <span className="font-medium">pAccountInfo:</span> 账号信息JSON字符串</div>
+                      <div>• <span className="font-medium">pPluginOption:</span> 插件配置参数</div>
+                      <div>• <span className="font-medium">crontabExtArgs:</span> 定时任务扩展参数</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 插件配置选项 */}
+            <div className="p-4 sm:p-6">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">配置选项</h4>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">通道选项</h5>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用子账号模式</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用递增金额规则</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用二维码登录流程</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">自定义操作</h5>
+                    <div className="space-y-2">
+                      <button
+                        onClick={() => {
+                          if (typeof window !== 'undefined') {
+                            window.confirm('是否需要唤醒？')
+                          }
+                        }}
+                        className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-md transition-colors text-sm"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span>唤醒</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800 sm:col-span-2 lg:col-span-1">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">全局配置</h5>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">费率</span>
+                        <span className="text-xs sm:text-sm text-gray-900 dark:text-white">0.15521</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">回调模式</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                  <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">定时任务</h5>
+                  <div className="overflow-x-auto -mx-1">
+                    <div className="inline-block min-w-full align-middle">
+                      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead>
+                          <tr>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">名称</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Cron 表达式</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">函数</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">范围</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                          <tr>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-900 dark:text-white">银联检查账号状态</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-mono">*/15 * * * * *</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400">check_account</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400">account</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     {/*自定义插件 */}
+
         {/* 行动号召区域 */}
         <section className="text-center bg-gradient-to-r from-[#0055ff] to-[#0066ff] p-8 md:p-12 lg:p-16 text-white rounded-lg">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 lg:mb-6">
