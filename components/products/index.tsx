@@ -47,6 +47,26 @@ const Products = () => {
       description: "支持多种支付最新协议，云端技术保障稳定运行"
     },
     {
+      icon: <Settings className="w-6 h-6 text-blue-600" />,
+      title: "高度可定制",
+      description: "提供丰富的定制选项，满足不同业务需求"
+    },
+    {
+      icon: <Code className="w-6 h-6 text-blue-600" />,
+      title: "API接口",
+      description: "提供完善的API接口，方便开发者集成支付功能"
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6 text-blue-600" />,
+      title: "插件开发",
+      description: "提供插件开发接口，方便开发者自定义支付功能"
+    },
+    {
+      icon: <Smartphone className="w-6 h-6 text-blue-600" />,
+      title: "超高性能",
+      description: "采用超高性能的 Go语言 和[ Vue + ElementUi +Vite]进行开发"
+    },
+    {
       icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
       title: "三重防护",
       description: "三重防掉单技术，确保每笔交易安全可靠"
@@ -343,16 +363,16 @@ const Products = () => {
               核心功能亮点
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Payphp系统采用先进技术架构，为您提供卓越的支付解决方案
+              PaYphp系统采用先进技术架构，为您提供卓越的支付解决方案
             </p>
           </div>
 
           {/* 功能卡片网格 */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                <CardContent className="p-8 text-center">
-                  <div className="flex items-center justify-center space-x-3 mb-6">
+              <Card key={index} className="group transition-all duration-300 hover:-translate-y-2 border border-gray-200 shadow-none">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-3 mb-6">
                     <div className="p-2 transition-colors">
                       {feature.icon}
                     </div>
@@ -360,7 +380,7 @@ const Products = () => {
                       {feature.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-left">
                     {feature.description}
                   </p>
                 </CardContent>

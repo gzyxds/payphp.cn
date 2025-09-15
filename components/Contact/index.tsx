@@ -196,10 +196,10 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
                 扫码联系我们
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-12">
                 {/* 微信客服二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
                     <img
                       src="/images/about/qq.png"
                       alt="微信客服二维码"
@@ -214,7 +214,7 @@ const Contact = () => {
 
                 {/* 商务合作二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
                     <img
                       src="/images/about/qqq.png"
                       alt="商户交流"
@@ -229,7 +229,7 @@ const Contact = () => {
 
                 {/* 技术支持二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
                     <img
                       src="/images/about/qq.png"
                       alt="技术支持二维码"
@@ -244,7 +244,7 @@ const Contact = () => {
 
                 {/* 公众号二维码 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-40 h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
                     <img
                       src="/images/about/gzh.jpg"
                       alt="公众号二维码"
