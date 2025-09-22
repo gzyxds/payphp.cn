@@ -48,21 +48,21 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 31,
-        title: "API文档",
+        title: "项目文档",
         newTab: false,
         path: "/docs",
         // SEO优化：文档页面对技术SEO很重要
       },
       {
         id: 32,
-        title: "技术博客",
+        title: "新闻资讯",
         newTab: false,
         path: "/blog",
         // SEO优化：博客页面提供丰富的内容，有利于SEO
       },
       {
         id: 33,
-        title: "技术支持",
+        title: "服务支持",
         newTab: false,
         path: "/support",
         // SEO优化：支持页面增强用户信任度

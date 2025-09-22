@@ -56,13 +56,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!mdxDocData) {
     return {
-      title: "文档未找到 - PayPHP NextJS",
+      title: "文档未找到 -",
       description: "请求的文档页面不存在"
     };
   }
 
   return {
-    title: `${mdxDocData.title} - PayPHP NextJS 文档`,
+    title: `${mdxDocData.title}教程文档`,
     description: mdxDocData.description || `${mdxDocData.title} 文档页面`,
   };
 }

@@ -154,7 +154,7 @@ const Footer = () => {
                           </li>
                           <li>
                             <a href="#" className="mb-3 inline-block hover:text-primary">
-                              API文档
+                              项目文档
                             </a>
                           </li>
                           <li>
@@ -321,7 +321,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
-                        API文档
+                        项目文档
                       </a>
                     </li>
                     <li>
