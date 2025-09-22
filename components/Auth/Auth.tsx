@@ -817,7 +817,7 @@ const PaymentAuth = () => {
             <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center lg:text-left text-black dark:text-white leading-tight">为什么选择PayPHP？</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center lg:text-left text-black dark:text-white leading-tight">为什么选择PaYphp</h2>
                   <div className="space-y-4 sm:space-y-6">
                     {[
                       {

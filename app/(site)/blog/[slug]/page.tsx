@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlogData(slug);
-  
+
   if (!blog) {
     return {
       title: "博客文章未找到",
@@ -30,8 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${blog.title} - PayPHP NextJS`,
-    description: blog.description || "PayPHP NextJS 博客文章",
+    title: `${blog.title}_易支付_码支付官网`,
+    description: blog.description || "易支付平台是第三方聚合支付产品;完美解决站长收款难题。帮助开发者快速集成支付接口,免签约接入支付宝,微信,财付通,QQ钱包,微信wap;效率高.见效快.费率低！",
+    keywords: ['易支付,彩虹易支付,聚合支付,支付宝免签约即时到账,支付平台,财付通收款接口,支付接口,微信免签约支付,码支付,QQ钱包扫码收款,云支付,免签约支付,云智付,第三方支付平台,支付系统'],
     openGraph: {
       title: blog.title,
       description: blog.description || "",
@@ -43,10 +44,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const SingleBlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   // 解析 params
   const { slug } = await params;
-  
+
   // 获取博客数据
   const blog = await getBlogData(slug);
-  
+
   // 如果博客不存在，返回 404
   if (!blog) {
     notFound();
@@ -150,7 +151,7 @@ const SingleBlogPage = async ({ params }: { params: Promise<{ slug: string }> })
                     </svg>
                     {blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('zh-CN') : '未知日期'}
                   </span>
-                  
+
                   {/* 作者信息 */}
                   <span className="flex items-center gap-3 font-medium text-black dark:text-white">
                     <svg

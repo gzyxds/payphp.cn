@@ -2,10 +2,9 @@ import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "payphp-文档中心",
-
-  // other metadata
-  description: "这是payphp的文档中心，这里有payphp的使用说明、API文档、开发指南等。"
+  title: "码支付_码支付文档_高效稳定的聚合免签约即时到账支付系统",
+  keywords: ['码支付,码支付官网,爱客码支付,扫码支付,聚合支付,三方支付,四方支付,支付宝免签约,微信免签约,QQ钱包免签约,即时到账支付,leave码支付'],
+  description: "码支付,聚合免签约支付系统专为个人、企业收款而生的支付系统。为支付宝、微信支付、QQ钱包等的个人账户、企业账号，提供即时到账收款接口。高效安全可靠，费率低。"
 };
 
 export default function DocsPage() {
