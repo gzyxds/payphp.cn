@@ -25,7 +25,7 @@ const BlogCategoriesPage = () => {
     const blogs = getBlogsByCategory(category);
     return {
       name: category,
-      slug: category.toLowerCase().replace(/\s+/g, '-'),
+      slug: encodeURIComponent(category),
       count: blogs.length,
       description: getCategoryDescription(category)
     };
@@ -33,7 +33,7 @@ const BlogCategoriesPage = () => {
 
   return (
     <section className="pb-[120px] pt-[150px]">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* 页面标题 */}
         <div className="mx-auto mb-[60px] max-w-[510px] text-center">
           <span className="mb-2 block text-lg font-semibold text-primary">

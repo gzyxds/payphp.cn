@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   const categories = getAllBlogCategories();
   
   return categories.map((category) => ({
-    slug: category.toLowerCase().replace(/\s+/g, '-'),
+    slug: encodeURIComponent(category),
   }));
 }
 
@@ -67,7 +67,7 @@ const CategoryPage = async ({ params }: PageProps) => {
 
   return (
     <section className="pb-[120px] pt-[150px]">
-      <div className="container">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* 面包屑导航 */}
         <nav className="mb-8 flex items-center space-x-2 text-sm text-body-color dark:text-body-color-dark">
           <Link href="/blog" className="hover:text-primary">
@@ -149,7 +149,7 @@ const CategoryPage = async ({ params }: PageProps) => {
                 .filter(cat => cat !== categoryName)
                 .slice(0, 6)
                 .map((category) => {
-                  const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+                  const categorySlug = encodeURIComponent(category);
                   const categoryBlogs = getBlogsByCategory(category);
                   
                   return (
@@ -286,29 +286,46 @@ function BlogCard({ blog }: { blog: Blog }) {
 function getCategoryNameFromSlug(slug: string): string | null {
   const allCategories = getAllBlogCategories();
   
-  // 尝试精确匹配
-  const exactMatch = allCategories.find(
-    category => category.toLowerCase().replace(/\s+/g, '-') === slug
-  );
-  
-  if (exactMatch) {
-    return exactMatch;
-  }
-  
-  // 尝试模糊匹配（处理一些常见的变体）
-  const slugVariants = [
-    slug.replace(/-/g, ' '),
-    slug.replace(/-/g, ''),
-    slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' '),
-  ];
-  
-  for (const variant of slugVariants) {
-    const match = allCategories.find(
-      category => category.toLowerCase() === variant.toLowerCase()
+  try {
+    // 首先尝试URL解码
+    const decodedSlug = decodeURIComponent(slug);
+    
+    // 尝试精确匹配解码后的分类名称
+    const exactMatch = allCategories.find(
+      category => category === decodedSlug
     );
-    if (match) {
-      return match;
+    
+    if (exactMatch) {
+      return exactMatch;
     }
+    
+    // 如果解码失败或没有匹配，尝试原来的逻辑（向后兼容）
+    const legacyMatch = allCategories.find(
+      category => category.toLowerCase().replace(/\s+/g, '-') === slug
+    );
+    
+    if (legacyMatch) {
+      return legacyMatch;
+    }
+    
+    // 尝试模糊匹配（处理一些常见的变体）
+    const slugVariants = [
+      slug.replace(/-/g, ' '),
+      slug.replace(/-/g, ''),
+      slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' '),
+    ];
+    
+    for (const variant of slugVariants) {
+      const match = allCategories.find(
+        category => category.toLowerCase() === variant.toLowerCase()
+      );
+      if (match) {
+        return match;
+      }
+    }
+    
+  } catch (error) {
+    console.error('解码分类 slug 时出错:', error);
   }
   
   return null;

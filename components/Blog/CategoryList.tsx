@@ -14,7 +14,7 @@ const CategoryList = () => {
     return {
       id: index + 1,
       name: category,
-      slug: category.toLowerCase().replace(/\s+/g, '-'),
+      slug: encodeURIComponent(category),
       count: blogs.length,
     };
   });
