@@ -215,8 +215,73 @@ const Industry = () => {
       <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
 
           {/* 英雄区 */}
-        <header className="mt-8 md:mt-12 lg:mt-16 mb-16 lg:mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <header className="relative mt-8 md:mt-12 lg:mt-16 mb-16 lg:mb-20 overflow-hidden">
+          {/* 英雄区背景装饰元素 */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* 科技网格背景 */}
+            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08]">
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(90deg, #0055ff 1px, transparent 1px),
+                    linear-gradient(180deg, #0055ff 1px, transparent 1px)
+                  `,
+                  backgroundSize: '60px 60px'
+                }}
+              />
+            </div>
+
+            {/* 动态几何装饰 */}
+            <div className="absolute top-10 right-10 w-24 h-24 opacity-[0.08] dark:opacity-[0.15]">
+              <div className="w-full h-full border-2 border-[#0055ff] rotate-45 animate-spin" style={{ animationDuration: '15s' }} />
+              <div className="absolute top-2 left-2 w-20 h-20 border border-[#0055ff]/50 rotate-45" />
+            </div>
+
+            <div className="absolute bottom-16 left-8 w-16 h-16 opacity-[0.10] dark:opacity-[0.18]">
+              <div className="w-full h-full border-2 border-[#0055ff] rounded-full animate-ping" style={{ animationDuration: '4s' }} />
+              <div className="absolute top-1 left-1 w-14 h-14 border border-[#0055ff]/60 rounded-full" />
+            </div>
+
+            {/* 浮动科技粒子 */}
+            <div className="absolute top-1/4 left-1/5 w-2 h-2 bg-[#0055ff]/30 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }} />
+            <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#0055ff]/25 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '2.5s' }} />
+            <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-[#0055ff]/35 rounded-full animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3.5s' }} />
+            <div className="absolute top-2/3 right-1/5 w-1.5 h-1.5 bg-[#0055ff]/20 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '2.8s' }} />
+
+            {/* 科技光束效果 */}
+            <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#0055ff]/15 to-transparent opacity-40" />
+            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#0055ff]/10 to-transparent opacity-30" />
+
+            {/* 数据流线条 */}
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0055ff]/20 to-transparent opacity-50">
+              <div className="absolute top-0 left-0 w-12 h-px bg-[#0055ff]/40 animate-pulse" style={{ animationDuration: '2.5s' }} />
+            </div>
+            <div className="absolute bottom-1/4 right-0 w-full h-px bg-gradient-to-l from-transparent via-[#0055ff]/15 to-transparent opacity-40">
+              <div className="absolute top-0 right-0 w-8 h-px bg-[#0055ff]/30 animate-pulse" style={{ animationDuration: '3s' }} />
+            </div>
+
+            {/* 科技边框装饰 */}
+            <div className="absolute top-6 left-6 w-20 h-20 opacity-[0.12] dark:opacity-[0.20]">
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#0055ff]" />
+              <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#0055ff]" />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#0055ff]" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#0055ff]" />
+            </div>
+
+            <div className="absolute bottom-6 right-6 w-16 h-16 opacity-[0.10] dark:opacity-[0.18]">
+              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#0055ff]" />
+              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#0055ff]" />
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#0055ff]" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#0055ff]" />
+            </div>
+
+            {/* 动态光晕效果 */}
+            <div className="absolute -top-20 -left-20 w-40 h-40 bg-[#0055ff]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-[#0055ff]/4 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          </div>
+
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* 左侧：主标题区域 */}
             <div className="text-center lg:text-left">
               {/* 服务商标识 */}
@@ -226,13 +291,15 @@ const Industry = () => {
               </div>
 
               {/* 主标题 */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-                <span className="relative inline-block">
-                  企业级支付
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <span className="relative inline-block text-[#0055ff] dark:text-[#0055ff]">
+                  PaYphp
                   <div className="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full" />
                 </span>
                 <br />
-                解决方案
+                <span className="text-black dark:text-white">
+                  企业级支付解决方案
+                </span>
               </h1>
 
               {/* 副标题 */}
@@ -305,6 +372,182 @@ const Industry = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* 核心功能设计 */}
+        <section className="mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0055ff] dark:text-[#0055ff] mb-4">
+              核心功能
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              全方位支付解决方案，满足不同业务场景需求
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* 支付网关 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20,8H4V6H20M20,18H4V12H20M22,18V6C22,4.89 21.1,4 20,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20C21.1,20 22,19.1 22,18Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    支付网关
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">99.9%</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">成功率</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• 多渠道支付接入</li>
+                <li>• 实时到账结算</li>
+                <li>• 安全加密传输</li>
+                <li>• 7×24小时监控</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                立即接入 →
+              </button>
+            </div>
+
+            {/* API文档 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    API文档
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">10+</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">编程语言</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• RESTful API设计</li>
+                <li>• 多语言SDK支持</li>
+                <li>• 在线调试工具</li>
+                <li>• 代码示例丰富</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                查看文档 →
+              </button>
+            </div>
+
+            {/* 数据看板 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3,3H21V5H19V18A1,1 0 0,1 18,19H6A1,1 0 0,1 5,18V5H3V3M7,5V17H17V5H7M8,6H16V8H8V6M8,9H16V11H8V9M8,12H13V14H8V12Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    数据看板
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">实时</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">数据更新</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• 实时数据监控</li>
+                <li>• 多维度报表</li>
+                <li>• 自定义图表</li>
+                <li>• 数据导出功能</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                查看演示 →
+              </button>
+            </div>
+
+            {/* 安全防护 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    安全防护
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">银行级</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">安全标准</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• SSL加密传输</li>
+                <li>• 实名认证验证</li>
+                <li>• 风险监控预警</li>
+                <li>• 合规资质认证</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                了解更多 →
+              </button>
+            </div>
+
+            {/* 商户中心 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    商户中心
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">24h</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">客服支持</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• 账户余额管理</li>
+                <li>• 交易记录查询</li>
+                <li>• 自动对账功能</li>
+                <li>• 提现结算服务</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                进入中心 →
+              </button>
+            </div>
+
+            {/* 消息通知 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                    消息通知
+                  </h3>
+                  <div className="text-xl md:text-2xl font-bold text-[#0055ff]">99.99%</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">送达率</div>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li>• 异步消息推送</li>
+                <li>• 重试机制保障</li>
+                <li>• 签名验证安全</li>
+                <li>• 多种通知方式</li>
+              </ul>
+              <button className="mt-4 text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
+                配置通知 →
+              </button>
+            </div>
           </div>
         </section>
 
@@ -414,6 +657,187 @@ const Industry = () => {
             ))}
           </div>
         </section>
+
+
+        {/* 产品优势 */}
+        <section className="mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4">
+              产品优势
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              专业的技术团队，成熟的产品体系，为您提供最可靠的支付解决方案
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {/* 银行级安全 */}
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 group-hover:text-[#0055ff] transition-colors duration-200">
+                    银行级安全
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <div className="text-2xl md:text-3xl font-bold text-[#0055ff]">99.99%</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">安全保障</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                采用金融级安全标准，多重加密保护，确保每一笔交易的安全可靠
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  SSL/TLS加密传输
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  多重身份验证
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  实时风险监控
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  PCI DSS认证
+                </div>
+              </div>
+            </div>
+
+            {/* 高可用性 */}
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17H13V11H11V17M11,9H13V7H11V9Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 group-hover:text-[#0055ff] transition-colors duration-200">
+                    高可用性
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <div className="text-2xl md:text-3xl font-bold text-[#0055ff]">99.9%</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">系统可用性</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                7×24小时不间断服务，99.9%的系统可用性，保障您的业务持续运行
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  分布式架构
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  自动故障切换
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  负载均衡
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  实时监控告警
+                </div>
+              </div>
+            </div>
+
+            {/* 极速响应 */}
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 group-hover:text-[#0055ff] transition-colors duration-200">
+                    极速响应
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <div className="text-2xl md:text-3xl font-bold text-[#0055ff]">&lt;100ms</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">响应时间</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                毫秒级响应速度，秒级到账结算，为用户提供极致的支付体验
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  毫秒级响应
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  秒级到账
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  智能路由
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  缓存优化
+                </div>
+              </div>
+            </div>
+
+            {/* 简单集成 */}
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
+                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 group-hover:text-[#0055ff] transition-colors duration-200">
+                    简单集成
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <div className="text-2xl md:text-3xl font-bold text-[#0055ff]">5分钟</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">快速集成</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                提供完整的SDK和API文档，5分钟快速集成，降低开发成本
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  RESTful API
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  多语言SDK
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  详细文档
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-[#0055ff] rounded-full" />
+                  在线调试
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
 
         {/* 技术优势展示 */}
         <section className="mb-16 lg:mb-20">
@@ -671,26 +1095,259 @@ end`}
       </section>
      {/*自定义插件 */}
 
+        {/* 合作伙伴 */}
+        <section className="mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4">
+              合作伙伴
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              与行业领先企业建立深度合作关系，为用户提供更优质的支付体验
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 lg:gap-8">
+            {/* 微信支付 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#07C160]/10 rounded-lg group-hover:bg-[#07C160]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#07C160]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8.5,5A6.5,6.5 0 0,1 15,11.5A6.5,6.5 0 0,1 8.5,18A6.5,6.5 0 0,1 2,11.5A6.5,6.5 0 0,1 8.5,5M8.5,7A4.5,4.5 0 0,0 4,11.5A4.5,4.5 0 0,0 8.5,16A4.5,4.5 0 0,0 13,11.5A4.5,4.5 0 0,0 8.5,7M15.5,7A6.5,6.5 0 0,1 22,13.5A6.5,6.5 0 0,1 15.5,20A6.5,6.5 0 0,1 9,13.5A6.5,6.5 0 0,1 15.5,7M15.5,9A4.5,4.5 0 0,0 11,13.5A4.5,4.5 0 0,0 15.5,18A4.5,4.5 0 0,0 20,13.5A4.5,4.5 0 0,0 15.5,9Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#07C160] transition-colors duration-200">
+                微信支付
+              </h3>
+            </div>
+
+            {/* 支付宝 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#1677FF]/10 rounded-lg group-hover:bg-[#1677FF]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#1677FF]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M7,9H17V11H7V9M7,13H17V15H7V13Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#1677FF] transition-colors duration-200">
+                支付宝
+              </h3>
+            </div>
+
+            {/* 银联支付 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#E60012]/10 rounded-lg group-hover:bg-[#E60012]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#E60012]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20,8H4V6H20M20,18H4V12H20M22,18V6C22,4.89 21.1,4 20,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20C21.1,20 22,19.1 22,18Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#E60012] transition-colors duration-200">
+                银联支付
+              </h3>
+            </div>
+
+            {/* QQ钱包 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#12B7F5]/10 rounded-lg group-hover:bg-[#12B7F5]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#12B7F5]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#12B7F5] transition-colors duration-200">
+                QQ钱包
+              </h3>
+            </div>
+
+            {/* 京东支付 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#E1251B]/10 rounded-lg group-hover:bg-[#E1251B]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#E1251B]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#E1251B] transition-colors duration-200">
+                京东支付
+              </h3>
+            </div>
+
+            {/* PayPal */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#003087]/10 rounded-lg group-hover:bg-[#003087]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#003087]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.076,21.337H2.47a.641.641,0,0,1-.633-.74L4.944,2.28A.78.78,0,0,1,5.717,1.66H14.8a12.5,12.5,0,0,1,2.76.3,7.714,7.714,0,0,1,2.347.98,4.651,4.651,0,0,1,1.663,1.9,6.919,6.919,0,0,1,.64,3.16,10.211,10.211,0,0,1-.58,3.52,8.51,8.51,0,0,1-1.56,2.84,7.315,7.315,0,0,1-2.32,1.94,6.36,6.36,0,0,1-2.84.7H13.64a1.847,1.847,0,0,0-1.85,1.56l-.09.44-.48,3.04-.07.36a.966.966,0,0,1-.95.8Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#003087] transition-colors duration-200">
+                PayPal
+              </h3>
+            </div>
+
+            {/* USDT */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#26A17B]/10 rounded-lg group-hover:bg-[#26A17B]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#26A17B]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M7,9H17V11H7V9M7,13H17V15H7V13Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#26A17B] transition-colors duration-200">
+                USDT
+              </h3>
+            </div>
+
+            {/* 数字人民币 */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg hover:border-[#0055ff]/30 transition-all duration-300 flex flex-col items-center justify-center">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center bg-[#C8102E]/10 rounded-lg group-hover:bg-[#C8102E]/20 transition-colors duration-200">
+                <svg className="w-8 h-8 text-[#C8102E]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,6H13V8H16V10H13V14H16V16H13V18H11V16H8V14H11V10H8V8H11V6Z"/>
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-black dark:text-white group-hover:text-[#C8102E] transition-colors duration-200">
+                数字人民币
+              </h3>
+            </div>
+          </div>
+
+          {/* 合作伙伴统计 */}
+          <div className="mt-12 lg:mt-16 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-bold text-[#0055ff] mb-2 group-hover:scale-110 transition-transform duration-200">
+                  8+
+                </div>
+                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                  主流支付渠道
+                </div>
+              </div>
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-bold text-[#0055ff] mb-2 group-hover:scale-110 transition-transform duration-200">
+                  100%
+                </div>
+                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                  渠道覆盖率
+                </div>
+              </div>
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-bold text-[#0055ff] mb-2 group-hover:scale-110 transition-transform duration-200">
+                  24/7
+                </div>
+                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                  全天候服务
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 行动号召区域 */}
         <section className="text-center bg-gradient-to-r from-[#0055ff] to-[#0066ff] p-8 md:p-12 lg:p-16 text-white rounded-lg">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 lg:mb-6">
-            开启您的数字化支付之旅
+            准备好开始了吗？
           </h2>
-          <p className="text-sm md:text-base lg:text-lg mb-6 lg:mb-8 max-w-2xl mx-auto opacity-90">
-            立即体验我们的专业支付解决方案，为您的业务增长提供强有力的支持
+          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-4 text-yellow-300">
+            5分钟快速接入支付服务
+          </h3>
+          <p className="text-sm md:text-base lg:text-lg mb-6 lg:mb-8 max-w-3xl mx-auto opacity-90">
+            无需复杂配置，无需等待审核，立即注册即可开始使用<br />
+            专业技术团队7×24小时为您提供支持服务
           </p>
+
+          {/* 特色标签 */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+              无需信用卡
+            </span>
+            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+              5分钟集成
+            </span>
+            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+              专业支持
+            </span>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <button className="bg-white text-[#0055ff] px-6 lg:px-8 py-3 font-semibold hover:bg-gray-100 transition-colors rounded-md">
+            <a
+              href="https://merch.payphp.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-[#0055ff] px-6 lg:px-8 py-2.5 lg:py-3 font-bold hover:bg-gray-100 transition-all duration-300 rounded-lg text-center inline-block"
+            >
               免费试用
+            </a>
+            <button className="border-2 border-white text-white px-6 lg:px-8 py-2.5 lg:py-3 font-semibold hover:bg-white hover:text-[#0055ff] transition-all duration-300 rounded-lg">
+              了解更多
             </button>
-            <button className="border-2 border-white text-white px-6 lg:px-8 py-3 font-semibold hover:bg-white hover:text-[#0055ff] transition-colors rounded-md">
-              联系销售
-            </button>
+          </div>
+        </section>
+
+        {/* 服务支持卡片 */}
+        <section className="mt-12 lg:mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+            {/* 技术支持卡片 */}
+            <div className="bg-white rounded-lg transition-all duration-300 p-4 lg:p-6 border border-gray-100 hover:border-[#0055ff]/20 group">
+              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#0055ff] to-[#0066ff] rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 11-9.75 9.75A9.75 9.75 0 0112 2.25z" />
+                </svg>
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0055ff] transition-colors duration-300">
+                技术支持
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                7×24小时在线技术支持
+              </p>
+              <div className="flex items-center text-[#0055ff] font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                <span>获取支持</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* 商务合作卡片 */}
+            <div className="bg-white rounded-lg transition-all duration-300 p-4 lg:p-6 border border-gray-100 hover:border-[#0055ff]/20 group">
+              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#0055ff] to-[#0066ff] rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0055ff] transition-colors duration-300">
+                商务合作
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                专业的商务团队为您服务
+              </p>
+              <div className="flex items-center text-[#0055ff] font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                <span>联系我们</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* 开发文档卡片 */}
+            <div className="bg-white rounded-lg transition-all duration-300 p-4 lg:p-6 border border-gray-100 hover:border-[#0055ff]/20 group">
+              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#0055ff] to-[#0066ff] rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0055ff] transition-colors duration-300">
+                开发文档
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                完整的API文档和SDK
+              </p>
+              <div className="flex items-center text-[#0055ff] font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                <span>查看文档</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </section>
   );
 };
+
+
 
 export default Industry;

@@ -508,32 +508,44 @@ const Products = () => {
       </section>
 
       {/* 4. 技术优势/数据支撑区 */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-blue-800">
+      <section className="py-24 px-4 bg-gray-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          {/* 标题区域 - 简洁设计 */}
+          <div className="text-center mb-20">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               技术优势
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               基于先进技术架构，为您提供卓越的性能表现
             </p>
           </div>
 
+          {/* 数据展示区域 - 简约卡片设计 */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {techAdvantages.map((advantage, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className="bg-white rounded-lg p-8 text-center border border-gray-100 hover:shadow-lg transition-all duration-300"
+              >
+                {/* 图标区域 - 简化设计 */}
                 <div className="mb-6 flex justify-center">
-                  <div className="p-4 bg-white bg-opacity-20 rounded-full">
+                  <div className="p-3 bg-blue-50 rounded-lg">
                     {advantage.icon}
                   </div>
                 </div>
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
+
+                {/* 核心数据 - 突出显示 */}
+                <div className="text-xl lg:text-2xl font-bold text-gray-900 mb-3">
                   {advantage.value}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
+
+                {/* 标题 */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {advantage.title}
                 </h3>
-                <p className="text-blue-100">
+
+                {/* 描述文字 */}
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {advantage.description}
                 </p>
               </div>

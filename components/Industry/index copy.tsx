@@ -17,7 +17,7 @@ const INDUSTRY_DATA = [
       stats: { value: "99.9%", label: "成功率" },
       features: [
         "主流渠道收款，契合银行实时到账",
-        "订单营销分账统一化管理", 
+        "订单营销分账统一化管理",
         "高效安全的资金统筹"
       ]
     },
@@ -64,7 +64,7 @@ const INDUSTRY_DATA = [
       subtitle: "Content Payment",
       stats: { value: "500M+", label: "交易额" },
       features: [
-        "支付接入门槛低，到账速度实时及次日可选",
+        "支付接入门槛低，实时到账",
         "资金到账速度快",
         "网文小说，动漫文章都覆盖"
       ]
@@ -80,6 +80,80 @@ const CORE_STATS = [
   { value: "500+", label: "API接口" },
   { value: "24/7", label: "技术支持" },
   { value: "1000+", label: "企业客户" }
+];
+
+/**
+ * 服务优势配置
+ * 定义平台的核心服务特色和优势
+ */
+const SERVICE_ADVANTAGES = [
+  {
+    id: 1,
+    title: "无需营业执照",
+    subtitle: "个人可申请",
+    description: "专业客服服务，7*24小时技术支持，不做二清，不碰钱，微信支付宝收款码可直接收款",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+      </svg>
+    )
+  },
+  {
+    id: 2,
+    title: "接口安全",
+    subtitle: "稳定传输",
+    description: "采用国内服务器，接口稳定传输，给顾客快速流畅的体验，安全可靠的服务您的每一笔订单",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
+      </svg>
+    )
+  },
+  {
+    id: 3,
+    title: "费率超低",
+    subtitle: "直接到账",
+    description: "接口渠道直接到自己账户，省去中间商赚差价，因此我们可以给商户提供更低廉的费率",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+      </svg>
+    )
+  },
+  {
+    id: 4,
+    title: "资金保障",
+    subtitle: "安全加密",
+    description: "商户订单信息，全部加密处理，专业技术24小时实时运维，您的帐户安全将得到充分的保障",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18L5,6.3V11.22C5,15.54 8.25,20 12,21M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9"/>
+      </svg>
+    )
+  },
+  {
+    id: 5,
+    title: "REST API",
+    subtitle: "完善接口",
+    description: "提供了完善的API接口，你可以用于平台应用通道接入，开发各种系统的对接通道插件等",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/>
+      </svg>
+    )
+  },
+
+  {
+    id: 6,
+    title: "拒绝资金流",
+    subtitle: "安全保障",
+    description: "只负责交易处理不参与资金清算，资金全都实时到您的个人账户上，以此来保障您的资金安全",
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1L13.5,2.5L16.17,5.17L10.58,10.76C10.22,10.54 9.82,10.4 9.39,10.4C7.99,10.4 6.86,11.53 6.86,12.93C6.86,14.33 7.99,15.46 9.39,15.46C10.79,15.46 11.92,14.33 11.92,12.93C11.92,12.5 11.78,12.1 11.56,11.74L17.15,6.15L19.83,8.83L21,9M4.93,5.82C3.08,5.82 1.6,7.3 1.6,9.15C1.6,11 3.08,12.48 4.93,12.48C6.78,12.48 8.26,11 8.26,9.15C8.26,7.3 6.78,5.82 4.93,5.82M15.5,13C15.5,15.21 13.71,17 11.5,17C9.29,17 7.5,15.21 7.5,13C7.5,10.79 9.29,9 11.5,9C13.71,9 15.5,10.79 15.5,13Z"/>
+      </svg>
+    )
+  }
 ];
 
 /**
@@ -128,18 +202,18 @@ const Industry = () => {
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#0055ff]/5 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0055ff]/3 rounded-full blur-3xl" />
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
-          <div 
-            className="w-full h-full" 
+          <div
+            className="w-full h-full"
             style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
               backgroundSize: '40px 40px'
-            }} 
+            }}
           />
         </div>
       </div>
 
       <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          
+
           {/* 英雄区 */}
         <header className="mt-8 md:mt-12 lg:mt-16 mb-16 lg:mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -150,7 +224,7 @@ const Industry = () => {
                 <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full" />
                 专业支付服务商
               </div>
-              
+
               {/* 主标题 */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
                 <span className="relative inline-block">
@@ -160,18 +234,18 @@ const Industry = () => {
                 <br />
                 解决方案
               </h1>
-              
+
               {/* 副标题 */}
               <div className="text-lg md:text-xl text-[#0055ff] font-medium mb-6 flex items-center justify-center lg:justify-start gap-3">
                 <div className="w-6 h-px bg-[#0055ff]" />
                 多行业覆盖
               </div>
-              
+
               {/* 行业标签 */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
                 {['电商支付', '游戏支付', '社交支付', '内容支付'].map((tag) => (
-                  <span 
-                    key={tag} 
+                  <span
+                    key={tag}
                     className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
                   >
                     {tag}
@@ -185,7 +259,7 @@ const Industry = () => {
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                 统一的API和SDK，集成多环节应用的接口，简化商户对接流程。专业支持合规电商，游戏，内容，社交等多种数娱行业，为企业提供安全、稳定、高效的支付服务。
               </p>
-              
+
               {/* 核心特性列表 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
@@ -213,7 +287,7 @@ const Industry = () => {
           </div>
         </header>
         {/* 英雄区结束 */}
-      
+
 
         {/* 核心统计数据展示 */}
         <section className="mb-16 lg:mb-20">
@@ -234,6 +308,52 @@ const Industry = () => {
           </div>
         </section>
 
+        {/* 服务优势展示 */}
+        <section className="mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4">
+              服务优势
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              专业的支付服务，为您的业务提供全方位保障
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {SERVICE_ADVANTAGES.map((advantage) => (
+              <div
+                key={advantage.id}
+                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300"
+              >
+                {/* 图标和标题区域 */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 flex-shrink-0">
+                    {advantage.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                      {advantage.title}
+                    </h3>
+                    <p className="text-sm text-[#0055ff] font-medium">
+                      {advantage.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 描述内容 */}
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {advantage.description}
+                </p>
+
+                {/* 装饰线 */}
+                <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="w-8 h-1 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full group-hover:w-12 transition-all duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* 行业解决方案展示 */}
         <section className="mb-16 lg:mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -244,7 +364,7 @@ const Industry = () => {
               >
                 {/* 装饰线 */}
                 <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-6" />
-                
+
                 {/* 行业信息头部 */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -260,7 +380,7 @@ const Industry = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* 关键指标 */}
                   <div className="text-right flex-shrink-0">
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0055ff]">
@@ -295,6 +415,56 @@ const Industry = () => {
           </div>
         </section>
 
+
+        {/* 核心功能 */}
+        <section className="mb-16 lg:mb-20">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4">
+              服务优势
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              专业的支付服务，为您的业务提供全方位保障
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {SERVICE_ADVANTAGES.map((advantage) => (
+              <div
+                key={advantage.id}
+                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300"
+              >
+                {/* 图标和标题区域 */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 flex-shrink-0">
+                    {advantage.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
+                      {advantage.title}
+                    </h3>
+                    <p className="text-sm text-[#0055ff] font-medium">
+                      {advantage.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 描述内容 */}
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {advantage.description}
+                </p>
+
+                {/* 装饰线 */}
+                <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="w-8 h-1 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full group-hover:w-12 transition-all duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        {/* 核心功能 */}
+
+
+
         {/* 技术优势展示 */}
         <section className="mb-16 lg:mb-20">
           <div className="text-center mb-12 lg:mb-16">
@@ -327,6 +497,229 @@ const Industry = () => {
             ))}
           </div>
         </section>
+
+      {/*自定义插件 */}
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-1 sm:px-2 lg:px-3">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">支付插件系统</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-1">
+              强大的插件生态系统，满足各类支付场景需求，轻松扩展您的支付功能
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+            {/* 插件头部信息 */}
+            <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col gap-4">
+                <div>
+                  <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                    <span className="text-[#0055ff] bg-blue-100 dark:bg-blue-900/30 p-1.5 sm:p-2 rounded-md flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">测试插件</h3>
+                    <span className="bg-green-100 text-green-800 text-xs font-medium px-2 sm:px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
+                      v1.0.1
+                    </span>
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2">监控插件 - 由 PaYphp 开发</p>
+                </div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                  <a href="https://payphp.cn" target="_blank" rel="noopener noreferrer" className="text-[#0055ff] hover:underline flex items-center gap-1 text-sm sm:text-base">
+                    <span>开发者主页</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                  <button className="bg-[#0055ff] hover:bg-[#0044cc] text-white px-4 py-2 rounded-md transition-colors text-sm sm:text-base w-full sm:w-auto">
+                    安装插件
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* 插件支持的支付通道和代码示例 */}
+            <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+              <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-6">
+                {/* 左侧：支付通道信息 */}
+                <div className="order-1">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">支持的支付通道</h4>
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4">
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                      <div className="flex justify-between items-center mb-2 sm:mb-3">
+                        <span className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">测试插件</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">demo</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">绑定支付方式:</span>
+                          <div className="flex flex-wrap gap-1">
+                            <span className="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">支付宝</span>
+                            <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded dark:bg-green-900 dark:text-green-300">微信支付</span>
+                            <span className="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">银行卡</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                          <span className="text-xs font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">支持功能:</span>
+                          <div className="flex flex-wrap gap-1">
+                            <span className="bg-gray-100 text-gray-800 text-xs px-2 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">接口上报</span>
+                            <span className="bg-gray-100 text-gray-800 text-xs px-2 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">解析上报</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 代码示例 */}
+                  <div className="mt-3 sm:mt-4 bg-gray-900 dark:bg-gray-800 rounded-lg p-3 sm:p-4 overflow-x-auto">
+                    <div className="text-xs text-gray-400 mb-2">支付回调示例</div>
+                    <pre className="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed">
+{`-- 支付回调
+function plugin.notify(request, orderInfo, params, pluginOptions)
+    -- 失败返回
+    return json.encode({
+            error_code = 500,
+            error_message = "签名校验失败"
+        })
+    -- 成功返回
+    return json.encode({
+        error_code = 200,
+        error_message = "支付成功",
+        response = "我是支付响应结果,用于输出给调用方,不填写则默认success",
+    })
+end`}
+                    </pre>
+                  </div>
+                </div>
+
+                {/* 右侧：定时任务代码示例 */}
+                <div className="order-2">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">定时任务代码示例</h4>
+                  <div className="bg-gray-900 dark:bg-gray-800 rounded-lg p-3 sm:p-4 overflow-x-auto">
+                    <div className="text-xs text-gray-400 mb-2">Lua Script</div>
+                    <pre className="text-xs sm:text-sm text-gray-300 font-mono leading-relaxed">
+{`-- 订单创建使用此接口 pOrderInfo: 订单信息 pluginOptions: 用户配置的支付通道信息
+内容格式为json
+function plugin.create(pOrderInfo, pluginOptions, ...)
+    return json.encode({
+            -- 返回支付类型 可选项:pre(需要预处理 如需要微信先登录获取openId等)
+            -- html(渲染html) qrcode(显示二维码) jump(跳转)
+            type = "html",
+            -- 返回二维码内容
+            qrcode = "",
+            -- jump 的url地址
+            url = "",
+            -- html content
+            content = content,
+            -- 返回错误码 200 为正确
+            err_code = 200,
+            -- 返回错误信息
+            err_message = ""
+        })
+end`}
+                    </pre>
+                  </div>
+                  <div className="mt-2 sm:mt-3 text-xs text-gray-500 dark:text-gray-400">
+                    <div className="space-y-1">
+                      <div>• <span className="font-medium">pAccountInfo:</span> 账号信息JSON字符串</div>
+                      <div>• <span className="font-medium">pPluginOption:</span> 插件配置参数</div>
+                      <div>• <span className="font-medium">crontabExtArgs:</span> 定时任务扩展参数</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 插件配置选项 */}
+            <div className="p-4 sm:p-6">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">配置选项</h4>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">通道选项</h5>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用子账号模式</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用递增金额规则</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">使用二维码登录流程</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">自定义操作</h5>
+                    <div className="space-y-2">
+                      <button
+                        onClick={() => {
+                          if (typeof window !== 'undefined') {
+                            window.confirm('是否需要唤醒？')
+                          }
+                        }}
+                        className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-md transition-colors text-sm"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span>唤醒</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800 sm:col-span-2 lg:col-span-1">
+                    <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">全局配置</h5>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">费率</span>
+                        <span className="text-xs sm:text-sm text-gray-900 dark:text-white">0.15521</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">回调模式</span>
+                        <span className="text-green-500">✓</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border border-gray-200 dark:border-gray-700 rounded-md p-3 sm:p-4 bg-white dark:bg-gray-800">
+                  <h5 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">定时任务</h5>
+                  <div className="overflow-x-auto -mx-1">
+                    <div className="inline-block min-w-full align-middle">
+                      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead>
+                          <tr>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">名称</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Cron 表达式</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">函数</th>
+                            <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">范围</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                          <tr>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-900 dark:text-white">银联检查账号状态</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-mono">*/15 * * * * *</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400">check_account</td>
+                            <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400">account</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     {/*自定义插件 */}
 
         {/* 行动号召区域 */}
         <section className="text-center bg-gradient-to-r from-[#0055ff] to-[#0066ff] p-8 md:p-12 lg:p-16 text-white rounded-lg">
