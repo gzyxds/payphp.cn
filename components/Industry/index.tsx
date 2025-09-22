@@ -362,7 +362,7 @@ const Industry = () => {
             {CORE_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white border border-gray-200 p-6 md:p-8 text-center dark:bg-black dark:border-gray-700"
+                className="bg-white border border-gray-200 p-6 md:p-8 text-center rounded-lg dark:bg-black dark:border-gray-700"
               >
                 <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0055ff] mb-2">
                   {stat.value}
@@ -388,7 +388,7 @@ const Industry = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* 支付网关 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -415,7 +415,7 @@ const Industry = () => {
             </div>
 
             {/* API文档 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -442,7 +442,7 @@ const Industry = () => {
             </div>
 
             {/* 数据看板 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -469,7 +469,7 @@ const Industry = () => {
             </div>
 
             {/* 安全防护 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -496,7 +496,7 @@ const Industry = () => {
             </div>
 
             {/* 商户中心 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -523,7 +523,7 @@ const Industry = () => {
             </div>
 
             {/* 消息通知 */}
-            <div className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -566,7 +566,7 @@ const Industry = () => {
             {SERVICE_ADVANTAGES.map((advantage) => (
               <div
                 key={advantage.id}
-                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300"
+                className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-lg transition-all duration-300"
               >
                 {/* 图标和标题区域 */}
                 <div className="flex items-start gap-4 mb-6">
@@ -603,7 +603,7 @@ const Industry = () => {
             {INDUSTRY_DATA.map((industry) => (
               <article
                 key={industry.id}
-                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group"
+                className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group"
               >
                 {/* 装饰线 */}
                 <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-6" />
@@ -672,7 +672,7 @@ const Industry = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* 银行级安全 */}
-            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -713,7 +713,7 @@ const Industry = () => {
             </div>
 
             {/* 高可用性 */}
-            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -754,7 +754,7 @@ const Industry = () => {
             </div>
 
             {/* 极速响应 */}
-            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -795,7 +795,7 @@ const Industry = () => {
             </div>
 
             {/* 简单集成 */}
-            <div className="bg-white border border-gray-200 p-8 lg:p-10 dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 rounded-lg dark:bg-black dark:border-gray-700 group hover:shadow-xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex h-16 w-16 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 rounded-xl">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -854,7 +854,7 @@ const Industry = () => {
             {TECH_FEATURES.map((feature) => (
               <div
                 key={feature.title}
-                className="bg-white border border-gray-200 p-6 lg:p-8 dark:bg-black dark:border-gray-700 group"
+                className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="text-[#0055ff] group-hover:scale-110 transition-transform duration-200">
