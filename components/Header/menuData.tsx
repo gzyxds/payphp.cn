@@ -30,7 +30,6 @@ const menuData: Menu[] = [
         path: "/products",
         // SEO优化：产品页面使用简洁的URL
       },
-
       {
         id: 23,
         title: "解决方案",
@@ -40,6 +39,14 @@ const menuData: Menu[] = [
       },
     ],
   },
+  {
+    id: 22,
+    title: "应用市场",
+    newTab: false,
+    path: "/Market",
+    // SEO优化：应用市场页面，提供丰富的功能扩展
+  },
+     
   {
     id: 3,
     title: "开发者",
@@ -93,14 +100,14 @@ const menuData: Menu[] = [
   },
   {
     id: 7,
-    title: "优刻云计算",
+    title: "优刻云",
     newTab: true,
     path: "https://www.cloudcvm.com/",
     // SEO优化：外部链接使用新窗口打开
   },
   {
     id: 8,
-    title: "免费领流量卡",
+    title: "领流量卡",
     newTab: true,
     path: "https://www.urlka.cn/",
     // SEO优化：联系页面增强用户信任度
