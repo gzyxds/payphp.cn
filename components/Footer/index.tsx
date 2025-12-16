@@ -440,12 +440,12 @@ const Footer = () => {
               className="animate_top"
             >
               <a
-                href="https://beian.miit.gov.cn/"
+                href="https://beian.miit.gov.cn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-center break-all"
               >
-                赣ICP备2023002309号-8
+                赣ICP备2023002309号
               </a>
             </motion.div>
 
