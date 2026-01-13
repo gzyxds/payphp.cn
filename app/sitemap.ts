@@ -7,7 +7,7 @@ import { MetadataRoute } from 'next';
 import { getAllBlogs } from '@/lib/blog';
 import { getAllDocs } from '@/lib/mdx';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://payphp.cn';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://PaYphp.cn';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 静态页面配置

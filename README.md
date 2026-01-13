@@ -1,6 +1,6 @@
-# PayPHP.cn - 专业的支付解决方案平台
+# PaYphp.cn - 专业的支付解决方案平台
 
-PayPHP.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用最新的 React 19、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。..
+PaYphp.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用最新的 React 19、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。..
 
 ## 🌟 项目特色
 
@@ -18,7 +18,7 @@ PayPHP.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示�
 ### 📁 目录结构
 
 ```
-payphp.cn/
+PaYphp.cn/
 ├── 📁 app/                    # Next.js 13+ App Router
 │   ├── 📁 (site)/            # 站点主要页面组
 │   │   ├── 📁 about/         # 关于我们页面
@@ -99,8 +99,8 @@ payphp.cn/
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/your-username/payphp.cn.git
-cd payphp.cn
+git clone https://github.com/your-username/PaYphp.cn.git
+cd PaYphp.cn
 ```
 
 2. **安装依赖**
@@ -272,8 +272,8 @@ npm run build:static
 
 ```env
 # 网站基础配置
-NEXT_PUBLIC_SITE_URL=https://payphp.cn
-NEXT_PUBLIC_SITE_NAME=PayPHP.cn
+NEXT_PUBLIC_SITE_URL=https://PaYphp.cn
+NEXT_PUBLIC_SITE_NAME=PaYphp.cn
 
 # SEO 验证
 GOOGLE_SITE_VERIFICATION=your_google_verification_code
@@ -330,7 +330,7 @@ SUPABASE_ANON_KEY=your_supabase_anon_key
 ## 📞 技术支持
 
 ### 获取帮助
-- **GitHub Issues**: [提交问题](https://github.com/your-username/payphp.cn/issues)
+- **GitHub Issues**: [提交问题](https://github.com/your-username/PaYphp.cn/issues)
 - **文档**: 查看项目文档和 API 说明
 - **社区**: 加入开发者社区讨论
 
@@ -363,7 +363,7 @@ SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ---
 
-**PayPHP.cn** - 让支付更简单，让业务更高效！ 🚀
+**PaYphp.cn** - 让支付更简单，让业务更高效！ 🚀
 
 
 ## 📋 更新日志
@@ -406,8 +406,8 @@ SUPABASE_ANON_KEY=your_supabase_anon_key
 ### 2️⃣ 项目初始化
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/payphp.cn.git
-cd payphp.cn
+git clone https://github.com/your-username/PaYphp.cn.git
+cd PaYphp.cn
 
 # 安装依赖 (重要：使用 legacy-peer-deps 标志)
 npm install --legacy-peer-deps
@@ -424,7 +424,7 @@ cp .env.example .env.local
 
 # 编辑环境变量
 # NEXT_PUBLIC_SITE_URL=http://localhost:3000
-# NEXT_PUBLIC_SITE_NAME=PayPHP.cn
+# NEXT_PUBLIC_SITE_NAME=PaYphp.cn
 ```
 
 ### 4️⃣ 验证安装
@@ -498,7 +498,7 @@ npm run preview      # 预览生产版本
 ## 🚀 部署选项
 
 ### Vercel 部署 (推荐)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fpayphp.cn)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2FPaYphp.cn)
 
 1. 连接 GitHub 仓库
 2. 自动检测 Next.js 项目
@@ -506,7 +506,7 @@ npm run preview      # 预览生产版本
 4. 一键部署完成
 
 ### Netlify 部署
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/payphp.cn)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/PaYphp.cn)
 
 1. 连接 GitHub 仓库
 2. 构建命令：`npm run build`
@@ -544,6 +544,6 @@ npm run build:static
 
 ---
 
-**🎉 恭喜！您已经成功配置了 PayPHP.cn 开发环境！**
+**🎉 恭喜！您已经成功配置了 PaYphp.cn 开发环境！**
 
 现在您可以开始自定义和开发您的支付解决方案网站了。如果遇到任何问题，请查看上面的故障排除指南或提交 Issue。

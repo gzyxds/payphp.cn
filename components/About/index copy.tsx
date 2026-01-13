@@ -90,7 +90,7 @@ const About = () => {
     {
       year: "2020",
       title: "项目启动",
-      description: "PayPHP项目正式启动，专注于PHP生态的支付解决方案",
+      description: "PaYphp项目正式启动，专注于PHP生态的支付解决方案",
       iconType: "building"
     },
     {
@@ -193,7 +193,7 @@ const About = () => {
                   {/* 主标题前的小标签 */}
                   <div className="inline-flex items-center gap-2 bg-[#0055ff]/10 text-[#0055ff] px-3 py-1 text-xs font-medium border border-[#0055ff]/20 mb-4">
                     <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full"></div>
-                    关于PayPHP
+                    关于PaYphp
                   </div>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -286,7 +286,7 @@ const About = () => {
                 发展历程
               </h2>
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                从想法到现实，见证PayPHP如何改变PHP支付开发
+                从想法到现实，见证PaYphp如何改变PHP支付开发
               </p>
             </div>
 
@@ -443,7 +443,7 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
-                  加入PayPHP开发者社区
+                  加入PaYphp开发者社区
                 </h3>
                 <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
                   与全球10万+开发者一起，构建下一代支付应用

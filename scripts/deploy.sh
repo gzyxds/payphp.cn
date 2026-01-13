@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# PayPHP.cn 部署脚本
-echo "🚀 开始部署 PayPHP.cn..."
+# PaYphp.cn 部署脚本
+echo "🚀 开始部署 PaYphp.cn..."
 
 # 检查 git 状态
 echo "📋 检查 Git 状态..."

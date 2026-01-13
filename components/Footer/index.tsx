@@ -148,7 +148,7 @@ const Footer = () => {
                       <AccordionContent>
                         <ul>
                           <li>
-                            <a href="https://doc.payphp.cn/" className="mb-3 inline-block hover:text-primary">
+                            <a href="https://doc.PaYphp.cn/" className="mb-3 inline-block hover:text-primary">
                               帮助文档
                             </a>
                           </li>
@@ -205,7 +205,7 @@ const Footer = () => {
                       <Image
                         width={100}
                         height={100}
-                        src="/images/about/payphp.jpg"
+                        src="/images/about/PaYphp.jpg"
                         alt="关注我们二维码"
                         className="border border-stroke p-1 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
                       />
@@ -315,7 +315,7 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a href="https://doc.payphp.cn/" className="mb-3 inline-block hover:text-primary">
+                      <a href="https://doc.PaYphp.cn/" className="mb-3 inline-block hover:text-primary">
                         帮助文档
                       </a>
                     </li>
@@ -368,7 +368,7 @@ const Footer = () => {
                       <Image
                         width={100}
                         height={100}
-                        src="/images/about/payphp.jpg"
+                        src="/images/about/PaYphp.jpg"
                         alt="关注我们二维码"
                         className="border border-stroke p-1 w-24 h-24 lg:w-28 lg:h-28"
                       />

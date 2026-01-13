@@ -1,8 +1,8 @@
-# PayPHP.cn 项目规范文档
+# PaYphp.cn 项目规范文档
 
 ## 1. 项目概述
 
-PayPHP.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用最新的 React 19、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。
+PaYphp.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用最新的 React 19、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。
 
 ### 1.1 技术栈
 
@@ -15,7 +15,7 @@ PayPHP.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示�
 ## 2. 目录结构规范
 
 ```
-payphp.cn/
+PaYphp.cn/
 ├── 📁 app/                    # Next.js App Router
 │   ├── 📁 (site)/            # 站点主要页面组
 │   │   ├── 📁 about/         # 关于我们页面
@@ -134,9 +134,9 @@ export default Header;
 ```typescript
 // 页面元数据配置示例
 export const metadata: Metadata = {
-  title: "产品介绍 | PayPHP.cn",
-  description: "PayPHP.cn 提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
-  keywords: ["支付", "PayPHP", "支付解决方案"],
+  title: "产品介绍 | PaYphp.cn",
+  description: "PaYphp.cn 提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
+  keywords: ["支付", "PaYphp", "支付解决方案"],
 };
 ```
 
@@ -201,4 +201,4 @@ export const metadata: Metadata = {
 
 ---
 
-本文档旨在规范 PayPHP.cn 项目的开发流程和代码质量，所有团队成员应遵循上述规范进行开发。规范可根据项目需求和团队反馈进行调整和完善。
+本文档旨在规范 PaYphp.cn 项目的开发流程和代码质量，所有团队成员应遵循上述规范进行开发。规范可根据项目需求和团队反馈进行调整和完善。

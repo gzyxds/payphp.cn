@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Qrcode from "@/components/Qrcode";
+import { Button } from "@/components/ui/button";
 
 /**
- * PayPHP支付系统官网页面组件
+ * PaYphp支付系统官网页面组件
  *
  * 功能模块：
  * - Hero区：品牌展示和核心价值主张
@@ -126,7 +127,7 @@ const PaymentAuth = () => {
     {
       name: "张总",
       company: "某电商平台",
-      comment: "PayPHP支付系统帮助我们解决了多渠道支付的难题，收款效率提升了300%，客户满意度大幅提升。"
+      comment: "PaYphp支付系统帮助我们解决了多渠道支付的难题，收款效率提升了300%，客户满意度大幅提升。"
     },
     {
       name: "李经理",
@@ -136,7 +137,7 @@ const PaymentAuth = () => {
     {
       name: "王站长",
       company: "个人站长",
-      comment: "作为个人站长，PayPHP让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
+      comment: "作为个人站长，PaYphp让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
     }
   ];
 
@@ -210,7 +211,7 @@ const PaymentAuth = () => {
               {/* 品牌标识 */}
               <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
                 <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
-                PayPHP 支付系统
+                PaYphp 支付系统
               </div>
 
               {/* 主标题 */}
@@ -241,35 +242,28 @@ const PaymentAuth = () => {
               <div className="space-y-6">
                 {/* CTA按钮组 */}
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <a
-                    href="https://merch.payphp.cn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg text-center"
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                    asChild
                   >
-                    立即接入
-                  </a>
+                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                      立即接入
+                    </a>
+                  </Button>
 
-                  <a
-                    href="/auth"
-                    className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors text-center"
+                  <Button
+                    variant="outline-primary"
+                    size="lg"
+                    asChild
                   >
-                    购买源码
-                  </a>
+                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72">
+                      购买源码
+                    </a>
+                  </Button>
 
-                  <Qrcode
-                    qrcodeUrl="/images/about/weixin.png"
-                    title="扫码联系客服"
-                    description="扫描上方二维码，获取最新资讯"
-                    buttonText="联系客服"
-                    buttonVariant="ghost"
-                    buttonClassName="text-gray-600 dark:text-gray-300 px-4 py-3 mt-1 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2"
-                    buttonIcon={
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                      </svg>
-                    }
-                  />
+                  <Qrcode preset="customer-service" />
                 </div>
               </div>
             </div>
@@ -281,7 +275,7 @@ const PaymentAuth = () => {
                 {/* 模拟产品界面 */}
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">PayPHP 控制台</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white">PaYphp 控制台</h3>
                     <div className="flex gap-1.5 sm:gap-2">
                       <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-red-500 rounded-full"></div>
                       <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-yellow-500 rounded-full"></div>
@@ -483,18 +477,26 @@ const PaymentAuth = () => {
           {/* CTA按钮组 - 参考Hero区按钮格式 */}
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <button className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg">
-                立即体验功能
-              </button>
-              <button className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors">
-                查看详细文档
-              </button>
-              <button className="text-gray-600 dark:text-gray-300 px-4 py-3 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2">
-                技术咨询
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                </svg>
-              </button>
+              <Button
+                variant="default"
+                size="lg"
+                className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                asChild
+              >
+                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                  立即体验功能
+                </a>
+              </Button>
+              <Button
+                variant="outline-primary"
+                size="lg"
+                asChild
+              >
+                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                  查看详细文档
+                </a>
+              </Button>
+              <Qrcode preset="customer-service" />
             </div>
           </div>
         </div>
@@ -563,35 +565,28 @@ const PaymentAuth = () => {
                   <div className="space-y-6">
                     {/* CTA按钮组 */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                      <a
-                        href="https://merch.payphp.cn"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg text-center"
+                      <Button
+                        variant="default"
+                        size="lg"
+                        className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                        asChild
                       >
-                        获取方案
-                      </a>
+                        <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                          获取方案
+                        </a>
+                      </Button>
 
-                      <a
-                        href="/auth"
-                        className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors text-center"
+                      <Button
+                        variant="outline-primary"
+                        size="lg"
+                        asChild
                       >
-                        查看案例
-                      </a>
+                        <a href="/auth">
+                          查看案例
+                        </a>
+                      </Button>
 
-                      <Qrcode
-                        qrcodeUrl="/images/about/weixin.png"
-                        title="扫码联系客服"
-                        description="扫描上方二维码，获取最新资讯"
-                        buttonText="咨询专家"
-                        buttonVariant="ghost"
-                        buttonClassName="text-gray-600 dark:text-gray-300 px-4 py-3 mt-1 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2"
-                        buttonIcon={
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                          </svg>
-                        }
-                      />
+                      <Qrcode preset="customer-service" buttonText="联系客服" />
                     </div>
                   </div>
                 </div>
@@ -693,7 +688,7 @@ const PaymentAuth = () => {
               超过10000+企业的信赖之选
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              从初创企业到行业巨头，PayPHP为各行各业提供稳定可靠的支付解决方案
+              从初创企业到行业巨头，PaYphp为各行各业提供稳定可靠的支付解决方案
             </p>
           </div>
 
@@ -933,7 +928,7 @@ const PaymentAuth = () => {
                       <svg className="w-3 h-3 text-[#0055ff] adaptive-dark-exclude" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span className="text-gray-600 dark:text-gray-300">前台地址：merch.payphp.cn</span>
+                      <span className="text-gray-600 dark:text-gray-300">前台地址：merch.PaYphp.cn</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -956,22 +951,26 @@ const PaymentAuth = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <a
-                      href="https://merchant.payphp.cn/auth/register"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff] text-white py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/90 text-center inline-block"
+                    <Button
+                      variant="default"
+                      size="lg"
+                      className="flex-1 bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                      asChild
                     >
-                      立即注册
-                    </a>
-                    <a
-                      href="https://merchant.payphp.cn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff]/10 text-[#0055ff] py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/20 text-center inline-block"
+                      <a href="https://merch.PaYphp.cn/register" target="_blank" rel="noopener noreferrer">
+                        立即注册
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline-primary"
+                      size="lg"
+                      className="flex-1"
+                      asChild
                     >
-                      商户中心
-                    </a>
+                      <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                        商户中心
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -1030,22 +1029,17 @@ const PaymentAuth = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <a
-                      href="https://wpa.qq.com/msgrd?v=3&uin=236749035&site=qq&menu=yes"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff] text-white py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/90 text-center inline-block"
+                    <Qrcode preset="customer-service" />
+                    <Button
+                      variant="outline-gray"
+                      size="lg"
+                      className="flex-1"
+                      asChild
                     >
-                      联系客服
-                    </a>
-                    <a
-                      href="https://merch.payphp.cn/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff]/10 text-[#0055ff] py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/20 text-center inline-block"
-                    >
-                      购买源码
-                    </a>
+                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer">
+                        购买源码
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -1103,22 +1097,17 @@ const PaymentAuth = () => {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <a
-                      href="https://wpa.qq.com/msgrd?v=3&uin=236749035&site=qq&menu=yes"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff] text-white py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/90 text-center inline-block"
+                    <Qrcode preset="customer-service" />
+                    <Button
+                      variant="outline-gray"
+                      size="lg"
+                      className="flex-1"
+                      asChild
                     >
-                      联系客服
-                    </a>
-                    <a
-                      href="https://merch.payphp.cn/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-[#0055ff]/10 text-[#0055ff] py-2 px-4 rounded-lg transition-colors hover:bg-[#0055ff]/20 text-center inline-block"
-                    >
-                      购买源码
-                    </a>
+                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer">
+                        购买源码
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -1142,12 +1131,17 @@ const PaymentAuth = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <button className="w-full sm:w-auto bg-white text-[#0055ff] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-lg" style={{ fontWeight: 500 }}>
-                免费体验演示
-              </button>
-              <button className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-white hover:text-[#0055ff] transition-colors" style={{ fontWeight: 500 }}>
-                联系专属客服
-              </button>
+              <Button
+                variant="default"
+                size="lg"
+                className="bg-white text-[#0055ff] shadow-lg hover:bg-gray-100"
+                asChild
+              >
+                <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
+                  立即体验接入
+                </a>
+              </Button>
+              <Qrcode preset="customer-service" />
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-blue-100">
@@ -1184,7 +1178,7 @@ const PaymentAuth = () => {
     {
       name: "张总",
       company: "某电商平台",
-      comment: "PayPHP支付系统帮助我们解决了多渠道支付的难题，收款效率提升了300%，客户满意度大幅提升。"
+      comment: "PaYphp支付系统帮助我们解决了多渠道支付的难题，收款效率提升了300%，客户满意度大幅提升。"
     },
     {
       name: "李经理",
@@ -1194,7 +1188,7 @@ const PaymentAuth = () => {
     {
       name: "王站长",
       company: "个人站长",
-      comment: "作为个人站长，PayPHP让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
+      comment: "作为个人站长，PaYphp让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
     }
   ];
 

@@ -159,7 +159,7 @@ const Products = () => {
           <Button 
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 rounded-lg font-medium"
             size="lg"
-            onClick={() => window.open('https://merch.payphp.cn/', '_blank')}
+            onClick={() => window.open('https://merch.PaYphp.cn/', '_blank')}
           >
             立即接入
             <ArrowRight className="ml-2 w-5 h-5" />

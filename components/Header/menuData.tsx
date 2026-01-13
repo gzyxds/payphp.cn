@@ -87,7 +87,7 @@ const menuData: Menu[] = [
     id: 5,
     title: "官网文档",
     newTab: true,
-    path: "https://doc.payphp.cn/help",
+    path: "https://doc.PaYphp.cn/help",
     // SEO优化：联系页面增强用户信任度
   },
 

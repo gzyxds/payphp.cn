@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import Qrcode from "@/components/Qrcode";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
 
   return (
     <>
       {/* Hero主视觉区域 - 采用支付企业官网设计风格 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-35 md:pt-40 xl:pb-32 xl:pt-48">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-12 md:pt-16 xl:pb-32 xl:pt-20">
         {/* 背景装饰元素 */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23165dff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
 
@@ -76,35 +77,27 @@ const Hero = () => {
               <div className="space-y-6">
                 {/* CTA按钮组 */}
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <a
-                    href="https://merch.payphp.cn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#0055ff] text-white px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/90 transition-colors shadow-lg text-center"
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                    asChild
                   >
-                    立即接入
-                  </a>
+                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                      立即接入
+                    </a>
+                  </Button>
 
-                  <a
-                    href="/auth"
-                    className="border border-[#0055ff] text-[#0055ff] px-6 py-3 text-sm font-medium rounded-lg hover:bg-[#0055ff]/5 transition-colors text-center"
+                  <Button
+                    variant="outline-primary"
+                    size="lg"
+                    asChild
                   >
-                    购买源码
-                  </a>
-
-                  <Qrcode
-                    qrcodeUrl="/images/about/weixin.png"
-                    title="扫码联系客服"
-                    description="扫描上方二维码，获取最新资讯"
-                    buttonText="联系客服"
-                    buttonVariant="ghost"
-                    buttonClassName="text-gray-600 dark:text-gray-300 px-4 py-3 mt-1 text-sm font-medium hover:text-[#0055ff] transition-colors flex items-center justify-center gap-2"
-                    buttonIcon={
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                      </svg>
-                    }
-                  />
+                    <a href="/auth">
+                      购买源码
+                    </a>
+                  </Button>
+                  <Qrcode preset="customer-service" />
                 </div>
 
                 {/* 免费试用说明 */}

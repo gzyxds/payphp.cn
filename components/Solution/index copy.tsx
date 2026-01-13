@@ -43,7 +43,7 @@ const Solution = () => {
                       <div className="h-1 w-1 rounded-full bg-gray-400"></div>
                       <div className="h-1 w-1 rounded-full bg-gray-400"></div>
                     </div>
-                    <div className="text-xs font-medium text-gray-600">PayPHP</div>
+                    <div className="text-xs font-medium text-gray-600">PaYphp</div>
                     <div className="flex items-center gap-1">
                       <div className="h-2 w-4 rounded-sm bg-green-400"></div>
                       <div className="text-xs text-gray-600">100%</div>

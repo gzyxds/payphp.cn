@@ -1,7 +1,7 @@
 ---
 # 页面元数据配置
 title: "API接口使用" # 页面标题
-description: "PayPHP码支付系统API接口使用指南" # 页面描述
+description: "PaYphp码支付系统API接口使用指南" # 页面描述
 date: "2024-01-23" # 最后更新日期
 category: "使用指南" # 文档分类
 subcategory: "高级功能" # 文档子分类
@@ -11,13 +11,13 @@ icon: "🔌" # 文档图标
 
 # API接口使用指南
 
-PayPHP 码支付系统提供了完善的 API 接口，方便商户系统与支付系统进行对接。本文档将详细介绍 API 接口的使用方法和注意事项。
+PaYphp 码支付系统提供了完善的 API 接口，方便商户系统与支付系统进行对接。本文档将详细介绍 API 接口的使用方法和注意事项。
 
 ## API 概述
 
 ### 接口规范
 
-PayPHP 码支付系统的 API 接口采用 RESTful 风格设计，具有以下特点：
+PaYphp 码支付系统的 API 接口采用 RESTful 风格设计，具有以下特点：
 
 - **请求方式**：主要使用 POST 方法
 - **数据格式**：请求和响应均使用 JSON 格式
@@ -591,7 +591,7 @@ POST /api/v1/refund/query
 
 ## SDK 使用
 
-为了方便商户对接，PayPHP 码支付系统提供了多种语言的 SDK。
+为了方便商户对接，PaYphp 码支付系统提供了多种语言的 SDK。
 
 ### PHP SDK
 
@@ -600,7 +600,7 @@ POST /api/v1/refund/query
 使用 Composer 安装：
 
 ```bash
-composer require payphp/sdk
+composer require PaYphp/sdk
 ```
 
 #### 初始化
@@ -609,7 +609,7 @@ composer require payphp/sdk
 <?php
 require 'vendor/autoload.php';
 
-use PayPHP\SDK\Client;
+use PaYphp\SDK\Client;
 
 $config = [
     'app_id' => '10001',
@@ -702,15 +702,15 @@ if ($isValid) {
 #### 安装
 
 ```bash
-npm install payphp-sdk
+npm install PaYphp-sdk
 ```
 
 #### 初始化
 
 ```javascript
-const PayPHP = require('payphp-sdk');
+const PaYphp = require('PaYphp-sdk');
 
-const client = new PayPHP.Client({
+const client = new PaYphp.Client({
   appId: '10001',
   appKey: 'a5f3f71efb96fe68b1b8f3791a1e2e1d',
   apiUrl: 'https://您的域名/api/v1',
@@ -858,7 +858,7 @@ client.queryOrder({ outTradeNo: '202401230001' })
 1. **技术文档**：查阅完整的 API 文档
 2. **开发者社区**：加入开发者社区，与其他开发者交流
 3. **在线客服**：工作时间内联系在线客服
-4. **邮件支持**：发送邮件至 support@payphp.cn
+4. **邮件支持**：发送邮件至 support@PaYphp.cn
 5. **问题反馈**：在商户后台提交问题反馈
 
 我们会在收到您的问题后，尽快为您解答。

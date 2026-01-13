@@ -7,9 +7,9 @@ import { getAllBlogCategories, getBlogsByCategory } from "@/lib/blog";
  * 页面元数据
  */
 export const metadata: Metadata = {
-  title: "博客分类 - PayPHP",
+  title: "博客分类 - PaYphp",
   description: "浏览所有博客分类，查找您感兴趣的技术文章和教程。",
-  keywords: ["博客分类", "技术文章", "教程", "PayPHP"],
+  keywords: ["博客分类", "技术文章", "教程", "PaYphp"],
 };
 
 /**

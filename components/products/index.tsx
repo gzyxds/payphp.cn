@@ -127,7 +127,7 @@ const Products = () => {
   const serviceGuarantees = [
     {
       title: "免费升级",
-      description: "持续修复程序bug和更新功能，提供免费升级服务，让您永远享受最新的Payphp2.0体验。",
+      description: "持续修复程序bug和更新功能，提供免费升级服务，让您永远享受最新的PaYphp2.0体验。",
       icon: <ArrowRight className="w-6 h-6 text-blue-600" />
     },
     {
@@ -142,7 +142,7 @@ const Products = () => {
     },
     {
       title: "商用授权",
-      description: "购买商业授权后，获得Payphp码支付商业使用授权，让您更加放心地使用。",
+      description: "购买商业授权后，获得PaYphp码支付商业使用授权，让您更加放心地使用。",
       icon: <Award className="w-6 h-6 text-blue-600" />
     }
   ];
@@ -172,7 +172,7 @@ const Products = () => {
                   {/* Logo图片 - 支持深色和浅色主题 */}
                   <Image
                     src="/images/logo/logo-dark.svg"
-                    alt="Payphp码支付"
+                    alt="PaYphp码支付"
                     width={280}
                     height={70}
                     className="hidden dark:block"
@@ -180,7 +180,7 @@ const Products = () => {
                   />
                   <Image
                     src="/images/logo/logo-light.svg"
-                    alt="Payphp码支付"
+                    alt="PaYphp码支付"
                     width={280}
                     height={70}
                     className="block dark:hidden"
@@ -200,12 +200,16 @@ const Products = () => {
 
               {/* 行动按钮 */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                  立即体验
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90" asChild>
+                  <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
+                    立即体验
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg">
-                  了解更多
+                <Button size="lg" variant="outline-primary" asChild>
+                  <a href="/products">
+                    了解更多
+                  </a>
                 </Button>
               </div>
             </div>
@@ -398,7 +402,7 @@ const Products = () => {
               多场景应用解决方案
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              从个人创作者到企业级应用，Payphp码支付为不同规模的业务提供专业的支付解决方案
+              从个人创作者到企业级应用，PaYphp码支付为不同规模的业务提供专业的支付解决方案
             </p>
           </div>
 
@@ -428,9 +432,11 @@ const Products = () => {
                   </div>
 
                   <div className="pt-4">
-                    <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                      了解更多
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                    <Button variant="outline-primary" size="lg" asChild>
+                      <a href="/products">
+                        了解更多
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -607,19 +613,24 @@ const Products = () => {
               <div className="flex gap-4 justify-center mb-8">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2"
+                  className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                  asChild
                 >
-                  <span className="flex items-center">
-                    点击购买
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </span>
+                  <a href="https://merch.PaYphp.cn/" target="_blank" rel="noopener noreferrer">
+                    <span className="flex items-center">
+                      点击购买
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </span>
+                  </a>
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  variant="outline-primary"
+                  asChild
                 >
-                  观看演示
+                  <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
+                    观看演示
+                  </a>
                 </Button>
               </div>
 

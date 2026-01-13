@@ -92,7 +92,7 @@ const About = () => {
     {
       year: "2020",
       title: "项目启动",
-      description: "PayPHP项目正式启动，专注于PHP生态的支付解决方案",
+      description: "PaYphp项目正式启动，专注于PHP生态的支付解决方案",
       iconType: "building"
     },
     {
@@ -179,15 +179,15 @@ const About = () => {
       avatar: "/images/team/avatar2.jpg",
       description: "前支付宝产品经理，精通支付流程设计和用户体验优化",
       social: {
-        github: "https://payphp.cn/",
-        twitter: "https://payphp.cn/"
+        github: "https://PaYphp.cn/",
+        twitter: "https://PaYphp.cn/"
       }
     },
     {
       name: "王强",
       role: "高级架构师",
       avatar: "/images/team/avatar3.jpg",
-      description: "分布式系统专家，负责PayPHP的高可用架构和性能优化",
+      description: "分布式系统专家，负责PaYphp的高可用架构和性能优化",
       social: {
         github: "https://github.com/wangqiang",
         twitter: "https://twitter.com/wangqiang"
@@ -228,24 +228,24 @@ const About = () => {
   // 常见问题数据
   const faqs = [
     {
-      question: "PayPHP支持哪些支付渠道？",
-      answer: "PayPHP目前支持支付宝、微信支付、银联、PayPal、Stripe等国内外主流支付渠道，并且持续增加新的支付方式。"
+      question: "PaYphp支持哪些支付渠道？",
+      answer: "PaYphp目前支持支付宝、微信支付、银联、PayPal、Stripe等国内外主流支付渠道，并且持续增加新的支付方式。"
     },
     {
-      question: "如何快速集成PayPHP到我的项目中？",
-      answer: "只需通过Composer安装PayPHP包，按照文档配置支付参数，几行代码即可完成集成。我们提供了详细的快速入门指南和示例代码。"
+      question: "如何快速集成PaYphp到我的项目中？",
+      answer: "只需通过Composer安装PaYphp包，按照文档配置支付参数，几行代码即可完成集成。我们提供了详细的快速入门指南和示例代码。"
     },
     {
-      question: "PayPHP的安全性如何保障？",
-      answer: "PayPHP采用银行级安全标准，包括数据加密、签名验证、防重放攻击等多重安全机制，并通过了PCI DSS安全认证。"
+      question: "PaYphp的安全性如何保障？",
+      answer: "PaYphp采用银行级安全标准，包括数据加密、签名验证、防重放攻击等多重安全机制，并通过了PCI DSS安全认证。"
     },
     {
       question: "是否提供企业级技术支持？",
       answer: "是的，我们为企业用户提供专业的技术支持服务，包括定制开发、性能优化、安全审计等，确保您的支付系统稳定可靠。"
     },
     {
-      question: "PayPHP是否支持国际化支付？",
-      answer: "支持，PayPHP设计之初就考虑了国际化需求，支持多币种结算、跨境支付、国际支付渠道对接等功能。"
+      question: "PaYphp是否支持国际化支付？",
+      answer: "支持，PaYphp设计之初就考虑了国际化需求，支持多币种结算、跨境支付、国际支付渠道对接等功能。"
     }
   ];
 
@@ -283,7 +283,7 @@ const About = () => {
                   {/* 主标题前的小标签 */}
                   <div className="inline-flex items-center gap-2 bg-[#0055ff]/10 text-[#0055ff] px-3 py-1 text-xs font-medium border border-[#0055ff]/20 mb-4">
                     <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full"></div>
-                    关于PayPHP
+                    关于PaYphp
                   </div>
 
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -376,7 +376,7 @@ const About = () => {
                 发展历程
               </h2>
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                从想法到现实，见证PayPHP如何改变PHP支付开发
+                从想法到现实，见证PaYphp如何改变PHP支付开发
               </p>
             </div>
 
@@ -598,7 +598,7 @@ const About = () => {
                 合作伙伴
               </h2>
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
-                解答您关心的问题，帮助您更好地了解PayPHP
+                解答您关心的问题，帮助您更好地了解PaYphp
               </p>
             </div>
 
@@ -717,7 +717,7 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
-                  加入PayPHP开发者社区
+                  加入PaYphp开发者社区
                 </h3>
                 <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-c-1390 mx-auto">
                   与全球10万+开发者一起，构建下一代支付应用

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# PayPHP.cn 构建验证脚本
-echo "🔍 验证 PayPHP.cn 构建输出..."
+# PaYphp.cn 构建验证脚本
+echo "🔍 验证 PaYphp.cn 构建输出..."
 
 # 检查 .next 目录是否存在
 if [ ! -d ".next" ]; then

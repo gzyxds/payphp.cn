@@ -44,7 +44,7 @@ export function getStaticCategoriesData(): DocCategory[] {
             {
               slug: 'installation',
               title: '安装指南',
-              description: '如何安装和部署Payphp系统',
+              description: '如何安装和部署PaYphp系统',
               date: '2024-01-17',
               category: '开始使用',
               subcategory: '安装配置',

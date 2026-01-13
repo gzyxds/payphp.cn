@@ -14,7 +14,26 @@ const nextConfig = {
       },
     ],
     unoptimized: true
-  }
+  },
+  experimental: {
+    turbo: {
+      resolveExtensions: [
+        '.tsx',
+        '.ts',
+        '.jsx',
+        '.js',
+        '.json',
+        '.wasm',
+      ],
+    },
+  },
+  webpack: (config) => {
+    config.watchOptions = {
+      ...config.watchOptions,
+      ignored: ['**/参考/**', '**/node_modules/**'],
+    };
+    return config;
+  },
 };
 
 module.exports = nextConfig;

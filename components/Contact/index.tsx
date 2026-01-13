@@ -20,7 +20,7 @@ const Contact = () => {
       items: [
         {
           label: "商务邮箱",
-          value: "business@payphp.com",
+          value: "business@PaYphp.com",
           type: "email"
         },
         {
@@ -36,7 +36,7 @@ const Contact = () => {
       items: [
         {
           label: "技术邮箱",
-          value: "support@payphp.com",
+          value: "support@PaYphp.com",
           type: "email"
         },
         {
@@ -52,7 +52,7 @@ const Contact = () => {
       items: [
         {
           label: "客服邮箱",
-          value: "feedback@payphp.com",
+          value: "feedback@PaYphp.com",
           type: "email"
         }
       ]

@@ -901,7 +901,7 @@ const Industry = () => {
                   <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-2">监控插件 - 由 PaYphp 开发</p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                  <a href="https://payphp.cn" target="_blank" rel="noopener noreferrer" className="text-[#0055ff] hover:underline flex items-center gap-1 text-sm sm:text-base">
+                  <a href="https://PaYphp.cn" target="_blank" rel="noopener noreferrer" className="text-[#0055ff] hover:underline flex items-center gap-1 text-sm sm:text-base">
                     <span>开发者主页</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -1263,7 +1263,7 @@ end`}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a
-              href="https://merch.payphp.cn/"
+              href="https://merch.PaYphp.cn/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#0055ff] px-6 lg:px-8 py-2.5 lg:py-3 font-bold hover:bg-gray-100 transition-all duration-300 rounded-lg text-center inline-block"

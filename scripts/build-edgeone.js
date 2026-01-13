@@ -40,7 +40,7 @@ try {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>PayPHP - 支付系统</title>
+  <title>PaYphp - 支付系统</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./_next/static/css/931b179cff3131dc.css">
   <link rel="stylesheet" href="./_next/static/css/0236a992f876e168.css">

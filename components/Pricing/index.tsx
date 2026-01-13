@@ -64,7 +64,7 @@ const Pricing = () => {
                 </ul>
               </div>
               <a
-                href="https://merch.payphp.cn/login"
+                href="https://merch.PaYphp.cn/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="选择基础版按钮"
@@ -124,7 +124,7 @@ const Pricing = () => {
                 </ul>
               </div>
               <a
-                href="https://merch.payphp.cn/login"
+                href="https://merch.PaYphp.cn/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="选择专业版按钮"
@@ -181,7 +181,7 @@ const Pricing = () => {
               </div>
 
               <a
-                href="https://merch.payphp.cn/login"
+                href="https://merch.PaYphp.cn/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="选择企业版按钮"

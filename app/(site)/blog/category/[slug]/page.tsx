@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!categoryName) {
     return {
-      title: "分类未找到 - PayPHP",
+      title: "分类未找到 - PaYphp",
       description: "抱歉，您访问的分类不存在。",
     };
   }
@@ -41,9 +41,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const blogs = getBlogsByCategory(categoryName);
   
   return {
-    title: `${categoryName} - 博客分类 - PayPHP`,
+    title: `${categoryName} - 博客分类 - PaYphp`,
     description: `浏览 ${categoryName} 分类下的所有文章，共 ${blogs.length} 篇。`,
-    keywords: [categoryName, "博客", "文章", "PayPHP"],
+    keywords: [categoryName, "博客", "文章", "PaYphp"],
   };
 }
 
