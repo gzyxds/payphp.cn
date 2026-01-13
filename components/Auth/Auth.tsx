@@ -189,7 +189,7 @@ const PaymentAuth = () => {
       </div>
 
       {/* Hero区 - 品牌展示和核心价值主张 */}
-      <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-white pt-20 md:pt-28 lg:pt-32 xl:pt-36 pb-16 md:pb-20 lg:pb-24 xl:pb-28 dark:from-black dark:via-blue-950/20 dark:to-black overflow-hidden min-h-screen flex items-center">
+      <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-white pt-16 md:pt-20 lg:pt-24 xl:pt-28 pb-12 md:pb-16 lg:pb-20 xl:pb-24 dark:from-black dark:via-blue-950/20 dark:to-black overflow-hidden flex items-center">
 
         {/* 装饰性几何图形 - 科技简洁风格 */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -271,7 +271,7 @@ const PaymentAuth = () => {
 
             {/* 右侧：产品界面展示 */}
             <div className="relative mt-8 lg:mt-0">
-              <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-200 dark:border-gray-700 shadow-xl">
+              <div className="relative bg-white dark:bg-gray-900 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-200 dark:border-gray-700">
                 {/* 模拟产品界面 */}
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-center justify-between">
@@ -419,9 +419,7 @@ const PaymentAuth = () => {
                 </div>
               </div>
 
-              {/* 装饰元素 */}
-              <div className="absolute -top-4 -right-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-[#0055ff]/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 bg-green-500/10 rounded-full blur-xl"></div>
+              {/* 装饰元素 - 已移除发光阴影效果 */}
             </div>
           </div>
         </div>
