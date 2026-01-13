@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
@@ -8,23 +8,10 @@ const ThemeToggler = () => {
     <button
       aria-label="theme toggler"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static"
+      className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
     >
-      <Image
-        src="/images/icon/icon-moon.svg"
-        alt="logo"
-        width={21}
-        height={21}
-        className="dark:hidden"
-      />
-
-      <Image
-        src="/images/icon/icon-sun.svg"
-        alt="logo"
-        width={22}
-        height={22}
-        className="hidden dark:block"
-      />
+      <Moon className="h-5 w-5 dark:hidden" />
+      <Sun className="h-5 w-5 hidden dark:block" />
     </button>
   );
 };

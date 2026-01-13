@@ -8,6 +8,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ShoppingCart, Sparkles, Download, Star, ChevronRight } from "lucide-react";
 
 interface Plugin {
   id: string;
@@ -958,7 +959,198 @@ const Market = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section - 应用商店主视觉区域 */}
+      <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
+        <svg
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200 dark:stroke-white/10"
+        >
+          <defs>
+            <pattern
+              x="50%"
+              y={-1}
+              id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+              width={200}
+              height={200}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 200V.5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50 dark:fill-gray-800/20">
+            <path
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" width="100%" height="100%" strokeWidth={0} />
+        </svg>
+        <div
+          aria-hidden="true"
+          className="absolute top-10 left-[calc(50%-4rem)] -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:top-[calc(50%-30rem)] lg:left-48 xl:left-[calc(50%-24rem)]"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
+            }}
+            className="aspect-1108/632 w-277 bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+          />
+        </div>
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
+          <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
+            <div className="mt-24 sm:mt-32 lg:mt-16">
+              <a href="#" className="inline-flex space-x-6">
+                <span className="rounded-full bg-blue-50 px-3 py-1 text-sm/6 font-semibold text-blue-600 ring-1 ring-blue-600/20 ring-inset dark:bg-blue-500/10 dark:text-blue-400 dark:ring-blue-500/25">
+                  应用商店
+                </span>
+                <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600 dark:text-gray-300">
+                    <span>丰富的扩展生态</span>
+                    <ChevronRight aria-hidden="true" className="size-5 text-gray-400 dark:text-gray-500" />
+                  </span>
+              </a>
+            </div>
+            <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white">
+              探索海量
+              <br />
+              支付插件与主题
+            </h1>
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 dark:text-gray-400">
+              一键安装，轻松定制您的支付系统。探索丰富的支付插件、主题模板和扩展功能，满足您的各种业务需求。
+            </p>
+            <div className="mt-10 flex items-center gap-x-6">
+              <a
+                href="#"
+                className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:outline-blue-500"
+              >
+                浏览应用
+              </a>
+              <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                上传应用 <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+          <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
+            <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+              <div className="relative w-304 rounded-md bg-gray-50 ring-1 ring-gray-900/10 dark:bg-white/5 dark:ring-white/10 p-6">
+                {/* 应用商店卡片外框 */}
+                <div className="relative mx-auto w-full h-[520px] bg-white rounded-3xl border border-gray-200/60 p-6 dark:bg-gray-800 dark:border-gray-700">
+                  {/* 顶部状态栏 */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+                      <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 bg-gray-100 rounded-lg flex items-center justify-center dark:bg-gray-700">
+                        <div className="w-4 h-0.5 bg-gray-400 rounded-full"></div>
+                      </div>
+                      <div className="w-6 h-6 bg-gray-100 rounded-lg flex items-center justify-center dark:bg-gray-700">
+                        <div className="w-4 h-0.5 bg-gray-400 rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 应用列表区域 */}
+                  <div className="space-y-3">
+                    {/* 应用卡片1 */}
+                    <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl dark:from-blue-900/20 dark:to-indigo-900/20">
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm dark:bg-gray-700">
+                        <ShoppingCart className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 dark:text-white">支付宝插件</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">官方 • 已安装</div>
+                      </div>
+                      <Button size="sm" variant="outline" className="text-xs px-2 py-1 dark:border-gray-600 dark:text-gray-300">
+                        管理
+                      </Button>
+                    </div>
+
+                    {/* 应用卡片2 */}
+                    <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl dark:from-purple-900/20 dark:to-pink-900/20">
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm dark:bg-gray-700">
+                        <Sparkles className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 dark:text-white">首页主题</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">官方 • 未安装</div>
+                      </div>
+                      <Button size="sm" className="text-xs px-2 py-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">
+                        安装
+                      </Button>
+                    </div>
+
+                    {/* 应用卡片3 */}
+                    <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl dark:from-green-900/20 dark:to-emerald-900/20">
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm dark:bg-gray-700">
+                        <Download className="h-6 w-6 text-green-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 dark:text-white">支付主题</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">官方 • 已安装</div>
+                      </div>
+                      <Button size="sm" variant="outline" className="text-xs px-2 py-1 dark:border-gray-600 dark:text-gray-300">
+                        管理
+                      </Button>
+                    </div>
+
+                    {/* 应用卡片4 */}
+                    <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl dark:from-orange-900/20 dark:to-amber-900/20">
+                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm dark:bg-gray-700">
+                        <Star className="h-6 w-6 text-orange-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 dark:text-white">监控插件</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">未知作者 • 已安装</div>
+                      </div>
+                      <Button size="sm" variant="outline" className="text-xs px-2 py-1 dark:border-gray-600 dark:text-gray-300">
+                        管理
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* 底部导航 */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center justify-around bg-white rounded-full px-4 py-2 dark:bg-gray-700">
+                      <div className="flex flex-col items-center text-xs text-gray-500 dark:text-gray-400">
+                        <div className="w-5 h-5 mb-0.5">
+                          <svg className="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L10 11.414l7-7a1 1 0 01-1.414-1.414L10 8.586 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L10 11.414l7-7a1 1 0 01-1.414-1.414L10 8.586z" />
+                          </svg>
+                        </div>
+                        <span>首页</span>
+                      </div>
+                      <div className="flex flex-col items-center text-xs text-blue-600 dark:text-blue-400">
+                        <div className="w-5 h-5 mb-0.5">
+                          <svg className="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m-6 4h1m-1 4h1" />
+                          </svg>
+                        </div>
+                        <span>应用</span>
+                      </div>
+                      <div className="flex flex-col items-center text-xs text-gray-500 dark:text-gray-400">
+                        <div className="w-5 h-5 mb-0.5">
+                          <svg className="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
+                          </svg>
+                        </div>
+                        <span>我的</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 装饰性元素 */}
+                <div className="absolute -top-4 -right-4 h-20 w-20 rounded-full bg-gradient-to-br from-[#165dff]/20 to-blue-300/20 blur-xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="py-4 px-4 bg-white border-b border-gray-200">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
@@ -978,38 +1170,52 @@ const Market = () => {
         </div>
       </section>
 
-      <section className="py-8 px-4">
+      <section className="py-12 px-4 bg-white">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPlugins.map((plugin) => (
-              <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-md">
-                <CardHeader className="pb-3">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg font-semibold text-gray-900">{plugin.name}</CardTitle>
-                  </div>
-                  <div className="mt-1 flex items-center gap-2 text-sm text-gray-500">
-                    <span>作者: {plugin.author}</span>
-                    <span className="text-gray-300">•</span>
-                    <span>{plugin.category}</span>
+              <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-gray-200 dark:border-gray-700">
+                <CardHeader className="pb-4 border-b border-gray-100 dark:border-gray-700">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${plugin.category === '支付插件' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400'}`}>
+                        {plugin.category === '支付插件' ? <ShoppingCart className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
+                      </div>
+                      <div>
+                        <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">{plugin.name}</CardTitle>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          <span className="text-xs text-gray-500 dark:text-gray-400">{plugin.author}</span>
+                          <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${plugin.category === '支付插件' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' : 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'}`}>
+                            {plugin.category}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${plugin.status === '已安装' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'}`}>
+                      {plugin.status}
+                    </span>
                   </div>
                 </CardHeader>
-                <CardContent className="pb-4">
-                  <p className="text-sm text-gray-600 mb-3">{plugin.description}</p>
-                  <div className="flex flex-wrap gap-3 text-sm mb-4">
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500">版本:</span>
-                      <span className="font-medium">{plugin.version}</span>
+                <CardContent className="pt-4 pb-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{plugin.description}</p>
+                  <div className="grid grid-cols-3 gap-3 text-xs">
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                      <div className="text-gray-500 dark:text-gray-400 mb-1">版本</div>
+                      <div className="font-semibold text-gray-900 dark:text-white">{plugin.version}</div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500">更新:</span>
-                      <span>{plugin.updateTime}</span>
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                      <div className="text-gray-500 dark:text-gray-400 mb-1">更新</div>
+                      <div className="font-semibold text-gray-900 dark:text-white text-xs">{plugin.updateTime.split(' ')[0]}</div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-gray-500">价格:</span>
-                      <span className="font-medium text-green-600">{plugin.price}</span>
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                      <div className="text-gray-500 dark:text-gray-400 mb-1">价格</div>
+                      <div className="font-semibold text-green-600 dark:text-green-400">{plugin.price}</div>
                     </div>
                   </div>
-
+                  <Button className="w-full mt-4" size="sm" variant={plugin.status === '已安装' ? 'outline' : 'default'}>
+                    {plugin.status === '已安装' ? '管理' : '安装'}
+                  </Button>
                 </CardContent>
               </Card>
             ))}
