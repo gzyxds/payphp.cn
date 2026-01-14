@@ -2,89 +2,46 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  Building2,
+  Award,
+  Layers,
+  TrendingUp,
+  Trophy,
+  Globe,
+  Lightbulb,
+  Code2,
+  Sparkles,
+  ShieldCheck,
+  Users,
+  Rocket,
+  Github,
+  Twitter,
+  ChevronDown
+} from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
-  // 线性图标渲染函数 - 统一设计风格，采用填充样式与 Industry 保持一致
+  // 线性图标渲染函数 - 使用 Lucide React 图标库
   const renderIcon = (iconType: string, className: string = "w-6 h-6") => {
-    const iconProps = {
-      className,
-      fill: "currentColor",
-      viewBox: "0 0 24 24"
+    const icons: Record<string, any> = {
+      building: Building2,
+      certificate: Award,
+      solution: Layers,
+      chart: TrendingUp,
+      trophy: Trophy,
+      global: Globe,
+      lightbulb: Lightbulb,
+      code: Code2,
+      spark: Sparkles,
+      shield: ShieldCheck,
+      handshake: Users,
+      rocket: Rocket,
     };
 
-    switch (iconType) {
-      case "building":
-        return (
-          <svg {...iconProps}>
-            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
-            <path d="M6 12h12"/>
-            <path d="M6 16h12"/>
-            <path d="M6 8h12"/>
-          </svg>
-        );
-      case "certificate":
-        return (
-          <svg {...iconProps}>
-            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
-          </svg>
-        );
-      case "solution":
-        return (
-          <svg {...iconProps}>
-            <path d="M3,3H21V5H19V18A1,1 0 0,1 18,19H6A1,1 0 0,1 5,18V5H3V3M7,5V17H17V5H7M8,6H16V8H8V6M8,9H16V11H8V9M8,12H13V14H8V12Z"/>
-          </svg>
-        );
-      case "chart":
-        return (
-          <svg {...iconProps}>
-            <path d="M5,21L12,14L16,18L21,13V20A1,1 0 0,1 20,21H5M5,19V7A1,1 0 0,1 6,6H18A1,1 0 0,1 19,7V13L16,16L12,12L5,19Z"/>
-          </svg>
-        );
-      case "trophy":
-        return (
-          <svg {...iconProps}>
-            <path d="M7,4V2A1,1 0 0,1 8,1H16A1,1 0 0,1 17,2V4H20A1,1 0 0,1 21,5C21,5.5 20.5,6 20,6H19V19A2,2 0 0,1 17,21H7A2,2 0 0,1 5,19V6H4A1,1 0 0,1 3,5C3,4.5 3.5,4 4,4H7M9,3V4H15V3H9M7,6V19H17V6H7Z"/>
-          </svg>
-        );
-      case "global":
-        return (
-          <svg {...iconProps}>
-            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A1,1 0 0,0 10,17H11V19.93M19.93,11H17V8A1,1 0 0,0 16,7H13V5A1,1 0 0,0 12,4A1,1 0 0,0 11,5V7H9L7.05,9H10A1,1 0 0,0 11,10V12A1,1 0 0,0 12,13H14A1,1 0 0,0 15,12V9A1,1 0 0,0 14,8H13V6H16V9H19.93C19.75,10.83 18.2,9.65 19.93,11Z"/>
-          </svg>
-        );
-      case "lightbulb":
-        return (
-          <svg {...iconProps}>
-            <path d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z"/>
-          </svg>
-        );
-      case "handshake":
-        return (
-          <svg {...iconProps}>
-            <path d="M11,2A2,2 0 0,1 13,4V8H21A1,1 0 0,1 22,9V11A1,1 0 0,1 21,12H13V16A2,2 0 0,1 11,18H9A2,2 0 0,1 7,16V12H3A1,1 0 0,1 2,11V9A1,1 0 0,1 3,8H7V4A2,2 0 0,1 9,2H11M9,4V8H11V4H9M9,12V16H11V12H9Z"/>
-          </svg>
-        );
-      case "rocket":
-        return (
-          <svg {...iconProps}>
-            <path d="M13.13,22.19L11.5,18.36C13.07,17.78 14.54,17 15.9,16.09L13.13,22.19M5.64,12.5L1.81,10.87L7.91,8.1C7,9.46 6.22,10.93 5.64,12.5M21.61,2.39C21.61,2.39 16.66,3.85 15.28,5.23C14.78,5.73 14.78,6.53 15.28,7.03L16.97,8.72L15.28,10.41C14.78,10.91 14.78,11.71 15.28,12.21C15.78,12.71 16.58,12.71 17.08,12.21L18.77,10.52L20.46,12.21C20.96,12.71 21.76,12.71 22.26,12.21C22.76,11.71 22.76,10.91 22.26,10.41L20.57,8.72L22.26,7.03C22.76,6.53 22.76,5.73 22.26,5.23C20.88,3.85 21.61,2.39 21.61,2.39Z"/>
-          </svg>
-        );
-      case "shield":
-        return (
-          <svg {...iconProps}>
-            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/>
-          </svg>
-        );
-      default:
-        return (
-          <svg {...iconProps}>
-            <circle cx="12" cy="12" r="10"/>
-          </svg>
-        );
-    }
+    const Icon = icons[iconType] || Building2;
+    return <Icon className={className} />;
   };
 
   // 发展历程数据 - 企业级内容
@@ -137,12 +94,12 @@ const About = () => {
     {
       title: "开发者优先",
       description: "始终以开发者体验为核心，提供简洁易用的API和工具",
-      iconType: "handshake"
+      iconType: "code"
     },
     {
       title: "持续创新",
       description: "紧跟技术趋势，不断探索支付技术的边界和可能性",
-      iconType: "rocket"
+      iconType: "spark"
     },
     {
       title: "安全可靠",
@@ -251,16 +208,13 @@ const About = () => {
 
   return (
     <>
-      {/* 现代化简洁设计 - 主色调 #0055ff，参考 Industry 组件布局 */}
-      <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-white py-20 md:py-24 lg:py-32 dark:from-black dark:via-blue-950/20 dark:to-black overflow-hidden">
-        {/* 装饰性几何图形 - 保持简约 */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* 左上角装饰圆 */}
-          <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#0055ff]/5 rounded-full blur-3xl"></div>
-          {/* 右下角装饰圆 */}
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0055ff]/3 rounded-full blur-3xl"></div>
-          {/* 网格装饰 */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] dark:opacity-[0.05]">
+      {/* 现代化 Hero 设计 - 居中聚焦 + 沉浸式光效 */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        {/* 背景装饰 - 动态光晕 */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-100/40 via-blue-50/20 to-transparent dark:from-blue-900/20 dark:via-blue-950/10 rounded-[100%] blur-3xl opacity-60"></div>
+          {/* 网格背景 */}
+          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
             <div className="w-full h-full" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
               backgroundSize: '40px 40px'
@@ -268,107 +222,84 @@ const About = () => {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="relative z-10 mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* 左侧内容 */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              {/* 顶部标签 */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                关于 PaYphp
+              </div>
 
-          {/* 英雄 - 左右布局设计，参考 Industry 组件 */}
-          <div className="mt-20 mb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* 左侧：主标题和副标题 */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <div>
-                  {/* 主标题前的小标签 */}
-                  <div className="inline-flex items-center gap-2 bg-[#0055ff]/10 text-[#0055ff] px-3 py-1 text-xs font-medium border border-[#0055ff]/20 mb-4">
-                    <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full"></div>
-                    关于PaYphp
+              {/* 主标题 */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+                重新定义
+                <br />
+                <span className="text-[#0055ff]">
+                  支付体验
+                </span>
+              </h1>
+
+              {/* 描述 */}
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                我们致力于打造下一代智能支付生态系统，通过创新技术让每一笔交易都变得简单、安全、高效。
+                专注于 PHP 生态，为全球开发者提供专业的支付解决方案。
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                 <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="w-1 h-4 bg-blue-500 rounded-full"></div>
+                    创新驱动
+                 </div>
+                 <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="w-1 h-4 bg-indigo-500 rounded-full"></div>
+                    开源生态
+                 </div>
+                 <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="w-1 h-4 bg-purple-500 rounded-full"></div>
+                    安全可靠
+                 </div>
+              </div>
+            </motion.div>
+
+            {/* 右侧卡片展示 */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {[
+                { icon: Code2, title: "技术创新", desc: "探索支付边界" },
+                { icon: Users, title: "开发者优先", desc: "极致接入体验" },
+                { icon: Github, title: "开源文化", desc: "共建繁荣生态" },
+                { icon: ShieldCheck, title: "安全保障", desc: "金融级风控" }
+              ].map((item, index) => (
+                <div key={index} className="group relative p-5 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-5 h-5" />
                   </div>
-
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 leading-tight">
-                    <span className="relative">
-                      重新定义
-                      {/* 标题装饰下划线 */}
-                      <div className="absolute -bottom-2 left-0 w-20 h-1 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full"></div>
-                    </span>
-                    <br />
-                    支付体验
-                  </h1>
-
-                  <div className="text-xl md:text-2xl text-[#0055ff] font-medium mb-6 flex items-center gap-3">
-                     <div className="w-6 h-px bg-[#0055ff]"></div>
-                     创新驱动未来
-                   </div>
-
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
-                    {['开源精神', '开发者优先', '持续创新', '安全可靠'].map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{item.desc}</p>
                 </div>
-              </motion.div>
-
-              {/* 右侧：详细描述和特色功能 */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                  我们致力于打造下一代智能支付生态系统，通过创新技术让每一笔交易都变得简单、安全、高效。
-                  专注于PHP生态的支付解决方案，为全球开发者提供专业的支付服务。
-                </p>
-
-                {/* 核心特色功能列表 - 两排两行布局 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start gap-4 group">
-                    <div className="mt-2 w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#0055ff]/20 transition-colors">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors">技术创新</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">紧跟技术趋势，不断探索支付技术的边界</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 group">
-                    <div className="mt-2 w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#0055ff]/20 transition-colors">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors">开发者体验</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">始终以开发者体验为核心，提供简洁易用的API</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 group">
-                    <div className="mt-2 w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#0055ff]/20 transition-colors">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors">开源文化</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">拥抱开源文化，与全球开发者共同构建生态</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 group">
-                    <div className="mt-2 w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#0055ff]/20 transition-colors">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors">安全保障</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">将安全作为产品基石，为每一笔交易提供保障</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+              ))}
+            </motion.div>
           </div>
-          {/* 头部结束 */}
+        </div>
+      </section>
 
+      {/* Main Content Section */}
+      <section className="pb-20 pt-20 lg:pb-25 lg:pt-25 overflow-hidden">
+        <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* 发展历程区域 - 参考 Industry 组件的卡片设计 */}
           <div className="mb-24">
             <div className="text-center mb-16">
@@ -392,7 +323,7 @@ const About = () => {
                 >
                   <div className="group">
                     {/* 白底灰边卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                       {/* 顶部装饰条 */}
                       <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-8"></div>
 
@@ -456,7 +387,7 @@ const About = () => {
                 >
                   <div className="group">
                     {/* 白底灰边卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                       {/* 图标区域 */}
                       <div className="mb-6">
                         <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
@@ -500,7 +431,7 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   {/* 白底灰边奖项卡片 */}
-                  <div className="bg-white border border-gray-200 p-8 dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                  <div className="bg-white border border-gray-200 p-8 rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                     <div className="flex items-center gap-4">
                       {/* 奖杯图标 */}
                       <div className="w-10 h-10 bg-[#0055ff]/10 flex items-center justify-center text-[#0055ff] flex-shrink-0">
@@ -546,7 +477,7 @@ const About = () => {
                 >
                   <div className="group">
                     {/* 成员卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                       {/* 头像区域 */}
                       <div className="mb-6 flex justify-center">
                         <div className="w-24 h-24 rounded-full bg-[#0055ff]/10 overflow-hidden relative">
@@ -574,14 +505,10 @@ const About = () => {
                       {/* 社交链接 */}
                       <div className="flex justify-center gap-4">
                         <a href={member.social.github} className="text-gray-500 hover:text-[#0055ff] transition-colors">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                          </svg>
+                          <Github className="w-5 h-5" />
                         </a>
                         <a href={member.social.twitter} className="text-gray-500 hover:text-[#0055ff] transition-colors">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                          </svg>
+                          <Twitter className="w-5 h-5" />
                         </a>
                       </div>
                     </div>
@@ -612,7 +539,7 @@ const About = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-white border border-gray-200 p-6 h-24 flex items-center justify-center dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                  <div className="bg-white border border-gray-200 p-6 h-24 flex items-center justify-center rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
                     <div className="text-center">
                       <div className="text-lg font-medium text-gray-800 dark:text-gray-200">{partner.name}</div>
                     </div>
@@ -687,14 +614,12 @@ const About = () => {
                   viewport={{ once: true }}
                   className="mb-4"
                 >
-                  <div className="border border-gray-200 dark:border-gray-700">
+                  <div className="border border-gray-200 dark:border-gray-700 rounded-lg">
                     <div className="p-6">
                       <div className="flex justify-between items-center cursor-pointer">
                         <h3 className="text-lg font-medium text-black dark:text-white">{faq.question}</h3>
                         <div className="w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center text-[#0055ff]">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                          </svg>
+                          <ChevronDown className="w-4 h-4" />
                         </div>
                       </div>
                       <div className="mt-4 text-gray-600 dark:text-gray-300">
@@ -709,7 +634,7 @@ const About = () => {
 
           {/* CTA区域 - 参考 Industry 组件设计 */}
           <div className="text-center">
-            <div className="bg-white border border-gray-200 p-12 lg:p-16 dark:bg-black dark:border-gray-700">
+            <div className="bg-white border border-gray-200 p-12 lg:p-16 rounded-lg dark:bg-black dark:border-gray-700">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -723,10 +648,10 @@ const About = () => {
                   与全球10万+开发者一起，构建下一代支付应用
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="bg-[#0055ff] text-white px-10 py-4 text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff]/90">
+                  <button className="bg-[#0055ff] text-white px-10 py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff]/90">
                     开始使用
                   </button>
-                  <button className="border border-[#0055ff] text-[#0055ff] px-10 py-4 text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff] hover:text-white">
+                  <button className="border border-[#0055ff] text-[#0055ff] px-10 py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff] hover:text-white">
                     查看文档
                   </button>
                 </div>

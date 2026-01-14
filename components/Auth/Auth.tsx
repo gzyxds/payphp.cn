@@ -452,7 +452,7 @@ const PaymentAuth = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl border border-[rgba(221,226,233,1)] dark:border-gray-700 hover:border-[#0055ff]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[#0055ff]/10 hover:scale-105"
+                className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl border border-[rgba(221,226,233,1)] dark:border-gray-700 transition-all duration-300 hover:scale-[1.02]"
               >
                 {/* 标题区域 - 图标在标题前面 */}
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 justify-center sm:justify-start">
@@ -657,7 +657,7 @@ const PaymentAuth = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg hover:shadow-[#0055ff]/10 transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 text-center transition-all duration-300"
               >
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0055ff] mb-2">
                   {advantage.value}
@@ -745,7 +745,7 @@ const PaymentAuth = () => {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 text-center leading-tight"
             >
               立即开启您的
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0055ff] to-[#0044cc] block sm:inline">
+              <span className="text-[#0055ff] block sm:inline">
                 支付之旅
               </span>
             </motion.h2>
@@ -769,7 +769,7 @@ const PaymentAuth = () => {
             >
               {/* 企业选择卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
                 style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">10000+</div>
@@ -778,7 +778,7 @@ const PaymentAuth = () => {
 
               {/* 系统稳定性卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
                 style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">99.9%</div>
@@ -787,7 +787,7 @@ const PaymentAuth = () => {
 
               {/* 技术支持卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
                 style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">24/7</div>
@@ -796,7 +796,7 @@ const PaymentAuth = () => {
 
               {/* 快速集成卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
                 style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">3步</div>
@@ -1119,47 +1119,62 @@ const PaymentAuth = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#0055ff] to-[#0044cc] text-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center"
+            className="relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 text-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center"
           >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              还在犹豫？立即开始您的支付之旅！
-            </h3>
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              加入10000+企业的选择，体验专业级支付解决方案
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button
-                variant="default"
-                size="lg"
-                className="bg-white text-[#0055ff] shadow-lg hover:bg-gray-100"
-                asChild
-              >
-                <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
-                  立即体验接入
-                </a>
-              </Button>
-              <Qrcode preset="customer-service" />
+            {/* 背景网格装饰 */}
+            <div className="absolute inset-0 pointer-events-none opacity-10">
+              <svg className="w-full h-full" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid-pattern-cta" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern-cta)" />
+              </svg>
             </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-blue-100">
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                </svg>
-                <span className="text-sm sm:text-base">7天免费试用</span>
+            {/* 内容容器 */}
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                还在犹豫？立即开始您的支付之旅！
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                加入10000+企业的选择，体验专业级支付解决方案
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="bg-white text-[#0055ff] shadow-lg hover:bg-gray-100"
+                  asChild
+                >
+                  <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
+                    立即体验接入
+                  </a>
+                </Button>
+                <Qrcode preset="customer-service" />
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                </svg>
-                <span className="text-sm sm:text-base">专业技术支持</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                </svg>
-                <span className="text-sm sm:text-base">1V1客服服务</span>
+
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-blue-100">
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                  </svg>
+                  <span className="text-sm sm:text-base">7天免费试用</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                  </svg>
+                  <span className="text-sm sm:text-base">专业技术支持</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                  </svg>
+                  <span className="text-sm sm:text-base">1V1客服服务</span>
+                </div>
               </div>
             </div>
           </motion.div>

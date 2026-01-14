@@ -32,42 +32,42 @@ const Products = () => {
   // 功能亮点数据
   const features = [
     {
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      icon: <Zap className="w-6 h-6" />,
       title: "高性能框架",
       description: "基于全新speedPHP框架开发，性能卓越，响应迅速"
     },
     {
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: <Shield className="w-6 h-6" />,
       title: "多线程检测",
       description: "使用多线程Curl检测账单回调，效率提高上百倍"
     },
     {
-      icon: <Globe className="w-6 h-6 text-blue-600" />,
+      icon: <Globe className="w-6 h-6" />,
       title: "多协议支持",
       description: "支持多种支付最新协议，云端技术保障稳定运行"
     },
     {
-      icon: <Settings className="w-6 h-6 text-blue-600" />,
+      icon: <Settings className="w-6 h-6" />,
       title: "高度可定制",
       description: "提供丰富的定制选项，满足不同业务需求"
     },
     {
-      icon: <Code className="w-6 h-6 text-blue-600" />,
+      icon: <Code className="w-6 h-6" />,
       title: "API接口",
       description: "提供完善的API接口，方便开发者集成支付功能"
     },
     {
-      icon: <ShoppingCart className="w-6 h-6 text-blue-600" />,
+      icon: <ShoppingCart className="w-6 h-6" />,
       title: "插件开发",
       description: "提供插件开发接口，方便开发者自定义支付功能"
     },
     {
-      icon: <Smartphone className="w-6 h-6 text-blue-600" />,
+      icon: <Smartphone className="w-6 h-6" />,
       title: "超高性能",
       description: "采用超高性能的 Go语言 和[ Vue + ElementUi +Vite]进行开发"
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+      icon: <CheckCircle className="w-6 h-6" />,
       title: "三重防护",
       description: "三重防掉单技术，确保每笔交易安全可靠"
     }
@@ -151,7 +151,19 @@ const Products = () => {
     <div className="min-h-screen bg-white">
       {/* 1. Hero区域 - 系统简介（首屏核心展示） */}
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4 overflow-hidden">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        {/* 背景网格装饰 */}
+        <div className="absolute inset-0 pointer-events-none opacity-10">
+          <svg className="w-full h-full" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid-pattern-hero" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" className="text-gray-400" strokeWidth="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-pattern-hero)" />
+          </svg>
+        </div>
+
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* 左侧：核心信息区 */}
             <div className="space-y-8">
@@ -217,7 +229,7 @@ const Products = () => {
             {/* 右侧：简洁界面展示 */}
             <div className="relative">
               {/* 主要展示面板 - 简洁设计 */}
-              <div className="p-6">
+              <div className="p-6 bg-white border border-gray-50 rounded-2xl">
                 {/* 面板标题 */}
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-1">PaYphp管理面板</h3>
@@ -372,23 +384,30 @@ const Products = () => {
           </div>
 
           {/* 功能卡片网格 */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="group transition-all duration-300 hover:-translate-y-2 border border-gray-200 shadow-none">
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="p-2 transition-colors">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {feature.title}
-                    </h3>
+              <div
+                key={index}
+                className="group relative bg-white p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* 悬停时的渐变背景装饰 */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+
+                <div className="relative z-10">
+                  {/* 图标区域 */}
+                  <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    {feature.icon}
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-left">
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-gray-500 leading-relaxed text-sm">
                     {feature.description}
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>

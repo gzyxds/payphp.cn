@@ -1,16 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { 
-  BookOpen, 
-  FileText, 
-  Bookmark, 
-  Rss, 
-  ChevronRight, 
-  Github, 
-  Twitter 
+import {
+  BookOpen,
+  FileText,
+  Bookmark,
+  Rss,
+  ChevronRight
 } from 'lucide-react';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const links = [
   {
@@ -19,11 +18,11 @@ const links = [
     description: '了解如何将我们的工具集成到您的应用中。',
     icon: BookOpen,
   },
-  { 
-    name: 'API 参考', 
-    href: '/docs', 
-    description: '完整的 API 接口参考文档。', 
-    icon: FileText 
+  {
+    name: 'API 参考',
+    href: '/docs',
+    description: '完整的 API 接口参考文档。',
+    icon: FileText
   },
   {
     name: '接入指南',
@@ -31,48 +30,19 @@ const links = [
     description: '涵盖常见业务场景的接入指南。',
     icon: Bookmark,
   },
-  { 
-    name: '技术博客', 
-    href: '/blog', 
-    description: '阅读我们最新的新闻和技术文章。', 
-    icon: Rss 
-  },
-];
-
-const social = [
   {
-    name: 'GitHub',
-    href: 'https://github.com/payphp',
-    icon: Github,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com/payphp',
-    icon: Twitter,
+    name: '技术博客',
+    href: '/blog',
+    description: '阅读我们最新的新闻和技术文章。',
+    icon: Rss
   },
 ];
 
 export default function NotFound() {
   return (
-    <div className="bg-white dark:bg-black min-h-screen">
-      <main className="mx-auto w-full max-w-7xl px-6 pt-10 pb-16 sm:pb-24 lg:px-8">
-        <Link href="/" className="block mx-auto h-12 w-fit relative mb-8">
-            <Image
-              src="/images/logo/logo-light.svg"
-              alt="PaYphp"
-              width={150}
-              height={40}
-              className="dark:hidden mx-auto h-full w-auto"
-            />
-            <Image
-              src="/images/logo/logo-dark.svg"
-              alt="PaYphp"
-              width={150}
-              height={40}
-              className="hidden dark:block mx-auto h-full w-auto"
-            />
-        </Link>
-        
+    <div className="bg-white dark:bg-black min-h-screen flex flex-col">
+      <Header />
+      <main className="mx-auto w-full max-w-7xl px-6 pt-20 pb-16 sm:pb-24 lg:px-8 flex-grow">
         <div className="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
           <p className="text-base font-semibold text-[#0055ff]">404</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
@@ -82,7 +52,7 @@ export default function NotFound() {
             抱歉，我们找不到您要访问的页面。
           </p>
         </div>
-        
+
         <div className="mx-auto mt-16 flow-root max-w-lg sm:mt-20">
           <h2 className="sr-only">热门页面</h2>
           <ul role="list" className="-mt-6 divide-y divide-gray-900/5 border-b border-gray-900/5 dark:divide-white/10 dark:border-white/10">
@@ -113,23 +83,7 @@ export default function NotFound() {
           </div>
         </div>
       </main>
-      
-      <footer className="border-t border-gray-100 dark:border-gray-800 py-6 sm:py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 sm:flex-row lg:px-8">
-          <p className="text-sm leading-7 text-gray-400 dark:text-gray-500">
-            &copy; {new Date().getFullYear()} PaYphp.cn All rights reserved.
-          </p>
-          <div className="hidden sm:block sm:h-7 sm:w-px sm:flex-none sm:bg-gray-200 dark:bg-gray-700" />
-          <div className="flex gap-x-4">
-            {social.map((item, itemIdx) => (
-              <a key={itemIdx} href={item.href} className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors">
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
