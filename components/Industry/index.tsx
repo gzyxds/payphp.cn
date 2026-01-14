@@ -1054,7 +1054,7 @@ const Industry = () => {
               {PARTNERS.map((partner) => (
                 <div
                   key={partner.name}
-                  className="flex items-center justify-between gap-4 p-4 rounded-2xl bg-gray-50/50 hover:bg-white hover:shadow-xl hover:shadow-gray-200/40 dark:bg-white/5 dark:hover:bg-white/10 transition-all duration-300 group cursor-default border border-gray-100/50 hover:border-gray-200/50 dark:border-white/5"
+                  className="flex items-center justify-between gap-4 p-4 rounded-2xl bg-gray-50/50 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 transition-all duration-300 group cursor-default border border-gray-100/50 hover:border-gray-200/50 dark:border-white/5"
                 >
                   <span className="text-base font-bold text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white transition-colors duration-300">
                     {partner.name}
