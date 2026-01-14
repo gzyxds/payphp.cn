@@ -46,7 +46,7 @@ const menuData: Menu[] = [
     path: "/Market",
     // SEO优化：应用市场页面，提供丰富的功能扩展
   },
-     
+
   {
     id: 3,
     title: "开发者",
@@ -87,7 +87,7 @@ const menuData: Menu[] = [
     id: 5,
     title: "官网文档",
     newTab: true,
-    path: "https://doc.PaYphp.cn/help",
+    path: "https://docs.payphp.cn/",
     // SEO优化：联系页面增强用户信任度
   },
 
@@ -119,6 +119,13 @@ const menuData: Menu[] = [
     newTab: false,
     path: "/about",
     // SEO优化：关于页面增强网站权威性和信任度
+  },
+  {
+    id: 10,
+    title: "官方文档",
+    newTab: true,
+    path: "https://docs.payphp.cn/",
+    // SEO优化：官方文档链接
   },
 ];
 

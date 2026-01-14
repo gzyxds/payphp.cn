@@ -35,6 +35,7 @@ interface NavItem {
   path?: string;
   dropdown?: boolean;
   items?: NavSubItem[];
+  external?: boolean;
 }
 
 /**
@@ -70,13 +71,13 @@ const NAV_ITEMS: NavItem[] = [
     name: "相关资源",
     dropdown: true,
     items: [
-      { name: "官网文档", path: "https://doc.PaYphp.cn/help", icon: <FileText className="h-5 w-5" />, color: "amber", description: "官方文档中心", external: true, url: "https://doc.PaYphp.cn/help" },
       { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, color: "amber", description: "AI智能平台", external: true, url: "https://urlnet.cn/" },
       { name: "优刻云", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, color: "sky", description: "云端计算服务", external: true, url: "https://www.cloudcvm.com/" },
       { name: "领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, color: "pink", description: "流量卡服务", external: true, url: "https://www.urlka.cn/" }
     ]
   },
-  { name: "关于我们", path: "/about" }
+  { name: "关于我们", path: "/about" },
+  { name: "官方文档", path: "https://docs.payphp.cn/", external: true }
 ];
 
 /**
@@ -474,17 +475,34 @@ export default function Header(): JSX.Element {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  <Link
-                    key={item.name}
-                    href={item.path!}
-                    className={`group flex items-center text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
-                      pathname === item.path
-                        ? "text-[#015bfe] bg-blue-50/70 dark:text-blue-400 dark:bg-blue-950/50"
-                        : "text-gray-700 hover:text-[#015bfe] hover:bg-blue-50/70 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-blue-950/50"
-                    }`}
-                  >
-                    {renderMenuItemName(item.name)}
-                  </Link>
+                  item.external ? (
+                    <a
+                      key={item.name}
+                      href={item.path!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group flex items-center text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                        pathname === item.path
+                          ? "text-[#015bfe] bg-blue-50/70 dark:text-blue-400 dark:bg-blue-950/50"
+                          : "text-gray-700 hover:text-[#015bfe] hover:bg-blue-50/70 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-blue-950/50"
+                      }`}
+                    >
+                      {renderMenuItemName(item.name)}
+                      <ExternalLink className="ml-1 h-3.5 w-3.5" />
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.path!}
+                      className={`group flex items-center text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                        pathname === item.path
+                          ? "text-[#015bfe] bg-blue-50/70 dark:text-blue-400 dark:bg-blue-950/50"
+                          : "text-gray-700 hover:text-[#015bfe] hover:bg-blue-50/70 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-blue-950/50"
+                      }`}
+                    >
+                      {renderMenuItemName(item.name)}
+                    </Link>
+                  )
                 )
               ))}
             </nav>
@@ -691,6 +709,23 @@ export default function Header(): JSX.Element {
                     <span className="text-[11px] text-gray-500 dark:text-gray-400">了解团队</span>
                   </div>
                 </Link>
+
+                <a
+                  key="docs"
+                  href="https://docs.payphp.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50/80 transition-colors duration-200 dark:bg-gray-800/50 dark:hover:bg-blue-900/30"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <div className="w-9 h-9 rounded-lg bg-amber-100 flex items-center justify-center mr-2.5 dark:bg-amber-900/50">
+                    <FileText className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-medium text-gray-800 dark:text-gray-200 text-sm">官方文档</span>
+                    <span className="text-[11px] text-gray-500 dark:text-gray-400">查看文档</span>
+                  </div>
+                </a>
               </div>
 
               {/* 登录和注册按钮 */}
