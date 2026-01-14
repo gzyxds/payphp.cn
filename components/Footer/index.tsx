@@ -205,7 +205,7 @@ const Footer = () => {
                       <Image
                         width={100}
                         height={100}
-                        src="/images/about/PaYphp.jpg"
+                        src="/images/about/gzh.jpg"
                         alt="关注我们二维码"
                         className="border border-stroke p-1 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
                       />
