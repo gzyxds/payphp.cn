@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { DOC, DocCategory, DocSubcategory } from '@/types/doc';
+// 导入静态数据
+import { getStaticDocsData, getStaticCategoriesData } from './docs-data';
 
 // 文档目录路径
 const docsDirectory = path.join(process.cwd(), 'markdown/docs');
@@ -35,7 +37,7 @@ export function getAllDocs(): DOC[] {
 
   // 获取所有 .mdx 文件
   const filePaths = getAllMdxFiles(docsDirectory);
-  
+
   const allDocsData = filePaths.map((filePath) => {
     // 从文件路径创建 slug，并确保路径分隔符为 /
     const slug = path.relative(docsDirectory, filePath).replace(/\\/g, '/').replace(/\.mdx$/, '');
@@ -97,7 +99,7 @@ export function getAllDocSlugs() {
  */
 export async function getDocData(slug: string) {
   const fullPath = path.join(docsDirectory, `${slug}.mdx`);
-  
+
   // 检查文件是否存在
   if (fs.existsSync(fullPath)) {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -119,11 +121,11 @@ export async function getDocData(slug: string) {
       ...matterResult.data,
     };
   }
-  
+
   // 如果物理文件不存在，尝试从静态数据中获取
   const staticDocs = getStaticDocsData();
   const staticDoc = staticDocs.find(doc => doc.slug === slug);
-  
+
   if (staticDoc) {
     // 从静态数据中找到了文档，但需要提供一个默认的内容
     return {
@@ -131,11 +133,11 @@ export async function getDocData(slug: string) {
       content: `# ${staticDoc.title}\n\n${staticDoc.description || '暂无内容'}\n\n此文档正在建设中，敬请期待。`
     };
   }
-  
+
   // 检查是否是分类
   const staticCategories = getStaticCategoriesData();
   const category = staticCategories.find(cat => cat.slug === slug);
-  
+
   if (category) {
     return {
       slug,
@@ -149,7 +151,7 @@ export async function getDocData(slug: string) {
       content: `# ${category.name}\n\n这是${category.name}分类的概述页面。\n\n请从侧边栏选择具体的文档进行阅读。`
     };
   }
-  
+
   // 检查是否是子分类
   for (const cat of staticCategories) {
     const subcategory = cat.subcategories.find(subcat => subcat.slug === slug);
@@ -167,7 +169,7 @@ export async function getDocData(slug: string) {
       };
     }
   }
-  
+
   return null;
 }
 
@@ -182,30 +184,27 @@ export function docExists(slug: string): boolean {
   if (fs.existsSync(fullPath)) {
     return true;
   }
-  
+
   // 如果物理文件不存在，检查静态数据中是否有该文档
   const staticDocs = getStaticDocsData();
   if (staticDocs.some(doc => doc.slug === slug)) {
     return true;
   }
-  
+
   // 检查是否是分类或子分类
   const staticCategories = getStaticCategoriesData();
   if (staticCategories.some(category => category.slug === slug)) {
     return true;
   }
-  
-  if (staticCategories.some(category => 
+
+  if (staticCategories.some(category =>
     category.subcategories.some(subcategory => subcategory.slug === slug)
   )) {
     return true;
   }
-  
+
   return false;
 }
-
-// 导入静态数据
-import { getStaticDocsData, getStaticCategoriesData } from './docs-data';
 
 /**
  * 获取按分类组织的文档结构
@@ -252,10 +251,10 @@ export function getDocsByCategory(): DocCategory[] {
 
   // 转换为数组并排序
   const categories = Array.from(categoryMap.values());
-  
+
   // 对分类进行排序
   categories.sort((a, b) => (a.order || 999) - (b.order || 999));
-  
+
   // 对每个分类的子分类和文档进行排序
   categories.forEach(category => {
     if (category.subcategories) {

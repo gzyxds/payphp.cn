@@ -2,30 +2,31 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { getDocData, getAllDocs, docExists } from "@/lib/mdx";
-import MDXContent from "@/components/Docs/MDXContent";
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { mdxComponents } from "@/components/Docs/MDXComponents";
 
 // 生成静态参数
 export async function generateStaticParams() {
   // 获取 MDX 文档
   const mdxDocs = getAllDocs();
-  
+
   // 确保包含必要的静态路径
   const staticSlugs = [
-    'system', 'installation', 'features', 'configuration', 
+    'system', 'installation', 'features', 'configuration',
     'dashboard', 'payment', 'api', 'plugins',
     // 添加分类路径
     'getting-started', 'user-guide',
     // 添加子分类路径
     'introduction', 'setup', 'basic', 'advanced'
   ];
-  
+
   // 从 mdxDocs 中提取 slug
   const mdxSlugs = mdxDocs.map(doc => doc.slug);
-  
+
   // 合并所有 slug 并去重
   const slugMap: {[key: string]: boolean} = {};
   const allSlugs: string[] = [];
-  
+
   // 添加 mdxSlugs
   for (let i = 0; i < mdxSlugs.length; i++) {
     const slug = mdxSlugs[i];
@@ -34,7 +35,7 @@ export async function generateStaticParams() {
       allSlugs.push(slug);
     }
   }
-  
+
   // 添加 staticSlugs
   for (let i = 0; i < staticSlugs.length; i++) {
     const slug = staticSlugs[i];
@@ -43,17 +44,17 @@ export async function generateStaticParams() {
       allSlugs.push(slug);
     }
   }
-  
+
   return allSlugs.map((slug) => ({ slug }));
 }
 
 // 生成元数据
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  
+
   // 从 MDX 获取文档数据
   const mdxDocData = await getDocData(slug);
-  
+
   if (!mdxDocData) {
     return {
       title: "文档未找到 -",
@@ -77,14 +78,14 @@ interface DocPageProps {
 
 export default async function DocPage({ params }: DocPageProps) {
   const { slug } = await params;
-  
+
   // 检查文档是否存在
   if (!docExists(slug)) {
     notFound();
   }
 
   const docData = await getDocData(slug);
-  
+
   if (!docData) {
     notFound();
   }
@@ -125,7 +126,8 @@ export default async function DocPage({ params }: DocPageProps) {
 
                 {/* MDX 内容渲染 */}
                 <div className="prose prose-lg max-w-none dark:prose-invert">
-                  <MDXContent content={docData.content} />
+                  {/* @ts-expect-error Server Component */}
+                  <MDXRemote source={docData.content} components={mdxComponents} />
                 </div>
               </div>
             </div>
