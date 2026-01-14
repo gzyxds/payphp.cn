@@ -1,4 +1,4 @@
-import Products from "@/components/products";
+import Products from "@/components/Products";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

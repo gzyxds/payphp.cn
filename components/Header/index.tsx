@@ -44,6 +44,42 @@ const SCROLL_THRESHOLD = 20;
 const MOBILE_BREAKPOINT = 768;
 
 /**
+ * 导航菜单配置
+ */
+const NAV_ITEMS: NavItem[] = [
+  {
+    name: "产品服务",
+    dropdown: true,
+    items: [
+      { name: "产品介绍", path: "/products", icon: <Layers className="h-5 w-5" />, color: "indigo", description: "PaYphp产品中心" },
+      { name: "解决方案", path: "/industry", icon: <Cpu className="h-5 w-5" />, color: "indigo", description: "行业解决方案" },
+      { name: "应用市场", path: "/market", icon: <ShoppingCart className="h-5 w-5" />, color: "purple", description: "丰富的功能扩展" },
+      { name: "购买源码", path: "/auth", icon: <Archive className="h-5 w-5" />, color: "amber", description: "获取开源代码" }
+    ]
+  },
+  {
+    name: "开发者",
+    dropdown: true,
+    items: [
+      { name: "项目文档", path: "/docs", icon: <BookOpen className="h-5 w-5" />, color: "indigo", description: "详细的技术文档" },
+      { name: "新闻资讯", path: "/blog", icon: <Newspaper className="h-5 w-5" />, color: "purple", description: "最新动态和资讯" },
+      { name: "服务支持", path: "/support", icon: <HelpCircle className="h-5 w-5" />, color: "cyan", description: "专业技术支持" }
+    ]
+  },
+  {
+    name: "相关资源",
+    dropdown: true,
+    items: [
+      { name: "官网文档", path: "https://doc.PaYphp.cn/help", icon: <FileText className="h-5 w-5" />, color: "amber", description: "官方文档中心", external: true, url: "https://doc.PaYphp.cn/help" },
+      { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, color: "amber", description: "AI智能平台", external: true, url: "https://urlnet.cn/" },
+      { name: "优刻云", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, color: "sky", description: "云端计算服务", external: true, url: "https://www.cloudcvm.com/" },
+      { name: "领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, color: "pink", description: "流量卡服务", external: true, url: "https://www.urlka.cn/" }
+    ]
+  },
+  { name: "关于我们", path: "/about" }
+];
+
+/**
  * 优化后的动画配置 - 减少动画复杂度
  */
 const MOBILE_MENU_VARIANTS = {
@@ -62,7 +98,7 @@ const DROPDOWN_VARIANTS = {
  * 网站头部导航组件
  * 功能：响应式导航、下拉菜单、暗黑模式切换、用户菜单、滚动监听
  */
-const Header = () => {
+export default function Header(): JSX.Element {
   const pathname = usePathname();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -72,42 +108,6 @@ const Header = () => {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  /**
-   * 导航菜单配置
-   */
-  const navItems: NavItem[] = useMemo(() => [
-    {
-      name: "产品服务",
-      dropdown: true,
-      items: [
-        { name: "产品介绍", path: "/products", icon: <Layers className="h-5 w-5" />, color: "indigo", description: "PaYphp产品中心" },
-        { name: "解决方案", path: "/industry", icon: <Cpu className="h-5 w-5" />, color: "indigo", description: "行业解决方案" },
-        { name: "应用市场", path: "/Market", icon: <ShoppingCart className="h-5 w-5" />, color: "purple", description: "丰富的功能扩展" },
-        { name: "购买源码", path: "/auth", icon: <Archive className="h-5 w-5" />, color: "amber", description: "获取开源代码" }
-      ]
-    },
-    {
-      name: "开发者",
-      dropdown: true,
-      items: [
-        { name: "项目文档", path: "/docs", icon: <BookOpen className="h-5 w-5" />, color: "indigo", description: "详细的技术文档" },
-        { name: "新闻资讯", path: "/blog", icon: <Newspaper className="h-5 w-5" />, color: "purple", description: "最新动态和资讯" },
-        { name: "服务支持", path: "/support", icon: <HelpCircle className="h-5 w-5" />, color: "cyan", description: "专业技术支持" }
-      ]
-    },
-    {
-      name: "相关资源",
-      dropdown: true,
-      items: [
-        { name: "官网文档", path: "https://doc.PaYphp.cn/help", icon: <FileText className="h-5 w-5" />, color: "amber", description: "官方文档中心", external: true, url: "https://doc.PaYphp.cn/help" },
-        { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, color: "amber", description: "AI智能平台", external: true, url: "https://urlnet.cn/" },
-        { name: "优刻云", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, color: "sky", description: "云端计算服务", external: true, url: "https://www.cloudcvm.com/" },
-        { name: "领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, color: "pink", description: "流量卡服务", external: true, url: "https://www.urlka.cn/" }
-      ]
-    },
-    { name: "关于我们", path: "/about" }
-  ], []);
 
   /**
    * 处理导航点击
@@ -266,7 +266,7 @@ const Header = () => {
   const MobileMenuItem = memo(({ subItem }: { subItem: NavSubItem }) => {
     const baseClass = "flex flex-col items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50/80 transition-colors duration-200 dark:bg-gray-800/50 dark:hover:bg-blue-900/30";
     const iconWrapperClass = "w-9 h-9 rounded-lg flex items-center justify-center mb-1.5";
-    
+
     const content = (
       <>
         <div className={iconWrapperClass}>
@@ -355,7 +355,7 @@ const Header = () => {
                 首页
               </Link>
 
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 item.dropdown ? (
                   <div
                     key={item.name}
@@ -571,7 +571,7 @@ const Header = () => {
                       className="overflow-hidden mt-4"
                     >
                       <div className="p-3 bg-white/90 rounded-lg dark:bg-gray-900/90">
-                        {renderMobileCategorizedMenu(navItems.find(item => item.name === "产品服务")?.items || [])}
+                        {renderMobileCategorizedMenu(NAV_ITEMS.find(item => item.name === "产品服务")?.items || [])}
                       </div>
                     </motion.div>
                   )}
@@ -612,7 +612,7 @@ const Header = () => {
                       className="overflow-hidden mt-4"
                     >
                       <div className="p-3 bg-white/90 rounded-lg dark:bg-gray-900/90">
-                        {renderMobileCategorizedMenu(navItems.find(item => item.name === "开发者")?.items || [])}
+                        {renderMobileCategorizedMenu(NAV_ITEMS.find(item => item.name === "开发者")?.items || [])}
                       </div>
                     </motion.div>
                   )}
@@ -653,7 +653,7 @@ const Header = () => {
                       className="overflow-hidden mt-4"
                     >
                       <div className="p-3 bg-white/90 rounded-lg dark:bg-gray-900/90">
-                        {renderMobileCategorizedMenu(navItems.find(item => item.name === "相关资源")?.items || [])}
+                        {renderMobileCategorizedMenu(NAV_ITEMS.find(item => item.name === "相关资源")?.items || [])}
                       </div>
                     </motion.div>
                   )}
@@ -728,4 +728,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+

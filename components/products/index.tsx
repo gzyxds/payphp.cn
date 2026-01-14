@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,7 +26,12 @@ import {
   ShoppingCart
 } from "lucide-react";
 
-const Products = () => {
+/**
+ * 产品中心组件
+ * 展示产品功能亮点、应用场景和技术优势
+ * @returns {JSX.Element} 产品中心页面组件
+ */
+export default function Products(): JSX.Element {
   const [activeTab, setActiveTab] = useState(0);
 
   // 功能亮点数据
@@ -701,6 +706,5 @@ const Products = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Products;
