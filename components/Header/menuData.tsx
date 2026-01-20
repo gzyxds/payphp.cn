@@ -43,7 +43,7 @@ const menuData: Menu[] = [
     id: 22,
     title: "应用市场",
     newTab: false,
-    path: "/Market",
+    path: "/market",
     // SEO优化：应用市场页面，提供丰富的功能扩展
   },
 
