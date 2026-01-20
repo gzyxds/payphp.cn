@@ -37,21 +37,21 @@ const menuData: Menu[] = [
         path: "/industry",
         // SEO优化：行业解决方案独立页面
       },
-      {
-        id: 22,
-        title: "应用市场",
-        newTab: false,
-        path: "/market",
-        // SEO优化：应用市场页面，提供丰富的功能扩展
-      },
-      {
-        id: 4,
-        title: "购买源码",
-        newTab: false,
-        path: "/auth",
-        // SEO优化：商业转化页面，重要性较高
-      },
     ],
+  },
+  {
+    id: 22,
+    title: "应用市场",
+    newTab: false,
+    path: "/market",
+    // SEO优化：应用市场页面，提供丰富的功能扩展
+  },
+  {
+    id: 4,
+    title: "购买源码",
+    newTab: false,
+    path: "/auth",
+    // SEO优化：商业转化页面，重要性较高
   },
   {
     id: 3,
