@@ -607,7 +607,7 @@ const Industry = () => {
                 </p>
 
                 <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
-                  <div className="w-8 h-1 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full group-hover:w-12 transition-all duration-300" />
+                  <div className="w-8 h-px bg-gray-200 group-hover:bg-[#0055ff] rounded-full transition-colors duration-300" />
                   <a
                     href="https://merch.PaYphp.cn/user/"
                     target="_blank"
@@ -633,8 +633,6 @@ const Industry = () => {
                 key={industry.id}
                 className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group"
               >
-                <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-6" />
-
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
@@ -701,8 +699,8 @@ const Industry = () => {
           <div className="mt-10 grid gap-6 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
             {/* 银行级安全 - 大格子 */}
             <div className="group relative lg:row-span-2">
-              <div className="absolute inset-px rounded-2xl bg-white lg:rounded-l-4xl dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem+1px)] lg:rounded-l-[calc(2rem+1px)] p-8 lg:p-10">
+              <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-lg dark:bg-gray-800" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-l-lg p-8 lg:p-10">
                 <div className="flex flex-col gap-6 mb-6">
                   <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
                     {PRODUCT_ADVANTAGES[0].icon}
@@ -730,13 +728,13 @@ const Industry = () => {
                   ))}
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm border border-gray-200 lg:rounded-l-4xl dark:border-gray-800 z-10" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 lg:rounded-l-lg dark:border-gray-800 z-10" />
             </div>
 
             {/* 高可用性 */}
             <div className="group relative">
-              <div className="absolute inset-px rounded-2xl bg-white dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem+1px)] p-8 lg:p-10">
+              <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-8 lg:p-10">
                 <div className="flex items-start gap-5">
                   <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
                     {PRODUCT_ADVANTAGES[1].icon}
@@ -755,13 +753,13 @@ const Industry = () => {
                   </div>
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
             </div>
 
             {/* 极速响应 */}
             <div className="group relative">
-              <div className="absolute inset-px rounded-2xl bg-white dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem+1px)] p-8 lg:p-10">
+              <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-8 lg:p-10">
                 <div className="flex items-start gap-5">
                   <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
                     {PRODUCT_ADVANTAGES[2].icon}
