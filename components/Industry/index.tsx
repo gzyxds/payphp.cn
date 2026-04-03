@@ -778,13 +778,13 @@ const Industry = () => {
                   </div>
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
             </div>
 
             {/* 简单集成 - 大格子 */}
-            <div className="group relative lg:col-span-2 lg:rounded-r-4xl">
-              <div className="absolute inset-px rounded-2xl bg-white lg:rounded-r-4xl dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem+1px)] lg:rounded-r-[calc(2rem+1px)] p-8 lg:p-10">
+            <div className="group relative lg:col-span-2 lg:rounded-r-lg">
+              <div className="absolute inset-px rounded-lg bg-white lg:rounded-r-lg dark:bg-gray-800" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-r-lg p-8 lg:p-10">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-6 mb-8">
                   <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
                     {PRODUCT_ADVANTAGES[3].icon}
@@ -812,7 +812,7 @@ const Industry = () => {
                   ))}
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm border border-gray-200 lg:rounded-r-4xl dark:border-gray-800 z-10" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 lg:rounded-r-lg dark:border-gray-800 z-10" />
             </div>
           </div>
         </section>
