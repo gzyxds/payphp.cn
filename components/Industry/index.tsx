@@ -54,7 +54,8 @@ import {
   Expand,
   BarChart,
   CheckCircle,
-  LifeBuoy
+  LifeBuoy,
+  ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -407,25 +408,18 @@ const PROCESS_STEPS = [
  */
 
 const Industry = () => {
-  // 网格背景渐变 - 用于英雄区全宽背景
-  const gridGradient = `linear-gradient(to right, #0055ff 1px, transparent 1px), linear-gradient(to bottom, #0055ff 1px, transparent 1px)`;
-
   return (
     <section className="relative bg-white dark:bg-black">
 
-      {/* 英雄区 - 独立全宽背景 */}
-      <div className="relative">
-        {/* 全宽网格背景 - 使用视口单位确保铺满整个英雄区域 */}
-        <div
-          className="absolute inset-0 w-screen -ml-[50vw] left-[50vw] pointer-events-none"
-          style={{
-            backgroundImage: gridGradient,
-            backgroundSize: '40px 40px',
-            opacity: 0.06
-          }}
-        />
+      {/* 英雄区 - 蓝色渐变背景 */}
+      <div className="relative bg-gradient-to-br from-blue-50 via-white to-slate-50 dark:from-gray-900 dark:via-black dark:to-gray-900">
+        {/* 背景装饰光晕 */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/30 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-100/40 dark:bg-slate-800/30 rounded-full blur-3xl"></div>
+        </div>
 
-        {/* 英雄区内容 - 使用标准容器宽度 */}
+        {/* 英雄区内容 */}
         <div className="relative max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0 pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -501,7 +495,7 @@ const Industry = () => {
       <div className="max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0">
 
         {/* 核心统计数据展示 */}
-        <section className="mb-16 lg:mb-20">
+        <section className="pt-16 lg:pt-20 mb-16 lg:mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {CORE_STATS.map((stat) => (
               <div
@@ -518,263 +512,61 @@ const Industry = () => {
             ))}
           </div>
         </section>
-
-        {/*
-         * 核心功能展示区域 - Bento Grids布局实现
-         *
-         * 设计特点：
-         * - 采用3列2行不对称网格布局，创造视觉层次感
-         * - 左侧大格子(支付网关)跨2行，突出核心功能
-         * - 右侧两个小格子(API文档、数据看板)分别占据1行
-         * - 响应式设计：移动端自动调整为单列布局
-         *
-         * 视觉层次：
-         * - 使用双重div结构创建边框和阴影效果
-         * - 外层div负责圆角和阴影，内层div负责内容和背景
-         * - 左侧大格子使用lg:rounded-l-4xl实现特殊圆角效果
-         * - 移动端使用max-lg:rounded-t-4xl优化顶部显示
-         *
-         * 内容组织：
-         * - 每个功能块包含图标、标题、统计数据、功能列表和操作按钮
-         * - 使用flex布局确保内容垂直对齐和自适应
-         * - 按钮采用不同的视觉样式区分主要/次要操作
-         */}
-        <section className="mb-16 lg:mb-20">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-center text-base/7 font-semibold text-[#0055ff] dark:text-[#0055ff] mb-2">
-              核心能力
-            </h2>
-            <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl dark:text-white">
-              全方位支付解决方案
-            </p>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              满足不同业务场景需求，提供专业的支付服务
-            </p>
-          </div>
-
-          {/*
-           * Bento Grids主容器
-           *
-           * 网格配置：
-           * - 默认：单列布局，适合移动设备
-           * - lg断点：3列2行网格，创造不对称布局
-           * - gap-4：格子间保持4单位间距
-           *
-           * 响应式行为：
-           * - 移动端：自动堆叠为单列，保持垂直阅读顺序
-           * - 桌面端：展开为3x2网格，实现Bento效果
-           */}
-          <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-            {/*
-             * 支付网关功能块 - Bento Grids主格子
-             *
-             * 布局特性：
-             * - lg:row-span-2：在桌面端跨越2行，形成大格子
-             * - 相对定位：为内部绝对定位元素提供参考
-             *
-             * 视觉设计：
-             * - 双重div结构：外层负责边框/阴影，内层负责内容
-             * - 圆角处理：外层使用标准圆角，内层计算精确圆角值
-             * - 特殊处理：左侧使用lg:rounded-l-4xl增强视觉效果
-             *
-             * 内容结构：
-             * - 顶部：图标+标题+统计数据的水平布局
-             * - 中部：功能描述和功能列表
-             * - 底部：主要操作按钮
-             */}
-            <div className="relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-4xl dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)] p-8 lg:p-10">
-                <div className="flex items-start gap-6 mb-8">
-                  <div className="flex-shrink-0 p-4 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
-                    {CORE_FUNCTIONS[0].icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-black dark:text-white mb-3">
-                      {CORE_FUNCTIONS[0].title}
-                    </h3>
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-3xl lg:text-4xl font-bold text-[#0055ff]">{CORE_FUNCTIONS[0].stat}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{CORE_FUNCTIONS[0].statLabel}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  安全可靠的支付通道，支持多种支付方式，确保交易顺畅进行。采用分布式架构，保障99.9%的系统可用性。
-                </p>
-
-                <div className="grid grid-cols-1 gap-3 mb-8">
-                  {CORE_FUNCTIONS[0].features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button className="mt-auto bg-gradient-to-r from-[#0055ff] to-[#0066ff] text-white px-6 py-3 rounded-lg font-medium hover:from-[#0055ff]/90 hover:to-[#0066ff]/90 transition-all duration-200 shadow-lg hover:shadow-xl">
-                  {CORE_FUNCTIONS[0].buttonText}
-                </button>
-              </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-l-4xl dark:outline-white/15" />
+        
+        {/* 核心能力展示 */}
+        <section className="py-24 sm:py-32">
+          <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+            <div className="text-center mb-16">
+              <p className="text-base/7 font-semibold text-[#0055ff]">核心能力</p>
+              <h2 className="mt-2 max-w-lg mx-auto text-center text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
+                全方位支付解决方案
+              </h2>
+              <p className="mt-4 max-w-xl mx-auto text-center text-base text-gray-500">
+                满足不同业务场景需求，提供专业的支付服务
+              </p>
             </div>
 
-            {/*
-             * API文档功能块 - Bento Grids右上小格子
-             *
-             * 定位特性：
-             * - max-lg:row-start-1：在移动端作为第一行显示
-             * - 默认占据1个网格单元，适合次要功能展示
-             *
-             * 响应式圆角：
-             * - max-lg:rounded-t-4xl：移动端顶部大圆角
-             * - 标准圆角：桌面端使用常规圆角
-             *
-             * 内容压缩：
-             * - 减小图标和字体尺寸，适应小格子空间
-             * - 功能列表使用2列网格，提高空间利用率
-             * - 次要操作按钮使用边框样式，降低视觉重量
-             */}
-            <div className="relative max-lg:row-start-1">
-              <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-lg">
-                    {CORE_FUNCTIONS[1].icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl lg:text-2xl font-bold text-black dark:text-white mb-2">
-                      {CORE_FUNCTIONS[1].title}
-                    </h3>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">{CORE_FUNCTIONS[1].stat}</span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">{CORE_FUNCTIONS[1].statLabel}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {CORE_FUNCTIONS.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-[#0055ff]/10 to-[#0055ff]/5 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-[#0055ff]">
+                          {item.icon}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                        <p className="text-xs text-gray-400">{item.statLabel}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                      完善的开发文档和SDK支持，简化集成过程
-                    </p>
                   </div>
-                </div>
 
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  {CORE_FUNCTIONS[1].features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button className="mt-auto text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200 border border-[#0055ff]/20 hover:border-[#0055ff]/40 px-4 py-2 rounded-lg">
-                  {CORE_FUNCTIONS[1].buttonText}
-                </button>
-              </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl dark:outline-white/15" />
-            </div>
-
-            {/*
-             * 数据看板功能块 - Bento Grids右下小格子
-             *
-             * 网格定位：
-             * - max-lg:row-start-3：移动端作为第三行显示
-             * - lg:col-start-2 lg:row-start-2：桌面端定位到第2列第2行
-             *
-             * 布局策略：
-             * - 与API文档功能块形成对角线布局，增强视觉平衡
-             * - 使用标准圆角，保持与其他小格子的一致性
-             *
-             * 自适应容器：
-             * - @container：启用容器查询，根据父容器尺寸调整布局
-             * - flex flex-1：确保内容区域能够弹性扩展
-             * - 功能列表使用2列网格，优化小空间内的内容展示
-             */}
-            <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-              <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-lg">
-                    {CORE_FUNCTIONS[2].icon}
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold bg-gradient-to-r from-[#0055ff] to-[#0066ff] bg-clip-text text-transparent">
+                      {item.stat}
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl lg:text-2xl font-bold text-black dark:text-white mb-2">
-                      {CORE_FUNCTIONS[2].title}
-                    </h3>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">{CORE_FUNCTIONS[2].stat}</span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">{CORE_FUNCTIONS[2].statLabel}</span>
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                      实时监控交易数据，提供全面的业务分析
-                    </p>
-                  </div>
-                </div>
 
-                <div className="@container flex flex-1 items-center max-lg:py-4 lg:pb-2">
-                  <div className="grid grid-cols-2 gap-3 w-full">
-                    {CORE_FUNCTIONS[2].features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full flex-shrink-0" />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                  <div className="space-y-3 mb-6">
+                    {item.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#0055ff]/40" />
+                        <span className="text-sm text-gray-600">{feature}</span>
                       </div>
                     ))}
                   </div>
+
+                  <button className="w-full bg-gray-50 text-gray-700 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                    <span>{item.buttonText.replace(' →', '')}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
-
-                <button className="mt-auto text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200 border border-[#0055ff]/20 hover:border-[#0055ff]/40 px-4 py-2 rounded-lg">
-                  {CORE_FUNCTIONS[2].buttonText}
-                </button>
-              </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 dark:outline-white/15" />
-            </div>
-
-            {/*
-             * 智能风控功能块 - Bento Grids右侧大格子
-             *
-             * 布局特性：
-             * - lg:col-start-3 lg:row-span-2：在桌面端位于第3列，跨越2行
-             * - 相对定位：为内部绝对定位元素提供参考
-             *
-             * 视觉设计：
-             * - 镜像对称：右侧使用lg:rounded-r-4xl，与左侧大格子形成对称
-             * - 保持一致的阴影和边框效果
-             */}
-            <div className="relative lg:col-start-3 lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-white lg:rounded-r-4xl dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-r-[calc(2rem+1px)] p-8 lg:p-10">
-                <div className="flex items-start gap-6 mb-8">
-                  <div className="flex-shrink-0 p-4 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
-                    {CORE_FUNCTIONS[3].icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-black dark:text-white mb-3">
-                      {CORE_FUNCTIONS[3].title}
-                    </h3>
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-3xl lg:text-4xl font-bold text-[#0055ff]">{CORE_FUNCTIONS[3].stat}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{CORE_FUNCTIONS[3].statLabel}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                  全链路智能风控系统，通过AI算法实时识别风险交易，毫秒级响应，为您的资金安全保驾护航。
-                </p>
-
-                <div className="grid grid-cols-1 gap-3 mb-8">
-                  {CORE_FUNCTIONS[3].features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button className="mt-auto bg-gradient-to-r from-[#0055ff] to-[#0066ff] text-white px-6 py-3 rounded-lg font-medium hover:from-[#0055ff]/90 hover:to-[#0066ff]/90 transition-all duration-200 shadow-lg hover:shadow-xl">
-                  {CORE_FUNCTIONS[3].buttonText}
-                </button>
-              </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-r-4xl dark:outline-white/15" />
+              ))}
             </div>
           </div>
         </section>

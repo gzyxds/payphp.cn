@@ -3,6 +3,16 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Blog } from '@/types/blog';
 
+function hashCode(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
+}
+
 // 博客文章目录路径
 const blogDirectory = path.join(process.cwd(), 'markdown/blog');
 
@@ -34,7 +44,7 @@ export function getAllBlogs(): Blog[] {
 
       // 组合数据和 slug
       return {
-        id: Date.now() + Math.random(), // 生成唯一 ID
+        id: hashCode(slug),
         slug,
         title: matterResult.data.title || slug,
         description: matterResult.data.description || '',

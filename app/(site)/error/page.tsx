@@ -1,38 +1,38 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Error Page - Solid SaaS Boilerplate",
-
-  // other metadata
-  description: "This is Error page for Solid Pro"
+  title: "页面出错 - PaYphp.cn",
+  description: "抱歉，页面加载过程中出现了错误，请返回首页重试。",
 };
 
-const ErroPage = () => {
+const ErrorPage = () => {
   return (
     <section className="overflow-hidden pb-25 pt-45 lg:pb-32.5 lg:pt-50 xl:pb-37.5 xl:pt-55">
       <div className="animate_top mx-auto max-w-[518px] text-center">
         <Image
           src="/images/shape/404.svg"
-          alt="404"
+          alt="页面出错"
           className="mx-auto mb-7.5"
           width={400}
           height={400}
         />
 
         <h2 className="mb-5 text-2xl font-semibold text-black dark:text-white md:text-4xl">
-          This Page Does Not Exist
+          页面出错了
         </h2>
-        <p className="mb-7.5">
-          The page you were looking for appears to have been moved, deleted or
-          does not exist.
+        <p className="mb-7.5 text-gray-600 dark:text-gray-400">
+          抱歉，页面加载过程中出现了错误。
+          <br />
+          该页面可能已被移动、删除或暂时不可用。
         </p>
 
-        <a
+        <Link
           href="/"
           className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
         >
-          Return to Home
+          返回首页
           <svg
             className="fill-white"
             width="14"
@@ -46,10 +46,10 @@ const ErroPage = () => {
               fill=""
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );
 };
 
-export default ErroPage;
+export default ErrorPage;

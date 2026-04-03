@@ -74,7 +74,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-blue-600 transition-all hover:bg-blue-700 hover:scale-105">
                 {/* 数字钱包图标 - 使用本地SVG */}
                 <Image
-                src="/images/pay/全球付款.svg"
+                src="/images/pay/global-payment.svg"
                 alt="数字钱包"
                 width={32}
                 height={32}
@@ -124,7 +124,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-slate-800 transition-all hover:bg-slate-900 hover:scale-105">
                 {/* 移动支付图标 - 使用本地SVG */}
                 <Image
-                src="/images/pay/跨境电商.svg"
+                src="/images/pay/cross-border-ecommerce.svg"
                 alt="移动支付"
                 width={32}
                 height={32}
@@ -174,7 +174,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-white border border-gray-200 transition-all hover:bg-gray-50 hover:scale-105">
                 {/* Visa图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/全球收单.svg"
+                  src="/images/pay/global-acquiring.svg"
                   alt="安全支付"
                   width={32}
                   height={32}
@@ -203,7 +203,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-white border border-gray-200 transition-all hover:bg-gray-50 hover:scale-105">
                 {/* Mastercard图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/数娱出海_blue.svg"
+                  src="/images/pay/digital-entertainment.svg"
                   alt="Mastercard支付"
                   width={32}
                   height={32}
@@ -253,7 +253,7 @@ const Integration = () => {
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-cyan-500 transition-all hover:bg-cyan-600 hover:scale-105">
                 {/* 银行卡图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/全球领跑.svg"
+                  src="/images/pay/global-leader.svg"
                   alt="银行卡支付"
                   width={28}
                   height={28}
@@ -303,7 +303,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-white border border-gray-200 transition-all hover:bg-gray-50 hover:scale-105">
                 {/* PayPal支付图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/商品寻源.svg"
+                  src="/images/pay/product-sourcing.svg"
                   alt="PayPal支付"
                   width={32}
                   height={32}
@@ -332,7 +332,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-blue-700 transition-all hover:bg-blue-800 hover:scale-105">
                 {/* 数字货币图标 - 使用本地SVG */}
                 <Image
-                src="/images/pay/留学教育.svg"
+                src="/images/pay/study-abroad.svg"
                 alt="数字货币"
                 width={32}
                 height={32}
@@ -382,7 +382,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-slate-700 transition-all hover:bg-slate-800 hover:scale-105">
                 {/* 银行卡支付图标 - 使用本地SVG */}
                 <Image
-                src="/images/pay/全球领跑.svg"
+src="/images/pay/global-leader.svg"
                 alt="银行卡支付"
                 width={32}
                 height={32}
@@ -432,7 +432,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-slate-600 transition-all hover:bg-slate-700 hover:scale-105">
                 {/* Google Pay图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/外贸B2B.svg"
+                  src="/images/pay/foreign-trade-b2b.svg"
                   alt="Google Pay"
                   width={32}
                   height={32}
@@ -482,7 +482,7 @@ const Integration = () => {
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-lg bg-blue-800 transition-all hover:bg-blue-900 hover:scale-105">
                 {/* Stripe图标 - 使用本地SVG */}
                 <Image
-                  src="/images/pay/国际物流.svg"
+                  src="/images/pay/international-logistics.svg"
                   alt="Stripe支付"
                   width={32}
                   height={32}

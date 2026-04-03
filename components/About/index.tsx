@@ -25,7 +25,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const About = () => {
   // 线性图标渲染函数 - 使用 Lucide React 图标库
   const renderIcon = (iconType: string, className: string = "w-6 h-6") => {
-    const icons: Record<string, any> = {
+    const icons: Record<string, React.ComponentType<{ className?: string }>> = {
       building: Building2,
       certificate: Award,
       solution: Layers,

@@ -1,10 +1,10 @@
 # PaYphp.cn - 专业的支付解决方案平台
 
-PaYphp.cn 是一个基于 Next.js 15 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用最新的 React 19、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。..
+PaYphp.cn 是一个基于 Next.js 14 构建的现代化支付解决方案展示网站，专为支付服务提供商、金融科技公司和需要集成支付功能的企业设计。该项目采用 React 18、TypeScript 和 Tailwind CSS 技术栈，提供完整的企业级网站解决方案。..
 
 ## 🌟 项目特色
 
-- **🚀 现代技术栈**: 基于 Next.js 15、React 19 和 TypeScript 构建
+- **🚀 现代技术栈**: 基于 Next.js 14、React 18 和 TypeScript 构建
 - **💳 支付主题**: 专门为支付行业定制的UI组件和页面
 - **📱 响应式设计**: 完美适配桌面端、平板和移动设备
 - **🎨 现代UI**: 使用 Tailwind CSS 4.x 和 Radix UI 组件
@@ -107,7 +107,7 @@ cd PaYphp.cn
 ```bash
 npm install --legacy-peer-deps
 ```
-> 注意：由于 React 19 与某些包存在对等依赖问题，需要使用 `--legacy-peer-deps` 标志
+> 注意：由于部分依赖存在 peer dependency 兼容问题，需要使用 `--legacy-peer-deps` 标志
 
 3. **启动开发服务器**
 ```bash
@@ -159,9 +159,9 @@ npm run clean        # 清理构建缓存和输出文件
 ## 🔧 技术栈详解
 
 ### 前端框架
-- **Next.js 15.1.6**: React 全栈框架，支持 SSR/SSG
-- **React 19.0.0**: 最新的 React 版本
-- **TypeScript 5.2.2**: 类型安全的 JavaScript
+- **Next.js 14.2**: React 全栈框架，支持 SSR/SSG
+- **React 18.2**: 稳定的 React 版本
+- **TypeScript 5.2+**: 类型安全的 JavaScript
 
 ### UI 和样式
 - **Tailwind CSS 4.1.3**: 原子化 CSS 框架
@@ -231,16 +231,15 @@ npm run clean        # 清理构建缓存和输出文件
 - **图片资源**: 存放在 `public/images/` 目录
 
 ### 菜单配置
-导航菜单配置文件：`components/Header/menuData.tsx`
+导航菜单配置位于 `components/Header/index.tsx` 中的 `NAV_ITEMS` 常量。
 
 ```typescript
 // 菜单项配置示例
 {
-  id: 1,
-  title: "首页",
-  path: "/",
-  newTab: false,
-  submenu: [
+  name: "产品服务",
+  dropdown: true,
+  items: [
+    { name: "产品介绍", path: "/products", ... },
     // 子菜单项...
   ]
 }
@@ -376,9 +375,9 @@ SUPABASE_ANON_KEY=your_supabase_anon_key
 - ✅ 优化构建配置，支持静态导出
 
 **2025年1月29日**
-- ✅ 升级到 Next.js 15.1.6，支持最新特性
-- ✅ 升级到 React 19.0.0，享受最新性能优化
-- ✅ 将 Framer Motion 更新到 v12.0.6 以支持 React 19
+- ✅ 升级到 Next.js 14.2，支持 App Router
+- ✅ 使用 React 18.2，享受稳定性能
+- ✅ 集成 Framer Motion 动画库
 - ✅ 添加完整的开发脚本集合
 
 ### 功能增强

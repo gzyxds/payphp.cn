@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 生成博客分类页面
-  const blogCategories = Array.from(new Set(blogs.map(blog => blog.category).filter(Boolean))); // 修复：使用Array.from替代扩展运算符
+  const blogCategories = Array.from(new Set(blogs.map(blog => blog.category).filter((c): c is string => Boolean(c))));
   const categoryPages = blogCategories.map((category) => ({
     url: `${SITE_URL}/blog/category/${encodeURIComponent(category)}`,
     lastModified: new Date(),

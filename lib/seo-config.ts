@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   title: "PaYphp - 专业的支付解决方案",
   description: "PaYphp提供专业的支付解决方案，支持多种支付方式，安全可靠，易于集成。",
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://PaYphp.cn',
-  keywords: ["支付", "PaYphp", "支付解决方案", "在线支付", "支付接口", "聚合支付", "免签支付"],
+  keywords: ["PaYphp", "支付解决方案", "聚合支付", "在线支付"],
   author: "PaYphp Team",
   locale: "zh_CN",
   type: "website",
@@ -20,9 +20,9 @@ export const SITE_CONFIG = {
 // 页面路径与SEO信息映射
 export const PAGE_SEO_CONFIG = {
   "/": {
-    title: "码支付_易支付官网_支付系统源码",
-    description: "PaYphp是行业领先的个人支付免签约易码支付系统平台，一站式集成接入网站收款api接口、支持支付宝、微信、财付通、QQ钱包、微信支付、收款码等、帮助开发者快速集成到自己相应产品，效率高，见效快，费率低！",
-    keywords: ["PaYphp", "码支付官网", "易支付平台", "在线支付系统", "免签约聚合支付系统源码"],
+    title: "PaYphp - 专业聚合支付系统平台",
+    description: "PaYphp是一站式聚合支付系统平台，支持支付宝、微信、QQ钱包等多种支付方式，帮助开发者快速集成支付功能。",
+    keywords: ["PaYphp", "码支付", "易支付", "聚合支付", "支付系统"],
   },
   "/products": {
     title: "产品介绍 - PaYphp聚合支付系统功能特性",
@@ -37,7 +37,7 @@ export const PAGE_SEO_CONFIG = {
   "/industry": {
     title: "行业解决方案 - PaYphp多场景支付应用",
     description: "为电商、教育、医疗、餐饮、零售等各行各业提供定制化支付解决方案，满足不同行业的特定支付需求，助力业务增长。",
-    keywords: ["行业支付解决方案", "电商支付", "教育支付", "医疗支付", "餐饮支付", "PaYphp行业应用"],
+    keywords: ["行业支付解决方案", "电商支付", "教育支付", "医疗支付", "PaYphp"],
   },
   "/docs": {
     title: "API文档 - PaYphp开发者中心",
@@ -120,7 +120,7 @@ export function generatePageMetadata(
  * @param data 数据内容
  * @returns JSON-LD字符串
  */
-export function generateStructuredData(type: string, data: any): string {
+export function generateStructuredData(type: string, data: Record<string, unknown>): string {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": type,

@@ -27,8 +27,8 @@ const Blog = () => {
       <div className="mx-auto mt-15 max-w-c-1390 px-4 md:px-8 xl:mt-20 2xl:px-0">
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
           {latestPosts.length > 0 ? (
-            latestPosts.map((blog, key) => (
-              <BlogItem blog={blog} key={key} />
+            latestPosts.map((blog) => (
+              <BlogItem blog={blog} key={blog.slug} />
             ))
           ) : (
             <div className="col-span-full text-center py-12">

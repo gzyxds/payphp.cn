@@ -13,7 +13,7 @@ const nextConfig = {
         port: "",
       },
     ],
-    unoptimized: true
+    unoptimized: true,
   },
   experimental: {
     turbo: {
