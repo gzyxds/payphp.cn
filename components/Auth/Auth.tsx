@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Qrcode from "@/components/Qrcode";
 import { Button } from "@/components/ui/button";
-import { Zap, ShoppingCart, FileText, Rocket, Eye, UserPlus, Building2, CreditCard, MessageCircle } from "lucide-react";
+import { Zap, ShoppingCart, FileText, Rocket, Eye, UserPlus, Building2, CreditCard, MessageCircle, Check } from "lucide-react";
 
 /**
  * PaYphp支付系统官网页面组件
@@ -854,175 +854,74 @@ const PaymentAuth = () => {
           </section>
          {/* 系统核心优势 */}
 
-          {/* 价格方案 - 重点突出 */}
+          {/* 价格方案 */}
           <div className="text-center mb-16 sm:mb-24">
-            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 w-full text-center py-16 sm:py-24">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">选择适合您的方案</h2>
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 sm:mb-16 leading-relaxed max-w-2xl mx-auto">
-                灵活的合作方式，满足不同业务需求，助您快速搭建专属支付平台
+            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 py-16 sm:py-24">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">选择适合您的方案</h2>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                灵活的合作方式，满足不同业务需求
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mx-auto text-left">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                 {/* 免费版 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="mb-8">
+                <div className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                  <div className="mb-6">
+                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">免费体验</span>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-2">商户地址</h3>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">立即接入，快速体验</div>
-                    <div className="text-4xl sm:text-5xl font-extrabold text-black dark:text-white">
-                      <span className="text-2xl font-medium text-gray-400 mr-1">￥</span>0
+                    <p className="text-gray-500 text-sm mb-4">立即接入，快速体验</p>
+                    <span className="text-4xl font-bold text-black dark:text-white">￥0</span>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
+                    {["前台地址：merch.PaYphp.cn", "演示后台：暂不开放", "前后台账号：自行注册", "前后台密码：自行注册"].map((f, i) => (
+                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
+                    ))}
+                  </ul>
+                  <div className="space-y-2">
+                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://merch.PaYphp.cn" target="_blank"><Building2 className="w-4 h-4 mr-2"/>进入商户中心</a></Button>
+                    <Button variant="outline" className="w-full border-stroke dark:border-strokedark" asChild><a href="https://merch.PaYphp.cn/register" target="_blank"><UserPlus className="w-4 h-4 mr-2"/>立即注册</a></Button>
+                  </div>
+                </div>
+
+                {/* 授权版 */}
+                <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border-2 border-primary hover:shadow-lg transition-shadow">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-sm rounded-full">推荐</span>
+                  <div className="mb-6">
+                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">个人/小型企业</span>
+                    <h3 className="text-xl font-bold text-primary mb-2">单域名授权</h3>
+                    <p className="text-gray-500 text-sm mb-4">永久授权，自主部署</p>
+                    <span className="text-4xl font-bold text-primary">￥699</span>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
+                    {["永久使用", "上传即用", "提供程序源码", "自备服务器/域名", "专属用户群"].map((f, i) => (
+                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
+                    ))}
+                  </ul>
+                  <div className="space-y-2">
+                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank"><CreditCard className="w-4 h-4 mr-2"/>立即购买</a></Button>
+                    <div className="flex items-center justify-center gap-2 text-sm text-gray-500 pt-1">
+                      <span>有疑问？</span><Qrcode preset="customer-service"/>
                     </div>
                   </div>
+                </div>
 
-                  {/* 特性列表 */}
-                  <div className="space-y-4 mb-10 flex-1">
-                    {[
-                      "前台地址：merch.PaYphp.cn",
-                      "演示后台：暂不开放",
-                      "前后台账号：自行注册",
-                      "前后台密码：自行注册"
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span className="text-gray-600 dark:text-gray-300 text-base">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-col xl:flex-row gap-3 mt-auto">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
-                      asChild
-                    >
-                      <a href="https://merch.PaYphp.cn/register" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <UserPlus className="h-4 w-4" />
-                        立即注册
-                      </a>
-                    </Button>
-                    <Button
-                      variant="default"
-                      size="lg"
-                      className="flex-1 bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 shadow-md"
-                      asChild
-                    >
-                      <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <Building2 className="h-4 w-4" />
-                        商户中心
-                      </a>
-                    </Button>
-                  </div>
-                </motion.div>
-
-                {/* 个人进阶版 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 relative border-2 border-[#0055ff]/30 dark:border-blue-500/50"
-                >
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0055ff] to-blue-400 text-white px-5 py-1.5 rounded-full text-sm font-semibold tracking-wide shadow-md whitespace-nowrap">
-                    最具性价比
-                  </div>
-
-                  <div className="mb-8">
-                    <h3 className="text-xl font-bold text-[#0055ff] dark:text-blue-400 mb-2">单域名授权</h3>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">个人/小型企业</div>
-                    <div className="text-4xl sm:text-5xl font-extrabold text-[#0055ff]">
-                      <span className="text-2xl font-medium mr-1">￥</span>699
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 mb-10 flex-1">
-                    {[
-                      "永久使用",
-                      "上传即用",
-                      "提供程序源码",
-                      "自备服务器/域名",
-                      "专属用户群"
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-[#0055ff] shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span className="text-gray-800 dark:text-gray-200 font-medium text-base">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3 mt-auto">
-                    <Qrcode preset="customer-service" />
-                    <Button
-                      variant="default"
-                      size="lg"
-                      className="flex-1 bg-[#0055ff] text-white shadow-lg shadow-blue-500/30 hover:bg-[#0055ff]/90"
-                      asChild
-                    >
-                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <CreditCard className="h-4 w-4" />
-                        购买源码
-                      </a>
-                    </Button>
-                  </div>
-                </motion.div>
-
-                {/* 团队版 */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="mb-8">
+                {/* 代理商版 */}
+                <div className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                  <div className="mb-6">
+                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">代理/分销/合作</span>
                     <h3 className="text-xl font-bold text-black dark:text-white mb-2">成为授权商</h3>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">代理/分销/合作</div>
-                    <div className="text-4xl sm:text-5xl font-extrabold text-black dark:text-white">
-                      <span className="text-2xl font-medium text-gray-400 mr-1">￥</span>2999
-                    </div>
+                    <p className="text-gray-500 text-sm mb-4">成为合作伙伴，享受更多权益</p>
+                    <span className="text-4xl font-bold text-black dark:text-white">￥2999</span>
                   </div>
-
-                  <div className="space-y-4 mb-10 flex-1">
-                    {[
-                      "购买产品: 7 折",
-                      "不支持开通下级代理商",
-                      "商户版单域名永久版 1 个",
-                      "专属代理群",
-                      "技术支持"
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-[#0055ff] shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span className="text-gray-600 dark:text-gray-300 text-base">{feature}</span>
-                      </div>
+                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
+                    {["购买产品: 7 折", "不支持开通下级代理商", "商户版单域名永久版 1 个", "专属代理群", "技术支持"].map((f, i) => (
+                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
                     ))}
+                  </ul>
+                  <div className="space-y-2">
+                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank"><CreditCard className="w-4 h-4 mr-2"/>立即购买</a></Button>
+                    <Button variant="outline" className="w-full border-stroke dark:border-strokedark" asChild><a href="https://merch.PaYphp.cn" target="_blank"><Building2 className="w-4 h-4 mr-2"/>了解更多</a></Button>
                   </div>
-
-                  <div className="flex gap-3 mt-auto">
-                    <Qrcode preset="customer-service" />
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
-                      asChild
-                    >
-                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <CreditCard className="h-4 w-4" />
-                        购买源码
-                      </a>
-                    </Button>
-                  </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
