@@ -17,7 +17,9 @@ import {
   Rocket,
   Github,
   Twitter,
-  ChevronDown
+  ChevronDown,
+  Zap,
+  FileText
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -241,7 +243,7 @@ const About = () => {
               </div>
 
               {/* 主标题 */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
                 重新定义
                 <br />
                 <span className="text-[#0055ff]">
@@ -297,74 +299,98 @@ const About = () => {
         </div>
       </section>
 
-      {/* Main Content Section */}
+      {/* 发展历程 */}
       <section className="pb-20 pt-20 lg:pb-25 lg:pt-25 overflow-hidden">
         <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          {/* 发展历程区域 - 参考 Industry 组件的卡片设计 */}
+          {/* 发展历程区域 - 横向步骤条设计 */}
           <div className="mb-24">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                Our Journey
+              </span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 发展历程
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 从想法到现实，见证PaYphp如何改变PHP支付开发
               </p>
             </div>
 
-            {/* 时间线卡片网格 - 白底灰边设计 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="group">
-                    {/* 白底灰边卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
-                      {/* 顶部装饰条 */}
-                      <div className="w-full h-px bg-gray-200 dark:bg-gray-700 mb-8"></div>
-
-                      {/* 头部信息 */}
-                      <div className="flex items-start justify-between mb-8">
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
+            {/* 横向步骤条设计 - 简洁版 */}
+            <div className="relative">
+              {/* 桌面端：横向步骤条 */}
+              <div className="hidden lg:block">
+                {/* 步骤连接线 */}
+                <div className="absolute top-[40px] left-[8%] right-[8%] h-px bg-gray-200 dark:bg-gray-700" />
+                
+                <div className="grid grid-cols-6 gap-2">
+                  {milestones.map((milestone, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="relative"
+                    >
+                      <div className="flex flex-col items-center text-center">
+                        {/* 图标 */}
+                        <div className="w-16 h-16 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-3">
+                          <div className="text-[#0055ff] dark:text-blue-400">
                             {renderIcon(milestone.iconType, "w-6 h-6")}
                           </div>
-                          <div>
-                            <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-1">
-                              {milestone.title}
-                            </h3>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                              {milestone.year}
-                            </p>
-                          </div>
                         </div>
+                        
+                        {/* 年份 */}
+                        <span className="text-sm font-semibold text-[#0055ff] mb-1">
+                          {milestone.year}
+                        </span>
+                        
+                        {/* 标题 */}
+                        <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-1">
+                          {milestone.title}
+                        </h3>
                       </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
 
-                      {/* 描述内容 */}
-                      <div className="mb-8">
-                        <p className="text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
-                          {milestone.description}
-                        </p>
-                      </div>
-
-                      {/* 底部操作区域 */}
-                      <div className="pt-6 border-t border-gray-100 dark:border-gray-700">
-                        <div className="text-[#0055ff] text-sm md:text-base font-medium">
-                          {milestone.year} 年
-                        </div>
+              {/* 移动端：简洁垂直列表 */}
+              <div className="lg:hidden space-y-4">
+                {milestones.map((milestone, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-4"
+                  >
+                    {/* 图标 */}
+                    <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center flex-shrink-0">
+                      <div className="text-[#0055ff] dark:text-blue-400">
+                        {renderIcon(milestone.iconType, "w-5 h-5")}
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                    
+                    {/* 内容 */}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span className="text-sm font-semibold text-[#0055ff]">{milestone.year}</span>
+                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">{milestone.title}</h3>
+                      </div>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        {milestone.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* 核心价值观区域 - 参考 Industry 组件设计 */}
+        {/* 核心价值观区域 - 参考 Industry 组件设计 */}
           <div className="mb-24">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
@@ -647,11 +673,13 @@ const About = () => {
                 <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-c-1390 mx-auto">
                   与全球10万+开发者一起，构建下一代支付应用
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="bg-[#0055ff] text-white px-10 py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff]/90">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="inline-flex items-center justify-center gap-2 bg-[#0055ff] text-white px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-[#0055ff]/90 hover:shadow-lg hover:shadow-[#0055ff]/25 hover:-translate-y-0.5">
+                    <Zap className="w-4 h-4" />
                     开始使用
                   </button>
-                  <button className="border border-[#0055ff] text-[#0055ff] px-10 py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 hover:bg-[#0055ff] hover:text-white">
+                  <button className="inline-flex items-center justify-center gap-2 border border-[#0055ff] text-[#0055ff] px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-[#0055ff] hover:text-white hover:shadow-lg hover:shadow-[#0055ff]/25 hover:-translate-y-0.5">
+                    <FileText className="w-4 h-4" />
                     查看文档
                   </button>
                 </div>

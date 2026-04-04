@@ -2,22 +2,23 @@
 import Image from "next/image";
 import Qrcode from "@/components/Qrcode";
 import { Button } from "@/components/ui/button";
+import { Zap, ShoppingCart, MessageCircle } from "lucide-react";
 
 const Hero = () => {
 
   return (
     <>
       {/* Hero主视觉区域 - 采用支付企业官网设计风格 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-12 md:pt-16 xl:pb-32 xl:pt-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-12 md:pt-16 xl:pb-32 xl:pt-20 dark:from-gray-900 dark:to-gray-800">
         {/* 背景装饰元素 */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23165dff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23165dff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40 dark:opacity-20"></div>
 
         <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex lg:items-center lg:gap-12 xl:gap-20">
             {/* 左侧内容区域 */}
             <div className="md:w-1/2 lg:w-3/5">
               {/* 产品标签 */}
-              <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[#165dff] border border-blue-100">
+              <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[#165dff] border border-blue-100 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-400">
                 <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
                 </svg>
@@ -25,7 +26,7 @@ const Hero = () => {
               </div>
 
               {/* 主标题 */}
-              <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl xl:text-6xl">
+              <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
                 安全可靠的
                 <br />
                 <span className="relative inline-block text-[#165dff]">
@@ -36,35 +37,35 @@ const Hero = () => {
                 </span>
               </h1>
               {/* 副标题描述 */}
-              <p className="mb-6 text-base leading-relaxed text-gray-600 md:text-lg lg:pr-6">
+              <p className="mb-6 text-base leading-relaxed text-gray-600 md:text-lg lg:pr-6 dark:text-gray-400">
                 为企业提供专业、安全、高效的支付解决方案。支持多种支付方式，
                 助力企业数字化转型。
               </p>
 
               {/* 核心优势标签 */}
               <div className="mb-8 flex flex-wrap gap-2">
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5">
+                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
                   {/* 安全锁图标 */}
                   <svg className="h-3.5 w-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   银行级安全
                 </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5">
+                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
                   {/* 闪电图标 */}
                   <svg className="h-3.5 w-3.5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   毫秒级响应
                 </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5">
+                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
                   {/* 地球图标 */}
                   <svg className="h-3.5 w-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   全球覆盖
                 </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5">
+                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
                   {/* 图表图标 */}
                   <svg className="h-3.5 w-3.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -80,10 +81,11 @@ const Hero = () => {
                   <Button
                     variant="default"
                     size="lg"
-                    className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                    className="rounded-lg bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90 font-normal"
                     asChild
                   >
-                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Zap className="h-4 w-4" />
                       立即接入
                     </a>
                   </Button>
@@ -93,21 +95,27 @@ const Hero = () => {
                     size="lg"
                     asChild
                   >
-                    <a href="/auth">
+                    <a href="/auth" className="flex items-center gap-2">
+                      <ShoppingCart className="h-4 w-4" />
                       购买源码
                     </a>
                   </Button>
-                  <Qrcode preset="customer-service" />
+
+                  <Qrcode
+                    preset="customer-service"
+                    buttonText="联系客服"
+                    buttonIcon={<MessageCircle className="h-4 w-4" />}
+                  />
                 </div>
 
                 {/* 免费试用说明 */}
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                 免费试用30天，无需信用卡，专业技术支持
                 </p>
 
                 {/* 快速入口按钮组 */}
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff]">
+                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff] dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
                     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -115,7 +123,7 @@ const Hero = () => {
                   </button>
 
                  {/* 快速入口按钮组 */}
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff]">
+                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff] dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
                     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
@@ -304,13 +312,13 @@ const Hero = () => {
                 </div>
 
                 {/* 装饰性元素 */}
-                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#165dff]/20 to-blue-300/20 blur-xl"></div>
-                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/50 to-[#165dff]/10 blur-2xl"></div>
+                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#165dff]/20 to-blue-300/20 blur-xl dark:from-[#165dff]/10 dark:to-blue-300/10"></div>
+                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/50 to-[#165dff]/10 blur-2xl dark:from-blue-900/20 dark:to-[#165dff]/5"></div>
 
                 {/* 浮动数据卡片 */}
-                <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white p-4 shadow-lg border border-gray-100">
-                  <div className="text-xs text-gray-500 mb-1">日交易量</div>
-                  <div className="text-lg font-bold text-[#165dff]">¥2.8M</div>
+                <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white p-4 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+                  <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">日交易量</div>
+                  <div className="text-lg font-bold text-[#165dff] dark:text-blue-400">¥2.8M</div>
                   <div className="flex items-center gap-1 text-xs text-green-600">
                     <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
@@ -319,10 +327,10 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <div className="absolute -right-6 bottom-1/3 rounded-lg bg-white p-3 shadow-lg border border-gray-100">
-                  <div className="text-xs text-gray-500 mb-1">成功率</div>
+                <div className="absolute -right-6 bottom-1/3 rounded-lg bg-white p-3 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+                  <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">成功率</div>
                   <div className="text-lg font-bold text-green-600">99.9%</div>
-                  <div className="text-xs text-gray-400">实时监控</div>
+                  <div className="text-xs text-gray-400 dark:text-gray-500">实时监控</div>
                 </div>
               </div>
             </div>

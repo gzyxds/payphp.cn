@@ -55,7 +55,10 @@ import {
   BarChart,
   CheckCircle,
   LifeBuoy,
-  ArrowRight
+  ArrowRight,
+  Rocket,
+  Phone,
+  Play
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -379,482 +382,568 @@ const PROCESS_STEPS = [
  * - 流畅的交互动画效果
  */
 /**
- * Industry组件主函数
- *
- * 功能概述：
- * 展示支付服务在各个行业的应用解决方案，通过精心设计的布局展示
- * 核心功能、服务优势和行业特定解决方案。
- *
- * 布局结构：
- * 1. 英雄区域：包含标题、介绍、行业标签和特性卡片
- * 2. 统计数据区：展示关键业务指标
- * 3. 核心功能Bento Grids：使用不对称网格展示主要功能
- * 4. 服务优势区：卡片式布局展示服务特点
- * 5. 行业解决方案：网格布局展示各行业应用
- * 6. 产品优势Bento Grids：另一个Bento布局展示优势
- * 7. FAQ区域：常见问题解答
- *
- * 设计特点：
- * - 深色/浅色主题支持
- * - 完全响应式设计
- * - Bento Grids布局创造视觉层次感
- * - 渐变和动画效果增强用户体验
- *
- * 技术实现：
- * - 使用CSS Grid和Flexbox进行布局
- * - Tailwind CSS类名实现样式
- * - 动态背景渐变效果
- * - 条件渲染处理不同屏幕尺寸
+ * 行业解决方案页面组件
+ * 统一展示企业支付能力、场景方案与服务支持内容
  */
-
 const Industry = () => {
   return (
     <section className="relative bg-white dark:bg-black">
 
       {/* 英雄区 - 蓝色渐变背景 */}
-      <div className="relative bg-gradient-to-br from-blue-50 via-white to-slate-50 dark:from-gray-900 dark:via-black dark:to-gray-900">
+      <div className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_44%,#f6f8fc_100%)] dark:bg-[linear-gradient(180deg,#06111f_0%,#040816_44%,#02050d_100%)]">
         {/* 背景装饰光晕 */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-100/30 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-100/40 dark:bg-slate-800/30 rounded-full blur-3xl"></div>
+          <div className="absolute left-[-12%] top-[-8%] h-[32rem] w-[32rem] rounded-full bg-[#0055ff]/10 blur-3xl dark:bg-[#2563eb]/18" />
+          <div className="absolute right-[-12%] top-[10%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl dark:bg-cyan-400/12" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,85,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,85,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-20" />
         </div>
 
         {/* 英雄区内容 */}
-        <div className="relative max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0 pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="relative max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0 pt-14 md:pt-20 lg:pt-24 pb-14 md:pb-20 lg:pb-20">
+
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-16">
 
             {/* 左侧标题区域 */}
-            <div className="text-center lg:text-left space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0055ff]/10 to-[#0055ff]/5 text-[#0055ff] px-4 py-2 text-sm font-semibold rounded-full border border-[#0055ff]/20">
-                <div className="w-2 h-2 bg-[#0055ff] rounded-full animate-pulse" />
-                专业支付服务商
+            <div className="flex flex-col justify-center text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 self-center rounded-full bg-[#0055ff]/8 px-4 py-2 text-sm font-semibold text-[#0055ff] dark:bg-[#3b82f6]/10 lg:self-start">
+                <div className="h-2 w-2 rounded-full bg-[#0055ff] shadow-[0_0_16px_rgba(0,85,255,0.75)]" />
+                企业支付基础设施
               </div>
 
-              <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
-                  <span className="text-[#0055ff]">
-                    PaYphp
-                  </span>
-                </h1>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
-                  企业级支付解决方案
-                </h2>
+              <div className="mt-8 space-y-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400">
+                  Business-grade payment platform
+                </p>
+                <div>
+                  <h1 className="text-4xl font-bold tracking-[-0.04em] text-gray-950 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                    <span className="bg-gradient-to-r from-[#0055ff] via-[#2563eb] to-cyan-500 bg-clip-text text-transparent">
+                      PaYphp
+                    </span>
+                  </h1>
+                  <h2 className="mt-4 text-2xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-3xl md:text-4xl lg:text-[3.15rem] lg:leading-[1.1]">
+                   企业级支付解决方案
+                  </h2>
+                </div>
+                <p className="max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                  统一的 API 与 SDK，覆盖电商、游戏、内容、社交等核心场景，以稳定链路、合规能力与高效交付，帮助企业构建更可靠的支付体验。
+                </p>
               </div>
 
-              <div className="flex items-center gap-3 text-lg md:text-xl text-gray-600 dark:text-gray-400">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#0055ff] to-transparent" />
-                多行业覆盖
-              </div>
-
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
                 {['电商支付', '游戏支付', '社交支付', '内容支付'].map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-[#0055ff] hover:text-[#0055ff] transition-all duration-300 cursor-default"
+                    className="rounded-2xl bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-[0_12px_30px_-22px_rgba(15,23,42,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:text-[#0055ff] dark:bg-white/5 dark:text-gray-300"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
+
+              <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {CORE_STATS.slice(0, 3).map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl bg-white/78 px-5 py-4 text-left shadow-[0_18px_40px_-28px_rgba(15,23,42,0.28)] backdrop-blur-sm dark:bg-white/5"
+                  >
+                    <div className="text-2xl font-bold text-[#0055ff] md:text-3xl">{stat.value}</div>
+                    <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* 右侧特性区域 */}
-            <div className="space-y-8">
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                统一的API和SDK，集成多环节应用的接口，简化商户对接流程。专业支持合规电商，游戏，内容，社交等多种数娱行业，为企业提供安全、稳定、高效的支付服务。
-              </p>
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,#eff6ff_0%,#dbeafe_52%,#f8fbff_100%)] p-7 text-slate-900 shadow-[0_35px_110px_-42px_rgba(37,99,235,0.28)] dark:bg-[linear-gradient(135deg,#1d4ed8_0%,#2563eb_52%,#3b82f6_100%)] dark:text-white lg:p-9">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.55),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.18),transparent_28%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(191,219,254,0.18),transparent_28%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.08)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:opacity-20" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {HERO_FEATURES.map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="group p-5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-[#0055ff]/30 transition-all duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 p-2 bg-[#0055ff]/10 text-[#0055ff] rounded-lg group-hover:bg-[#0055ff]/20 group-hover:scale-110 transition-all duration-300">
-                        {feature.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#0055ff] transition-colors duration-300">
-                          {feature.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                          {feature.desc}
-                        </p>
+              <div className="relative z-10 space-y-8">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#2563eb]/80 dark:text-blue-100/80">
+                      Solution Matrix
+                    </p>
+                    <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-slate-900 dark:text-white md:text-3xl">
+                      统一接入，更强支付中台能力
+                    </h3>
+                  </div>
+                  <div className="rounded-2xl bg-white/65 px-4 py-3 backdrop-blur-sm dark:bg-white/12">
+                    <div className="text-2xl font-bold text-[#2563eb] dark:text-blue-100">7×24</div>
+                    <div className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-blue-100/75">Service Support</div>
+                  </div>
+                </div>
+
+                <p className="text-sm leading-7 text-slate-600 md:text-base dark:text-blue-50/85">
+                  通过标准化技术接入、稳定链路治理与多行业经验沉淀，为企业建立可持续扩展的支付能力底座。
+                </p>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {HERO_FEATURES.map((feature) => (
+                    <div
+                      key={feature.title}
+                      className="group rounded-2xl bg-white/72 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/88 dark:bg-white/10 dark:hover:bg-white/14"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#2563eb]/10 text-[#2563eb] shadow-[0_0_30px_rgba(37,99,235,0.12)] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2563eb]/15 dark:bg-white/14 dark:text-blue-100 dark:shadow-[0_0_30px_rgba(191,219,254,0.12)] dark:group-hover:bg-white/18">
+                          {feature.icon}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-base font-semibold text-slate-900 md:text-lg dark:text-white">
+                            {feature.title}
+                          </h4>
+                          <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-blue-50/80">
+                            {feature.desc}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+
       {/* 主要内容区域 - 约束宽度 */}
       <div className="max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0">
 
         {/* 核心统计数据展示 */}
         <section className="pt-16 lg:pt-20 mb-16 lg:mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {CORE_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white border border-gray-200 p-6 md:p-8 text-center rounded-lg dark:bg-black dark:border-gray-700"
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 text-center shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5"
               >
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0055ff] mb-2">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#0055ff]/40 to-transparent" />
+                <div className="text-2xl font-bold text-[#0055ff] md:text-3xl lg:text-4xl">
                   {stat.value}
                 </div>
-                <div className="text-xs md:text-sm lg:text-base text-gray-600 dark:text-gray-300 font-medium">
+                <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 md:text-sm">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
         </section>
-        
+
         {/* 核心能力展示 */}
-        <section className="py-24 sm:py-32">
-          <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-            <div className="text-center mb-16">
-              <p className="text-base/7 font-semibold text-[#0055ff]">核心能力</p>
-              <h2 className="mt-2 max-w-lg mx-auto text-center text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-                全方位支付解决方案
+        <section className="py-20 sm:py-28">
+          <div className="text-center mb-14 lg:mb-16">
+              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                Core Capabilities
+              </span>
+              <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+                面向复杂业务的全方位支付能力
               </h2>
-              <p className="mt-4 max-w-xl mx-auto text-center text-base text-gray-500">
-                满足不同业务场景需求，提供专业的支付服务
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300 md:text-lg">
+                以高可用底座、标准化接入与实时业务反馈，帮助企业构建更稳、更快、更易扩展的支付系统。
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-              {CORE_FUNCTIONS.map((item, index) => (
-                <div
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {CORE_FUNCTIONS.map((item) => (
+                <article
                   key={item.title}
-                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white/85 p-7 shadow-[0_20px_60px_-35px_rgba(0,85,255,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/25 dark:border-white/10 dark:bg-white/5"
                 >
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-gradient-to-br from-[#0055ff]/10 to-[#0055ff]/5 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                        <div className="text-[#0055ff]">
-                          {item.icon}
-                        </div>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.09),transparent_32%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                  <div className="relative">
+                    <div className="mb-6 flex items-start justify-between gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                        {item.icon}
                       </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                        <p className="text-xs text-gray-400">{item.statLabel}</p>
+                      <div className="rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0055ff]">
+                        {item.statLabel}
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-[#0055ff] to-[#0066ff] bg-clip-text text-transparent">
-                      {item.stat}
-                    </span>
-                  </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
 
-                  <div className="space-y-3 mb-6">
-                    {item.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#0055ff]/40" />
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                    <div className="mt-4 mb-6">
+                      <span className="bg-gradient-to-r from-[#0055ff] to-cyan-500 bg-clip-text text-4xl font-bold text-transparent">
+                        {item.stat}
+                      </span>
+                    </div>
 
-                  <button className="w-full bg-gray-50 text-gray-700 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2">
-                    <span>{item.buttonText.replace(' →', '')}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
+                    <div className="space-y-3">
+                      {item.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-3 rounded-lg px-1 py-2">
+                          <div className="h-2 w-2 rounded-full bg-[#0055ff] shadow-[0_0_12px_rgba(0,85,255,0.55)]" />
+                          <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold text-gray-700 transition-all duration-300 hover:text-[#0055ff] dark:text-white">
+                      <span>{item.buttonText.replace(' →', '')}</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </article>
               ))}
             </div>
-          </div>
         </section>
 
+
         {/* 服务优势展示 */}
-        <section className="mb-16 lg:mb-20">
+        <section className="mb-16 lg:mb-24">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-4">
-              服务优势
+            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              Service Highlights
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+              全方位服务保障
             </h2>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              专业的支付服务，为您的业务提供全方位保障
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-gray-600 dark:text-gray-300">
+              从申请门槛、接口稳定到资金安全与接入效率，构建更完整的商户服务体验。
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {SERVICE_ADVANTAGES.map((advantage) => (
-              <div
-                key={advantage.id}
-                className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group transition-all duration-300"
-              >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200 flex-shrink-0">
-                    {advantage.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1 group-hover:text-[#0055ff] transition-colors duration-200">
-                      {advantage.title}
-                    </h3>
-                    <p className="text-sm text-[#0055ff] font-medium">
-                      {advantage.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {advantage.description}
-                </p>
-
-                <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
-                  <div className="w-8 h-px bg-gray-200 group-hover:bg-[#0055ff] rounded-full transition-colors duration-300" />
-                  <a
-                    href="https://merch.PaYphp.cn/user/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#0055ff] hover:text-[#0044cc] flex items-center gap-1 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300"
-                  >
-                    立即接入
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 行业解决方案展示 */}
-        <section className="mb-16 lg:mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {INDUSTRY_DATA.map((industry) => (
               <article
-                key={industry.id}
-                className="bg-white border border-gray-200 p-6 lg:p-8 rounded-lg dark:bg-black dark:border-gray-700 group"
+                key={advantage.id}
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_20px_60px_-30px_rgba(0,85,255,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/30 dark:border-gray-800 dark:bg-gray-950/90"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff] group-hover:bg-[#0055ff]/20 transition-colors duration-200">
-                      {industry.icon}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.45),transparent_55%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_34%),linear-gradient(180deg,rgba(59,130,246,0.08),transparent_55%)]" />
+                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-[#0055ff]/10 blur-2xl dark:bg-[#0055ff]/20" />
+
+                <div className="relative flex h-full flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                        {advantage.icon}
+                      </div>
+
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0055ff]">
+                          {advantage.subtitle}
+                        </p>
+                        <h3 className="mt-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
+                          {advantage.title}
+                        </h3>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-black dark:text-white mb-1">
-                        {industry.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
-                        {industry.subtitle}
-                      </p>
+
+                    <div className="flex h-10 min-w-10 items-center justify-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-3 text-sm font-bold text-[#0055ff] dark:border-[#0055ff]/20 dark:bg-[#0055ff]/10">
+                      0{advantage.id}
                     </div>
                   </div>
 
-                  <div className="text-right flex-shrink-0">
-                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0055ff]">
-                      {industry.stats.value}
+                  <p className="mt-6 text-sm md:text-base leading-7 text-gray-600 dark:text-gray-300">
+                    {advantage.description}
+                  </p>
+
+                  <div className="mt-8 flex items-center justify-between border-t border-gray-200/70 pt-5 dark:border-white/10">
+                    <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+                      <span className="h-2 w-2 rounded-full bg-[#0055ff]" />
+                      企业级服务能力
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {industry.stats.label}
-                    </div>
+                    <a
+                      href="https://merch.PaYphp.cn/user/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 group-hover:gap-3 hover:text-[#0044cc]"
+                    >
+                      立即接入
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
-                </div>
-
-                <div className="space-y-3 mb-6">
-                  {industry.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {feature}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <button className="text-[#0055ff] text-sm font-medium hover:text-[#0055ff]/80 transition-colors duration-200">
-                    了解更多 →
-                  </button>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* 产品优势展示 - Bento Grids布局
-            设计意图：
-            1. 视觉层次：通过Bento Grids的不对称布局建立视觉重点，左侧大卡片和底部宽卡片承载核心信息。
-            2. 字体排版：采用清晰的字体层级（Title > Stat > Description），使用不同字重和颜色区分。
-            3. 响应式：移动端单列，桌面端3列，通过 grid-cols 和 row-span 控制。
-            4. 交互：使用 ring-1 代替 outline 获得更细腻的边框效果。
-        */}
+
+        {/* 行业解决方案展示 */}
         <section className="mb-16 lg:mb-24">
-          <div className="text-center mb-16 lg:mb-24">
-            <h2 className="text-center text-sm/7 font-bold uppercase tracking-wider text-[#0055ff] dark:text-[#0055ff] mb-3">
-              核心优势
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              Industry Scenarios
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+              覆盖主流业务场景
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-4xl font-extrabold tracking-tight text-balance text-gray-950 sm:text-5xl lg:text-6xl dark:text-white">
-              为什么选择我们
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-gray-600 dark:text-gray-300">
+              以更灵活的卡片布局展示行业方案，让核心数据、适用场景与能力亮点一眼可见。
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-            {/* 银行级安全 - 大格子 */}
-            <div className="group relative lg:row-span-2">
-              <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-lg dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-l-lg p-8 lg:p-10">
-                <div className="flex flex-col gap-6 mb-6">
-                  <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
-                    {PRODUCT_ADVANTAGES[0].icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
-                      {PRODUCT_ADVANTAGES[0].title}
-                    </h3>
-                    <div className="flex flex-col gap-1 mb-6">
-                      <span className="text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0055ff]">{PRODUCT_ADVANTAGES[0].stat}</span>
-                      <span className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[0].statLabel}</span>
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 lg:gap-8">
+            {INDUSTRY_DATA.map((industry, index) => (
+              <article
+                key={industry.id}
+                className={`group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_20px_60px_-30px_rgba(0,85,255,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/30 dark:border-gray-800 dark:bg-gray-950/90 ${
+                  index % 2 === 0 ? "xl:col-span-7" : "xl:col-span-5"
+                }`}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.12),transparent_36%),linear-gradient(135deg,rgba(0,85,255,0.05),transparent_42%,rgba(15,23,42,0.04))] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_36%),linear-gradient(135deg,rgba(37,99,235,0.12),transparent_42%,rgba(15,23,42,0.35))]" />
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#0055ff]/10 blur-3xl dark:bg-[#0055ff]/20" />
+
+                <div className="relative flex h-full flex-col gap-8">
+                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                        {industry.icon}
+                      </div>
+
+                      <div>
+                        <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0055ff] ring-1 ring-[#0055ff]/10 dark:bg-white/10 dark:ring-white/10">
+                          解决方案
+                        </span>
+                        <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+                          {industry.title}
+                        </h3>
+                        <p className="mt-2 text-sm md:text-base text-gray-500 dark:text-gray-400">
+                          {industry.subtitle}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-base/7 lg:text-lg/8 text-gray-600 dark:text-gray-300">
-                      {PRODUCT_ADVANTAGES[0].description}
+
+                    <div className="inline-flex min-w-[124px] flex-col rounded-2xl border border-gray-200/80 bg-white/70 px-4 py-3 text-left backdrop-blur-sm dark:border-white/10 dark:bg-white/5 md:text-right">
+                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">
+                        {industry.stats.value}
+                      </span>
+                      <span className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+                        {industry.stats.label}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {industry.features.map((feature) => (
+                      <div
+                        key={feature}
+                        className="flex h-full items-start gap-3 rounded-2xl border border-gray-200/70 bg-gray-50/80 px-4 py-4 backdrop-blur-sm transition-colors duration-300 group-hover:border-[#0055ff]/15 group-hover:bg-white/90 dark:border-white/8 dark:bg-white/5 dark:group-hover:bg-white/8"
+                      >
+                        <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0055ff]/10 text-[#0055ff]">
+                          <CheckCircle className="w-3.5 h-3.5" />
+                        </div>
+                        <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+                          {feature}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col gap-4 border-t border-gray-200/70 pt-6 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      支持标准化 API 接入、稳定清算链路与多场景支付扩展。
                     </p>
+                    <button className="inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 hover:gap-3 hover:text-[#0044cc]">
+                      了解方案
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-                <div className="grid grid-cols-1 gap-4 mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
+
+        {/* 产品优势展示 - Bento Grids布局 */}
+        <section className="mb-16 lg:mb-24">
+          <div className="text-center mb-16 lg:mb-20">
+            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              Premium Advantages
+            </span>
+            <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+              用更稳健的底层能力支撑业务增长
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300 md:text-lg">
+              以银行级安全、高可用架构、极速处理与简单接入，为支付场景提供兼顾稳定性与效率的长期价值。
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2">
+            {/* 银行级安全 - 大格子 */}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(239,246,255,0.92))] p-8 text-slate-900 shadow-[0_30px_90px_-40px_rgba(59,130,246,0.2)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:row-span-2 lg:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.16),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(191,219,254,0.55),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.92),rgba(239,246,255,0.86))] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.2),transparent_30%),linear-gradient(180deg,rgba(15,23,42,0.92),rgba(2,6,23,1))]" />
+              <div className="relative flex h-full flex-col">
+                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                  {PRODUCT_ADVANTAGES[0].icon}
+                </div>
+
+                <div className="max-w-md">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-600/80 dark:text-blue-200/80">
+                    Security First
+                  </p>
+                  <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-slate-900 dark:text-white lg:text-4xl">
+                    {PRODUCT_ADVANTAGES[0].title}
+                  </h3>
+                  <div className="mt-5 flex flex-col gap-2">
+                    <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-4xl font-bold text-transparent dark:from-cyan-300 dark:to-blue-400 lg:text-5xl">{PRODUCT_ADVANTAGES[0].stat}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">{PRODUCT_ADVANTAGES[0].statLabel}</span>
+                  </div>
+                  <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300 lg:text-lg">
+                    {PRODUCT_ADVANTAGES[0].description}
+                  </p>
+                </div>
+
+                <div className="mt-8 grid gap-4 border-t border-blue-100/80 pt-6 dark:border-white/10">
                   {PRODUCT_ADVANTAGES[0].features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#0055ff] rounded-full flex-shrink-0" />
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{feature}</span>
+                    <div key={feature} className="flex items-center gap-3 rounded-2xl border border-blue-100/80 bg-white/70 px-4 py-3 backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+                      <div className="h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.45)] dark:bg-cyan-300 dark:shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 lg:rounded-l-lg dark:border-gray-800 z-10" />
             </div>
 
             {/* 高可用性 */}
-            <div className="group relative">
-              <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-8 lg:p-10">
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
-                    {PRODUCT_ADVANTAGES[1].icon}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-white/5 lg:p-9">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.09),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.14),transparent_30%)]" />
+              <div className="relative flex h-full items-start gap-5">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                  {PRODUCT_ADVANTAGES[1].icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white lg:text-2xl">
+                    {PRODUCT_ADVANTAGES[1].title}
+                  </h3>
+                  <div className="mt-3 flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-[#0055ff] lg:text-3xl">{PRODUCT_ADVANTAGES[1].stat}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[1].statLabel}</span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {PRODUCT_ADVANTAGES[1].title}
-                    </h3>
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">{PRODUCT_ADVANTAGES[1].stat}</span>
-                      <span className="text-xs font-semibold uppercase text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[1].statLabel}</span>
-                    </div>
-                    <p className="text-sm/6 text-gray-600 dark:text-gray-300">
-                      {PRODUCT_ADVANTAGES[1].description}
-                    </p>
-                  </div>
+                  <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                    {PRODUCT_ADVANTAGES[1].description}
+                  </p>
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
             </div>
 
             {/* 极速响应 */}
-            <div className="group relative">
-              <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-lg p-8 lg:p-10">
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 p-3 bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
-                    {PRODUCT_ADVANTAGES[2].icon}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-white/5 lg:p-9">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.12),transparent_30%)]" />
+              <div className="relative flex h-full items-start gap-5">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
+                  {PRODUCT_ADVANTAGES[2].icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white lg:text-2xl">
+                    {PRODUCT_ADVANTAGES[2].title}
+                  </h3>
+                  <div className="mt-3 flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-blue-600 dark:text-blue-400 lg:text-3xl">{PRODUCT_ADVANTAGES[2].stat}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[2].statLabel}</span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {PRODUCT_ADVANTAGES[2].title}
-                    </h3>
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">{PRODUCT_ADVANTAGES[2].stat}</span>
-                      <span className="text-xs font-semibold uppercase text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[2].statLabel}</span>
-                    </div>
-                    <p className="text-sm/6 text-gray-600 dark:text-gray-300">
-                      {PRODUCT_ADVANTAGES[2].description}
-                    </p>
-                  </div>
+                  <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                    {PRODUCT_ADVANTAGES[2].description}
+                  </p>
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 z-10" />
             </div>
 
             {/* 简单集成 - 大格子 */}
-            <div className="group relative lg:col-span-2 lg:rounded-r-lg">
-              <div className="absolute inset-px rounded-lg bg-white lg:rounded-r-lg dark:bg-gray-800" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-r-lg p-8 lg:p-10">
-                <div className="flex flex-col sm:flex-row sm:items-start gap-6 mb-8">
-                  <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-[#0055ff]/10 text-[#0055ff] rounded-xl">
+            <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(248,250,252,0.92))] p-8 shadow-[0_25px_70px_-40px_rgba(0,85,255,0.18)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] lg:col-span-2 lg:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(0,85,255,0.1),transparent_28%)] dark:bg-[radial-gradient(circle_at_right,rgba(59,130,246,0.16),transparent_28%)]" />
+              <div className="relative flex h-full flex-col">
+                <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-start">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
                     {PRODUCT_ADVANTAGES[3].icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                      Integration Efficiency
+                    </p>
+                    <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white lg:text-3xl">
                       {PRODUCT_ADVANTAGES[3].title}
                     </h3>
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-3xl lg:text-4xl font-bold text-[#0055ff]">{PRODUCT_ADVANTAGES[3].stat}</span>
-                      <span className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[3].statLabel}</span>
+                    <div className="mt-4 flex items-center gap-3">
+                      <span className="text-3xl font-bold text-[#0055ff] lg:text-4xl">{PRODUCT_ADVANTAGES[3].stat}</span>
+                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[3].statLabel}</span>
                     </div>
-                    <p className="text-base/7 text-gray-600 dark:text-gray-300 max-w-2xl">
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
                       {PRODUCT_ADVANTAGES[3].description}
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
+                <div className="grid grid-cols-2 gap-4 border-t border-gray-200/70 pt-6 dark:border-white/10 sm:grid-cols-4">
                   {PRODUCT_ADVANTAGES[3].features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#0055ff] rounded-full flex-shrink-0" />
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{feature}</span>
+                    <div key={feature} className="rounded-2xl border border-gray-200/70 bg-white/80 px-4 py-4 text-center text-sm font-medium text-gray-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">
+                      {feature}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm border border-gray-200 lg:rounded-r-lg dark:border-gray-800 z-10" />
             </div>
           </div>
         </section>
 
+
         {/* 合作伙伴展示 */}
-        <section className="py-16 lg:py-20 bg-white dark:bg-transparent">
-          <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
-            <div className="mx-auto w-full max-w-xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                与主流支付渠道深度合作
+        <section className="py-16 lg:py-20">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+            <div className="rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-8 shadow-[0_25px_70px_-40px_rgba(15,23,42,0.2)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
+              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                Channel Partners
+              </span>
+              <h2 className="mt-5 text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl">
+                与主流支付渠道建立深度协同
               </h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                我们与全球领先的支付机构建立了深度的合作伙伴关系，为您提供安全、稳定、高效的支付服务。无论您的用户身在何处，都能享受流畅的支付体验。
+              <p className="mt-5 text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                联合微信支付、支付宝、银联及国际支付渠道，兼顾本地化收款与全球业务扩展，提供稳定、合规、连续可用的支付能力。
               </p>
-              <div className="mt-8 flex items-center gap-x-6">
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-gray-200/80 bg-white/80 px-5 py-4 dark:border-white/10 dark:bg-white/5">
+                  <div className="text-2xl font-bold text-[#0055ff]">8+</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">核心渠道</div>
+                </div>
+                <div className="rounded-2xl border border-gray-200/80 bg-white/80 px-5 py-4 dark:border-white/10 dark:bg-white/5">
+                  <div className="text-2xl font-bold text-[#0055ff]">Global</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">场景覆盖</div>
+                </div>
+              </div>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="https://merch.payphp.cn/"
                   target="_blank"
-                  className="rounded-md bg-[#0055ff] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#0044cc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0055ff] transition-all duration-300"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0055ff] px-6 py-3 text-sm font-normal text-white shadow-lg shadow-[#0055ff]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0044cc]"
                 >
+                  <Rocket className="h-4 w-4" />
                   立即开通
                 </a>
-                <a href="#" className="text-sm font-semibold text-gray-900 dark:text-white hover:text-[#0055ff] transition-colors">
-                  联系商务 <span aria-hidden="true">&rarr;</span>
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-normal text-gray-700 transition-colors hover:text-[#0055ff] dark:text-gray-200">
+                  <Phone className="h-4 w-4" />
+                  联系商务
                 </a>
               </div>
             </div>
-            <div className="mx-auto grid w-full max-w-xl grid-cols-2 gap-4 lg:mx-0 lg:max-w-none lg:pl-8">
+
+            <div className="grid grid-cols-2 gap-4">
               {PARTNERS.map((partner) => (
                 <div
                   key={partner.name}
-                  className="flex items-center justify-between gap-4 p-4 rounded-2xl bg-gray-50/50 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 transition-all duration-300 group cursor-default border border-gray-100/50 hover:border-gray-200/50 dark:border-white/5"
+                  className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-5 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5"
                 >
-                  <span className="text-base font-bold text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white transition-colors duration-300">
-                    {partner.name}
-                  </span>
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white dark:bg-white/10 shadow-sm ring-1 ring-gray-900/5 group-hover:scale-110 transition-all duration-300">
-                    <div
-                      className="text-gray-400 group-hover:text-[var(--brand-color)] transition-colors duration-300"
-                      style={{ '--brand-color': partner.color } as React.CSSProperties}
-                    >
-                      {partner.icon}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                  <div className="relative flex items-center justify-between gap-4">
+                    <div>
+                      <span className="text-base font-bold text-gray-700 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">
+                        {partner.name}
+                      </span>
+                      <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-gray-400 dark:text-gray-500">
+                        Payment Partner
+                      </p>
+                    </div>
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-gray-200/70 bg-white/85 shadow-sm transition-all duration-300 group-hover:scale-105 dark:border-white/10 dark:bg-white/10">
+                      <div
+                        className="text-gray-400 transition-colors duration-300 group-hover:text-[var(--brand-color)]"
+                        style={{ '--brand-color': partner.color } as React.CSSProperties}
+                      >
+                        {partner.icon}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -865,121 +954,141 @@ const Industry = () => {
 
         {/* 行动号召区域 */}
         <section className="mb-16 lg:mb-20">
-          <div className="bg-gradient-to-r from-[#0055ff] to-[#0066ff] rounded-2xl p-8 lg:p-12 text-white text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              {CTA_CONFIG.title}
-            </h2>
-            <p className="text-lg md:text-xl mb-2 opacity-90">
-              {CTA_CONFIG.subtitle}
-            </p>
-            <p className="text-base opacity-80 mb-8 max-w-2xl mx-auto">
-              {CTA_CONFIG.description}
-            </p>
+          <div className="relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(239,246,255,0.92))] px-8 py-10 text-slate-900 shadow-[0_30px_90px_-40px_rgba(59,130,246,0.18)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:px-12 lg:py-14">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(191,219,254,0.5),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.94),rgba(239,246,255,0.88))] dark:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.2),transparent_26%),linear-gradient(135deg,rgba(15,23,42,0.92),rgba(2,6,23,1))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-15" />
 
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {CTA_CONFIG.tags.map((tag) => (
-                <span key={tag} className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
+            <div className="relative z-10 text-center">
+              <span className="inline-flex items-center rounded-full border border-blue-100/80 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff] backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:text-cyan-200">
+                Ready to Launch
+              </span>
+              <h2 className="mt-5 text-3xl font-bold tracking-[-0.03em] text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
+                {CTA_CONFIG.title}
+              </h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-200 md:text-xl">
+                {CTA_CONFIG.subtitle}
+              </p>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-500 dark:text-slate-300">
+                {CTA_CONFIG.description}
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              {CTA_CONFIG.buttons.map((button, index) => (
-                button.variant === "primary" ? (
-                  <a
-                    key={index}
-                    href={button.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-[#0055ff] px-6 lg:px-8 py-2.5 lg:py-3 font-bold hover:bg-gray-100 transition-all duration-300 rounded-lg text-center inline-block"
-                  >
-                    {button.text}
-                  </a>
-                ) : (
-                  <button
-                    key={index}
-                    className="border-2 border-white text-white px-6 lg:px-8 py-2.5 lg:py-3 font-semibold hover:bg-white hover:text-[#0055ff] transition-all duration-300 rounded-lg"
-                  >
-                    {button.text}
-                  </button>
-                )
-              ))}
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                {CTA_CONFIG.tags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-blue-100/80 bg-white/75 px-4 py-2 text-sm font-medium text-slate-700 backdrop-blur-sm dark:border-white/10 dark:bg-white/10 dark:text-slate-100">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mx-auto mt-8 flex max-w-md flex-col gap-4 sm:flex-row sm:justify-center">
+                {CTA_CONFIG.buttons.map((button, index) => (
+                  button.variant === "primary" ? (
+                    <a
+                      key={index}
+                      href={button.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0055ff] px-6 py-3 text-sm font-normal text-white shadow-lg shadow-[#0055ff]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0044cc]"
+                    >
+                      <Play className="h-4 w-4" />
+                      {button.text}
+                    </a>
+                  ) : (
+                    <button
+                      key={index}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-blue-100/80 bg-white/80 px-6 py-3 text-sm font-normal text-slate-700 transition-all duration-300 hover:border-[#0055ff]/20 hover:text-[#0055ff] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#0055ff]"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                      {button.text}
+                    </button>
+                  )
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* 服务支持卡片 */}
         <section className="mt-12 lg:mt-16 mb-12 lg:mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
-            {SUPPORT_CARDS.map((card, index) => (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6">
+            {SUPPORT_CARDS.map((card) => (
               <div
                 key={card.title}
-                className={`bg-white rounded-lg transition-all duration-300 p-4 lg:p-6 border border-gray-100 hover:border-[#0055ff]/20 group ${
-                  index === 0 ? 'col-span-2 md:col-span-1' : ''
-                }`}
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/92 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5 lg:p-7"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#0055ff] to-[#0066ff] rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {card.icon}
-                </div>
-                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0055ff] transition-colors duration-300">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {card.description}
-                </p>
-                <div className="flex items-center text-[#0055ff] font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
-                  <span>{card.linkText}</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_30%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_30%)]" />
+                <div className="relative">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0055ff] to-[#3b82f6] shadow-lg shadow-[#0055ff]/20 transition-transform duration-300 group-hover:scale-105">
+                    {card.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#0055ff] dark:text-white">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                    {card.description}
+                  </p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 group-hover:gap-3">
+                    <span>{card.linkText}</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
+
       </div>
 
       {/* 接入流程 */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-white/5">
+      <section className="py-16 lg:py-24">
         <div className="max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0">
-          {/* 标题区域 */}
-          <div className="text-center mb-12 lg:mb-16">
-            <div className="inline-flex items-center px-3 py-1 bg-[#0055ff]/10 rounded-full mb-4">
-              <span className="text-[#0055ff] text-xs font-medium">快速部署</span>
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">接入流程</h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 text-lg">标准化服务流程，助您快速完成支付系统接入</p>
-            <Button
-              className="bg-[#0055ff] hover:bg-[#0044cc] text-white px-8 py-6 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-              onClick={() => window.open('https://merch.payphp.cn/', '_blank')}
-            >
-              立即接入
-            </Button>
-          </div>
-
-          {/* 流程步骤 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {PROCESS_STEPS.map((step, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden">
-                {/* 序号水印 */}
-                <div className="absolute -right-4 -top-4 text-9xl font-bold text-gray-100/50 dark:text-gray-700/50 select-none pointer-events-none font-mono">
-                  {step.id}
-                </div>
-
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-[#0055ff]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#0055ff] transition-colors duration-300">
-                    <span className="text-[#0055ff] font-bold text-lg group-hover:text-white transition-colors duration-300">{step.id}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{step.title}</h3>
-                  <div className="w-8 h-1 bg-gray-100 dark:bg-gray-700 rounded-full mb-4 group-hover:bg-[#0055ff]/30 transition-colors duration-300"></div>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{step.desc}</p>
-                </div>
+          <div className="overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-8 shadow-[0_30px_90px_-50px_rgba(15,23,42,0.22)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
+            {/* 标题区域 */}
+            <div className="text-center mb-12 lg:mb-16">
+              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                Deployment Flow
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white lg:text-5xl">接入流程</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">标准化服务流程，帮助您快速完成账户注册、认证签约与正式上线。</p>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href="https://merch.payphp.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#0055ff] to-[#3b82f6] px-8 py-3 text-base font-medium text-white shadow-lg shadow-[#0055ff]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#0055ff]/30 hover:-translate-y-0.5"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#3b82f6] to-[#0055ff] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <Rocket className="relative h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  <span className="relative">立即接入</span>
+                  <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
               </div>
-            ))}
+            </div>
+
+            {/* 流程步骤 */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              {PROCESS_STEPS.map((step, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5 lg:p-7">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                  <div className="absolute -right-3 -top-3 text-8xl font-bold text-gray-100/70 dark:text-white/5 select-none pointer-events-none font-mono">
+                    {step.id}
+                  </div>
+
+                  <div className="relative z-10">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0055ff]/10 text-[#0055ff] transition-all duration-300 group-hover:bg-[#0055ff] group-hover:text-white">
+                      <span className="text-lg font-bold">{step.id}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{step.title}</h3>
+                    <div className="mt-4 h-1 w-10 rounded-full bg-gradient-to-r from-[#0055ff] to-cyan-400 opacity-70" />
+                    <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-300">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
     </section>
   );
 };

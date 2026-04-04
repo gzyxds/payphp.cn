@@ -61,17 +61,17 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
 
   return (
     <>
-      <div className="rounded-lg bg-white border border-gray-200 p-4 shadow-sm sm:p-6 lg:p-8">
+      <div className="rounded-lg bg-white border border-gray-200 p-4 shadow-sm sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
           {/* 左侧内容区域 - 优化移动端布局 */}
           <div className="lg:w-1/2">
             {/* 标题区域 - 简洁设计，优化移动端 */}
             <div className="mb-6 flex items-center gap-3 sm:mb-8 sm:gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-50 border border-gray-200 sm:h-12 sm:w-12">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-50 border border-gray-200 sm:h-12 sm:w-12 dark:bg-gray-700 dark:border-gray-600">
                 {getTabIcon(id)}
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl">
+                <h2 className="text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl dark:text-white">
                   {title}
                 </h2>
                 <div className="mt-1 h-0.5 w-12 bg-[#165dff] sm:w-16"></div>
@@ -80,10 +80,10 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
 
             {/* 描述内容 - 优化移动端字体大小和间距 */}
             <div className="space-y-3 mb-6 sm:space-y-4 sm:mb-8">
-              <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+              <p className="text-sm leading-relaxed text-gray-600 sm:text-base dark:text-gray-300">
                 {desc1}
               </p>
-              <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+              <p className="text-sm leading-relaxed text-gray-600 sm:text-base dark:text-gray-300">
                 {desc2}
               </p>
             </div>
@@ -91,11 +91,11 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
             {/* 特性列表 - 简洁卡片设计，优化移动端 */}
             <div className="grid grid-cols-1 gap-2.5 mb-6 sm:grid-cols-2 sm:gap-3 sm:mb-8">
               {getFeatureList(id).map((feature, index) => (
-                <div key={index} className="flex items-center gap-2.5 rounded-lg bg-gray-50 p-3 border border-gray-100 sm:gap-3 sm:p-4">
+                <div key={index} className="flex items-center gap-2.5 rounded-lg bg-gray-50 p-3 border border-gray-100 sm:gap-3 sm:p-4 dark:bg-gray-700/50 dark:border-gray-600">
                   <span className="text-lg sm:text-xl">{feature.icon}</span>
                   <div>
-                    <h4 className="font-medium text-gray-900 text-xs sm:text-sm">{feature.title}</h4>
-                    <p className="text-xs text-gray-600">{feature.desc}</p>
+                    <h4 className="font-medium text-gray-900 text-xs sm:text-sm dark:text-white">{feature.title}</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -106,7 +106,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
               <button className="rounded-lg bg-[#165dff] px-4 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-[#1451e6] focus:outline-none focus:ring-2 focus:ring-[#165dff]/20 sm:px-6 sm:py-3">
                 了解更多
               </button>
-              <button className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:px-6 sm:py-3">
+              <button className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:px-6 sm:py-3 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
                 查看文档
               </button>
             </div>
@@ -116,7 +116,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
           <div className="lg:w-1/2">
             <div className="relative">
               {/* 主要展示区域 - 优化移动端 */}
-              <div className="rounded-lg bg-white p-3 border border-gray-200 shadow-sm sm:p-4 lg:p-6">
+              <div className="rounded-lg bg-white p-3 border border-gray-200 shadow-sm sm:p-4 lg:p-6 dark:bg-gray-800 dark:border-gray-700">
                 <Image 
                   src={image} 
                   alt={title} 
@@ -134,10 +134,10 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
               </div>
 
               {/* 简洁的数据展示卡片 - 优化移动端位置和大小 */}
-              <div className="absolute -right-2 top-4 rounded-lg bg-white p-2 border border-gray-200 shadow-sm sm:-right-4 sm:top-6 sm:p-3">
-                <div className="text-xs text-gray-500 mb-0.5 sm:mb-1">安全等级</div>
-                <div className="text-sm font-semibold text-[#165dff] sm:text-base">AAA+</div>
-                <div className="flex items-center gap-1 text-xs text-green-600">
+              <div className="absolute -right-2 top-4 rounded-lg bg-white p-2 border border-gray-200 shadow-sm sm:-right-4 sm:top-6 sm:p-3 dark:bg-gray-800 dark:border-gray-700">
+                <div className="text-xs text-gray-500 mb-0.5 sm:mb-1 dark:text-gray-400">安全等级</div>
+                <div className="text-sm font-semibold text-[#165dff] sm:text-base dark:text-blue-400">AAA+</div>
+                <div className="flex items-center gap-1 text-xs text-green-600 dark:text-green-400">
                   <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -145,9 +145,9 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                 </div>
               </div>
 
-              <div className="absolute -left-2 bottom-4 rounded-lg bg-white p-2 border border-gray-200 shadow-sm sm:-left-4 sm:bottom-6 sm:p-3">
-                <div className="text-xs text-gray-500 mb-0.5 sm:mb-1">响应时间</div>
-                <div className="text-sm font-semibold text-green-600 sm:text-base">&lt;100ms</div>
+              <div className="absolute -left-2 bottom-4 rounded-lg bg-white p-2 border border-gray-200 shadow-sm sm:-left-4 sm:bottom-6 sm:p-3 dark:bg-gray-800 dark:border-gray-700">
+                <div className="text-xs text-gray-500 mb-0.5 sm:mb-1 dark:text-gray-400">响应时间</div>
+                <div className="text-sm font-semibold text-green-600 sm:text-base dark:text-green-400">&lt;100ms</div>
               </div>
             </div>
           </div>

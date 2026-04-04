@@ -7,7 +7,7 @@ const Solution = () => {
   return (
     <>
       {/* <!-- ===== 行业支付解决方案 ===== --> */}
-      <section className="overflow-hidden bg-[#f0f7ff] py-16 md:py-24 lg:py-32">
+      <section className="overflow-hidden bg-gray-50 py-16 md:py-24 lg:py-32 dark:bg-gray-900">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* 极简布局：清晰的层次结构 */}
           <div className="flex flex-col lg:flex-row lg:items-center gap-16 lg:gap-20 xl:gap-24">
@@ -33,10 +33,10 @@ const Solution = () => {
               <div className="relative mx-auto max-w-sm lg:max-w-none">
                 {/* 主标题 */}
                 <div className="mb-8">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1d2129] mb-4">
-                    一站式<span className="text-[#165dff]">支付解决方案</span>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#1d2129] mb-4 dark:text-white">
+                    一站式<span className="text-[#165dff] dark:text-blue-400">支付解决方案</span>
                   </h3>
-                  <p className="text-lg text-[#4e5969] leading-relaxed">
+                  <p className="text-lg text-[#4e5969] leading-relaxed dark:text-gray-400">
                     为您的业务提供全方位的支付服务，满足各种场景需求，提升用户体验与转化率。
                   </p>
                 </div>
@@ -45,7 +45,7 @@ const Solution = () => {
                 <div className="space-y-4">
                   {/* 特点1：多渠道支付 */}
                   <motion.div
-                    className="bg-white p-5 rounded-lg border-l-4 border-[#165dff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#165dff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
@@ -55,8 +55,8 @@ const Solution = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-base font-medium text-[#1d2129] mb-1">多渠道支付</h4>
-                        <p className="text-sm text-[#4e5969]">
+                        <h4 className="text-base font-medium text-[#1d2129] mb-1 dark:text-white">多渠道支付</h4>
+                        <p className="text-sm text-[#4e5969] dark:text-gray-400">
                           支持微信支付、支付宝、银联、QQ钱包等多种支付方式，满足不同用户的支付习惯。
                         </p>
                       </div>
@@ -65,7 +65,7 @@ const Solution = () => {
 
                   {/* 特点2：安全保障 */}
                   <motion.div
-                    className="bg-white p-5 rounded-lg border-l-4 border-[#4080ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#4080ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
@@ -75,8 +75,8 @@ const Solution = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-base font-medium text-[#1d2129] mb-1">安全保障</h4>
-                        <p className="text-sm text-[#4e5969]">
+                        <h4 className="text-base font-medium text-[#1d2129] mb-1 dark:text-white">安全保障</h4>
+                        <p className="text-sm text-[#4e5969] dark:text-gray-400">
                           采用银行级安全加密技术，全方位保障交易安全，防止欺诈和信息泄露。
                         </p>
                       </div>
@@ -85,7 +85,7 @@ const Solution = () => {
 
                   {/* 特点3：快速结算 */}
                   <motion.div
-                    className="bg-white p-5 rounded-lg border-l-4 border-[#6aa1ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300"
+                    className="bg-white p-5 rounded-lg border-l-4 border-[#6aa1ff] border-t border-r border-b border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex items-start gap-4">
@@ -95,8 +95,8 @@ const Solution = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-base font-medium text-[#1d2129] mb-1">快速结算</h4>
-                        <p className="text-sm text-[#4e5969]">
+                        <h4 className="text-base font-medium text-[#1d2129] mb-1 dark:text-white">快速结算</h4>
+                        <p className="text-sm text-[#4e5969] dark:text-gray-400">
                           支持T+1、D+1等多种结算方式，资金到账快速，提高资金周转效率。
                         </p>
                       </div>
@@ -106,17 +106,17 @@ const Solution = () => {
 
                 {/* 数据统计 - 更简约无阴影 */}
                 <div className="mt-8 grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
-                    <div className="text-2xl font-bold text-[#165dff] mb-1">99.9%</div>
-                    <div className="text-xs text-[#4e5969]">系统稳定性</div>
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff] dark:bg-gray-800 dark:border-gray-700">
+                    <div className="text-2xl font-bold text-[#165dff] mb-1 dark:text-blue-400">99.9%</div>
+                    <div className="text-xs text-[#4e5969] dark:text-gray-400">系统稳定性</div>
                   </div>
-                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
-                    <div className="text-2xl font-bold text-[#165dff] mb-1">300+</div>
-                    <div className="text-xs text-[#4e5969]">商户接入</div>
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff] dark:bg-gray-800 dark:border-gray-700">
+                    <div className="text-2xl font-bold text-[#165dff] mb-1 dark:text-blue-400">300+</div>
+                    <div className="text-xs text-[#4e5969] dark:text-gray-400">商户接入</div>
                   </div>
-                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff]">
-                    <div className="text-2xl font-bold text-[#165dff] mb-1">10亿+</div>
-                    <div className="text-xs text-[#4e5969]">年交易额</div>
+                  <div className="text-center p-3 bg-white rounded-lg border border-[#e6f0ff] dark:bg-gray-800 dark:border-gray-700">
+                    <div className="text-2xl font-bold text-[#165dff] mb-1 dark:text-blue-400">10亿+</div>
+                    <div className="text-xs text-[#4e5969] dark:text-gray-400">年交易额</div>
                   </div>
                 </div>
               </div>
@@ -151,22 +151,22 @@ const Solution = () => {
                 </span>
               </div>
 
-              <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left">
+              <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left dark:text-white">
                 提供
-                <span className="relative inline-block ml-2 text-[#165dff]">
+                <span className="relative inline-block ml-2 text-[#165dff] dark:text-blue-400">
                   行业级
                 </span>
                 支付解决方案
               </h2>
 
-              <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left">
+              <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left dark:text-gray-400">
                 针对不同行业特点，提供专业定制化的支付解决方案，满足各行业的特殊需求
               </p>
 
               {/* 行业特性列表 - 采用现代卡片设计 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div
-                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#165dff] text-white flex-shrink-0">
@@ -175,10 +175,10 @@ const Solution = () => {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129]">
+                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129] dark:text-white">
                       电商支付
                     </h3>
-                    <ul className="text-[#4e5969] text-sm space-y-1">
+                    <ul className="text-[#4e5969] text-sm space-y-1 dark:text-gray-400">
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#165dff]"></div>
                         支持主流支付渠道，实时到账
@@ -196,7 +196,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#4080ff] text-white flex-shrink-0">
@@ -205,10 +205,10 @@ const Solution = () => {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129]">
+                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129] dark:text-white">
                       游戏支付
                     </h3>
-                    <ul className="text-[#4e5969] text-sm space-y-1">
+                    <ul className="text-[#4e5969] text-sm space-y-1 dark:text-gray-400">
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#4080ff]"></div>
                         支持多种渠道，实时到账
@@ -226,7 +226,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#6aa1ff] text-white flex-shrink-0">
@@ -235,10 +235,10 @@ const Solution = () => {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129]">
+                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129] dark:text-white">
                       社交支付
                     </h3>
-                    <ul className="text-[#4e5969] text-sm space-y-1">
+                    <ul className="text-[#4e5969] text-sm space-y-1 dark:text-gray-400">
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#6aa1ff]"></div>
                         全自动结算结佣实时到账
@@ -256,7 +256,7 @@ const Solution = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300"
+                  className="flex items-start gap-4 rounded-lg bg-white p-6 border border-[#e6f0ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-700"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#0f1423] text-white flex-shrink-0">
@@ -265,10 +265,10 @@ const Solution = () => {
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129]">
+                    <h3 className="mb-2 text-lg font-semibold text-[#1d2129] dark:text-white">
                       动漫支付
                     </h3>
-                    <ul className="text-[#4e5969] text-sm space-y-1">
+                    <ul className="text-[#4e5969] text-sm space-y-1 dark:text-gray-400">
                       <li className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full bg-[#0f1423]"></div>
                         支付接入门槛低
@@ -292,7 +292,7 @@ const Solution = () => {
       {/* <!-- ===== 行业支付解决方案 ===== --> */}
 
       {/* <!-- ===== 核心优势展示 ===== --> */}
-      <section className="bg-white py-16 lg:py-24 xl:py-32">
+      <section className="bg-white py-16 lg:py-24 xl:py-32 dark:bg-gray-900">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* 移动端优化：改为垂直布局，桌面端保持水平布局 */}
           <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16 xl:gap-24">
@@ -315,7 +315,7 @@ const Solution = () => {
               className="animate_left w-full lg:w-1/2 order-1"
             >
               <div className="mb-6 text-center lg:text-left">
-                <span className="inline-flex items-center rounded-full bg-[#f0f7ff] px-4 py-2 text-sm font-medium text-[#165dff]">
+                <span className="inline-flex items-center rounded-full bg-[#f0f7ff] px-4 py-2 text-sm font-medium text-[#165dff] dark:bg-blue-900/30 dark:text-blue-400">
                   <span className="mr-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -325,14 +325,14 @@ const Solution = () => {
                 </span>
               </div>
 
-              <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left">
+              <h2 className="relative mb-6 text-3xl lg:text-4xl xl:text-5xl font-bold text-[#1d2129] leading-tight text-center lg:text-left dark:text-white">
                 全面支持各个终端
-                <span className="relative inline-block ml-2 text-[#165dff]">
+                <span className="relative inline-block ml-2 text-[#165dff] dark:text-blue-400">
                   数据同步
                 </span>
               </h2>
 
-              <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left">
+              <p className="mb-8 text-lg leading-relaxed text-[#4e5969] text-center lg:text-left dark:text-gray-400">
                 提供完整的API文档和SDK，支持快速集成，
                 让开发者能够轻松接入各种支付功能，缩短开发周期。
               </p>
@@ -378,17 +378,17 @@ const Solution = () => {
               className="animate_right relative w-full lg:w-1/2 order-2"
             >
               {/* 极简容器设计 */}
-              <div className="relative w-full">
-                {/* 主要内容容器 - 纯净白色风格 */}
-                <div className="relative z-10 rounded-lg bg-white border border-[#e6f0ff] overflow-hidden">
-                  {/* 极简标题栏 */}
-                  <div className="px-6 py-4 bg-[#f5f9ff] border-b border-[#e6f0ff]">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="h-2 w-2 rounded-full bg-[#165dff]"></div>
-                        <span className="text-sm font-medium text-[#1d2129]">支付方式</span>
-                      </div>
-                      <span className="text-sm text-[#4e5969] font-medium">6种方式</span>
+                <div className="relative w-full">
+                  {/* 主要内容容器 - 纯净白色风格 */}
+                  <div className="relative z-10 rounded-lg bg-white border border-[#e6f0ff] overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                    {/* 极简标题栏 */}
+                    <div className="px-6 py-4 bg-[#f5f9ff] border-b border-[#e6f0ff] dark:bg-gray-700/50 dark:border-gray-600">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="h-2 w-2 rounded-full bg-[#165dff]"></div>
+                          <span className="text-sm font-medium text-[#1d2129] dark:text-white">支付方式</span>
+                        </div>
+                        <span className="text-sm text-[#4e5969] font-medium dark:text-gray-400">6种方式</span>
                     </div>
                   </div>
 
@@ -397,23 +397,23 @@ const Solution = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {/* 微信支付 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-[#f5f9ff] border border-[#e6f0ff] hover:bg-[#ecf3ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-[#f5f9ff] border border-[#e6f0ff] hover:bg-[#ecf3ff] transition-all duration-300 dark:bg-gray-700/50 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
-                        <div className="h-10 w-10 rounded bg-[#165dff] flex items-center justify-center flex-shrink-0">
-                          <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        <div className="h-10 w-10 rounded bg-[#07c160] flex items-center justify-center flex-shrink-0">
+                          <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8.5,13.5A1.5,1.5 0 1,0 7,15A1.5,1.5 0 0,0 8.5,13.5M14.5,13.5A1.5,1.5 0 1,0 13,15A1.5,1.5 0 0,0 14.5,13.5M12,2C6.48,2 2,5.58 2,10C2,12.66 3.61,15.05 6.12,16.46L5.05,19.5L8.24,17.41C9.37,17.79 10.65,18 12,18C17.52,18 22,14.42 22,10C22,5.58 17.52,2 12,2Z" />
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">微信支付</div>
-                          <div className="text-xs text-[#4e5969] truncate">快捷移动支付</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">微信支付</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">快捷移动支付</div>
                         </div>
                       </motion.div>
 
                       {/* 支付宝支付 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
                         <div className="h-10 w-10 rounded bg-[#4080ff] flex items-center justify-center flex-shrink-0">
@@ -422,14 +422,14 @@ const Solution = () => {
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">支付宝支付</div>
-                          <div className="text-xs text-[#4e5969] truncate">全场景支付</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">支付宝支付</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">全场景支付</div>
                         </div>
                       </motion.div>
 
                       {/* QQ支付 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
                         <div className="h-10 w-10 rounded bg-[#6aa1ff] flex items-center justify-center flex-shrink-0">
@@ -438,14 +438,14 @@ const Solution = () => {
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">QQ支付</div>
-                          <div className="text-xs text-[#4e5969] truncate">社交支付</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">QQ支付</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">社交支付</div>
                         </div>
                       </motion.div>
 
                       {/* 二维码收款 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
                         <div className="h-10 w-10 rounded bg-[#0f1423] flex items-center justify-center flex-shrink-0">
@@ -454,14 +454,14 @@ const Solution = () => {
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">二维码收款</div>
-                          <div className="text-xs text-[#4e5969] truncate">扫码支付</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">二维码收款</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">扫码支付</div>
                         </div>
                       </motion.div>
 
                       {/* 个人码收款 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
                         <div className="h-10 w-10 rounded bg-[#165dff] flex items-center justify-center flex-shrink-0">
@@ -470,14 +470,14 @@ const Solution = () => {
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">个人码收款</div>
-                          <div className="text-xs text-[#4e5969] truncate">个人收款</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">个人码收款</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">个人收款</div>
                         </div>
                       </motion.div>
 
                       {/* 商家码收款 */}
                       <motion.div
-                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300"
+                        className="flex items-center gap-3 p-3 rounded bg-white border border-[#e6f0ff] hover:bg-[#f5f9ff] transition-all duration-300 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700"
                         whileHover={{ y: -2 }}
                       >
                         <div className="h-10 w-10 rounded bg-[#4080ff] flex items-center justify-center flex-shrink-0">
@@ -486,51 +486,51 @@ const Solution = () => {
                           </svg>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-medium text-[#1d2129] text-sm">商家码收款</div>
-                          <div className="text-xs text-[#4e5969] truncate">商户收款</div>
+                          <div className="font-medium text-[#1d2129] text-sm dark:text-white">商家码收款</div>
+                          <div className="text-xs text-[#4e5969] truncate dark:text-gray-400">商户收款</div>
                         </div>
                       </motion.div>
                     </div>
 
                     {/* 支付特性展示 */}
                     <div className="mt-4 grid grid-cols-2 gap-2">
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded dark:bg-gray-700/50">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        <span className="text-xs text-[#1d2129]">实时到账</span>
+                        <span className="text-xs text-[#1d2129] dark:text-gray-300">实时到账</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded dark:bg-gray-700/50">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
-                        <span className="text-xs text-[#1d2129]">安全保障</span>
+                        <span className="text-xs text-[#1d2129] dark:text-gray-300">安全保障</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded dark:bg-gray-700/50">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-xs text-[#1d2129]">快速接入</span>
+                        <span className="text-xs text-[#1d2129] dark:text-gray-300">快速接入</span>
                       </div>
-                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded">
+                      <div className="flex items-center gap-2 p-2 bg-[#f5f9ff] rounded dark:bg-gray-700/50">
                         <svg className="h-4 w-4 text-[#165dff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
-                        <span className="text-xs text-[#1d2129]">数据分析</span>
+                        <span className="text-xs text-[#1d2129] dark:text-gray-300">数据分析</span>
                       </div>
                     </div>
                   </div>
 
                   {/* 极简底部统计 */}
-                  <div className="px-6 py-4 bg-[#f5f9ff] border-t border-[#e6f0ff]">
+                  <div className="px-6 py-4 bg-[#f5f9ff] border-t border-[#e6f0ff] dark:bg-gray-700/50 dark:border-gray-600">
                     <div className="flex items-center justify-between text-sm">
                       <div className="flex items-center gap-4">
-                        <span className="text-[#4e5969]">接口数量: <span className="font-medium text-[#165dff]">6</span></span>
-                        <span className="text-[#4e5969]">可用性: <span className="font-medium text-[#165dff]">99.9%</span></span>
+                        <span className="text-[#4e5969] dark:text-gray-400">接口数量: <span className="font-medium text-[#165dff] dark:text-blue-400">6</span></span>
+                        <span className="text-[#4e5969] dark:text-gray-400">可用性: <span className="font-medium text-[#165dff] dark:text-blue-400">99.9%</span></span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="h-2 w-2 rounded-full bg-[#165dff]"></div>
-                        <span className="text-[#4e5969] font-medium">在线</span>
+                        <span className="text-[#4e5969] font-medium dark:text-gray-400">在线</span>
                       </div>
                     </div>
                   </div>
@@ -548,10 +548,10 @@ const Solution = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="bg-white rounded border border-[#e6f0ff] px-3 py-2">
+                  <div className="bg-white rounded border border-[#e6f0ff] px-3 py-2 dark:bg-gray-800 dark:border-gray-600">
                     <div className="text-center">
-                      <div className="text-lg font-bold text-[#165dff]">5min</div>
-                      <div className="text-xs text-[#4e5969]">快速集成</div>
+                      <div className="text-lg font-bold text-[#165dff] dark:text-blue-400">5min</div>
+                      <div className="text-xs text-[#4e5969] dark:text-gray-400">快速集成</div>
                     </div>
                   </div>
                 </motion.div>

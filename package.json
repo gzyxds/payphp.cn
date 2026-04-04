@@ -11,7 +11,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,css,md,json}\"",
     "typecheck": "tsc --noEmit"
   },
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "npm@10",
+
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",

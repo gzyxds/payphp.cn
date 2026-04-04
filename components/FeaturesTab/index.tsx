@@ -12,20 +12,20 @@ const FeaturesTab = () => {
   return (
     <>
       {/* <!-- ===== 支付企业官网 - 产品功能展示区域 Start ===== --> */}
-      <section className="bg-gray-50/30 pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-25 lg:pt-25 xl:pb-30 xl:pt-30">
+      <section className="bg-gray-50/30 pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-25 lg:pt-25 xl:pb-30 xl:pt-30 dark:bg-gray-900/50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* 标题区域 - 简洁设计，优化移动端间距 */}
           <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16">
-            <div className="mb-3 inline-flex items-center rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-[#165dff] border border-gray-200 shadow-sm sm:mb-4 sm:px-4 sm:py-2 sm:text-sm">
+            <div className="mb-3 inline-flex items-center rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-[#165dff] border border-gray-200 shadow-sm sm:mb-4 sm:px-4 sm:py-2 sm:text-sm dark:bg-gray-800 dark:border-gray-700">
               <svg className="mr-1.5 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
               </svg>
               产品功能
             </div>
-            <h2 className="mb-4 text-2xl font-bold text-gray-900 sm:mb-6 sm:text-3xl lg:text-4xl xl:text-5xl">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 sm:mb-6 sm:text-3xl lg:text-4xl xl:text-5xl dark:text-white">
               全方位支付解决方案
             </h2>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
               从安全支付到数据分析，从API集成到风控管理，为企业提供完整的支付生态系统解决方案
             </p>
           </div>
@@ -50,14 +50,14 @@ const FeaturesTab = () => {
           >
             {/* Tab导航容器 - 现代简洁设计，优化移动端 */}
             <div className="mx-auto max-w-2xl">
-              <div className="flex items-center justify-center rounded-xl bg-gray-100 p-1">
+              <div className="flex items-center justify-center rounded-xl bg-gray-100 p-1 dark:bg-gray-800">
                 {/* Tab 1 - 安全支付 */}
                 <button
                   onClick={() => setCurrentTab("tabOne")}
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabOne"
-                      ? "bg-white text-[#165dff] shadow-sm"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
                   <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -72,8 +72,8 @@ const FeaturesTab = () => {
                   onClick={() => setCurrentTab("tabTwo")}
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabTwo"
-                      ? "bg-white text-[#165dff] shadow-sm"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
                   <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -88,8 +88,8 @@ const FeaturesTab = () => {
                   onClick={() => setCurrentTab("tabThree")}
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabThree"
-                      ? "bg-white text-[#165dff] shadow-sm"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
                   <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">

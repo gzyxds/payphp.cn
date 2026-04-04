@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Qrcode from "@/components/Qrcode";
 import { Button } from "@/components/ui/button";
+import { Zap, ShoppingCart, FileText, Rocket, Eye, UserPlus, Building2, CreditCard, MessageCircle } from "lucide-react";
 
 /**
  * PaYphp支付系统官网页面组件
@@ -141,52 +142,8 @@ const PaymentAuth = () => {
     }
   ];
 
-  /**
-   * 主题切换功能
-   * 在明暗主题间切换，并更新DOM类名
-   */
-  const toggleTheme = () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
-  };
-
   return (
     <>
-
-      {/* 主题切换按钮 - 固定定位，支持键盘访问 */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={toggleTheme}
-          className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-600"
-          aria-label="切换主题模式"
-        >
-          <svg
-            className="w-5 h-5 text-gray-800 dark:text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              className="dark:hidden"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              className="hidden dark:block"
-            />
-          </svg>
-        </button>
-      </div>
 
       {/* Hero区 - 品牌展示和核心价值主张 */}
       <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-white pt-16 md:pt-20 lg:pt-24 xl:pt-28 pb-12 md:pb-16 lg:pb-20 xl:pb-24 dark:from-black dark:via-blue-950/20 dark:to-black overflow-hidden flex items-center">
@@ -195,6 +152,9 @@ const PaymentAuth = () => {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#0055ff]/5 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0055ff]/3 rounded-full blur-3xl"></div>
+          <div className="absolute -top-28 left-1/4 w-96 h-96 bg-gradient-to-br from-[#0055ff]/16 via-[#3b82f6]/8 to-[#0ea5e9]/12 blur-3xl"></div>
+
+
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] dark:opacity-[0.05]">
             <div className="w-full h-full" style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
@@ -218,8 +178,8 @@ const PaymentAuth = () => {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
                 <span className="relative inline-block">
                   收款秒到账
-                  <div className="absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-[#0055ff] to-[#0055ff]/50 rounded-full"></div>
                 </span>
+
                 <br />
                 <span className="text-[#0055ff]">高并发处理</span>
               </h1>
@@ -248,7 +208,8 @@ const PaymentAuth = () => {
                     className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
                     asChild
                   >
-                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Zap className="h-4 w-4" />
                       立即接入
                     </a>
                   </Button>
@@ -258,7 +219,8 @@ const PaymentAuth = () => {
                     size="lg"
                     asChild
                   >
-                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72">
+                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" className="flex items-center gap-2">
+                      <ShoppingCart className="h-4 w-4" />
                       购买源码
                     </a>
                   </Button>
@@ -481,7 +443,8 @@ const PaymentAuth = () => {
                 className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
                 asChild
               >
-                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Rocket className="h-4 w-4" />
                   立即体验功能
                 </a>
               </Button>
@@ -490,7 +453,8 @@ const PaymentAuth = () => {
                 size="lg"
                 asChild
               >
-                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
                   查看详细文档
                 </a>
               </Button>
@@ -569,7 +533,8 @@ const PaymentAuth = () => {
                         className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
                         asChild
                       >
-                        <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                        <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <Rocket className="h-4 w-4" />
                           获取方案
                         </a>
                       </Button>
@@ -579,7 +544,8 @@ const PaymentAuth = () => {
                         size="lg"
                         asChild
                       >
-                        <a href="/auth">
+                        <a href="/auth" className="flex items-center gap-2">
+                          <Eye className="h-4 w-4" />
                           查看案例
                         </a>
                       </Button>
@@ -732,7 +698,7 @@ const PaymentAuth = () => {
       </section>
 
       {/* 6. 转化区 - 核心转化内容 */}
-      <section style={{ backgroundColor: 'rgba(247,248,251, 1)' }} className="py-16 sm:py-20 md:py-24 lg:py-32 dark:bg-gray-900">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-[rgba(247,248,251,1)] dark:bg-gray-900">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
 
           {/* 主转化标题区域 */}
@@ -742,7 +708,7 @@ const PaymentAuth = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 text-center leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-6 text-center leading-tight"
             >
               立即开启您的
               <span className="text-[#0055ff] block sm:inline">
@@ -754,7 +720,7 @@ const PaymentAuth = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
             >
               轻量级 · 高并发 · 多重防掉单协议 · 拒绝掉单
             </motion.p>
@@ -769,8 +735,7 @@ const PaymentAuth = () => {
             >
               {/* 企业选择卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
+                className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">10000+</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">企业选择</div>
@@ -778,8 +743,7 @@ const PaymentAuth = () => {
 
               {/* 系统稳定性卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
+                className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">99.9%</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">系统稳定性</div>
@@ -787,8 +751,7 @@ const PaymentAuth = () => {
 
               {/* 技术支持卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
+                className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">24/7</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">技术支持</div>
@@ -796,8 +759,7 @@ const PaymentAuth = () => {
 
               {/* 快速集成卡片 */}
               <div
-                className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl text-center"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
+                className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">3步</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">快速集成</div>
@@ -806,7 +768,7 @@ const PaymentAuth = () => {
           </div>
 
           {/* 系统核心优势 */}
-          <section style={{ backgroundColor: 'rgba(247,248,251, 1)' }} className="py-16 sm:py-20 md:py-24 lg:py-32 dark:bg-gray-900">
+          <section className="py-16 sm:py-20 md:py-24 lg:py-32">
             <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div>
@@ -872,7 +834,7 @@ const PaymentAuth = () => {
                 </div>
 
                 <div className="text-center">
-                  <div className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl p-6 sm:p-8" style={{ border: '1px solid rgba(221, 226, 233, 1)' }}>
+                  <div className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                     <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center text-black dark:text-white">系统核心优势</h2>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
                       {[
@@ -885,8 +847,7 @@ const PaymentAuth = () => {
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3, delay: index * 0.05 }}
                           viewport={{ once: true }}
-                          className="bg-white dark:bg-gray-800 rounded-lg p-2 sm:p-3 font-medium text-black dark:text-white hover:scale-105 transition-transform duration-200"
-                          style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
+                          className="bg-gray-50 dark:bg-gray-700 rounded-lg p-2 sm:p-3 font-medium text-black dark:text-white hover:scale-105 transition-transform duration-200 border border-gray-200 dark:border-gray-600"
                         >
                           {feature}
                         </motion.div>
@@ -900,218 +861,177 @@ const PaymentAuth = () => {
          {/* 系统核心优势 */}
 
           {/* 价格方案 - 重点突出 */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 w-full text-center py-12 sm:py-16" style={{ backgroundColor: 'rgba(247,248,251, 1)', borderRadius: '16px' }}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white mb-4 leading-tight">选择适合您的方案</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 leading-relaxed">灵活的合作方式，满足不同业务需求</p>
+          <div className="text-center mb-16 sm:mb-24">
+            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 w-full text-center py-16 sm:py-24">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">选择适合您的方案</h2>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 sm:mb-16 leading-relaxed max-w-2xl mx-auto">
+                灵活的合作方式，满足不同业务需求，助您快速搭建专属支付平台
+              </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
-              {/* 免费版 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-black p-6 rounded-xl transition-all duration-300 hover:shadow-md"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-black dark:text-white mb-2">商户地址</h3>
-                  <div className="text-gray-500 dark:text-gray-400 mb-2">立即接入</div>
-                  <div className="text-2xl font-bold text-gray-600 dark:text-gray-300 mb-4">￥0</div>
-
-                  {/* 特性列表 - 简化样式 */}
-                  <div className="space-y-2 mb-6 text-left">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff] adaptive-dark-exclude" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">前台地址：merch.PaYphp.cn</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">演示后台：暂不开放</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">前后台账号：自行注册</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">前后台密码：自行注册</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mx-auto text-left">
+                {/* 免费版 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">商户地址</h3>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">立即接入，快速体验</div>
+                    <div className="text-4xl sm:text-5xl font-extrabold text-black dark:text-white">
+                      <span className="text-2xl font-medium text-gray-400 mr-1">￥</span>0
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
+                  {/* 特性列表 */}
+                  <div className="space-y-4 mb-10 flex-1">
+                    {[
+                      "前台地址：merch.PaYphp.cn",
+                      "演示后台：暂不开放",
+                      "前后台账号：自行注册",
+                      "前后台密码：自行注册"
+                    ].map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span className="text-gray-600 dark:text-gray-300 text-base">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col xl:flex-row gap-3 mt-auto">
                     <Button
-                      variant="default"
+                      variant="outline"
                       size="lg"
-                      className="flex-1 bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                      className="flex-1 border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
                       asChild
                     >
-                      <a href="https://merch.PaYphp.cn/register" target="_blank" rel="noopener noreferrer">
+                      <a href="https://merch.PaYphp.cn/register" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <UserPlus className="h-4 w-4" />
                         立即注册
                       </a>
                     </Button>
                     <Button
-                      variant="outline-primary"
+                      variant="default"
                       size="lg"
-                      className="flex-1"
+                      className="flex-1 bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 shadow-md"
                       asChild
                     >
-                      <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer">
+                      <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <Building2 className="h-4 w-4" />
                         商户中心
                       </a>
                     </Button>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
 
-              {/* 个人进阶版 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-black p-6 rounded-xl transition-all duration-300 hover:shadow-md relative"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
-              >
-                {/* 推荐标签 - 简化设计 */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#0055ff] text-white px-3 py-1 rounded-full font-medium">
-                  立即购买
-                </div>
+                {/* 个人进阶版 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 relative border-2 border-[#0055ff]/30 dark:border-blue-500/50"
+                >
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#0055ff] to-blue-400 text-white px-5 py-1.5 rounded-full text-sm font-semibold tracking-wide shadow-md whitespace-nowrap">
+                    最具性价比
+                  </div>
 
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-black dark:text-white mb-2">单域名授权</h3>
-                  <div className="text-gray-500 dark:text-gray-400 mb-2">个人/小型企业</div>
-                  <div className="text-2xl font-bold text-[#0055ff] mb-4">￥699</div>
-
-                  {/* 特性列表 - 简化样式 */}
-                  <div className="space-y-2 mb-6 text-left">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">永久使用</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">上传即用</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">提供程序源码</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">自备服务器/域名</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">专属用户群</span>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-[#0055ff] dark:text-blue-400 mb-2">单域名授权</h3>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">个人/小型企业</div>
+                    <div className="text-4xl sm:text-5xl font-extrabold text-[#0055ff]">
+                      <span className="text-2xl font-medium mr-1">￥</span>699
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="space-y-4 mb-10 flex-1">
+                    {[
+                      "永久使用",
+                      "上传即用",
+                      "提供程序源码",
+                      "自备服务器/域名",
+                      "专属用户群"
+                    ].map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-[#0055ff] shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span className="text-gray-800 dark:text-gray-200 font-medium text-base">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3 mt-auto">
                     <Qrcode preset="customer-service" />
                     <Button
-                      variant="outline-gray"
+                      variant="default"
                       size="lg"
-                      className="flex-1"
+                      className="flex-1 bg-[#0055ff] text-white shadow-lg shadow-blue-500/30 hover:bg-[#0055ff]/90"
                       asChild
                     >
-                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer">
+                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <CreditCard className="h-4 w-4" />
                         购买源码
                       </a>
                     </Button>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
 
-              {/* 团队版 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-black p-6 rounded-xl transition-all duration-300 hover:shadow-md relative"
-                style={{ border: '1px solid rgba(221, 226, 233, 1)' }}
-              >
-                {/* 推荐标签 - 简化设计 */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#0055ff] text-white px-3 py-1 rounded-full font-medium">
-                  立即购买
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-black dark:text-white mb-2">成为授权商</h3>
-                  <div className="text-gray-500 dark:text-gray-400 mb-2">代理/分销/合作</div>
-                  <div className="text-2xl font-bold text-[#0055ff] mb-4">￥2999</div>
-
-                  {/* 特性列表 - 简化样式 */}
-                  <div className="space-y-2 mb-6 text-left">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">购买产品: 7 折</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">不支持开通下级代理商</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">商户版单域名永久版 1 个 价值: 699 积分</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span className="text-gray-600 dark:text-gray-300">专属代理群</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-3 h-3 text-[#0055ff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-
-                      <span className="text-gray-600 dark:text-gray-300">技术支持</span>
+                {/* 团队版 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col bg-white dark:bg-gray-800 p-8 sm:p-10 rounded-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">成为授权商</h3>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 mb-6">代理/分销/合作</div>
+                    <div className="text-4xl sm:text-5xl font-extrabold text-black dark:text-white">
+                      <span className="text-2xl font-medium text-gray-400 mr-1">￥</span>2999
                     </div>
                   </div>
-                  <div className="flex gap-2">
+
+                  <div className="space-y-4 mb-10 flex-1">
+                    {[
+                      "购买产品: 7 折",
+                      "不支持开通下级代理商",
+                      "商户版单域名永久版 1 个",
+                      "专属代理群",
+                      "技术支持"
+                    ].map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-[#0055ff] shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span className="text-gray-600 dark:text-gray-300 text-base">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3 mt-auto">
                     <Qrcode preset="customer-service" />
                     <Button
-                      variant="outline-gray"
+                      variant="outline"
                       size="lg"
-                      className="flex-1"
+                      className="flex-1 border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
                       asChild
                     >
-                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer">
+                      <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <CreditCard className="h-4 w-4" />
                         购买源码
                       </a>
                     </Button>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
-        </div>
 
           {/* 最终转化CTA */}
           <motion.div
@@ -1149,7 +1069,8 @@ const PaymentAuth = () => {
                   className="bg-white text-[#0055ff] shadow-lg hover:bg-gray-100"
                   asChild
                 >
-                  <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <Zap className="h-4 w-4" />
                     立即体验接入
                   </a>
                 </Button>
@@ -1180,59 +1101,8 @@ const PaymentAuth = () => {
           </motion.div>
         </div>
       </section>
-
-
       </>
     );
   };
-
-  // 添加缺失的数据定义
-  const userCases = [
-    {
-      name: "张总",
-      company: "某电商平台",
-      comment: "PaYphp支付系统帮助我们解决了多渠道支付的难题，收款效率提升了300%，客户满意度大幅提升。"
-    },
-    {
-      name: "李经理",
-      company: "游戏公司",
-      comment: "系统稳定性非常好，从接入到现在半年时间，没有出现过任何支付故障，技术支持也很及时。"
-    },
-    {
-      name: "王站长",
-      company: "个人站长",
-      comment: "作为个人站长，PaYphp让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
-    }
-  ];
-
-  const pricingPlans = [
-    {
-      title: "体验版",
-      price: "免费",
-      suffix: "/7天",
-      description: "适合个人开发者和小型项目",
-      features: ["基础支付接口", "技术文档支持", "社区支持", "每日1000笔交易"],
-      buttonText: "免费试用",
-      popular: false
-    },
-    {
-      title: "专业版",
-      price: "¥2999",
-      suffix: "/年",
-      description: "适合中小企业和成长型业务",
-      features: ["全功能支付接口", "7x24技术支持", "数据分析报表", "无交易限制"],
-      buttonText: "立即购买",
-      popular: true
-    },
-    {
-      title: "企业版",
-      price: "定制",
-      suffix: "",
-      description: "适合大型企业和定制需求",
-      features: ["定制化开发", "专属客服", "私有化部署", "SLA保障"],
-      buttonText: "联系销售",
-      popular: false
-    }
-  ];
 
   export default PaymentAuth;

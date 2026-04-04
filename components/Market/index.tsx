@@ -959,7 +959,7 @@ const Market = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section - 应用商店主视觉区域 */}
       <div className="relative isolate overflow-hidden bg-white dark:bg-gray-900">
         <svg
@@ -1151,7 +1151,8 @@ const Market = () => {
         </div>
       </div>
 
-      <section className="py-4 px-4 bg-white border-b border-gray-200">
+      {/* 分类筛选区域 */}
+      <section className="py-4 px-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             <div className="flex flex-wrap gap-2">
@@ -1161,6 +1162,10 @@ const Market = () => {
                   variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
+                  className={selectedCategory === category
+                    ? "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600"
+                    : "border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+                  }
                 >
                   {category}
                 </Button>
@@ -1170,15 +1175,16 @@ const Market = () => {
         </div>
       </section>
 
-      <section className="py-12 px-4 bg-white">
+      {/* 应用列表区域 */}
+      <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPlugins.map((plugin) => (
-              <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-gray-200 dark:border-gray-700">
+              <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                 <CardHeader className="pb-4 border-b border-gray-100 dark:border-gray-700">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${plugin.category === '支付插件' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400'}`}>
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${plugin.category === '支付插件' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : 'bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'}`}>
                         {plugin.category === '支付插件' ? <ShoppingCart className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
                       </div>
                       <div>
@@ -1186,34 +1192,42 @@ const Market = () => {
                         <div className="flex items-center gap-2 mt-0.5">
                           <span className="text-xs text-gray-500 dark:text-gray-400">{plugin.author}</span>
                           <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
-                          <span className={`text-xs px-2 py-0.5 rounded-full ${plugin.category === '支付插件' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' : 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'}`}>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${plugin.category === '支付插件' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300' : 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300'}`}>
                             {plugin.category}
                           </span>
                         </div>
                       </div>
                     </div>
-                    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${plugin.status === '已安装' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'}`}>
+                    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${plugin.status === '已安装' ? 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'}`}>
                       {plugin.status}
                     </span>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-4 pb-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">{plugin.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{plugin.description}</p>
                   <div className="grid grid-cols-3 gap-3 text-xs">
-                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
                       <div className="text-gray-500 dark:text-gray-400 mb-1">版本</div>
                       <div className="font-semibold text-gray-900 dark:text-white">{plugin.version}</div>
                     </div>
-                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
                       <div className="text-gray-500 dark:text-gray-400 mb-1">更新</div>
                       <div className="font-semibold text-gray-900 dark:text-white text-xs">{plugin.updateTime.split(' ')[0]}</div>
                     </div>
-                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-2.5 text-center">
+                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
                       <div className="text-gray-500 dark:text-gray-400 mb-1">价格</div>
                       <div className="font-semibold text-green-600 dark:text-green-400">{plugin.price}</div>
                     </div>
                   </div>
-                  <Button className="w-full mt-4" size="sm" variant={plugin.status === '已安装' ? 'outline' : 'default'}>
+                  <Button
+                    className={`w-full mt-4 ${
+                      plugin.status === '已安装'
+                        ? 'border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700'
+                        : 'bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600'
+                    }`}
+                    size="sm"
+                    variant={plugin.status === '已安装' ? 'outline' : 'default'}
+                  >
                     {plugin.status === '已安装' ? '管理' : '安装'}
                   </Button>
                 </CardContent>

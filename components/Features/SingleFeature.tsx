@@ -8,11 +8,11 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
   return (
     <>
       {/* <!-- 极简功能卡片 --> */}
-      <div className="group relative bg-white p-8 rounded-lg">
+      <div className="group relative bg-white p-8 rounded-lg dark:bg-gray-800">
         {/* <!-- 标题区域 - 图标和标题在同一行 --> */}
         <div className="flex items-center gap-3 mb-4">
           {/* <!-- 图标容器 --> */}
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 transition-colors duration-200">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 transition-colors duration-200 dark:bg-gray-700 dark:group-hover:bg-gray-600">
             <Image
               src={icon}
               alt={title}
@@ -23,13 +23,13 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
           </div>
 
           {/* <!-- 标题 - 与图标在同一行显示 --> */}
-          <h3 className="text-lg font-semibold text-gray-900">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             {title}
           </h3>
         </div>
 
         {/* <!-- 描述文字 --> */}
-        <p className="text-sm leading-6 text-gray-600">
+        <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
           {description}
         </p>
       </div>
