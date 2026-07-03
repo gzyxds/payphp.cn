@@ -61,7 +61,7 @@ const fadeUpVariants = {
 const Footer = () => {
   return (
     <footer className="border-t border-stroke bg-white dark:border-strokedark dark:bg-blacksection">
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+      <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
         <div className="py-20 lg:py-25">
           <div className="flex flex-wrap gap-6 sm:gap-8 lg:justify-between lg:gap-0">
             <motion.div

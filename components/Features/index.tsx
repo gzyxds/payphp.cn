@@ -11,7 +11,7 @@ const Feature = () => {
         id="features"
         className="bg-gray-50 py-20 dark:bg-gray-900"
       >
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* <!-- 简洁标题区域 --> */}
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl dark:text-white">

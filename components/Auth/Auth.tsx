@@ -158,7 +158,7 @@ const PaymentAuth = () => {
         </div>
 
         <div className="relative w-full">
-          <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
             {/* 左侧：文案内容 */}
             <div className="text-center lg:text-left">
@@ -383,7 +383,7 @@ const PaymentAuth = () => {
 
       {/* 2. 核心功能区 - 卡片式网格展示 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
@@ -460,7 +460,7 @@ const PaymentAuth = () => {
 
       {/* 3. 场景解决方案 - 交替式布局 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white dark:bg-black">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
@@ -592,7 +592,7 @@ const PaymentAuth = () => {
 
       {/* 4. 技术优势区 - 数据可视化 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-[#0055ff]/5 via-transparent to-[#0055ff]/5 dark:from-[#0055ff]/10 dark:to-[#0055ff]/10">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
@@ -634,7 +634,7 @@ const PaymentAuth = () => {
 
       {/* 5. 用户案例区 - 客户评价展示 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white dark:bg-black">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
@@ -693,7 +693,7 @@ const PaymentAuth = () => {
 
       {/* 6. 转化区 - 核心转化内容 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-[rgba(247,248,251,1)] dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 主转化标题区域 */}
           <div className="text-center mb-12 sm:mb-16">
@@ -763,7 +763,7 @@ const PaymentAuth = () => {
 
           {/* 系统核心优势 */}
           <section className="py-16 sm:py-20 md:py-24 lg:py-32">
-            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+            <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center lg:text-left text-black dark:text-white leading-tight">为什么选择PaYphp</h2>
@@ -856,7 +856,7 @@ const PaymentAuth = () => {
 
           {/* 价格方案 */}
           <div className="text-center mb-16 sm:mb-24">
-            <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 py-16 sm:py-24">
+            <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 py-16 sm:py-24">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">选择适合您的方案</h2>
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
                 灵活的合作方式，满足不同业务需求

@@ -399,7 +399,7 @@ const Industry = () => {
         </div>
 
         {/* 英雄区内容 */}
-        <div className="relative max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0 pt-14 md:pt-20 lg:pt-24 pb-14 md:pb-20 lg:pb-20">
+        <div className="relative max-w-c-1450 mx-auto px-4 md:px-8 2xl:px-0 pt-14 md:pt-20 lg:pt-24 pb-14 md:pb-20 lg:pb-20">
 
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-16">
 
@@ -508,7 +508,7 @@ const Industry = () => {
 
 
       {/* 主要内容区域 - 约束宽度 */}
-      <div className="max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0">
+      <div className="max-w-c-1450 mx-auto px-4 md:px-8 2xl:px-0">
 
         {/* 核心统计数据展示 */}
         <section className="pt-16 lg:pt-20 mb-16 lg:mb-20">
@@ -1041,7 +1041,7 @@ const Industry = () => {
 
       {/* 接入流程 */}
       <section className="py-16 lg:py-24">
-        <div className="max-w-c-1390 mx-auto px-4 md:px-8 2xl:px-0">
+        <div className="max-w-c-1450 mx-auto px-4 md:px-8 2xl:px-0">
           <div className="overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-8 shadow-[0_30px_90px_-50px_rgba(15,23,42,0.22)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
             {/* 标题区域 */}
             <div className="text-center mb-12 lg:mb-16">

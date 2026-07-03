@@ -227,7 +227,7 @@ export default function Products() {
           </svg>
         </div>
 
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 relative z-10">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* 左侧：核心信息区 */}
             <div className="space-y-8">
@@ -348,7 +348,7 @@ export default function Products() {
 
       {/* 2. 功能亮点区 */}
       <section className="py-24 px-4 bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               核心功能
@@ -385,7 +385,7 @@ export default function Products() {
 
       {/* 3. 应用场景区 - 参考Auth样式设计 */}
       <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-slate-50 dark:bg-gray-800/50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
@@ -512,7 +512,7 @@ export default function Products() {
 
       {/* 4. 技术优势/数据支撑区 */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 标题区域 - 简洁设计 */}
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -553,7 +553,7 @@ export default function Products() {
 
       {/* 5. 服务保障区 */}
       <section className="py-24 px-4 bg-slate-50 dark:bg-gray-800/50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               服务保障
@@ -582,7 +582,7 @@ export default function Products() {
 
       {/* 6. 行动转化区（CTA区域） - 现代化卡片式简约风格 */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 主要CTA卡片 */}
           <div className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 overflow-hidden shadow-sm">
             <div className="p-12 text-center">

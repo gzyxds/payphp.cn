@@ -50,7 +50,7 @@ const itemVariants = {
 const Integration = () => {
   return (
     <section>
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+      <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
         <SectionHeader
           headerInfo={{
             title: `支付集成`,
@@ -60,7 +60,7 @@ const Integration = () => {
         />
       </div>
 
-      <div className="relative z-50 mx-auto mt-15 max-w-c-1390 px-4 md:px-8 xl:mt-20 2xl:px-0">
+      <div className="relative z-50 mx-auto mt-15 max-w-c-1450 px-4 md:px-8 xl:mt-20 2xl:px-0">
         <div className="absolute -top-3/4 left-0 right-0 -z-1 mx-auto h-full w-full">
           <Image
             width={1200}

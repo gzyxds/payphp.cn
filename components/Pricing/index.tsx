@@ -52,7 +52,7 @@ const Pricing = () => {
   return (
     <>
       <section className="overflow-hidden pb-16 pt-12 lg:pb-25 lg:pt-15 xl:pb-30">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
@@ -64,7 +64,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-10 max-w-c-1390 px-4 md:px-8 lg:mt-15 xl:mt-20 2xl:px-0">
+        <div className="relative mx-auto mt-10 max-w-c-1450 px-4 md:px-8 lg:mt-15 xl:mt-20 2xl:px-0">
           <div className="absolute -bottom-15 -z-1 h-full w-full">
             <Image
               fill
