@@ -1,129 +1,133 @@
 "use client";
-import Image from "next/image";
-import SectionHeader from "../Common/SectionHeader";
 
-interface PricingPlan {
-  price: string;
-  period: string;
-  title: string;
-  description: string;
-  features: string[];
-  isRecommended: boolean;
-  ariaLabel: string;
-}
+import { motion } from "framer-motion";
+import { Tag, Check, ArrowRight } from "lucide-react";
 
-const ArrowIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" fill="currentColor" />
-  </svg>
-);
-
-const pricingPlans: PricingPlan[] = [
+/* ====== 套餐数据 ====== */
+const PRICING_PLANS = [
   {
+    title: "体验套餐",
     price: "¥0",
     period: "/7天",
-    title: "体验套餐",
-    description: "体验套餐无售后",
+    desc: "免费体验，无售后支持",
     features: ["费率 3.00%", "每日限额 100元", "每月限额 1000元", "通道数无限制", "通道账号无限制"],
-    isRecommended: false,
-    ariaLabel: "选择基础版按钮",
+    recommended: false,
+    href: "https://merch.PaYphp.cn/login",
   },
   {
+    title: "月度会员",
     price: "¥19.89",
     period: "/30天",
-    title: "月度会员",
-    description: "套餐说明月度会员",
+    desc: "高性价比，适合中小商户",
     features: ["费率 0.50%", "每日限额无限制", "每月限额无限制", "通道数无限制", "通道账号无限制"],
-    isRecommended: true,
-    ariaLabel: "选择专业版按钮",
+    recommended: true,
+    href: "https://merch.PaYphp.cn/login",
   },
   {
+    title: "季度会员",
     price: "¥199",
     period: "/90天",
-    title: "季度会员",
-    description: "套餐说明季度会员",
+    desc: "超低费率，适合大流量商户",
     features: ["费率 0.20%", "每日限额无限制", "每月限额无限制", "通道数无限制", "通道账号无限制"],
-    isRecommended: false,
-    ariaLabel: "选择企业版按钮",
+    recommended: false,
+    href: "https://merch.PaYphp.cn/login",
   },
 ];
 
+/* ====== 组件 ====== */
+
+/**
+ * 费率方案区域
+ * 3 列定价卡片，推荐方案居中高亮
+ */
 const Pricing = () => {
   return (
-    <>
-      <section className="overflow-hidden pb-16 pt-12 lg:pb-25 lg:pt-15 xl:pb-30">
-        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
-          <div className="animate_top mx-auto text-center">
-            <SectionHeader
-              headerInfo={{
-                title: `费率方案`,
-                subtitle: `透明的支付费率`,
-                description: `选择最适合您业务的支付方案，无隐藏费用，按需付费。专业的支付服务，助力企业降本增效。`,
-              }}
-            />
-          </div>
-        </div>
+    <section className="bg-white py-16 md:py-24 lg:py-32 dark:bg-gray-950">
+      <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
-        <div className="relative mx-auto mt-10 max-w-c-1450 px-4 md:px-8 lg:mt-15 xl:mt-20 2xl:px-0">
-          <div className="absolute -bottom-15 -z-1 h-full w-full">
-            <Image
-              fill
-              sizes="(max-width: 768px) 100vw, 1390px"
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-            />
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 lg:flex-nowrap lg:gap-7.5 xl:gap-12.5">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.title}
-                className="animate_top group relative rounded-lg border border-stroke bg-white p-4 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[45%] lg:w-1/3 sm:p-6 xl:p-12.5"
-              >
-                {plan.isRecommended && (
-                  <div className="absolute -right-2 top-4 -rotate-90 rounded-bl-full rounded-tl-full bg-primary px-3 py-1 text-xs font-medium uppercase text-white sm:-right-3.5 sm:top-7.5 sm:px-4.5 sm:py-1.5 sm:text-metatitle">
-                    推荐
-                  </div>
-                )}
+        {/* ===== 标题 ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mx-auto mb-16 max-w-2xl text-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <Tag className="h-3.5 w-3.5" />
+            费率方案
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+            透明的
+            <span className="text-primary dark:text-blue-400">支付费率</span>
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            选择最适合您业务的支付方案，无隐藏费用，按需付费
+          </p>
+        </motion.div>
 
-                <h3 className="mb-4 text-2xl font-bold text-black dark:text-white sm:mb-7.5 sm:text-3xl xl:text-sectiontitle3">
-                  {plan.price}{" "}
-                  <span className="text-sm text-waterloo dark:text-manatee sm:text-regular">
-                    {plan.period}
-                  </span>
-                </h3>
-                <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                  {plan.title}
-                </h4>
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">{plan.description}</p>
+        {/* ===== 定价卡片 ===== */}
+        <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+          {PRICING_PLANS.map((plan, i) => (
+            <motion.div
+              key={plan.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative flex flex-col rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8 ${
+                plan.recommended
+                  ? "border-primary/30 bg-gradient-to-b from-primary/5 to-white shadow-primary/10 hover:shadow-primary/20 dark:from-blue-900/20 dark:to-gray-800/60 dark:border-blue-800"
+                  : "border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-800/60"
+              }`}
+            >
+              {/* 推荐标签 */}
+              {plan.recommended && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-white shadow-md">
+                  推荐
+                </span>
+              )}
 
-                <div className="mt-6 border-t border-stroke pb-8 pt-6 dark:border-strokedark sm:mt-9 sm:pb-12.5 sm:pt-9">
-                  <ul className="space-y-3 sm:space-y-4">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="text-sm text-black dark:text-manatee sm:text-base">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <a
-                  href="https://merch.PaYphp.cn/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={plan.ariaLabel}
-                  className="group/btn inline-flex items-center gap-2 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary sm:gap-2.5"
-                >
-                  <span className="text-sm duration-300 group-hover/btn:pr-2 sm:text-base">
-                    选择方案
-                  </span>
-                  <ArrowIcon />
-                </a>
+              {/* 价格 */}
+              <div className="mb-3">
+                <span className="text-4xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
+                <span className="text-base text-gray-500 dark:text-gray-400">{plan.period}</span>
               </div>
-            ))}
-          </div>
+
+              {/* 套餐名 + 描述 */}
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{plan.title}</h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{plan.desc}</p>
+
+              {/* 特性列表 */}
+              <ul className="mt-6 flex-1 space-y-3 border-t border-gray-100 pt-6 dark:border-gray-700">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2.5 text-sm text-gray-700 dark:text-gray-300">
+                    <Check className="h-4 w-4 flex-shrink-0 text-green-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <a
+                href={plan.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all ${
+                  plan.recommended
+                    ? "bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
+                    : "border border-gray-200 bg-white text-gray-700 hover:border-primary/30 hover:text-primary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:text-blue-400"
+                }`}
+              >
+                选择方案
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </>
+
+      </div>
+    </section>
   );
 };
 

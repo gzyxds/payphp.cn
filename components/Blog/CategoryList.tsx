@@ -1,66 +1,47 @@
-import React from "react";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { getAllBlogCategories, getBlogsByCategory } from "@/lib/blog";
 
 /**
- * 博客分类列表组件
- * 显示所有可用的博客分类及文章数量
+ * 博客分类列表（侧边栏组件）
+ * 显示所有分类及文章计数
  */
 const CategoryList = () => {
-  // 获取所有分类并计算每个分类的文章数量
   const allCategories = getAllBlogCategories();
-  const categories = allCategories.map((category, index) => {
+  const categories = allCategories.map((category) => {
     const blogs = getBlogsByCategory(category);
     return {
-      id: index + 1,
       name: category,
       slug: encodeURIComponent(category),
       count: blogs.length,
     };
   });
+
+  if (categories.length === 0) return null;
+
   return (
     <div>
-      <h4 className="mb-7.5 text-xl font-semibold text-black dark:text-white">
+      <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
         文章分类
       </h4>
-      
-      <div className="flex flex-col gap-4.5">
+      <div className="flex flex-col">
         {categories.map((category) => (
           <Link
-            key={category.id}
+            key={category.name}
             href={`/blog/category/${category.slug}`}
-            className="group flex items-center justify-between rounded-md px-4 py-3 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+            className="group flex items-center justify-between rounded-lg px-3 py-2.5 text-sm transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50"
           >
-            <span className="text-base font-medium text-body-color transition-all duration-300 group-hover:text-primary dark:text-body-color-dark">
+            <span className="font-medium text-gray-700 group-hover:text-primary dark:text-gray-300 dark:group-hover:text-blue-400">
               {category.name}
             </span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-body-color transition-all duration-300 group-hover:bg-primary group-hover:text-white dark:bg-gray-800 dark:text-body-color-dark">
-              {category.count}
+            <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
+              <span className="flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gray-100 px-1.5 text-xs font-medium text-gray-600 group-hover:bg-primary/10 group-hover:text-primary dark:bg-gray-700 dark:text-gray-400">
+                {category.count}
+              </span>
+              <ChevronRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
             </span>
           </Link>
         ))}
-      </div>
-      
-      {/* 查看所有分类链接 */}
-      <div className="mt-7.5 text-center">
-        <Link
-          href="/blog/categories"
-          className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-all duration-300 hover:underline"
-        >
-          查看所有分类
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
-              fill="currentColor"
-            />
-          </svg>
-        </Link>
       </div>
     </div>
   );

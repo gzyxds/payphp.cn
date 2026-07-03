@@ -1,342 +1,267 @@
 "use client";
-import Qrcode from "@/components/Qrcode";
-import { Button } from "@/components/ui/button";
-import { Zap, ShoppingCart, MessageCircle } from "lucide-react";
 
+import { motion } from "framer-motion";
+import {
+  Zap,
+  Lock,
+  Globe,
+  FileText,
+  MessageCircle,
+  CreditCard,
+  ScanLine,
+  ArrowLeftRight,
+  ScrollText,
+  TrendingUp,
+  Home,
+  Building2,
+  User,
+} from "lucide-react";
+
+/* ====== 优势标签数据 ====== */
+const ADVANTAGES = [
+  { label: "银行级安全", Icon: Lock, color: "text-blue-600" },
+  { label: "毫秒级响应", Icon: Zap, color: "text-yellow-500" },
+  { label: "全渠道覆盖", Icon: Globe, color: "text-green-600" },
+];
+
+/* ====== 手机快捷功能 ====== */
+const QUICK_ACTIONS = [
+  { label: "付款", Icon: CreditCard },
+  { label: "扫码", Icon: ScanLine },
+  { label: "转账", Icon: ArrowLeftRight },
+  { label: "账单", Icon: ScrollText },
+];
+
+/* ====== 手机底部导航 ====== */
+const BOTTOM_NAV = [
+  { label: "首页", Icon: Home, active: true },
+  { label: "资产", Icon: Building2, active: false },
+  { label: "发现", Icon: Globe, active: false },
+  { label: "我的", Icon: User, active: false },
+];
+
+/**
+ * Hero 首屏区域
+ * 左右分栏：左侧文案 + CTA，右侧手机模拟界面
+ * 支付风格深色渐变背景
+ */
 const Hero = () => {
-
   return (
-    <>
-      {/* Hero主视觉区域 - 采用支付企业官网设计风格 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 pb-20 pt-12 md:pt-16 xl:pb-32 xl:pt-20 dark:from-gray-900 dark:to-gray-800">
-        {/* 背景装饰元素 */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23165dff%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40 dark:opacity-20"></div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white pb-20 pt-24 md:pt-32 xl:pb-32 xl:pt-40">
+      {/* ===== 背景装饰 ===== */}
+      {/* 网格纹理 */}
+      <div className="absolute inset-0 opacity-[0.06] dark:opacity-[0.06]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%236b7280' stroke-width='0.5'%3E%3Cpath d='M0 0h40v40H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+      {/* 光晕 */}
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-blue-200/40 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-blue-100/50 blur-[100px]" />
+      {/* 装饰线条 */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent" />
 
-        <div className="relative mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-12 xl:gap-20">
-            {/* 左侧内容区域 */}
-            <div className="md:w-1/2 lg:w-3/5">
-              {/* 产品标签 */}
-              <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-primary border border-blue-100 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-400">
-                <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
-                </svg>
-                企业级支付解决方案
-              </div>
+      <div className="relative mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
 
-              {/* 主标题 */}
-              <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
-                安全可靠的
-                <br />
-                <span className="relative inline-block text-primary">
-                  支付服务平台
-                  <svg className="absolute -bottom-2 left-0 w-full" text-primary viewBox="0 0 300 12" fill="none">
-                    <path d="M2 10C100 2 200 2 298 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.3"/>
-                  </svg>
+          {/* ===== 左侧内容 ===== */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="w-full lg:w-3/5"
+          >
+            {/* 标签 */}
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              <Zap className="h-3.5 w-3.5" />
+              企业级支付解决方案
+            </span>
+
+            {/* 标题 */}
+            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
+              安全可靠的
+              <br />
+              <span className="text-primary dark:text-primary dark:text-blue-400">
+                支付服务平台
+              </span>
+            </h1>
+
+            {/* 描述 */}
+            <p className="mb-8 max-w-lg text-base leading-relaxed text-gray-500 md:text-lg dark:text-gray-500 dark:text-gray-400">
+              为企业提供专业、安全、高效的支付解决方案。支持多种支付方式，助力企业数字化转型。
+            </p>
+
+            {/* 优势标签 */}
+            <div className="mb-8 flex flex-wrap gap-2">
+              {ADVANTAGES.map(({ label, Icon, color }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                >
+                  <Icon className={`h-3.5 w-3.5 ${color}`} />
+                  {label}
                 </span>
-              </h1>
-              {/* 副标题描述 */}
-              <p className="mb-6 text-base leading-relaxed text-gray-600 md:text-lg lg:pr-6 dark:text-gray-400">
-                为企业提供专业、安全、高效的支付解决方案。支持多种支付方式，
-                助力企业数字化转型。
-              </p>
-
-              {/* 核心优势标签 */}
-              <div className="mb-8 flex flex-wrap gap-2">
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
-                  {/* 安全锁图标 */}
-                  <svg className="h-3.5 w-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                  银行级安全
-                </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
-                  {/* 闪电图标 */}
-                  <svg className="h-3.5 w-3.5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                  毫秒级响应
-                </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
-                  {/* 地球图标 */}
-                  <svg className="h-3.5 w-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  全球覆盖
-                </span>
-                <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex items-center gap-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
-                  {/* 图表图标 */}
-                  <svg className="h-3.5 w-3.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                  实时监控
-                </span>
-              </div>
-
-              {/* CTA操作区域 */}
-              <div className="space-y-6">
-                {/* CTA按钮组 */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                  <Button
-                    variant="default"
-                    size="lg"
-                    className="rounded-lg bg-primaryho text-white shadow-lg hover:bg-primaryho/90 font-normal"
-                    asChild
-                  >
-                    <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                      <Zap className="h-4 w-4" />
-                      立即接入
-                    </a>
-                  </Button>
-
-                  <Button
-                    variant="outline-primary"
-                    size="lg"
-                    asChild
-                  >
-                    <a href="/auth" className="flex items-center gap-2">
-                      <ShoppingCart className="h-4 w-4" />
-                      购买源码
-                    </a>
-                  </Button>
-
-                  <Qrcode
-                    preset="customer-service"
-                    buttonText="联系客服"
-                    buttonIcon={<MessageCircle className="h-4 w-4" />}
-                  />
-                </div>
-
-                {/* 免费试用说明 */}
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                免费试用30天，无需信用卡，专业技术支持
-                </p>
-
-                {/* 快速入口按钮组 */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-primary hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    产品文档
-                  </button>
-
-                 {/* 快速入口按钮组 */}
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-primary hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    在线咨询
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* 右侧视觉区域 - 模拟移动支付应用界面 */}
-            <div className="hidden md:block md:w-1/2 lg:w-2/5">
-              <div className="relative">
-                {/* 手机外框 */}
-                <div className="relative mx-auto w-72 h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
-                  {/* 手机屏幕 */}
-                  <div className="w-full h-full bg-gradient-to-b from-blue-500 to-blue-600 rounded-[2.5rem] overflow-hidden relative">
-                    {/* 状态栏 */}
-                    <div className="flex items-center justify-between px-6 pt-4 pb-2 text-white">
-                      <div className="text-sm font-medium">9:41</div>
-                      <div className="flex items-center gap-1">
-                        {/* 信号图标 */}
-                        <div className="flex gap-0.5">
-                          <div className="w-1 h-3 bg-white rounded-full"></div>
-                          <div className="w-1 h-4 bg-white rounded-full"></div>
-                          <div className="w-1 h-5 bg-white rounded-full"></div>
-                          <div className="w-1 h-6 bg-white rounded-full"></div>
+            {/* CTA 按钮 */}
+            <div className="flex gap-2 sm:gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
+              >
+                <Zap className="h-4 w-4" />
+                快速开始
+              </button>
+              <button
+                type="button"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-primary/30 hover:text-primary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:text-blue-400"
+              >
+                <FileText className="h-4 w-4" />
+                产品文档
+              </button>
+              <button
+                type="button"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-primary/30 hover:text-primary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:text-blue-400"
+              >
+                <MessageCircle className="h-4 w-4" />
+                在线咨询
+              </button>
+            </div>
+          </motion.div>
+
+          {/* ===== 右侧：手机模拟界面 ===== */}
+          <motion.div
+            initial={{ opacity: 0, x: 20, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-2/5"
+          >
+            <div className="relative mx-auto max-w-[280px]">
+              {/* 浮动数据卡片 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="absolute -left-12 top-1/4 z-20 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div className="text-xs text-gray-500 dark:text-gray-400">日交易量</div>
+                <div className="text-lg font-bold text-primary dark:text-blue-400">¥2.8M</div>
+                <div className="flex items-center gap-1 text-xs text-green-400">
+                  <TrendingUp className="h-3 w-3" />
+                  +12.5%
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="absolute -right-8 bottom-1/3 z-20 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div className="text-xs text-gray-500 dark:text-gray-400">成功率</div>
+                <div className="text-lg font-bold text-green-400">99.9%</div>
+                <div className="text-xs text-gray-500">实时监控</div>
+              </motion.div>
+
+              {/* 手机外框 */}
+              <div className="relative rounded-[2.5rem] border-2 border-gray-600 bg-black p-2 shadow-2xl shadow-blue-500/10">
+                {/* 灵动岛 */}
+                <div className="mx-auto mb-3 h-6 w-24 rounded-full bg-black" />
+
+                {/* 屏幕 */}
+                <div className="overflow-hidden rounded-[2rem] bg-gradient-to-b from-blue-500 to-blue-700">
+                  {/* 状态栏 */}
+                  <div className="flex items-center justify-between px-6 pt-3 pb-2 text-white">
+                    <span className="text-xs font-medium">9:41</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="flex gap-0.5">
+                        {[3,4,5,6].map((h) => (
+                          <div key={h} className="w-0.5 rounded-full bg-white" style={{ height: h * 2 }} />
+                        ))}
+                      </div>
+                      <div className="relative ml-0.5 h-2.5 w-5 rounded-sm border border-white/70">
+                        <div className="absolute left-0.5 top-0.5 h-1.5 w-3 rounded-sm bg-green-400" />
+                        <div className="absolute -right-0.5 top-0.5 h-1 w-0.5 rounded-r bg-white/70" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 应用头部 */}
+                  <div className="flex items-center gap-2.5 px-6 py-3">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white">
+                      <span className="text-sm font-bold text-blue-600">P</span>
+                    </div>
+                    <span className="font-semibold text-white">PaYphp</span>
+                  </div>
+
+                  {/* 余额卡片 */}
+                  <div className="mx-4 mb-4 rounded-2xl bg-white/10 p-5 backdrop-blur-sm">
+                    <div className="mb-1 text-sm text-white/70">我的余额</div>
+                    <div className="mb-4 text-3xl font-bold text-white">¥ 8,659.20</div>
+                    <div className="flex gap-2">
+                      <span className="rounded-lg bg-white/20 px-4 py-1.5 text-xs font-medium text-white">充值</span>
+                      <span className="rounded-lg bg-white/20 px-4 py-1.5 text-xs font-medium text-white">提现</span>
+                    </div>
+                  </div>
+
+                  {/* 快捷功能 */}
+                  <div className="mb-4 px-4">
+                    <div className="mb-2 text-xs text-white/70">快捷功能</div>
+                    <div className="grid grid-cols-4 gap-3">
+                      {QUICK_ACTIONS.map(({ label, Icon }) => (
+                        <div key={label} className="text-center">
+                          <div className="mx-auto mb-1.5 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+                            <Icon className="h-5 w-5 text-white" />
+                          </div>
+                          <span className="text-xs text-white/80">{label}</span>
                         </div>
-                        {/* 电池图标 */}
-                        <div className="w-6 h-3 border border-white rounded-sm relative ml-1">
-                          <div className="w-4 h-1.5 bg-green-400 rounded-sm absolute top-0.5 left-0.5"></div>
-                          <div className="w-0.5 h-1 bg-white rounded-r absolute -right-1 top-1"></div>
-                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 底部白区 */}
+                  <div className="rounded-t-3xl bg-white px-5 py-5">
+                    {/* 全球支付 */}
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-50">
+                        <Globe className="h-4 w-4 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-gray-900">全球支付</div>
+                        <div className="text-xs text-gray-500">支持多种结算</div>
                       </div>
                     </div>
 
-                    {/* 应用头部 */}
-                    <div className="px-6 py-4">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                          <span className="text-blue-600 font-bold text-sm">P</span>
-                        </div>
-                        <span className="text-white font-semibold text-lg">PaYphp</span>
-                      </div>
-
-                      {/* 余额卡片 */}
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6 relative overflow-hidden">
-                        {/* 安全标识 */}
-                        <div className="absolute top-4 right-4 bg-white/20 rounded-lg px-3 py-1">
-                          <div className="flex items-center gap-1">
-                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 616 0z" clipRule="evenodd" />
-                            </svg>
-                            <span className="text-xs text-white font-medium">银行级安全</span>
-                          </div>
-                          <div className="text-xs text-white/80 mt-0.5">多重加密保障</div>
-                        </div>
-
-                        <div className="text-white/80 text-sm mb-2">我的余额</div>
-                        <div className="text-white text-3xl font-bold mb-4">¥ 8,659.20</div>
-
-                        <div className="flex gap-3">
-                          <button className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white text-sm font-medium">
-                            充值
-                          </button>
-                          <button className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white text-sm font-medium">
-                            提现
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* 快捷功能 */}
-                      <div className="mb-6">
-                        <div className="text-white/90 text-sm mb-3">快捷功能</div>
-                        <div className="grid grid-cols-4 gap-4">
-                          {/* 付款 */}
-                          <div className="text-center">
-                            <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                              </svg>
-                            </div>
-                            <span className="text-white text-xs">付款</span>
-                          </div>
-
-                          {/* 扫码 */}
-                          <div className="text-center">
-                            <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
-                              </svg>
-                            </div>
-                            <span className="text-white text-xs">扫码</span>
-                          </div>
-
-                          {/* 转账 */}
-                          <div className="text-center">
-                            <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                              </svg>
-                            </div>
-                            <span className="text-white text-xs">转账</span>
-                          </div>
-
-                          {/* 账单 */}
-                          <div className="text-center">
-                            <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-2">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                              </svg>
-                            </div>
-                            <span className="text-white text-xs">账单</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* 底部内容区域 */}
-                    <div className="bg-white rounded-t-3xl flex-1 px-6 py-6">
-                      {/* 全球支付支持 */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
-                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
+                    {/* 近期交易 */}
+                    <div className="mb-4 rounded-xl bg-gray-50 p-3">
+                      <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-medium text-gray-900">全球支付</div>
-                          <div className="text-sm text-gray-500">支持多种结算</div>
+                          <div className="text-sm font-medium text-gray-900">网上商城</div>
+                          <div className="text-xs text-gray-500">今天 14:30</div>
                         </div>
+                        <div className="text-sm font-bold text-gray-900">-¥128.50</div>
                       </div>
+                    </div>
 
-                      {/* 近期交易 */}
-                      <div className="mb-4">
-                        <div className="text-gray-900 font-medium mb-3">近交易</div>
-                        <div className="bg-gray-50 rounded-xl p-4">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <div className="font-medium text-gray-900">网上商城</div>
-                              <div className="text-sm text-gray-500">今天 14:30</div>
-                            </div>
-                            <div className="text-right">
-                              <div className="font-bold text-gray-900">-¥128.50</div>
-                            </div>
-                          </div>
+                    {/* 底部导航 */}
+                    <div className="flex justify-around border-t border-gray-100 pt-3">
+                      {BOTTOM_NAV.map(({ label, Icon, active }) => (
+                        <div key={label} className="text-center">
+                          <Icon className={`mx-auto mb-0.5 h-5 w-5 ${active ? "text-blue-600" : "text-gray-500 dark:text-gray-400"}`} />
+                          <span className={`text-xs ${active ? "font-medium text-blue-600" : "text-gray-500 dark:text-gray-400"}`}>
+                            {label}
+                          </span>
                         </div>
-                      </div>
-
-                      {/* 底部导航 */}
-                      <div className="flex justify-around pt-4 border-t border-gray-100">
-                        <div className="text-center">
-                          <div className="w-6 h-6 mx-auto mb-1">
-                            <svg className="w-full h-full text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                            </svg>
-                          </div>
-                          <span className="text-xs text-blue-600 font-medium">首页</span>
-                        </div>
-                        <div className="text-center">
-                          <div className="w-6 h-6 mx-auto mb-1">
-                            <svg className="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                          </div>
-                          <span className="text-xs text-gray-400">资产</span>
-                        </div>
-                        <div className="text-center">
-                          <div className="w-6 h-6 mx-auto mb-1">
-                            <svg className="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                          </div>
-                          <span className="text-xs text-gray-400">发现</span>
-                        </div>
-                        <div className="text-center">
-                          <div className="w-6 h-6 mx-auto mb-1">
-                            <svg className="w-full h-full text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                          </div>
-                          <span className="text-xs text-gray-400">我的</span>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-
-                {/* 装饰性元素 */}
-                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br will-change-transform from-primary/20 to-blue-300/20 blur-xl dark:from-primary/10 dark:to-blue-300/10"></div>
-                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br will-change-transform from-blue-100/50 to-primary/10 blur-2xl dark:from-blue-900/20 dark:to-primary/5"></div>
-
-                {/* 浮动数据卡片 */}
-                <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white will-change-transform p-4 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
-                  <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">日交易量</div>
-                  <div className="text-lg font-bold text-primary dark:text-blue-400">¥2.8M</div>
-                  <div className="flex items-center gap-1 text-xs text-green-600">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                    +12.5%
-                  </div>
-                </div>
-
-                <div className="absolute -right-6 bottom-1/3 rounded-lg bg-white will-change-transform p-3 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
-                  <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">成功率</div>
-                  <div className="text-lg font-bold text-green-600">99.9%</div>
-                  <div className="text-xs text-gray-400 dark:text-gray-500">实时监控</div>
-                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

@@ -1,63 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import { Search } from "lucide-react";
+import { useState } from "react";
 
 /**
- * 博客搜索框组件
- * 提供博客文章的搜索功能
+ * 博客搜索框
+ * 带搜索图标的内联搜索输入
  */
 const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // 处理搜索提交
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      // 这里可以添加实际的搜索逻辑
-      console.log("搜索关键词:", searchTerm);
-      // 可以跳转到搜索结果页面或过滤当前页面内容
+      console.log("搜索:", searchTerm);
+      // TODO: 跳转搜索结果页
     }
   };
 
   return (
-    <div className="relative">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="搜索文章..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full rounded-md border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-        />
-        <button
-          type="submit"
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-body-color transition-all duration-300 hover:text-primary dark:text-body-color-dark"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M17.5 17.5L13.875 13.875"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSearch} className="relative">
+      <input
+        type="text"
+        placeholder="搜索文章..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full rounded-xl border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-4 text-sm text-gray-900 outline-none transition-all placeholder:text-gray-400 focus:border-primary/50 focus:bg-white focus:ring-2 focus:ring-primary/10 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-800 dark:focus:bg-gray-800"
+      />
+      <button type="submit" className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-primary dark:text-gray-500 dark:hover:text-blue-400">
+        <Search className="h-4 w-4" />
+      </button>
+    </form>
   );
 };
 
