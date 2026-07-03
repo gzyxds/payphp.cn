@@ -135,7 +135,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-2/5"
           >
-            <div className="relative mx-auto max-w-[280px]">
+            <div className="relative mx-auto max-w-[360px]">
               {/* 浮动数据卡片 */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
