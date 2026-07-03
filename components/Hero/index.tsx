@@ -16,6 +16,7 @@ import {
   Building2,
   User,
 } from "lucide-react";
+import Qrcode from "@/components/Qrcode";
 
 /* ====== 优势标签数据 ====== */
 const ADVANTAGES = [
@@ -104,27 +105,29 @@ const Hero = () => {
 
             {/* CTA 按钮 */}
             <div className="flex gap-2 sm:gap-3">
-              <button
-                type="button"
+              <a
+                href="https://merch.payphp.cn/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
               >
                 <Zap className="h-4 w-4" />
                 快速开始
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="/docs"
                 className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-primary/30 hover:text-primary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:text-blue-400"
               >
                 <FileText className="h-4 w-4" />
                 产品文档
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-4 py-2.5 sm:px-6 sm:py-3 text-sm font-medium text-gray-700 shadow-sm transition-all hover:border-primary/30 hover:text-primary dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:text-blue-400"
-              >
-                <MessageCircle className="h-4 w-4" />
-                在线咨询
-              </button>
+              </a>
+              <Qrcode
+                preset="customer-service"
+                buttonText="在线咨询"
+                buttonIcon={<MessageCircle className="h-4 w-4" />}
+                buttonVariant="outline-gray"
+                buttonClassName="!rounded-xl !h-auto !py-2.5 sm:!py-3 !px-4 sm:!px-6 !text-sm !font-medium !shadow-sm hover:!border-primary/30 hover:!text-white dark:!border-gray-700 dark:!bg-gray-800 dark:!text-gray-300 dark:hover:!border-blue-800 dark:hover:!text-blue-400"
+              />
             </div>
           </motion.div>
 
