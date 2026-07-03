@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <>
       <section id="support" className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <motion.div
             variants={{
               hidden: { opacity: 0, y: -20 },

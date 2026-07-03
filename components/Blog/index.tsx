@@ -10,7 +10,7 @@ const Blog = () => {
 
   return (
     <section className="py-20 lg:py-25 xl:py-30">
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+      <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
         {/* <!-- Section Title Start --> */}
         <div className="animate_top mx-auto text-center">
           <SectionHeader
@@ -24,7 +24,7 @@ const Blog = () => {
         {/* <!-- Section Title End --> */}
       </div>
 
-      <div className="mx-auto mt-15 max-w-c-1390 px-4 md:px-8 xl:mt-20 2xl:px-0">
+      <div className="mx-auto mt-15 max-w-c-1450 px-4 md:px-8 xl:mt-20 2xl:px-0">
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
           {latestPosts.length > 0 ? (
             latestPosts.map((blog) => (

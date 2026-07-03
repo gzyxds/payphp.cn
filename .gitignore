@@ -32,6 +32,10 @@ yarn-error.log*
 .env*.local
 .env
 
+# claude
+.claude/settings.local.json
+.claude/worktrees/
+
 # vercel
 .vercel
 # typescript

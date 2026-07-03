@@ -13,7 +13,7 @@ const FeaturesTab = () => {
     <>
       {/* <!-- ===== 支付企业官网 - 产品功能展示区域 Start ===== --> */}
       <section className="bg-gray-50/30 pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-25 lg:pt-25 xl:pb-30 xl:pt-30 dark:bg-gray-900/50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 标题区域 - 简洁设计，优化移动端间距 */}
           <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16">
             <div className="mb-3 inline-flex items-center rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-[#165dff] border border-gray-200 shadow-sm sm:mb-4 sm:px-4 sm:py-2 sm:text-sm dark:bg-gray-800 dark:border-gray-700">
@@ -50,10 +50,14 @@ const FeaturesTab = () => {
           >
             {/* Tab导航容器 - 现代简洁设计，优化移动端 */}
             <div className="mx-auto max-w-2xl">
-              <div className="flex items-center justify-center rounded-xl bg-gray-100 p-1 dark:bg-gray-800">
+              <div className="flex items-center justify-center rounded-xl bg-gray-100 p-1 dark:bg-gray-800" role="tablist">
                 {/* Tab 1 - 安全支付 */}
                 <button
                   onClick={() => setCurrentTab("tabOne")}
+                  role="tab"
+                  id="tab-tabOne"
+                  aria-selected={currentTab === "tabOne"}
+                  aria-controls="panel-tabOne"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabOne"
                       ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
@@ -70,6 +74,10 @@ const FeaturesTab = () => {
                 {/* Tab 2 - 数据分析 */}
                 <button
                   onClick={() => setCurrentTab("tabTwo")}
+                  role="tab"
+                  id="tab-tabTwo"
+                  aria-selected={currentTab === "tabTwo"}
+                  aria-controls="panel-tabTwo"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabTwo"
                       ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
@@ -86,6 +94,10 @@ const FeaturesTab = () => {
                 {/* Tab 3 - API集成 */}
                 <button
                   onClick={() => setCurrentTab("tabThree")}
+                  role="tab"
+                  id="tab-tabThree"
+                  aria-selected={currentTab === "tabThree"}
+                  aria-controls="panel-tabThree"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabThree"
                       ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
@@ -120,10 +132,13 @@ const FeaturesTab = () => {
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
-            className="animate_top mx-auto max-w-c-1390"
+            className="animate_top mx-auto max-w-c-1450"
           >
             {featuresTabData.map((feature, key) => (
               <div
+                id={`panel-${feature.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${feature.id}`}
                 className={feature.id === currentTab ? "block" : "hidden"}
                 key={key}
               >

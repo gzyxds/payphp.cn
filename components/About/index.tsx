@@ -224,7 +224,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="relative z-10 mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* 左侧内容 */}
             <motion.div
@@ -301,7 +301,7 @@ const About = () => {
 
       {/* 发展历程 */}
       <section className="pb-20 pt-20 lg:pb-25 lg:pt-25 overflow-hidden">
-        <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="relative mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 发展历程区域 - 横向步骤条设计 */}
           <div className="mb-24">
             <div className="text-center mb-16">
@@ -396,7 +396,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 核心理念
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 我们的核心价值观指引着每一个决策和行动
               </p>
             </div>
@@ -441,7 +441,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 社区认可
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 我们获得的荣誉是对技术创新和服务质量的认可
               </p>
             </div>
@@ -486,7 +486,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 核心团队
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 由行业专家组成的精英团队，致力于推动支付技术创新
               </p>
             </div>
@@ -550,7 +550,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 合作伙伴
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 解答您关心的问题，帮助您更好地了解PaYphp
               </p>
             </div>
@@ -581,13 +581,13 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 技术栈
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 与行业领先企业携手，共同打造支付生态
               </p>
             </div>
 
             {/* 合作伙伴网格 - 两排两行布局 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1390 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1450 mx-auto">
               {techStack.map((tech, index) => (
                 <motion.div
                   key={index}
@@ -624,13 +624,13 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
                 常见问题
               </h2>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1390 mx-auto">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
                 基于现代化技术栈，构建高性能、可扩展的支付系统
               </p>
             </div>
 
             {/* 技术栈进度条展示 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1390 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-c-1450 mx-auto">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -670,7 +670,7 @@ const About = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
                   加入PaYphp开发者社区
                 </h3>
-                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-c-1390 mx-auto">
+                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-c-1450 mx-auto">
                   与全球10万+开发者一起，构建下一代支付应用
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

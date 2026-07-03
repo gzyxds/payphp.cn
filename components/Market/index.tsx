@@ -998,7 +998,7 @@ const Market = () => {
             className="aspect-1108/632 w-277 bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"
           />
         </div>
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
           <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
             <div className="mt-24 sm:mt-32 lg:mt-16">
               <a href="#" className="inline-flex space-x-6">
@@ -1153,7 +1153,7 @@ const Market = () => {
 
       {/* 分类筛选区域 */}
       <section className="py-4 px-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -1177,7 +1177,7 @@ const Market = () => {
 
       {/* 应用列表区域 */}
       <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPlugins.map((plugin) => (
               <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">

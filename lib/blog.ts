@@ -125,7 +125,7 @@ export async function getBlogData(slug: string): Promise<Blog | null> {
 
     // 组合数据和内容
     return {
-      id: Date.now() + Math.random(), // 生成唯一 ID
+      id: hashCode(slug),
       slug,
       title: matterResult.data.title,
       description: matterResult.data.description,

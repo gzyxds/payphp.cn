@@ -8,7 +8,7 @@ const Solution = () => {
     <>
       {/* <!-- ===== 行业支付解决方案 ===== --> */}
       <section className="overflow-hidden bg-gray-50 py-16 md:py-24 lg:py-32 dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 极简布局：清晰的层次结构 */}
           <div className="flex flex-col lg:flex-row lg:items-center gap-16 lg:gap-20 xl:gap-24">
             {/* 左侧文案内容区域 - 现代简约设计 */}
@@ -293,7 +293,7 @@ const Solution = () => {
 
       {/* <!-- ===== 核心优势展示 ===== --> */}
       <section className="bg-white py-16 lg:py-24 xl:py-32 dark:bg-gray-900">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+        <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 移动端优化：改为垂直布局，桌面端保持水平布局 */}
           <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16 xl:gap-24">
             {/* 左侧内容 */}
