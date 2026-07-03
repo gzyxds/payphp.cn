@@ -101,7 +101,8 @@ export default function Products() {
       benefits: [
         { id: "multi-pay", label: "多种支付方式" },
         { id: "easy-tool", label: "便捷收费工具" },
-        { id: "ux-optimize", label: "用户体验优化" }
+        { id: "ux-optimize", label: "用户体验优化" },
+        { id: "data-analytics", label: "数据统计分析" }
       ]
     },
     {
@@ -118,7 +119,8 @@ export default function Products() {
       benefits: [
         { id: "stable", label: "稳定可靠" },
         { id: "payment-guarantee", label: "支付保障" },
-        { id: "student-exp", label: "学员体验" }
+        { id: "student-exp", label: "学员体验" },
+        { id: "efficient-settlement", label: "高效结算" }
       ]
     },
     {
@@ -135,7 +137,8 @@ export default function Products() {
       benefits: [
         { id: "simplify-process", label: "简化流程" },
         { id: "improve-efficiency", label: "提高效率" },
-        { id: "flexible-config", label: "灵活配置" }
+        { id: "flexible-config", label: "灵活配置" },
+        { id: "real-time-transfer", label: "实时到账" }
       ]
     }
   ];
@@ -277,7 +280,7 @@ export default function Products() {
 
               {/* 行动按钮 */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90" asChild>
+                <Button size="lg" className="bg-primary text-white shadow-lg hover:bg-primary/90" asChild>
                   <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Rocket className="h-5 w-5" />
                     立即体验
@@ -366,7 +369,7 @@ export default function Products() {
               >
                 {/* icon和标题并排显示 */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-primaryho dark:text-blue-400">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-primary dark:text-blue-400">
                     {feature.icon}
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
@@ -388,8 +391,8 @@ export default function Products() {
         <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
-              <div className="w-2 h-2 bg-primaryho rounded-full"></div>
+            <div className="inline-flex items-center gap-3 bg-primary/10 text-primary px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
               行业解决方案
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
@@ -414,7 +417,7 @@ export default function Products() {
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight">
                     {scenario.title}
                   </h3>
-                  <p className="text-lg sm:text-xl text-primaryho font-medium mb-4 sm:mb-6">
+                  <p className="text-lg sm:text-xl text-primary font-medium mb-4 sm:mb-6">
                     {scenario.badge.label}
                   </p>
                   <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
@@ -425,7 +428,7 @@ export default function Products() {
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
                     {scenario.benefits.map((benefit, featureIndex) => (
                       <div key={benefit.id} className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-white dark:bg-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors border border-gray-100 dark:border-gray-700">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primaryho rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
                           </svg>
@@ -442,7 +445,7 @@ export default function Products() {
                     <Button
                       variant="default"
                       size="lg"
-                      className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90"
+                      className="bg-primary text-white shadow-lg hover:bg-primary/90"
                       asChild
                     >
                       <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -479,7 +482,7 @@ export default function Products() {
                       <div className="grid grid-cols-2 gap-2 sm:gap-3">
                         {scenario.metrics.map((metric) => (
                           <div key={metric.label} className="bg-white dark:bg-gray-800 p-2.5 sm:p-3 rounded-lg border border-gray-100 dark:border-gray-700">
-                            <div className="text-base sm:text-lg font-bold text-primaryho">{metric.value}</div>
+                            <div className="text-base sm:text-lg font-bold text-primary">{metric.value}</div>
                             <div className="text-xs text-gray-600 dark:text-gray-400">{metric.label}</div>
                           </div>
                         ))}
@@ -502,7 +505,7 @@ export default function Products() {
                   </div>
 
                   {/* 装饰元素 */}
-                  <div className="absolute -top-4 -right-4 w-16 sm:w-20 h-16 sm:h-20 bg-primaryho/10 rounded-full blur-xl"></div>
+                  <div className="absolute -top-4 -right-4 w-16 sm:w-20 h-16 sm:h-20 bg-primary/10 rounded-full blur-xl"></div>
                 </div>
               </div>
             ))}
@@ -601,7 +604,7 @@ export default function Products() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button
                   size="lg"
-                  className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90 dark:bg-blue-600 dark:hover:bg-blue-500"
+                  className="bg-primary text-white shadow-lg hover:bg-primary/90 dark:bg-blue-600 dark:hover:bg-blue-500"
                   asChild
                 >
                   <a href="https://merch.PaYphp.cn/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
