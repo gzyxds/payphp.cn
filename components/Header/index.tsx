@@ -5,10 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Menu, X, ChevronDown, Github, Bell,
-  Moon, Sun, User, Settings, HelpCircle,
-  BookOpen, Code, Zap, Layers, ExternalLink, Cloud, Gift, Sparkles,
-  FileText, Archive, Newspaper, ShoppingCart, Cpu, Globe, Smartphone
+  Menu, X, ChevronDown, User, HelpCircle,
+  BookOpen, Code, Zap, Layers, ExternalLink, Cloud, Sparkles,
+  FileText, Archive, Newspaper, ShoppingCart, Cpu, Smartphone
 } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -365,6 +364,8 @@ export default function Header(): JSX.Element {
                     onMouseLeave={handleMenuMouseLeave}
                   >
                     <button
+                      aria-expanded={hoveredMenu === item.name}
+                      aria-haspopup="true"
                       className={`group flex items-center text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
                         hoveredMenu === item.name
                           ? "text-[#015bfe] bg-blue-50/70 dark:text-blue-400 dark:bg-blue-950/50"
@@ -531,6 +532,8 @@ export default function Header(): JSX.Element {
             {/* 移动端菜单按钮 */}
             <button
               onClick={toggleMobileMenu}
+              aria-label={mobileMenuOpen ? "关闭菜单" : "打开菜单"}
+              aria-expanded={mobileMenuOpen}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               {mobileMenuOpen ? (

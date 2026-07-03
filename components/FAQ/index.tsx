@@ -20,12 +20,14 @@ const FAQ = () => {
           <div className="absolute -bottom-16 -z-1 h-full w-full">
             <Image
               fill
+              sizes="(max-width: 768px) 100vw, 1390px"
               src="/images/shape/shape-dotted-light.svg"
               alt="Dotted"
               className="dark:hidden"
             />
             <Image
               fill
+              sizes="(max-width: 768px) 100vw, 1390px"
               src="/images/shape/shape-dotted-light.svg"
               alt="Dotted"
               className="hidden dark:block"
