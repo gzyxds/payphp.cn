@@ -18,11 +18,13 @@ import ThemeToggler from "./ThemeToggler";
 const SCROLL_THRESHOLD = 20;
 const MOBILE_BREAKPOINT = 768;
 
+const URL_MERCH = "https://merch.payphp.cn";
+const URL_DOCS = "https://docs.payphp.cn/";
+
 interface NavSubItem {
   name: string;
   path: string;
   icon: React.ReactElement;
-  color: string;
   description: string;
   external?: boolean;
   url?: string;
@@ -41,32 +43,34 @@ const NAV_ITEMS: NavItem[] = [
     name: "产品服务",
     dropdown: true,
     items: [
-      { name: "产品介绍", path: "/products", icon: <Layers className="h-5 w-5" />, color: "indigo", description: "PaYphp产品中心" },
-      { name: "解决方案", path: "/industry", icon: <Cpu className="h-5 w-5" />, color: "indigo", description: "行业解决方案" },
-      { name: "应用市场", path: "/market", icon: <ShoppingCart className="h-5 w-5" />, color: "purple", description: "丰富的功能扩展" },
-      { name: "购买源码", path: "/auth", icon: <Archive className="h-5 w-5" />, color: "amber", description: "获取开源代码" },
+      { name: "产品介绍", path: "/products", icon: <Layers className="h-5 w-5" />, description: "PaYphp产品中心" },
+      { name: "解决方案", path: "/industry", icon: <Cpu className="h-5 w-5" />, description: "行业解决方案" },
+      { name: "应用市场", path: "/market", icon: <ShoppingCart className="h-5 w-5" />, description: "丰富的功能扩展" },
+      { name: "购买源码", path: "/auth", icon: <Archive className="h-5 w-5" />, description: "获取开源代码" },
     ],
   },
   {
-    name: "开发者",
+    name: "服务支持",
     dropdown: true,
     items: [
-      { name: "项目文档", path: "/docs", icon: <BookOpen className="h-5 w-5" />, color: "indigo", description: "详细的技术文档" },
-      { name: "新闻资讯", path: "/blog", icon: <Newspaper className="h-5 w-5" />, color: "purple", description: "最新动态和资讯" },
-      { name: "服务支持", path: "/support", icon: <HelpCircle className="h-5 w-5" />, color: "cyan", description: "专业技术支持" },
+      { name: "商户文档", path: "https://docs.payphp.cn/8033235m0", icon: <BookOpen className="h-5 w-5" />, description: "商户接入与使用指南", external: true, url: "https://docs.payphp.cn/8033235m0" },
+      { name: "项目文档", path: "/docs", icon: <BookOpen className="h-5 w-5" />, description: "开发者技术参考文档" },
+      { name: "新闻资讯", path: "/blog", icon: <Newspaper className="h-5 w-5" />, description: "最新动态和资讯" },
+      { name: "服务支持", path: "/support", icon: <HelpCircle className="h-5 w-5" />, description: "专业技术支持" },
     ],
   },
   {
     name: "相关资源",
     dropdown: true,
     items: [
-      { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, color: "amber", description: "AI智能平台", external: true, url: "https://urlnet.cn/" },
-      { name: "优刻云", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, color: "sky", description: "云端计算服务", external: true, url: "https://www.cloudcvm.com/" },
-      { name: "领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, color: "pink", description: "流量卡服务", external: true, url: "https://www.urlka.cn/" },
+      { name: "智言AIGC", path: "https://aigc.cnai.art/", icon: <Sparkles className="h-5 w-5" />, description: "一站式AIGC智能创作平台", external: true, url: "https://aigc.cnai.art/" },
+      { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, description: "用一套源码系统承载你的 AI 应用业务", external: true, url: "https://urlnet.cn/" },
+      { name: "优刻云计算", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, description: "上云特惠-4核4G云服务器38元/年-限时秒杀官方", external: true, url: "https://www.cloudcvm.com/" },
+      { name: "免费领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, description: "全国超值流量卡免费领，顺丰包邮到家", external: true, url: "https://www.urlka.cn/" },
     ],
   },
   { name: "关于我们", path: "/about" },
-  { name: "官方文档", path: "https://docs.payphp.cn/", external: true },
+  { name: "官方文档", path: URL_DOCS, external: true },
 ];
 
 const MOBILE_MENU_VARIANTS = {
@@ -92,15 +96,10 @@ const navLinkClass = (isActive: boolean) =>
 
 const DROPDOWN_DESC: Record<string, string> = {
   "产品服务": "探索我们的产品解决方案",
-  "开发者": "获取开发者资源和支持",
+  "服务支持": "获取服务支持和资源",
   "相关资源": "相关资源和合作伙伴",
 };
 
-const MOBILE_DROPDOWN_DESC: Record<string, string> = {
-  "产品服务": "探索产品解决方案",
-  "开发者": "开发者资源和支持",
-  "相关资源": "相关资源和合作伙伴",
-};
 
 const MOBILE_DROPDOWN_ID: Record<string, string> = {
   "产品服务": "products",
@@ -176,31 +175,31 @@ function DropdownItem({
   onOpenExternal: (url: string) => void;
 }) {
   const inner = (
-    <div className="flex items-center gap-4 px-5 py-4 rounded-lg transition-all duration-200 hover:bg-blue-50/60 dark:hover:bg-blue-950/30 group-hover/item:border-blue-100 dark:group-hover/item:border-blue-900/50">
+    <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-white/5">
       <div className="flex-shrink-0">
-        <div className="w-11 h-11 rounded-xl bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm ring-1 ring-gray-200 dark:ring-gray-700 group-hover/item:ring-blue-200 dark:group-hover/item:ring-blue-800 group-hover/item:shadow-md group-hover/item:shadow-blue-100/50 dark:group-hover/item:shadow-blue-900/20 transition-all duration-200">
-          {React.cloneElement(subItem.icon, { className: "w-5 h-5 text-gray-600 dark:text-gray-400 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-200" })}
+        <div className="h-8 w-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+          {React.cloneElement(subItem.icon, { className: "h-4 w-4 text-gray-500 dark:text-gray-400" })}
         </div>
       </div>
       <div className="flex-1 min-w-0">
-        <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-200">
+        <div className="text-sm font-medium text-gray-800 dark:text-gray-200">
           {subItem.name}
         </div>
-        <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">{subItem.description}</div>
+        <div className="text-xs text-gray-500 dark:text-gray-400 ">{subItem.description}</div>
       </div>
     </div>
   );
 
   if (subItem.external) {
     return (
-      <div className="group/item cursor-pointer" onClick={() => onOpenExternal(subItem.url!)}>
+      <div className="cursor-pointer" onClick={() => onOpenExternal(subItem.url!)}>
         {inner}
       </div>
     );
   }
 
   return (
-    <Link href={subItem.path} className="group/item" onClick={onNavigate}>
+    <Link href={subItem.path}  onClick={onNavigate}>
       {inner}
     </Link>
   );
@@ -234,7 +233,7 @@ function DropdownPanel({
       </div>
 
       {/* Items Grid */}
-      <div className="p-4">
+      <div className="p-3">
         <div className="grid grid-cols-2 gap-1">
           {item.items?.map((sub) => (
             <DropdownItem key={sub.name} subItem={sub} onNavigate={onNavigate} onOpenExternal={onOpenExternal} />
@@ -291,7 +290,7 @@ function MobileCategoryBlock({
           </div>
           <div className="flex flex-col items-start">
             {renderMenuItemName(item.name)}
-            <span className="text-xs text-gray-500 dark:text-gray-400">{MOBILE_DROPDOWN_DESC[item.name] || ""}</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">{DROPDOWN_DESC[item.name] || ""}</span>
           </div>
         </div>
         <ChevronDown className={`h-5 w-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
@@ -324,7 +323,7 @@ function MobileCategoryBlock({
 const QUICK_LINKS = [
   { key: "home", href: "/", label: "首页", desc: "返回首页", icon: Zap, bg: "bg-cyan-100 dark:bg-cyan-900/50", iconColor: "text-cyan-600 dark:text-cyan-400" },
   { key: "about", href: "/about", label: "关于我们", desc: "了解团队", icon: User, bg: "bg-emerald-100 dark:bg-emerald-900/50", iconColor: "text-emerald-600 dark:text-emerald-400" },
-  { key: "docs", href: "https://docs.payphp.cn/", label: "官方文档", desc: "查看文档", icon: FileText, bg: "bg-amber-100 dark:bg-amber-900/50", iconColor: "text-amber-600 dark:text-amber-400", external: true },
+  { key: "docs", href: URL_DOCS, label: "官方文档", desc: "查看文档", icon: FileText, bg: "bg-amber-100 dark:bg-amber-900/50", iconColor: "text-amber-600 dark:text-amber-400", external: true },
 ];
 
 // ─── Main Header ───
@@ -409,7 +408,7 @@ export default function Header() {
           <div className="flex items-center space-x-8">
             <Link href="/" className="flex items-center group" onClick={handleNavigation}>
               <div className="flex items-center">
-                <Image src="/images/logo/logo-dark.svg" alt="PaYphp" width={120} height={30} className="h-8 w-auto dark:hidden" />
+                <Image src="/images/logo/logo-dark.svg" priority alt="PaYphp" width={120} height={30} className="h-8 w-auto dark:hidden" />
                 <Image src="/images/logo/logo-light.svg" alt="PaYphp" width={120} height={30} className="h-8 w-auto hidden dark:block" />
                 <span className="ml-1.5 text-xs bg-blue-100 text-primary px-1.5 py-0.5 rounded-full font-medium dark:bg-blue-900 dark:text-blue-300">官网</span>
               </div>
@@ -461,7 +460,7 @@ export default function Header() {
             <ThemeToggler />
 
             <Link
-              href="https://merch.payphp.cn"
+              href={URL_MERCH}
               className="hidden md:inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-2 text-sm font-normal text-white transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               <User className="h-4 w-4" />
@@ -552,13 +551,13 @@ export default function Header() {
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">账户中心</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
-                    <Link href="https://merch.payphp.cn" target="_blank" rel="noopener noreferrer">
+                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer">
                       <button className="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium rounded-lg transition-all duration-200 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 text-sm py-2.5 px-4">
                         <User className="h-4 w-4 mr-1.5 inline" />
                         登录
                       </button>
                     </Link>
-                    <Link href="https://merch.payphp.cn" target="_blank" rel="noopener noreferrer">
+                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer">
                       <button className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-all duration-200 text-sm py-2.5 px-4">
                         <Sparkles className="h-4 w-4 mr-1.5 inline" />
                         注册

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Qrcode from "@/components/Qrcode";
 import { Button } from "@/components/ui/button";
-import { Zap, ShoppingCart, FileText, Rocket, Eye, UserPlus, Building2, CreditCard, MessageCircle, Check } from "lucide-react";
+import { Zap, ShoppingCart, FileText, Rocket, Eye, UserPlus, Building2, CreditCard, MessageCircle, Check, Crown, Sparkles, CheckCircle, BadgePercent, Gem } from "lucide-react";
 
 /**
  * PaYphp支付系统官网页面组件
@@ -144,14 +144,14 @@ const PaymentAuth = () => {
 
         {/* 装饰性几何图形 - 科技简洁风格 */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#0055ff]/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#0055ff]/3 rounded-full blur-3xl"></div>
-          <div className="absolute -top-28 left-1/4 w-96 h-96 bg-gradient-to-br from-[#0055ff]/16 via-[#3b82f6]/8 to-[#0ea5e9]/12 blur-3xl"></div>
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-primaryho/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-primaryho/3 rounded-full blur-3xl"></div>
+          <div className="absolute -top-28 left-1/4 w-96 h-96 bg-gradient-to-br from-primaryho/16 via-[#3b82f6]/8 to-[#0ea5e9]/12 blur-3xl"></div>
 
 
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] dark:opacity-[0.05]">
             <div className="w-full h-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, var(--color-primaryho) 1px, transparent 0)`,
               backgroundSize: '40px 40px'
             }}></div>
           </div>
@@ -163,8 +163,8 @@ const PaymentAuth = () => {
             {/* 左侧：文案内容 */}
             <div className="text-center lg:text-left">
               {/* 品牌标识 */}
-              <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
-                <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
+              <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+                <div className="w-2 h-2 bg-primaryho rounded-full"></div>
                 PaYphp 支付系统
               </div>
 
@@ -175,7 +175,7 @@ const PaymentAuth = () => {
                 </span>
 
                 <br />
-                <span className="text-[#0055ff]">高并发处理</span>
+                <span className="text-primaryho">高并发处理</span>
               </h1>
 
               {/* 副标题 */}
@@ -199,7 +199,7 @@ const PaymentAuth = () => {
                   <Button
                     variant="default"
                     size="lg"
-                    className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                    className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90"
                     asChild
                   >
                     <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -240,7 +240,7 @@ const PaymentAuth = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    <div className="bg-gradient-to-r from-[#0055ff] to-[#0055ff]/80 p-3 sm:p-4 rounded-lg text-white transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-gradient-to-r from-primaryho to-primaryho/80 p-3 sm:p-4 rounded-lg text-white transform hover:scale-105 transition-transform duration-300">
                       <div className="text-lg sm:text-2xl font-bold">99.9%</div>
                       <div className="text-xs sm:text-sm opacity-90">系统稳定性</div>
                     </div>
@@ -387,8 +387,8 @@ const PaymentAuth = () => {
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
-              <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
+            <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+              <div className="w-2 h-2 bg-primaryho rounded-full"></div>
               系统特色
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -412,7 +412,7 @@ const PaymentAuth = () => {
               >
                 {/* 标题区域 - 图标在标题前面 */}
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 justify-center sm:justify-start">
-                  <div className="text-[#0055ff] flex-shrink-0">
+                  <div className="text-primaryho flex-shrink-0">
                     {feature.icon}
                   </div>
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white">
@@ -434,7 +434,7 @@ const PaymentAuth = () => {
               <Button
                 variant="default"
                 size="lg"
-                className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90"
                 asChild
               >
                 <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -464,8 +464,8 @@ const PaymentAuth = () => {
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
-              <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
+            <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+              <div className="w-2 h-2 bg-primaryho rounded-full"></div>
               行业解决方案
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -494,7 +494,7 @@ const PaymentAuth = () => {
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white mb-3 sm:mb-4 leading-tight">
                     {scenario.title}
                   </h3>
-                  <p className="text-lg sm:text-xl text-[#0055ff] font-medium mb-4 sm:mb-6">
+                  <p className="text-lg sm:text-xl text-primaryho font-medium mb-4 sm:mb-6">
                     {scenario.subtitle}
                   </p>
                   <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
@@ -505,7 +505,7 @@ const PaymentAuth = () => {
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
                     {scenario.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-[#0055ff] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primaryho rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
                           </svg>
@@ -524,7 +524,7 @@ const PaymentAuth = () => {
                       <Button
                         variant="default"
                         size="lg"
-                        className="bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90"
+                        className="bg-primaryho text-white shadow-lg hover:bg-primaryho/90"
                         asChild
                       >
                         <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -561,7 +561,7 @@ const PaymentAuth = () => {
 
                       <div className="grid grid-cols-2 gap-2 sm:gap-3">
                         <div className="bg-white dark:bg-gray-800 p-2.5 sm:p-3 rounded-lg">
-                          <div className="text-base sm:text-lg font-bold text-[#0055ff]">98.5%</div>
+                          <div className="text-base sm:text-lg font-bold text-primaryho">98.5%</div>
                           <div className="text-xs text-gray-600 dark:text-gray-400">成功率</div>
                         </div>
                         <div className="bg-white dark:bg-gray-800 p-2.5 sm:p-3 rounded-lg">
@@ -582,7 +582,7 @@ const PaymentAuth = () => {
                   </div>
 
                   {/* 装饰元素 */}
-                  <div className="absolute -top-4 -right-4 w-16 sm:w-20 h-16 sm:h-20 bg-[#0055ff]/10 rounded-full blur-xl"></div>
+                  <div className="absolute -top-4 -right-4 w-16 sm:w-20 h-16 sm:h-20 bg-primaryho/10 rounded-full blur-xl"></div>
                 </div>
               </motion.div>
             ))}
@@ -591,13 +591,13 @@ const PaymentAuth = () => {
       </section>
 
       {/* 4. 技术优势区 - 数据可视化 */}
-      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-[#0055ff]/5 via-transparent to-[#0055ff]/5 dark:from-[#0055ff]/10 dark:to-[#0055ff]/10">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-primaryho/5 via-transparent to-primaryho/5 dark:from-primaryho/10 dark:to-primaryho/10">
         <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
-              <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
+            <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+              <div className="w-2 h-2 bg-primaryho rounded-full"></div>
               技术优势
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -619,7 +619,7 @@ const PaymentAuth = () => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 text-center transition-all duration-300"
               >
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0055ff] mb-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryho mb-2">
                   {advantage.value}
                   <span className="text-xl sm:text-2xl">{advantage.suffix}</span>
                 </div>
@@ -638,8 +638,8 @@ const PaymentAuth = () => {
 
           {/* 区块标题 */}
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-3 bg-[#0055ff]/10 text-[#0055ff] px-4 py-2 text-sm font-medium rounded-full border border-[#0055ff]/20 mb-6">
-              <div className="w-2 h-2 bg-[#0055ff] rounded-full"></div>
+            <div className="inline-flex items-center gap-3 bg-primaryho/10 text-primaryho px-4 py-2 text-sm font-medium rounded-full border border-primaryho/20 mb-6">
+              <div className="w-2 h-2 bg-primaryho rounded-full"></div>
               客户案例
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
@@ -677,7 +677,7 @@ const PaymentAuth = () => {
 
                 {/* 用户信息 */}
                 <div className="flex items-center gap-3 sm:gap-4 justify-center sm:justify-start">
-                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#0055ff] rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primaryho rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
                     {userCase.name.charAt(0)}
                   </div>
                   <div className="text-center sm:text-left">
@@ -705,7 +705,7 @@ const PaymentAuth = () => {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-6 text-center leading-tight"
             >
               立即开启您的
-              <span className="text-[#0055ff] block sm:inline">
+              <span className="text-primaryho block sm:inline">
                 支付之旅
               </span>
             </motion.h2>
@@ -731,7 +731,7 @@ const PaymentAuth = () => {
               <div
                 className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">10000+</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primaryho mb-2">10000+</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">企业选择</div>
               </div>
 
@@ -739,7 +739,7 @@ const PaymentAuth = () => {
               <div
                 className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">99.9%</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primaryho mb-2">99.9%</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">系统稳定性</div>
               </div>
 
@@ -747,7 +747,7 @@ const PaymentAuth = () => {
               <div
                 className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">24/7</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primaryho mb-2">24/7</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">技术支持</div>
               </div>
 
@@ -755,7 +755,7 @@ const PaymentAuth = () => {
               <div
                 className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0055ff] mb-2">3步</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primaryho mb-2">3步</div>
                 <div className="text-gray-600 dark:text-gray-300 leading-normal text-xs sm:text-sm">快速集成</div>
               </div>
             </motion.div>
@@ -815,7 +815,7 @@ const PaymentAuth = () => {
                         viewport={{ once: true }}
                         className="flex items-center gap-3 sm:gap-4"
                       >
-                        <div className="flex-shrink-0 w-8 sm:w-10 h-8 sm:h-10 bg-[#0055ff]/10 dark:bg-[#0055ff]/20 rounded-lg flex items-center justify-center text-[#0055ff]">
+                        <div className="flex-shrink-0 w-8 sm:w-10 h-8 sm:h-10 bg-primaryho/10 dark:bg-primaryho/20 rounded-lg flex items-center justify-center text-primaryho">
                           {item.icon}
                         </div>
                         <div>
@@ -853,78 +853,140 @@ const PaymentAuth = () => {
             </div>
           </section>
          {/* 系统核心优势 */}
+           {/* 价格方案 */}
+           <div className="text-center mb-16 sm:mb-24">
+             <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 py-16 sm:py-24">
+               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">选择适合您的方案</h2>
+               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
+                 灵活的合作方式，满足不同业务需求
+               </p>
 
-          {/* 价格方案 */}
-          <div className="text-center mb-16 sm:mb-24">
-            <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0 py-16 sm:py-24">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-6">选择适合您的方案</h2>
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-                灵活的合作方式，满足不同业务需求
-              </p>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start text-left">
+                 {/* 免费版 */}
+                 <div className="relative flex flex-col rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-200/50 dark:border-gray-700 dark:bg-gray-800/80 dark:hover:shadow-gray-900/30">
+                   <div className="mb-6">
+                     <div className="inline-flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                       <Zap className="h-3.5 w-3.5" />
+                       免费体验
+                     </div>
+                     <h3 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">商户地址</h3>
+                     <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400">立即接入，快速体验</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                {/* 免费版 */}
-                <div className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                  <div className="mb-6">
-                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">免费体验</span>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">商户地址</h3>
-                    <p className="text-gray-500 text-sm mb-4">立即接入，快速体验</p>
-                    <span className="text-4xl font-bold text-black dark:text-white">￥0</span>
-                  </div>
-                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
-                    {["前台地址：merch.PaYphp.cn", "演示后台：暂不开放", "前后台账号：自行注册", "前后台密码：自行注册"].map((f, i) => (
-                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
-                    ))}
-                  </ul>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://merch.PaYphp.cn" target="_blank"><Building2 className="w-4 h-4 mr-2"/>进入商户中心</a></Button>
-                    <Button variant="outline" className="w-full border-stroke dark:border-strokedark" asChild><a href="https://merch.PaYphp.cn/register" target="_blank"><UserPlus className="w-4 h-4 mr-2"/>立即注册</a></Button>
-                  </div>
-                </div>
+                     <div className="mt-6 flex items-baseline gap-1">
+                       <span className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white">¥0</span>
+                       <span className="text-sm text-gray-400">/永久</span>
+                     </div>
+                   </div>
 
-                {/* 授权版 */}
-                <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border-2 border-primary hover:shadow-lg transition-shadow">
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-sm rounded-full">推荐</span>
-                  <div className="mb-6">
-                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">个人/小型企业</span>
-                    <h3 className="text-xl font-bold text-primary mb-2">单域名授权</h3>
-                    <p className="text-gray-500 text-sm mb-4">永久授权，自主部署</p>
-                    <span className="text-4xl font-bold text-primary">￥699</span>
-                  </div>
-                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
-                    {["永久使用", "上传即用", "提供程序源码", "自备服务器/域名", "专属用户群"].map((f, i) => (
-                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
-                    ))}
-                  </ul>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank"><CreditCard className="w-4 h-4 mr-2"/>立即购买</a></Button>
-                    <div className="flex items-center justify-center gap-2 text-sm text-gray-500 pt-1">
-                      <span>有疑问？</span><Qrcode preset="customer-service"/>
-                    </div>
-                  </div>
-                </div>
+                   <ul className="mb-8 flex-1 space-y-3 border-t border-gray-100 pt-6 dark:border-gray-700">
+                     {["前台地址：merch.PaYphp.cn", "演示后台：暂不开放", "前后台账号：自行注册", "前后台密码：自行注册"].map((f, i) => (
+                       <li key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
+                         <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                         <span>{f}</span>
+                       </li>
+                     ))}
+                   </ul>
 
-                {/* 代理商版 */}
-                <div className="flex flex-col bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                  <div className="mb-6">
-                    <span className="inline-block px-3 py-1 rounded-full bg-zumthor dark:bg-btndark text-primary text-sm mb-3">代理/分销/合作</span>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">成为授权商</h3>
-                    <p className="text-gray-500 text-sm mb-4">成为合作伙伴，享受更多权益</p>
-                    <span className="text-4xl font-bold text-black dark:text-white">￥2999</span>
-                  </div>
-                  <ul className="space-y-3 mb-8 flex-1 text-sm text-gray-600">
-                    {["购买产品: 7 折", "不支持开通下级代理商", "商户版单域名永久版 1 个", "专属代理群", "技术支持"].map((f, i) => (
-                      <li key={i} className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>{f}</li>
-                    ))}
-                  </ul>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-primary hover:bg-primaryho text-white" asChild><a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank"><CreditCard className="w-4 h-4 mr-2"/>立即购买</a></Button>
-                    <Button variant="outline" className="w-full border-stroke dark:border-strokedark" asChild><a href="https://merch.PaYphp.cn" target="_blank"><Building2 className="w-4 h-4 mr-2"/>了解更多</a></Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                   <div className="space-y-2.5">
+                     <Button className="w-full" variant="outline" asChild>
+                       <a href="https://merch.PaYphp.cn" target="_blank">
+                         <Building2 className="h-4 w-4 mr-2"/>进入商户中心
+                       </a>
+                     </Button>
+                     <Button className="w-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100" asChild>
+                       <a href="https://merch.PaYphp.cn/register" target="_blank">
+                         <UserPlus className="h-4 w-4 mr-2"/>立即注册
+                       </a>
+                     </Button>
+                   </div>
+                 </div>
+
+                 {/* 授权版 — 推荐 */}
+                 <div className="relative flex flex-col rounded-3xl bg-gradient-to-b from-primary to-primaryho p-7 text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/35 lg:scale-105">
+                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                     <span className="inline-flex items-center gap-1 rounded-full bg-white px-4 py-1.5 text-xs font-bold text-primary shadow-lg">
+                       <Sparkles className="h-3 w-3" />
+                       最受欢迎
+                     </span>
+                   </div>
+
+                   <div className="mb-6">
+                     <div className="inline-flex items-center gap-2 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium">
+                       <Gem className="h-3.5 w-3.5" />
+                       个人/小型企业
+                     </div>
+                     <h3 className="mt-4 text-2xl font-bold">单域名授权</h3>
+                     <p className="mt-1.5 text-sm text-blue-100">永久授权，自主部署</p>
+
+                     <div className="mt-6 flex items-baseline gap-1">
+                       <span className="text-5xl font-bold tracking-tight">¥699</span>
+                       <span className="text-sm text-blue-200">/永久</span>
+                     </div>
+                   </div>
+
+                   <ul className="mb-8 flex-1 space-y-3 border-t border-white/20 pt-6">
+                     {["永久使用", "上传即用", "提供程序源码", "自备服务器/域名", "专属用户群"].map((f, i) => (
+                       <li key={i} className="flex items-start gap-3 text-sm text-blue-50">
+                         <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-white/80" />
+                         <span>{f}</span>
+                       </li>
+                     ))}
+                   </ul>
+
+                   <div className="space-y-3">
+                     <Button size="lg" className="w-full bg-white text-primary font-semibold hover:bg-gray-100 shadow-md" asChild>
+                       <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank">
+                         <CreditCard className="h-4 w-4 mr-2"/>立即购买
+                       </a>
+                     </Button>
+                     <div className="flex items-center justify-center gap-2 text-sm text-blue-200">
+                       <span>有疑问？</span>
+                       <Qrcode preset="customer-service"/>
+                     </div>
+                   </div>
+                 </div>
+
+                 {/* 代理商版 */}
+                 <div className="relative flex flex-col rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-200/50 dark:border-gray-700 dark:bg-gray-800/80 dark:hover:shadow-gray-900/30">
+                   <div className="mb-6">
+                     <div className="inline-flex items-center gap-2 rounded-lg bg-amber-50 px-3 py-1.5 text-xs font-medium text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                       <BadgePercent className="h-3.5 w-3.5" />
+                       代理/分销/合作
+                     </div>
+                     <h3 className="mt-4 text-2xl font-bold text-gray-900 dark:text-white">成为授权商</h3>
+                     <p className="mt-1.5 text-sm text-gray-500 dark:text-gray-400">成为合作伙伴，享受更多权益</p>
+
+                     <div className="mt-6 flex items-baseline gap-1">
+                       <span className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white">¥2999</span>
+                       <span className="text-sm text-gray-400">/永久</span>
+                     </div>
+                   </div>
+
+                   <ul className="mb-8 flex-1 space-y-3 border-t border-gray-100 pt-6 dark:border-gray-700">
+                     {["购买产品: 7 折", "不支持开通下级代理商", "商户版单域名永久版 1 个", "专属代理群", "技术支持"].map((f, i) => (
+                       <li key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
+                         <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-500" />
+                         <span>{f}</span>
+                       </li>
+                     ))}
+                   </ul>
+
+                   <div className="space-y-2.5">
+                     <Button size="lg" className="w-full bg-amber-500 text-white hover:bg-amber-600 shadow-md" asChild>
+                       <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=71&spg_id=72" target="_blank">
+                         <CreditCard className="h-4 w-4 mr-2"/>立即购买
+                       </a>
+                     </Button>
+                     <Button variant="outline" className="w-full" asChild>
+                       <a href="https://merch.PaYphp.cn" target="_blank">
+                         <Building2 className="h-4 w-4 mr-2"/>了解更多
+                       </a>
+                     </Button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
 
           {/* 最终转化CTA */}
           <motion.div
@@ -959,7 +1021,7 @@ const PaymentAuth = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="bg-white text-[#0055ff] shadow-lg hover:bg-gray-100"
+                  className="bg-white text-primaryho shadow-lg hover:bg-gray-100"
                   asChild
                 >
                   <a href="https://merch.PaYphp.cn/user/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">

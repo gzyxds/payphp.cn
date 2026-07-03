@@ -218,7 +218,7 @@ const About = () => {
           {/* 网格背景 */}
           <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
             <div className="w-full h-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #0055ff 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, var(--color-primaryho) 1px, transparent 0)`,
               backgroundSize: '40px 40px'
             }}></div>
           </div>
@@ -246,7 +246,7 @@ const About = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
                 重新定义
                 <br />
-                <span className="text-[#0055ff]">
+                <span className="text-primaryho">
                   支付体验
                 </span>
               </h1>
@@ -305,7 +305,7 @@ const About = () => {
           {/* 发展历程区域 - 横向步骤条设计 */}
           <div className="mb-24">
             <div className="text-center mb-16">
-              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
                 Our Journey
               </span>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
@@ -336,13 +336,13 @@ const About = () => {
                       <div className="flex flex-col items-center text-center">
                         {/* 图标 */}
                         <div className="w-16 h-16 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-3">
-                          <div className="text-[#0055ff] dark:text-blue-400">
+                          <div className="text-primaryho dark:text-blue-400">
                             {renderIcon(milestone.iconType, "w-6 h-6")}
                           </div>
                         </div>
                         
                         {/* 年份 */}
-                        <span className="text-sm font-semibold text-[#0055ff] mb-1">
+                        <span className="text-sm font-semibold text-primaryho mb-1">
                           {milestone.year}
                         </span>
                         
@@ -369,7 +369,7 @@ const About = () => {
                   >
                     {/* 图标 */}
                     <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center flex-shrink-0">
-                      <div className="text-[#0055ff] dark:text-blue-400">
+                      <div className="text-primaryho dark:text-blue-400">
                         {renderIcon(milestone.iconType, "w-5 h-5")}
                       </div>
                     </div>
@@ -377,7 +377,7 @@ const About = () => {
                     {/* 内容 */}
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-sm font-semibold text-[#0055ff]">{milestone.year}</span>
+                        <span className="text-sm font-semibold text-primaryho">{milestone.year}</span>
                         <h3 className="text-sm font-medium text-gray-900 dark:text-white">{milestone.title}</h3>
                       </div>
                       <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -413,10 +413,10 @@ const About = () => {
                 >
                   <div className="group">
                     {/* 白底灰边卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-primaryho/30">
                       {/* 图标区域 */}
                       <div className="mb-6">
-                        <div className="flex h-12 w-12 items-center justify-center bg-[#0055ff]/10 text-[#0055ff]">
+                        <div className="flex h-12 w-12 items-center justify-center bg-primaryho/10 text-primaryho">
                           {renderIcon(value.iconType, "w-6 h-6")}
                         </div>
                       </div>
@@ -457,16 +457,16 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   {/* 白底灰边奖项卡片 */}
-                  <div className="bg-white border border-gray-200 p-8 rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                  <div className="bg-white border border-gray-200 p-8 rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-primaryho/30">
                     <div className="flex items-center gap-4">
                       {/* 奖杯图标 */}
-                      <div className="w-10 h-10 bg-[#0055ff]/10 flex items-center justify-center text-[#0055ff] flex-shrink-0">
+                      <div className="w-10 h-10 bg-primaryho/10 flex items-center justify-center text-primaryho flex-shrink-0">
                         {renderIcon("trophy", "w-5 h-5")}
                       </div>
 
                       {/* 奖项信息 */}
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs text-[#0055ff] font-medium mb-1">
+                        <div className="text-xs text-primaryho font-medium mb-1">
                           {award.year}
                         </div>
                         <div className="text-black dark:text-white font-medium text-sm leading-tight">
@@ -503,11 +503,11 @@ const About = () => {
                 >
                   <div className="group">
                     {/* 成员卡片设计 */}
-                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                    <div className="bg-white border border-gray-200 p-8 h-full rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-primaryho/30">
                       {/* 头像区域 */}
                       <div className="mb-6 flex justify-center">
-                        <div className="w-24 h-24 rounded-full bg-[#0055ff]/10 overflow-hidden relative">
-                          <div className="absolute inset-0 flex items-center justify-center text-[#0055ff] text-2xl font-bold">
+                        <div className="w-24 h-24 rounded-full bg-primaryho/10 overflow-hidden relative">
+                          <div className="absolute inset-0 flex items-center justify-center text-primaryho text-2xl font-bold">
                             {member.name.charAt(0)}
                           </div>
                         </div>
@@ -518,7 +518,7 @@ const About = () => {
                         <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-1">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-[#0055ff] font-medium">
+                        <p className="text-sm text-primaryho font-medium">
                           {member.role}
                         </p>
                       </div>
@@ -530,10 +530,10 @@ const About = () => {
 
                       {/* 社交链接 */}
                       <div className="flex justify-center gap-4">
-                        <a href={member.social.github} className="text-gray-500 hover:text-[#0055ff] transition-colors">
+                        <a href={member.social.github} className="text-gray-500 hover:text-primaryho transition-colors">
                           <Github className="w-5 h-5" />
                         </a>
-                        <a href={member.social.twitter} className="text-gray-500 hover:text-[#0055ff] transition-colors">
+                        <a href={member.social.twitter} className="text-gray-500 hover:text-primaryho transition-colors">
                           <Twitter className="w-5 h-5" />
                         </a>
                       </div>
@@ -565,7 +565,7 @@ const About = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-white border border-gray-200 p-6 h-24 flex items-center justify-center rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-[#0055ff]/30">
+                  <div className="bg-white border border-gray-200 p-6 h-24 flex items-center justify-center rounded-lg dark:bg-black dark:border-gray-700 transition-all duration-300 hover:border-primaryho/30">
                     <div className="text-center">
                       <div className="text-lg font-medium text-gray-800 dark:text-gray-200">{partner.name}</div>
                     </div>
@@ -599,16 +599,16 @@ const About = () => {
                   <div className="mb-6">
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 bg-[#0055ff]/10 rounded-md flex items-center justify-center text-[#0055ff]">
-                          <div className="w-3 h-3 bg-[#0055ff] rounded-sm"></div>
+                        <div className="w-6 h-6 bg-primaryho/10 rounded-md flex items-center justify-center text-primaryho">
+                          <div className="w-3 h-3 bg-primaryho rounded-sm"></div>
                         </div>
                         <span className="font-medium text-black dark:text-white">{tech.name}</span>
                       </div>
-                      <span className="text-sm text-[#0055ff] font-medium">{tech.percentage}%</span>
+                      <span className="text-sm text-primaryho font-medium">{tech.percentage}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
                       <div
-                        className="bg-[#0055ff] h-full rounded-full"
+                        className="bg-primaryho h-full rounded-full"
                         style={{ width: `${tech.percentage}%` }}
                       ></div>
                     </div>
@@ -644,7 +644,7 @@ const About = () => {
                     <div className="p-6">
                       <div className="flex justify-between items-center cursor-pointer">
                         <h3 className="text-lg font-medium text-black dark:text-white">{faq.question}</h3>
-                        <div className="w-6 h-6 bg-[#0055ff]/10 rounded-full flex items-center justify-center text-[#0055ff]">
+                        <div className="w-6 h-6 bg-primaryho/10 rounded-full flex items-center justify-center text-primaryho">
                           <ChevronDown className="w-4 h-4" />
                         </div>
                       </div>
@@ -674,11 +674,11 @@ const About = () => {
                   与全球10万+开发者一起，构建下一代支付应用
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="inline-flex items-center justify-center gap-2 bg-[#0055ff] text-white px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-[#0055ff]/90 hover:shadow-lg hover:shadow-[#0055ff]/25 hover:-translate-y-0.5">
+                  <button className="inline-flex items-center justify-center gap-2 bg-primaryho text-white px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-primaryho/90 hover:shadow-lg hover:shadow-primaryho/25 hover:-translate-y-0.5">
                     <Zap className="w-4 h-4" />
                     开始使用
                   </button>
-                  <button className="inline-flex items-center justify-center gap-2 border border-[#0055ff] text-[#0055ff] px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-[#0055ff] hover:text-white hover:shadow-lg hover:shadow-[#0055ff]/25 hover:-translate-y-0.5">
+                  <button className="inline-flex items-center justify-center gap-2 border border-primaryho text-primaryho px-8 py-3.5 rounded-lg text-base font-normal transition-all duration-300 hover:bg-primaryho hover:text-white hover:shadow-lg hover:shadow-primaryho/25 hover:-translate-y-0.5">
                     <FileText className="w-4 h-4" />
                     查看文档
                   </button>

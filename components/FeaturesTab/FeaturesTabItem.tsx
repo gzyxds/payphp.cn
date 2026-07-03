@@ -10,19 +10,19 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
     switch (tabId) {
       case "tabOne":
         return (
-          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-[#165dff]" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
           </svg>
         );
       case "tabTwo":
         return (
-          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-[#165dff]" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
           </svg>
         );
       case "tabThree":
         return (
-          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-[#165dff]" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="h-6 w-6 sm:h-8 sm:w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
           </svg>
         );
@@ -74,7 +74,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
                 <h2 className="text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl dark:text-white">
                   {title}
                 </h2>
-                <div className="mt-1 h-0.5 w-12 bg-[#165dff] sm:w-16"></div>
+                <div className="mt-1 h-0.5 w-12 bg-primary sm:w-16"></div>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
 
             {/* CTA按钮 - 简洁设计，优化移动端 */}
             <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-3">
-              <button className="rounded-lg bg-[#165dff] px-4 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-[#1451e6] focus:outline-none focus:ring-2 focus:ring-[#165dff]/20 sm:px-6 sm:py-3">
+              <button className="rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-primaryho focus:outline-none focus:ring-2 focus:ring-primary/20 sm:px-6 sm:py-3">
                 了解更多
               </button>
               <button className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:px-6 sm:py-3 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
@@ -136,7 +136,7 @@ const FeaturesTabItem = ({ featureTab }: { featureTab: FeatureTab }) => {
               {/* 简洁的数据展示卡片 - 优化移动端位置和大小 */}
               <div className="absolute -right-2 top-4 rounded-lg bg-white p-2 border border-gray-200 shadow-sm sm:-right-4 sm:top-6 sm:p-3 dark:bg-gray-800 dark:border-gray-700">
                 <div className="text-xs text-gray-500 mb-0.5 sm:mb-1 dark:text-gray-400">安全等级</div>
-                <div className="text-sm font-semibold text-[#165dff] sm:text-base dark:text-blue-400">AAA+</div>
+                <div className="text-sm font-semibold text-primary sm:text-base dark:text-blue-400">AAA+</div>
                 <div className="flex items-center gap-1 text-xs text-green-600 dark:text-green-400">
                   <svg className="h-2.5 w-2.5 sm:h-3 sm:w-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

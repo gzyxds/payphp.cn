@@ -1,62 +1,58 @@
-type FaqData = {
-  activeFaq: number;
-  id: number;
-  handleFaqToggle: (id: number) => void;
-  quest: string;
-  ans: string;
-};
+"use client";
 
-const FAQItem = ({ faqData }: { faqData: FaqData }) => {
-  const { activeFaq, id, handleFaqToggle, quest, ans } = faqData;
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+import { FAQ as FaqData } from "@/types/faq";
+
+interface FAQItemProps {
+  faq: FaqData;
+  isOpen: boolean;
+  onToggle: (id: number) => void;
+}
+
+/**
+ * FAQ 手风琴条目
+ * 点击问题展开/收起答案，带平滑高度过渡动画
+ */
+const FAQItem = ({ faq, isOpen, onToggle }: FAQItemProps) => {
+  const { id, quest, ans } = faq;
 
   return (
-    <>
-      <div className="flex flex-col border-b border-stroke last-of-type:border-none dark:border-strokedark">
-        <button
-          onClick={() => {
-            handleFaqToggle(id);
-          }}
-          className="flex cursor-pointer items-center justify-between px-6 py-5 text-metatitle3 font-medium text-black dark:text-white lg:px-9 lg:py-7.5"
-        >
+    <div className="border-b border-gray-100 last:border-none dark:border-gray-800">
+      {/* 问题按钮 */}
+      <button
+        onClick={() => onToggle(id)}
+        className="flex w-full items-center justify-between gap-4 px-0 py-5 text-left transition-colors hover:text-primary dark:hover:text-blue-400"
+      >
+        <span className="text-base font-semibold text-gray-900 dark:text-white">
           {quest}
-
-          {activeFaq === id ? (
-            <svg
-              width="18"
-              height="4"
-              viewBox="0 0 18 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.1666 0.833374H10.1666H7.83331H0.833313V3.16671H7.83331H10.1666H17.1666V0.833374Z"
-                fill="currentColor"
-              />
-            </svg>
+        </span>
+        <span className="flex-shrink-0 text-gray-400 transition-colors dark:text-gray-500">
+          {isOpen ? (
+            <Minus className="h-5 w-5" />
           ) : (
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.83331 7.83337V0.833374H10.1666V7.83337H17.1666V10.1667H10.1666V17.1667H7.83331V10.1667H0.833313V7.83337H7.83331Z"
-                fill="currentColor"
-              />
-            </svg>
+            <Plus className="h-5 w-5" />
           )}
-        </button>
-        <p
-          className={`border-t border-stroke px-6 py-5 dark:border-strokedark lg:px-9 lg:py-7.5 ${
-            activeFaq === id ? "block" : "hidden"
-          }`}
-        >
-          {ans}
-        </p>
-      </div>
-    </>
+        </span>
+      </button>
+
+      {/* 答案区域 —— 带高度动画 */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="pb-5 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              {ans}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 

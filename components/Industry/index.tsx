@@ -177,27 +177,7 @@ const SERVICE_ADVANTAGES = [
   }
 ];
 
-/**
- * 技术优势配置
- * 定义平台的技术特性和优势
- */
-const TECH_FEATURES = [
-  {
-    title: "高可用架构",
-    description: "99.99%系统可用性保障，多地域容灾备份",
-    icon: <ShieldCheck className="w-6 h-6" />
-  },
-  {
-    title: "实时监控",
-    description: "全链路性能监控与智能告警系统",
-    icon: <Activity className="w-6 h-6" />
-  },
-  {
-    title: "弹性扩容",
-    description: "自动伸缩应对业务峰值，成本优化",
-    icon: <Expand className="w-6 h-6" />
-  }
-];
+
 
 /**
  * 英雄区核心特性配置
@@ -387,15 +367,15 @@ const PROCESS_STEPS = [
  */
 const Industry = () => {
   return (
-    <section className="relative bg-white dark:bg-black">
+    <section className="relative bg-white dark:bg-background">
 
       {/* 英雄区 - 蓝色渐变背景 */}
       <div className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_44%,#f6f8fc_100%)] dark:bg-[linear-gradient(180deg,#06111f_0%,#040816_44%,#02050d_100%)]">
         {/* 背景装饰光晕 */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute left-[-12%] top-[-8%] h-[32rem] w-[32rem] rounded-full bg-[#0055ff]/10 blur-3xl dark:bg-[#2563eb]/18" />
+          <div className="absolute left-[-12%] top-[-8%] h-[32rem] w-[32rem] rounded-full bg-primaryho/10 blur-3xl dark:bg-[#2563eb]/18" />
           <div className="absolute right-[-12%] top-[10%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl dark:bg-cyan-400/12" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,85,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,85,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-20" />
+          <div className="absolute inset-0 bg-[linear-gradient(var(--color-primaryho) / 0.03_1px,transparent_1px),linear-gradient(90deg,var(--color-primaryho) / 0.03_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-20" />
         </div>
 
         {/* 英雄区内容 */}
@@ -405,8 +385,8 @@ const Industry = () => {
 
             {/* 左侧标题区域 */}
             <div className="flex flex-col justify-center text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 self-center rounded-full bg-[#0055ff]/8 px-4 py-2 text-sm font-semibold text-[#0055ff] dark:bg-[#3b82f6]/10 lg:self-start">
-                <div className="h-2 w-2 rounded-full bg-[#0055ff] shadow-[0_0_16px_rgba(0,85,255,0.75)]" />
+              <div className="inline-flex items-center gap-2 self-center rounded-full bg-primaryho/8 px-4 py-2 text-sm font-semibold text-primaryho dark:bg-[#3b82f6]/10 lg:self-start">
+                <div className="h-2 w-2 rounded-full bg-primaryho shadow-[0_0_16px_var(--color-primaryho) / 0.75]" />
                 企业支付基础设施
               </div>
 
@@ -416,7 +396,7 @@ const Industry = () => {
                 </p>
                 <div>
                   <h1 className="text-4xl font-bold tracking-[-0.04em] text-gray-950 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                    <span className="bg-gradient-to-r from-[#0055ff] via-[#2563eb] to-cyan-500 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-primaryho via-[#2563eb] to-cyan-500 bg-clip-text text-transparent">
                       PaYphp
                     </span>
                   </h1>
@@ -433,7 +413,7 @@ const Industry = () => {
                 {['电商支付', '游戏支付', '社交支付', '内容支付'].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-2xl bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-[0_12px_30px_-22px_rgba(15,23,42,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:text-[#0055ff] dark:bg-white/5 dark:text-gray-300"
+                    className="rounded-2xl bg-white/75 px-4 py-2 text-sm font-medium text-gray-700 shadow-[0_12px_30px_-22px_rgba(15,23,42,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:text-primaryho dark:bg-white/5 dark:text-gray-300"
                   >
                     {tag}
                   </span>
@@ -446,7 +426,7 @@ const Industry = () => {
                     key={stat.label}
                     className="rounded-2xl bg-white/78 px-5 py-4 text-left shadow-[0_18px_40px_-28px_rgba(15,23,42,0.28)] backdrop-blur-sm dark:bg-white/5"
                   >
-                    <div className="text-2xl font-bold text-[#0055ff] md:text-3xl">{stat.value}</div>
+                    <div className="text-2xl font-bold text-primaryho md:text-3xl">{stat.value}</div>
                     <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">{stat.label}</div>
                   </div>
                 ))}
@@ -455,8 +435,8 @@ const Industry = () => {
 
             {/* 右侧特性区域 */}
             <div className="relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,#eff6ff_0%,#dbeafe_52%,#f8fbff_100%)] p-7 text-slate-900 shadow-[0_35px_110px_-42px_rgba(37,99,235,0.28)] dark:bg-[linear-gradient(135deg,#1d4ed8_0%,#2563eb_52%,#3b82f6_100%)] dark:text-white lg:p-9">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.55),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.18),transparent_28%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(191,219,254,0.18),transparent_28%)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.08)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:opacity-20" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.55),transparent_24%),radial-gradient(circle_at_bottom_left,var(--color-blue-500) / 0.18,transparent_28%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(191,219,254,0.18),transparent_28%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(var(--color-blue-500) / 0.08_1px,transparent_1px),linear-gradient(90deg,var(--color-blue-500) / 0.08_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 dark:opacity-20" />
 
               <div className="relative z-10 space-y-8">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -511,15 +491,15 @@ const Industry = () => {
       <div className="max-w-c-1450 mx-auto px-4 md:px-8 2xl:px-0">
 
         {/* 核心统计数据展示 */}
-        <section className="pt-16 lg:pt-20 mb-16 lg:mb-20">
+        <section className="pt-12 lg:pt-16 mb-12 lg:mb-16">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {CORE_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 text-center shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5"
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 text-center shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/20 dark:border-white/10 dark:bg-white/5"
               >
-                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[#0055ff]/40 to-transparent" />
-                <div className="text-2xl font-bold text-[#0055ff] md:text-3xl lg:text-4xl">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primaryho/40 to-transparent" />
+                <div className="text-2xl font-bold text-primaryho md:text-3xl lg:text-4xl">
                   {stat.value}
                 </div>
                 <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 md:text-sm">
@@ -533,7 +513,7 @@ const Industry = () => {
         {/* 核心能力展示 */}
         <section className="py-20 sm:py-28">
           <div className="text-center mb-14 lg:mb-16">
-              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
                 Core Capabilities
               </span>
               <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
@@ -548,15 +528,15 @@ const Industry = () => {
               {CORE_FUNCTIONS.map((item) => (
                 <article
                   key={item.title}
-                  className="group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white/85 p-7 shadow-[0_20px_60px_-35px_rgba(0,85,255,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/25 dark:border-white/10 dark:bg-white/5"
+                  className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/85 p-7 shadow-[0_16px_48px_-28px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_-24px_rgba(15,23,42,0.22)] hover:border-primaryho/20 dark:border-white/10 dark:bg-white/5"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.09),transparent_32%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.09,transparent_32%)] dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.12,transparent_32%)]" />
                   <div className="relative">
                     <div className="mb-6 flex items-start justify-between gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
                         {item.icon}
                       </div>
-                      <div className="rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0055ff]">
+                      <div className="rounded-full border border-primaryho/15 bg-primaryho/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primaryho">
                         {item.statLabel}
                       </div>
                     </div>
@@ -566,7 +546,7 @@ const Industry = () => {
                     </h3>
 
                     <div className="mt-4 mb-6">
-                      <span className="bg-gradient-to-r from-[#0055ff] to-cyan-500 bg-clip-text text-4xl font-bold text-transparent">
+                      <span className="bg-gradient-to-r from-primaryho to-cyan-500 bg-clip-text text-4xl font-bold text-transparent">
                         {item.stat}
                       </span>
                     </div>
@@ -574,13 +554,13 @@ const Industry = () => {
                     <div className="space-y-3">
                       {item.features.map((feature) => (
                         <div key={feature} className="flex items-center gap-3 rounded-lg px-1 py-2">
-                          <div className="h-2 w-2 rounded-full bg-[#0055ff] shadow-[0_0_12px_rgba(0,85,255,0.55)]" />
+                          <div className="h-2 w-2 rounded-full bg-primaryho shadow-[0_0_12px_var(--color-primaryho) / 0.55]" />
                           <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
 
-                    <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold text-gray-700 transition-all duration-300 hover:text-[#0055ff] dark:text-white">
+                    <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold text-gray-700 transition-all duration-300 hover:text-primaryho dark:text-white">
                       <span>{item.buttonText.replace(' →', '')}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
@@ -594,7 +574,7 @@ const Industry = () => {
         {/* 服务优势展示 */}
         <section className="mb-16 lg:mb-24">
           <div className="text-center mb-12 lg:mb-16">
-            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+            <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
               Service Highlights
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
@@ -609,10 +589,10 @@ const Industry = () => {
             {SERVICE_ADVANTAGES.map((advantage) => (
               <article
                 key={advantage.id}
-                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_20px_60px_-30px_rgba(0,85,255,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/30 dark:border-gray-800 dark:bg-gray-950/90"
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_16px_48px_-28px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/30 dark:border-gray-800 dark:bg-gray-950/90"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.45),transparent_55%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_34%),linear-gradient(180deg,rgba(59,130,246,0.08),transparent_55%)]" />
-                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-[#0055ff]/10 blur-2xl dark:bg-[#0055ff]/20" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.12,transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.45),transparent_55%)] dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.18,transparent_34%),linear-gradient(180deg,var(--color-blue-500) / 0.08,transparent_55%)]" />
+                <div className="absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-primaryho/10 blur-2xl dark:bg-primaryho/20" />
 
                 <div className="relative flex h-full flex-col">
                   <div className="flex items-start justify-between gap-4">
@@ -622,7 +602,7 @@ const Industry = () => {
                       </div>
 
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0055ff]">
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primaryho">
                           {advantage.subtitle}
                         </p>
                         <h3 className="mt-2 text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">
@@ -631,7 +611,7 @@ const Industry = () => {
                       </div>
                     </div>
 
-                    <div className="flex h-10 min-w-10 items-center justify-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-3 text-sm font-bold text-[#0055ff] dark:border-[#0055ff]/20 dark:bg-[#0055ff]/10">
+                    <div className="flex h-10 min-w-10 items-center justify-center rounded-full border border-primaryho/15 bg-primaryho/8 px-3 text-sm font-bold text-primaryho dark:border-primaryho/20 dark:bg-primaryho/10">
                       0{advantage.id}
                     </div>
                   </div>
@@ -642,14 +622,14 @@ const Industry = () => {
 
                   <div className="mt-8 flex items-center justify-between border-t border-gray-200/70 pt-5 dark:border-white/10">
                     <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
-                      <span className="h-2 w-2 rounded-full bg-[#0055ff]" />
+                      <span className="h-2 w-2 rounded-full bg-primaryho" />
                       企业级服务能力
                     </div>
                     <a
                       href="https://merch.PaYphp.cn/user/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 group-hover:gap-3 hover:text-[#0044cc]"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primaryho transition-all duration-300 group-hover:gap-3 hover:text-blue-700"
                     >
                       立即接入
                       <ArrowRight className="w-4 h-4" />
@@ -665,7 +645,7 @@ const Industry = () => {
         {/* 行业解决方案展示 */}
         <section className="mb-16 lg:mb-24">
           <div className="text-center mb-12 lg:mb-16">
-            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+            <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
               Industry Scenarios
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
@@ -680,12 +660,12 @@ const Industry = () => {
             {INDUSTRY_DATA.map((industry, index) => (
               <article
                 key={industry.id}
-                className={`group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_20px_60px_-30px_rgba(0,85,255,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/30 dark:border-gray-800 dark:bg-gray-950/90 ${
+                className={`group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/95 p-6 lg:p-8 shadow-[0_16px_48px_-28px_rgba(15,23,42,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/30 dark:border-gray-800 dark:bg-gray-950/90 ${
                   index % 2 === 0 ? "xl:col-span-7" : "xl:col-span-5"
                 }`}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.12),transparent_36%),linear-gradient(135deg,rgba(0,85,255,0.05),transparent_42%,rgba(15,23,42,0.04))] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_36%),linear-gradient(135deg,rgba(37,99,235,0.12),transparent_42%,rgba(15,23,42,0.35))]" />
-                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#0055ff]/10 blur-3xl dark:bg-[#0055ff]/20" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.12,transparent_36%),linear-gradient(135deg,rgba(0,85,255,0.05),transparent_42%,rgba(15,23,42,0.04))] dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.18,transparent_36%),linear-gradient(135deg,rgba(37,99,235,0.12),transparent_42%,rgba(15,23,42,0.35))]" />
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primaryho/10 blur-3xl dark:bg-primaryho/20" />
 
                 <div className="relative flex h-full flex-col gap-8">
                   <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
@@ -695,7 +675,7 @@ const Industry = () => {
                       </div>
 
                       <div>
-                        <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0055ff] ring-1 ring-[#0055ff]/10 dark:bg-white/10 dark:ring-white/10">
+                        <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-primaryho ring-1 ring-primaryho/10 dark:bg-white/10 dark:ring-white/10">
                           解决方案
                         </span>
                         <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
@@ -708,7 +688,7 @@ const Industry = () => {
                     </div>
 
                     <div className="inline-flex min-w-[124px] flex-col rounded-2xl border border-gray-200/80 bg-white/70 px-4 py-3 text-left backdrop-blur-sm dark:border-white/10 dark:bg-white/5 md:text-right">
-                      <span className="text-2xl lg:text-3xl font-bold text-[#0055ff]">
+                      <span className="text-2xl lg:text-3xl font-bold text-primaryho">
                         {industry.stats.value}
                       </span>
                       <span className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
@@ -721,9 +701,9 @@ const Industry = () => {
                     {industry.features.map((feature) => (
                       <div
                         key={feature}
-                        className="flex h-full items-start gap-3 rounded-2xl border border-gray-200/70 bg-gray-50/80 px-4 py-4 backdrop-blur-sm transition-colors duration-300 group-hover:border-[#0055ff]/15 group-hover:bg-white/90 dark:border-white/8 dark:bg-white/5 dark:group-hover:bg-white/8"
+                        className="flex h-full items-start gap-3 rounded-2xl border border-gray-200/70 bg-gray-50/80 px-4 py-4 backdrop-blur-sm transition-colors duration-300 group-hover:border-primaryho/15 group-hover:bg-white/90 dark:border-white/8 dark:bg-white/5 dark:group-hover:bg-white/8"
                       >
-                        <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0055ff]/10 text-[#0055ff]">
+                        <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primaryho/10 text-primaryho">
                           <CheckCircle className="w-3.5 h-3.5" />
                         </div>
                         <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
@@ -737,7 +717,7 @@ const Industry = () => {
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       支持标准化 API 接入、稳定清算链路与多场景支付扩展。
                     </p>
-                    <button className="inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 hover:gap-3 hover:text-[#0044cc]">
+                    <button className="inline-flex items-center gap-2 text-sm font-semibold text-primaryho transition-all duration-300 hover:gap-3 hover:text-blue-700">
                       了解方案
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -752,7 +732,7 @@ const Industry = () => {
         {/* 产品优势展示 - Bento Grids布局 */}
         <section className="mb-16 lg:mb-24">
           <div className="text-center mb-16 lg:mb-20">
-            <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+            <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
               Premium Advantages
             </span>
             <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
@@ -765,8 +745,8 @@ const Industry = () => {
 
           <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-2">
             {/* 银行级安全 - 大格子 */}
-            <div className="group relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(239,246,255,0.92))] p-8 text-slate-900 shadow-[0_30px_90px_-40px_rgba(59,130,246,0.2)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:row-span-2 lg:p-10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.16),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(191,219,254,0.55),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.92),rgba(239,246,255,0.86))] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.2),transparent_30%),linear-gradient(180deg,rgba(15,23,42,0.92),rgba(2,6,23,1))]" />
+            <div className="group relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-white p-8 text-slate-900 shadow-[0_16px_48px_-28px_rgba(15,23,42,0.15)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:row-span-2 lg:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-blue-500)_/_0.10,transparent_40%)] dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500)_/_0.14,transparent_40%),linear-gradient(180deg,rgba(15,23,42,0.80),rgba(2,6,23,0.95))]" />
               <div className="relative flex h-full flex-col">
                 <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
                   {PRODUCT_ADVANTAGES[0].icon}
@@ -801,7 +781,7 @@ const Industry = () => {
 
             {/* 高可用性 */}
             <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-white/92 p-8 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-white/5 lg:p-9">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.09),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.14),transparent_30%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.09,transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.14),transparent_30%)]" />
               <div className="relative flex h-full items-start gap-5">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
                   {PRODUCT_ADVANTAGES[1].icon}
@@ -811,7 +791,7 @@ const Industry = () => {
                     {PRODUCT_ADVANTAGES[1].title}
                   </h3>
                   <div className="mt-3 flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-[#0055ff] lg:text-3xl">{PRODUCT_ADVANTAGES[1].stat}</span>
+                    <span className="text-2xl font-bold text-primaryho lg:text-3xl">{PRODUCT_ADVANTAGES[1].stat}</span>
                     <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[1].statLabel}</span>
                   </div>
                   <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-300">
@@ -845,21 +825,21 @@ const Industry = () => {
 
             {/* 简单集成 - 大格子 */}
             <div className="group relative overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(248,250,252,0.92))] p-8 shadow-[0_25px_70px_-40px_rgba(0,85,255,0.18)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] lg:col-span-2 lg:p-10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(0,85,255,0.1),transparent_28%)] dark:bg-[radial-gradient(circle_at_right,rgba(59,130,246,0.16),transparent_28%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(0,85,255,0.1),transparent_28%)] dark:bg-[radial-gradient(circle_at_right,var(--color-blue-500) / 0.16,transparent_28%)]" />
               <div className="relative flex h-full flex-col">
                 <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-start">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 transition-colors duration-300">
                     {PRODUCT_ADVANTAGES[3].icon}
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
                       Integration Efficiency
                     </p>
                     <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white lg:text-3xl">
                       {PRODUCT_ADVANTAGES[3].title}
                     </h3>
                     <div className="mt-4 flex items-center gap-3">
-                      <span className="text-3xl font-bold text-[#0055ff] lg:text-4xl">{PRODUCT_ADVANTAGES[3].stat}</span>
+                      <span className="text-3xl font-bold text-primaryho lg:text-4xl">{PRODUCT_ADVANTAGES[3].stat}</span>
                       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">{PRODUCT_ADVANTAGES[3].statLabel}</span>
                     </div>
                     <p className="mt-4 max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
@@ -884,8 +864,8 @@ const Industry = () => {
         {/* 合作伙伴展示 */}
         <section className="py-16 lg:py-20">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-            <div className="rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-8 shadow-[0_25px_70px_-40px_rgba(15,23,42,0.2)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
-              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+            <div className="rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.94))] p-8 shadow-[0_25px_70px_-40px_rgba(15,23,42,0.2)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
+              <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
                 Channel Partners
               </span>
               <h2 className="mt-5 text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-4xl">
@@ -896,11 +876,11 @@ const Industry = () => {
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-gray-200/80 bg-white/80 px-5 py-4 dark:border-white/10 dark:bg-white/5">
-                  <div className="text-2xl font-bold text-[#0055ff]">8+</div>
+                  <div className="text-2xl font-bold text-primaryho">8+</div>
                   <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">核心渠道</div>
                 </div>
                 <div className="rounded-2xl border border-gray-200/80 bg-white/80 px-5 py-4 dark:border-white/10 dark:bg-white/5">
-                  <div className="text-2xl font-bold text-[#0055ff]">Global</div>
+                  <div className="text-2xl font-bold text-primaryho">Global</div>
                   <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">场景覆盖</div>
                 </div>
               </div>
@@ -909,12 +889,12 @@ const Industry = () => {
                   href="https://merch.payphp.cn/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0055ff] px-6 py-3 text-sm font-normal text-white shadow-lg shadow-[#0055ff]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0044cc]"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primaryho px-6 py-3 text-sm font-normal text-white shadow-lg shadow-primaryho/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
                 >
                   <Rocket className="h-4 w-4" />
                   立即开通
                 </a>
-                <a href="#" className="inline-flex items-center gap-2 text-sm font-normal text-gray-700 transition-colors hover:text-[#0055ff] dark:text-gray-200">
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-normal text-gray-700 transition-colors hover:text-primaryho dark:text-gray-200">
                   <Phone className="h-4 w-4" />
                   联系商务
                 </a>
@@ -925,9 +905,9 @@ const Industry = () => {
               {PARTNERS.map((partner) => (
                 <div
                   key={partner.name}
-                  className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-5 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5"
+                  className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-5 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/20 dark:border-white/10 dark:bg-white/5"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.08,transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.12,transparent_32%)]" />
                   <div className="relative flex items-center justify-between gap-4">
                     <div>
                       <span className="text-base font-bold text-gray-700 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">
@@ -954,12 +934,12 @@ const Industry = () => {
 
         {/* 行动号召区域 */}
         <section className="mb-16 lg:mb-20">
-          <div className="relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(239,246,255,0.92))] px-8 py-10 text-slate-900 shadow-[0_30px_90px_-40px_rgba(59,130,246,0.18)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:px-12 lg:py-14">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(191,219,254,0.5),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.94),rgba(239,246,255,0.88))] dark:bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.2),transparent_26%),linear-gradient(135deg,rgba(15,23,42,0.92),rgba(2,6,23,1))]" />
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-15" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-blue-100/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(239,246,255,0.92))] px-8 py-10 text-slate-900 shadow-[0_30px_90px_-40px_var(--color-blue-500) / 0.18] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:text-white lg:px-12 lg:py-14">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--color-blue-500) / 0.16,transparent_26%),radial-gradient(circle_at_bottom_right,rgba(191,219,254,0.5),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.94),rgba(239,246,255,0.88))] dark:bg-[radial-gradient(circle_at_top_left,var(--color-blue-500) / 0.20,transparent_26%),linear-gradient(135deg,rgba(15,23,42,0.92),rgba(2,6,23,1))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(var(--color-blue-500) / 0.05_1px,transparent_1px),linear-gradient(90deg,var(--color-blue-500) / 0.05_1px,transparent_1px)] bg-[size:72px_72px] opacity-40 dark:opacity-15" />
 
             <div className="relative z-10 text-center">
-              <span className="inline-flex items-center rounded-full border border-blue-100/80 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff] backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:text-cyan-200">
+              <span className="inline-flex items-center rounded-full border border-blue-100/80 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:text-cyan-200">
                 Ready to Launch
               </span>
               <h2 className="mt-5 text-3xl font-bold tracking-[-0.03em] text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
@@ -988,7 +968,7 @@ const Industry = () => {
                       href={button.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0055ff] px-6 py-3 text-sm font-normal text-white shadow-lg shadow-[#0055ff]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0044cc]"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-primaryho px-6 py-3 text-sm font-normal text-white shadow-lg shadow-primaryho/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
                     >
                       <Play className="h-4 w-4" />
                       {button.text}
@@ -996,7 +976,7 @@ const Industry = () => {
                   ) : (
                     <button
                       key={index}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-blue-100/80 bg-white/80 px-6 py-3 text-sm font-normal text-slate-700 transition-all duration-300 hover:border-[#0055ff]/20 hover:text-[#0055ff] dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-[#0055ff]"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-blue-100/80 bg-white/80 px-6 py-3 text-sm font-normal text-slate-700 transition-all duration-300 hover:border-primaryho/20 hover:text-primaryho dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-primaryho"
                     >
                       <ArrowRight className="h-4 w-4" />
                       {button.text}
@@ -1014,20 +994,20 @@ const Industry = () => {
             {SUPPORT_CARDS.map((card) => (
               <div
                 key={card.title}
-                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/92 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5 lg:p-7"
+                className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/92 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/20 dark:border-white/10 dark:bg-white/5 lg:p-7"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_30%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_30%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.08,transparent_30%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.12,transparent_30%)]" />
                 <div className="relative">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0055ff] to-[#3b82f6] shadow-lg shadow-[#0055ff]/20 transition-transform duration-300 group-hover:scale-105">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primaryho to-blue-500 shadow-lg shadow-primaryho/20 transition-transform duration-300 group-hover:scale-105">
                     {card.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#0055ff] dark:text-white">
+                  <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-primaryho dark:text-white">
                     {card.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">
                     {card.description}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0055ff] transition-all duration-300 group-hover:gap-3">
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primaryho transition-all duration-300 group-hover:gap-3">
                     <span>{card.linkText}</span>
                     <ArrowRight className="h-4 w-4" />
                   </div>
@@ -1042,10 +1022,10 @@ const Industry = () => {
       {/* 接入流程 */}
       <section className="py-16 lg:py-24">
         <div className="max-w-c-1450 mx-auto px-4 md:px-8 2xl:px-0">
-          <div className="overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.92))] p-8 shadow-[0_30px_90px_-50px_rgba(15,23,42,0.22)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
+          <div className="overflow-hidden rounded-[2rem] border border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,250,252,0.94))] p-8 shadow-[0_30px_90px_-50px_rgba(15,23,42,0.22)] dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] lg:p-10">
             {/* 标题区域 */}
             <div className="text-center mb-12 lg:mb-16">
-              <span className="inline-flex items-center rounded-full border border-[#0055ff]/15 bg-[#0055ff]/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0055ff]">
+              <span className="inline-flex items-center rounded-full border border-primaryho/15 bg-primaryho/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primaryho">
                 Deployment Flow
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white lg:text-5xl">接入流程</h2>
@@ -1055,9 +1035,9 @@ const Industry = () => {
                   href="https://merch.payphp.cn/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#0055ff] to-[#3b82f6] px-8 py-3 text-base font-medium text-white shadow-lg shadow-[#0055ff]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#0055ff]/30 hover:-translate-y-0.5"
+                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primaryho to-blue-500 px-8 py-3 text-base font-medium text-white shadow-lg shadow-primaryho/25 transition-all duration-300 hover:shadow-xl hover:shadow-primaryho/30 hover:-translate-y-0.5"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#3b82f6] to-[#0055ff] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#3b82f6] to-primaryho opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <Rocket className="relative h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                   <span className="relative">立即接入</span>
                   <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -1068,18 +1048,18 @@ const Industry = () => {
             {/* 流程步骤 */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
               {PROCESS_STEPS.map((step, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/20 dark:border-white/10 dark:bg-white/5 lg:p-7">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,85,255,0.08),transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_32%)]" />
+                <div key={index} className="group relative overflow-hidden rounded-3xl border border-gray-200/80 bg-white/90 p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-primaryho/20 dark:border-white/10 dark:bg-white/5 lg:p-7">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-primaryho) / 0.08,transparent_32%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_top_right,var(--color-blue-500) / 0.12,transparent_32%)]" />
                   <div className="absolute -right-3 -top-3 text-8xl font-bold text-gray-100/70 dark:text-white/5 select-none pointer-events-none font-mono">
                     {step.id}
                   </div>
 
                   <div className="relative z-10">
-                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0055ff]/10 text-[#0055ff] transition-all duration-300 group-hover:bg-[#0055ff] group-hover:text-white">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primaryho/10 text-primaryho transition-all duration-300 group-hover:bg-primaryho group-hover:text-white">
                       <span className="text-lg font-bold">{step.id}</span>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">{step.title}</h3>
-                    <div className="mt-4 h-1 w-10 rounded-full bg-gradient-to-r from-[#0055ff] to-cyan-400 opacity-70" />
+                    <div className="mt-4 h-1 w-10 rounded-full bg-gradient-to-r from-primaryho to-cyan-400 opacity-70" />
                     <p className="mt-4 text-sm leading-7 text-gray-600 dark:text-gray-300">{step.desc}</p>
                   </div>
                 </div>

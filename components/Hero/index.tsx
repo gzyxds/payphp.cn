@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Qrcode from "@/components/Qrcode";
 import { Button } from "@/components/ui/button";
 import { Zap, ShoppingCart, MessageCircle } from "lucide-react";
@@ -18,7 +17,7 @@ const Hero = () => {
             {/* 左侧内容区域 */}
             <div className="md:w-1/2 lg:w-3/5">
               {/* 产品标签 */}
-              <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[#165dff] border border-blue-100 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-400">
+              <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-primary border border-blue-100 dark:bg-blue-900/30 dark:border-blue-800 dark:text-blue-400">
                 <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
                 </svg>
@@ -29,10 +28,10 @@ const Hero = () => {
               <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
                 安全可靠的
                 <br />
-                <span className="relative inline-block text-[#165dff]">
+                <span className="relative inline-block text-primary">
                   支付服务平台
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                    <path d="M2 10C100 2 200 2 298 10" stroke="#165dff" strokeWidth="3" strokeLinecap="round" opacity="0.3"/>
+                  <svg className="absolute -bottom-2 left-0 w-full" text-primary viewBox="0 0 300 12" fill="none">
+                    <path d="M2 10C100 2 200 2 298 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.3"/>
                   </svg>
                 </span>
               </h1>
@@ -81,7 +80,7 @@ const Hero = () => {
                   <Button
                     variant="default"
                     size="lg"
-                    className="rounded-lg bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90 font-normal"
+                    className="rounded-lg bg-primaryho text-white shadow-lg hover:bg-primaryho/90 font-normal"
                     asChild
                   >
                     <a href="https://merch.PaYphp.cn" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -115,7 +114,7 @@ const Hero = () => {
 
                 {/* 快速入口按钮组 */}
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff] dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-primary hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
                     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -123,7 +122,7 @@ const Hero = () => {
                   </button>
 
                  {/* 快速入口按钮组 */}
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-[#165dff] hover:text-[#165dff] dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                  <button className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:border-primary hover:text-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
                     <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
@@ -312,13 +311,13 @@ const Hero = () => {
                 </div>
 
                 {/* 装饰性元素 */}
-                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#165dff]/20 to-blue-300/20 blur-xl dark:from-[#165dff]/10 dark:to-blue-300/10"></div>
-                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br from-blue-100/50 to-[#165dff]/10 blur-2xl dark:from-blue-900/20 dark:to-[#165dff]/5"></div>
+                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br will-change-transform from-primary/20 to-blue-300/20 blur-xl dark:from-primary/10 dark:to-blue-300/10"></div>
+                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-gradient-to-br will-change-transform from-blue-100/50 to-primary/10 blur-2xl dark:from-blue-900/20 dark:to-primary/5"></div>
 
                 {/* 浮动数据卡片 */}
-                <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white p-4 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+                <div className="absolute -left-8 top-1/3 transform -translate-y-1/2 rounded-lg bg-white will-change-transform p-4 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
                   <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">日交易量</div>
-                  <div className="text-lg font-bold text-[#165dff] dark:text-blue-400">¥2.8M</div>
+                  <div className="text-lg font-bold text-primary dark:text-blue-400">¥2.8M</div>
                   <div className="flex items-center gap-1 text-xs text-green-600">
                     <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
@@ -327,7 +326,7 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <div className="absolute -right-6 bottom-1/3 rounded-lg bg-white p-3 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+                <div className="absolute -right-6 bottom-1/3 rounded-lg bg-white will-change-transform p-3 shadow-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
                   <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">成功率</div>
                   <div className="text-lg font-bold text-green-600">99.9%</div>
                   <div className="text-xs text-gray-400 dark:text-gray-500">实时监控</div>

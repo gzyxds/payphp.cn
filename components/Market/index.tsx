@@ -22,8 +22,7 @@ interface Plugin {
   price: string;
 }
 
-const Market = () => {
-  const [plugins] = useState<Plugin[]>([
+const PLUGINS: Plugin[] = [
     {
       id: "1",
       name: "支付宝-预授权",
@@ -948,14 +947,19 @@ const Market = () => {
       updateTime: "2025-09-04 09:20:39",
       price: "免费"
     }
-  ]);
+];
 
+const Market = () => {
+  const plugins = PLUGINS;
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("全部应用");
 
   const categories = ["全部应用", "支付插件", "首页主题", "支付主题"];
 
   const filteredPlugins = plugins.filter(plugin => {
-    return selectedCategory === "全部应用" || plugin.category === selectedCategory;
+    const mCat = selectedCategory === "全部应用" || plugin.category === selectedCategory;
+    const mSearch = !searchQuery || plugin.name.includes(searchQuery) || plugin.description.includes(searchQuery);
+    return mCat && mSearch;
   });
 
   return (
@@ -1029,6 +1033,11 @@ const Market = () => {
               <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
                 上传应用 <span aria-hidden="true">→</span>
               </a>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-6">
+              <div className="flex items-baseline gap-1.5"><span className="text-2xl font-bold text-gray-900 dark:text-white">{plugins.length}</span><span className="text-sm text-gray-500 dark:text-gray-400">个应用</span></div>
+              <div className="flex items-baseline gap-1.5"><span className="text-2xl font-bold text-gray-900 dark:text-white">{categories.filter(c => c !== '全部应用').length}</span><span className="text-sm text-gray-500 dark:text-gray-400">个分类</span></div>
+              <div className="flex items-baseline gap-1.5"><span className="text-2xl font-bold text-green-600 dark:text-green-400">{plugins.filter(p => p.status === '已安装').length}</span><span className="text-sm text-gray-500 dark:text-gray-400">已安装</span></div>
             </div>
           </div>
           <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
@@ -1170,25 +1179,32 @@ const Market = () => {
                   {category}
                 </Button>
               ))}
+
+            {/* 搜索框 */}
+            <div className="relative w-full md:w-56">
+              <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <input type="text" placeholder="搜索..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:placeholder-gray-400" />
             </div>
-          </div>
+            </div>
         </div>
-      </section>
+        {searchQuery && <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">找到 {filteredPlugins.length} 个结果</p>}
+      </div>
+    </section>
 
       {/* 应用列表区域 */}
       <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPlugins.map((plugin) => (
-              <Card key={plugin.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                <CardHeader className="pb-4 border-b border-gray-100 dark:border-gray-700">
+              <Card key={plugin.id} className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/90">
+                <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${plugin.category === '支付插件' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : 'bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'}`}>
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${plugin.category === '支付插件' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : plugin.category === '首页主题' ? 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'}`}>
                         {plugin.category === '支付插件' ? <ShoppingCart className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
                       </div>
                       <div>
-                        <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">{plugin.name}</CardTitle>
+                        <CardTitle className="truncate text-sm font-semibold text-gray-900 dark:text-white">{plugin.name}</CardTitle>
                         <div className="flex items-center gap-2 mt-0.5">
                           <span className="text-xs text-gray-500 dark:text-gray-400">{plugin.author}</span>
                           <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
@@ -1198,26 +1214,17 @@ const Market = () => {
                         </div>
                       </div>
                     </div>
-                    <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium ${plugin.status === '已安装' ? 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'}`}>
+                    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${plugin.status === '已安装' ? 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'}`}>
                       {plugin.status}
                     </span>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-4 pb-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{plugin.description}</p>
-                  <div className="grid grid-cols-3 gap-3 text-xs">
-                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
-                      <div className="text-gray-500 dark:text-gray-400 mb-1">版本</div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{plugin.version}</div>
-                    </div>
-                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
-                      <div className="text-gray-500 dark:text-gray-400 mb-1">更新</div>
-                      <div className="font-semibold text-gray-900 dark:text-white text-xs">{plugin.updateTime.split(' ')[0]}</div>
-                    </div>
-                    <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-2.5 text-center">
-                      <div className="text-gray-500 dark:text-gray-400 mb-1">价格</div>
-                      <div className="font-semibold text-green-600 dark:text-green-400">{plugin.price}</div>
-                    </div>
+                  <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">{plugin.description}</p>
+                  <div className="mb-3 flex items-center gap-3 text-xs text-gray-400 dark:text-gray-500">
+                    <span>{plugin.version}</span>
+                    <span>{plugin.updateTime.split(' ')[0]}</span>
+                    <span className="ml-auto font-semibold text-green-600 dark:text-green-400">{plugin.price}</span>
                   </div>
                   <Button
                     className={`w-full mt-4 ${

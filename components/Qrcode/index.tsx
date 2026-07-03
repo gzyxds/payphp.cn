@@ -69,7 +69,7 @@ const Qrcode: React.FC<QrcodeProps> = ({
     subtitle: subtitle || "扫码添加客服   关注公众号了解最新优惠活动和产品更新",
     buttonText: buttonText || "联系客服",
     buttonVariant: (buttonVariant || "default") as "default" | "outline" | "secondary" | "ghost" | "link" | "outline-primary" | "outline-gray",
-    buttonClassName: buttonClassName || "bg-[#0055ff] text-white shadow-lg hover:bg-[#0055ff]/90",
+    buttonClassName: buttonClassName || "bg-primaryho text-white shadow-lg hover:bg-primaryho/90",
     buttonIcon: buttonIcon || (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>

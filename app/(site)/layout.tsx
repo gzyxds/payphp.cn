@@ -18,7 +18,14 @@ export default function SiteLayout({
       attribute="class"
       defaultTheme="light"
     >
-      <div className="dark:bg-black">
+
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-99999 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+      >
+        跳转到主要内容
+      </a>
+      <div className="dark:bg-background">
         <Lines />
         <Header />
         <ToasterContext />

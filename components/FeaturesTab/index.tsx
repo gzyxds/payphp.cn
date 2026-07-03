@@ -16,7 +16,7 @@ const FeaturesTab = () => {
         <div className="mx-auto max-w-c-1450 px-4 md:px-8 2xl:px-0">
           {/* 标题区域 - 简洁设计，优化移动端间距 */}
           <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16">
-            <div className="mb-3 inline-flex items-center rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-[#165dff] border border-gray-200 shadow-sm sm:mb-4 sm:px-4 sm:py-2 sm:text-sm dark:bg-gray-800 dark:border-gray-700">
+            <div className="mb-3 inline-flex items-center rounded-lg bg-white px-3 py-1.5 text-xs font-medium text-primary border border-gray-200 shadow-sm sm:mb-4 sm:px-4 sm:py-2 sm:text-sm dark:bg-gray-800 dark:border-gray-700">
               <svg className="mr-1.5 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
               </svg>
@@ -60,7 +60,7 @@ const FeaturesTab = () => {
                   aria-controls="panel-tabOne"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabOne"
-                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      ? "bg-white text-primary shadow-sm dark:bg-gray-700 dark:text-blue-400"
                       : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
@@ -80,7 +80,7 @@ const FeaturesTab = () => {
                   aria-controls="panel-tabTwo"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabTwo"
-                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      ? "bg-white text-primary shadow-sm dark:bg-gray-700 dark:text-blue-400"
                       : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
@@ -100,7 +100,7 @@ const FeaturesTab = () => {
                   aria-controls="panel-tabThree"
                   className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-2 py-2.5 text-xs font-medium transition-all duration-200 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm ${
                     currentTab === "tabThree"
-                      ? "bg-white text-[#165dff] shadow-sm dark:bg-gray-700 dark:text-blue-400"
+                      ? "bg-white text-primary shadow-sm dark:bg-gray-700 dark:text-blue-400"
                       : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   }`}
                 >
