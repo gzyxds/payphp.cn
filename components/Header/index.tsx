@@ -137,37 +137,84 @@ const MobileMenuItem = memo(function MobileMenuItem({
   onNavigate: () => void;
   onOpenExternal: (url: string) => void;
 }) {
-  const className = "flex flex-col items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50/80 transition-colors duration-200 dark:bg-gray-800/50 dark:hover:bg-blue-900/30";
-
-  const content = (
-    <>
-      <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-1.5">
-        {React.cloneElement(subItem.icon, { className: "h-5 w-5" })}
+  const inner = (
+    <div className="flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-150 hover:bg-gray-100 dark:hover:bg-white/[0.06] active:scale-[0.98]">
+      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-750 ring-1 ring-gray-200/50 dark:ring-white/10">
+        {React.cloneElement(subItem.icon, { className: "h-4 w-4 text-gray-500 dark:text-gray-400" })}
       </div>
-      <div className="flex flex-col items-center text-center">
-        <span className="font-medium text-gray-800 dark:text-gray-200 text-sm mb-1">{subItem.name}</span>
-        <span className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{subItem.description}</span>
+      <div className="min-w-0 flex-1">
+        <div className="text-sm font-medium text-gray-800 dark:text-gray-200">{subItem.name}</div>
+        <div className="text-[11px] text-gray-400 dark:text-gray-500 mt-px leading-tight">{subItem.description}</div>
       </div>
-    </>
+    </div>
   );
 
   if (subItem.external) {
-    return (
-      <div className={`${className} cursor-pointer relative`} onClick={() => onOpenExternal(subItem.url!)}>
-        {content}
-        <ExternalLink className="h-3 w-3 text-gray-400 absolute top-2 right-2 dark:text-gray-500" />
-      </div>
-    );
+    return <div className="cursor-pointer" onClick={() => onOpenExternal(subItem.url!)}>{inner}</div>;
   }
-
-  return (
-    <Link href={subItem.path} className={className} onClick={onNavigate}>
-      {content}
-    </Link>
-  );
+  return <Link href={subItem.path} onClick={onNavigate}>{inner}</Link>;
 });
 
-function DropdownItem({
+interface HighlightItem {
+  title: string;
+  description: string;
+  href: string;
+  category: string;
+  image: string;
+}
+
+const HIGHLIGHTS: Record<string, HighlightItem[]> = {
+  "产品服务": [
+    {
+      title: "全渠道支付解决方案",
+      description: "一站式接入微信、支付宝、银联等主流支付渠道，快速搭建支付能力。",
+      href: "/products",
+      category: "产品",
+      image: "/images/pay/global-payment.svg",
+    },
+    {
+      title: "开源源码，自主可控",
+      description: "整套支付系统源码开放购买，支持私有化部署，数据安全自主掌控。",
+      href: "/auth",
+      category: "源码",
+      image: "/images/pay/international-logistics.svg",
+    },
+  ],
+  "服务支持": [
+    {
+      title: "商户快速接入指南",
+      description: "详细的商户接入文档，从注册到上线，全程指引助您快速完成对接。",
+      href: "https://docs.payphp.cn/8033235m0",
+      category: "指南",
+      image: "/images/pay/global-acquiring.svg",
+    },
+    {
+      title: "开发者API文档中心",
+      description: "完善的REST API接口文档，提供丰富的SDK和代码示例，轻松集成。",
+      href: "/docs",
+      category: "文档",
+      image: "/images/pay/digital-entertainment.svg",
+    },
+  ],
+  "相关资源": [
+    {
+      title: "智言AIGC — AI创作平台",
+      description: "一站式AIGC智能创作平台，AI绘画、AI写作、AI视频，释放创意潜能。",
+      href: "https://aigc.cnai.art/",
+      category: "AI",
+      image: "/images/pay/study-abroad.svg",
+    },
+    {
+      title: "优刻云 — 高性能云服务器",
+      description: "4核4G云服务器仅38元/年，限时秒杀，为企业提供稳定可靠的云计算服务。",
+      href: "https://www.cloudcvm.com/",
+      category: "云服务",
+      image: "/images/pay/foreign-trade-b2b.svg",
+    },
+  ],
+};
+
+function DropdownLink({
   subItem, onNavigate, onOpenExternal,
 }: {
   subItem: NavSubItem;
@@ -175,34 +222,23 @@ function DropdownItem({
   onOpenExternal: (url: string) => void;
 }) {
   const inner = (
-    <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-white/5">
-      <div className="flex-shrink-0">
-        <div className="h-8 w-8 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-          {React.cloneElement(subItem.icon, { className: "h-4 w-4 text-gray-500 dark:text-gray-400" })}
+    <div className="group flex items-start gap-4 rounded-xl px-4 py-3.5 transition-all duration-150 hover:bg-gray-50 dark:hover:bg-white/[0.04]">
+      <div className="flex-shrink-0 mt-0.5">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 ring-1 ring-blue-100/50 dark:bg-blue-500/10 dark:text-blue-400 dark:ring-blue-500/20">
+          {React.cloneElement(subItem.icon, { className: "h-5 w-5" })}
         </div>
       </div>
-      <div className="flex-1 min-w-0">
-        <div className="text-sm font-medium text-gray-800 dark:text-gray-200">
-          {subItem.name}
-        </div>
-        <div className="text-xs text-gray-500 dark:text-gray-400 ">{subItem.description}</div>
+      <div className="min-w-0 flex-1">
+        <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">{subItem.name}</div>
+        <div className="mt-0.5 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{subItem.description}</div>
       </div>
     </div>
   );
 
   if (subItem.external) {
-    return (
-      <div className="cursor-pointer" onClick={() => onOpenExternal(subItem.url!)}>
-        {inner}
-      </div>
-    );
+    return <div className="cursor-pointer" onClick={() => onOpenExternal(subItem.url!)}>{inner}</div>;
   }
-
-  return (
-    <Link href={subItem.path}  onClick={onNavigate}>
-      {inner}
-    </Link>
-  );
+  return <Link href={subItem.path} onClick={onNavigate}>{inner}</Link>;
 }
 
 function DropdownPanel({
@@ -212,6 +248,8 @@ function DropdownPanel({
   onNavigate: () => void;
   onOpenExternal: (url: string) => void;
 }) {
+  const highlights = HIGHLIGHTS[item.name] || [];
+
   return (
     <motion.div
       variants={DROPDOWN_VARIANTS}
@@ -219,42 +257,62 @@ function DropdownPanel({
       animate="visible"
       exit="exit"
       transition={{ duration: 0.15, ease: "easeOut" }}
-      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[620px] bg-white dark:bg-gray-900 rounded-2xl shadow-xl shadow-black/[0.08] dark:shadow-black/60 border border-gray-200/80 dark:border-gray-700/50 z-50"
+      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 z-50"
     >
-      {/* Arrow */}
-      <div className="absolute -top-[6px] left-1/2 -translate-x-1/2">
-        <div className="w-3 h-3 bg-white dark:bg-gray-900 border-l border-t border-gray-200/80 dark:border-gray-700/50 rotate-45" />
-      </div>
-
-      {/* Header */}
-      <div className="px-6 pt-5 pb-3 border-b border-gray-100 dark:border-gray-800">
-        <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">{item.name}</h3>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{DROPDOWN_DESC[item.name] || ""}</p>
-      </div>
-
-      {/* Items Grid */}
-      <div className="p-3">
-        <div className="grid grid-cols-2 gap-1">
-          {item.items?.map((sub) => (
-            <DropdownItem key={sub.name} subItem={sub} onNavigate={onNavigate} onOpenExternal={onOpenExternal} />
-          ))}
+      <div className="w-[820px] overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-xl shadow-black/[0.08] dark:border-gray-700/50 dark:bg-gray-900 dark:shadow-black/60">
+        {/* Arrow */}
+        <div className="absolute -top-[6px] left-1/2 -translate-x-1/2">
+          <div className="h-3 w-3 rotate-45 border-l border-t border-gray-200/80 bg-white dark:border-gray-700/50 dark:bg-gray-900" />
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="border-t border-gray-100 dark:border-gray-800">
-        <a
-          href={item.items?.[0]?.external ? undefined : "/"}
-          className="flex items-center justify-between px-6 py-3.5 text-xs text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 group/footer"
-        >
-          <span>探索更多</span>
-          <span className="inline-flex items-center gap-1 text-blue-500 dark:text-blue-400 font-medium opacity-0 group-hover/footer:opacity-100 transition-all duration-200 translate-x-[-4px] group-hover/footer:translate-x-0">
-            查看全部
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" fill="currentColor" />
-            </svg>
-          </span>
-        </a>
+        <div className="grid grid-cols-3 divide-x divide-gray-100 dark:divide-gray-800">
+            {/* Links */}
+            <div className="col-span-2 p-5 pb-4">
+              <div className="mb-3 px-4">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">{item.name}</h3>
+                <p className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">{DROPDOWN_DESC[item.name] || ""}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-0.5">
+                {item.items?.map((sub) => (
+                  <DropdownLink key={sub.name} subItem={sub} onNavigate={onNavigate} onOpenExternal={onOpenExternal} />
+                ))}
+              </div>
+              <div className="mt-3 px-4">
+                <div className="h-px bg-gradient-to-r from-gray-100 via-gray-200/50 to-transparent dark:from-gray-800 dark:via-gray-700/30" />
+                <div className="mt-2.5 flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+                  <span>浏览全部{item.name}</span>
+                  <span className="inline-flex items-center gap-1 text-blue-500 dark:text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-all duration-200">查看详情 →</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Highlights */}
+            <div className="p-5 pb-4">
+            <h3 className="mb-3 px-1 text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">推荐</h3>
+            <div className="flex flex-col gap-2.5">
+              {highlights.map((h) => (
+                <a
+                  key={h.title}
+                  href={h.href}
+                  target={h.href.startsWith("http") ? "_blank" : undefined}
+                  rel={h.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-all duration-150 hover:bg-gray-50 dark:hover:bg-white/[0.04]"
+                >
+                  <div className="flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50">
+                    <div className="flex h-12 w-12 items-center justify-center">
+                      <Image src={h.image} alt="" width={24} height={24} className="opacity-60 dark:opacity-40 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[11px] font-medium text-blue-600 dark:text-blue-400">{h.category}</span>
+                    <h4 className="mt-0.5 text-sm font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{h.title}</h4>
+                    <p className="mt-0.5 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-1">{h.description}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -262,7 +320,7 @@ function DropdownPanel({
 
 const MOBILE_ICON_MAP: Record<string, { icon: React.ElementType; bg: string; iconColor: string }> = {
   "产品服务": { icon: Layers, bg: "bg-blue-100 dark:bg-blue-900/50", iconColor: "text-blue-600 dark:text-blue-400" },
-  "开发者": { icon: Code, bg: "bg-indigo-100 dark:bg-indigo-900/50", iconColor: "text-indigo-600 dark:text-indigo-400" },
+  "服务支持": { icon: Code, bg: "bg-indigo-100 dark:bg-indigo-900/50", iconColor: "text-indigo-600 dark:text-indigo-400" },
   "相关资源": { icon: Sparkles, bg: "bg-orange-100 dark:bg-orange-900/50", iconColor: "text-orange-600 dark:text-orange-400" },
 };
 
@@ -275,25 +333,26 @@ function MobileCategoryBlock({
   onNavigate: () => void;
   onOpenExternal: (url: string) => void;
 }) {
-  const meta = MOBILE_ICON_MAP[item.name] || { icon: Zap, bg: "bg-gray-100 dark:bg-gray-800", iconColor: "text-gray-600 dark:text-gray-400" };
-  const Icon = meta.icon;
+  const meta = MOBILE_ICON_MAP[item.name];
 
   return (
-    <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-gray-800/50">
+    <div className="overflow-hidden rounded-2xl border border-gray-100/80 bg-white dark:border-gray-700/50 dark:bg-gray-900/50">
       <button
         onClick={onToggle}
-        className="flex items-center justify-between w-full py-3 px-3 rounded-lg hover:bg-blue-50/70 transition-colors duration-200 dark:hover:bg-blue-950/50"
+        className="flex w-full items-center justify-between px-5 py-4 transition-colors duration-150 hover:bg-gray-50/80 dark:hover:bg-white/[0.03]"
       >
-        <div className="font-medium text-gray-800 flex items-center dark:text-gray-200">
-          <div className={`w-10 h-10 rounded-lg ${meta.bg} flex items-center justify-center mr-3`}>
-            <Icon className={`h-5 w-5 ${meta.iconColor}`} />
-          </div>
-          <div className="flex flex-col items-start">
-            {renderMenuItemName(item.name)}
-            <span className="text-xs text-gray-500 dark:text-gray-400">{DROPDOWN_DESC[item.name] || ""}</span>
+        <div className="flex items-center gap-3.5">
+          {meta && (
+            <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${meta.bg}`}>
+              <meta.icon className={`h-5 w-5 ${meta.iconColor}`} />
+            </div>
+          )}
+          <div className="text-left">
+            <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">{item.name}</span>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-px">{DROPDOWN_DESC[item.name] || ""}</p>
           </div>
         </div>
-        <ChevronDown className={`h-5 w-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       <AnimatePresence>
@@ -304,10 +363,10 @@ function MobileCategoryBlock({
             animate="visible"
             exit="exit"
             transition={{ duration: 0.2 }}
-            className="overflow-hidden mt-4"
+            className="overflow-hidden"
           >
-            <div className="p-3 bg-white/90 rounded-lg dark:bg-gray-900/90">
-              <div className="grid grid-cols-2 gap-2.5">
+            <div className="px-3 pb-3">
+              <div className="grid grid-cols-2 gap-1 rounded-xl bg-gray-50/50 p-1 dark:bg-white/[0.02]">
                 {item.items?.map((sub) => (
                   <MobileMenuItem key={sub.name} subItem={sub} onNavigate={onNavigate} onOpenExternal={onOpenExternal} />
                 ))}
@@ -496,9 +555,9 @@ export default function Header() {
             animate="visible"
             exit="exit"
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800"
+            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[calc(100vh-64px)] overflow-y-auto"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-5 space-y-3">
               {NAV_ITEMS.filter((n) => n.dropdown).map((item) => (
                 <MobileCategoryBlock
                   key={item.name}
@@ -511,30 +570,26 @@ export default function Header() {
               ))}
 
               {/* Quick nav */}
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-2">
                 {QUICK_LINKS.map((link) => {
-                  const base = "flex items-center p-3 rounded-lg bg-slate-50 hover:bg-blue-50/80 transition-colors duration-200 dark:bg-gray-800/50 dark:hover:bg-blue-900/30";
                   const inner = (
                     <>
-                      <div className={`w-9 h-9 rounded-lg ${link.bg} flex items-center justify-center mr-2.5`}>
+                      <div className={`w-10 h-10 rounded-xl ${link.bg} flex items-center justify-center mx-auto mb-1.5`}>
                         <link.icon className={`h-4 w-4 ${link.iconColor}`} />
                       </div>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-gray-800 dark:text-gray-200 text-sm">{link.label}</span>
-                        <span className="text-[11px] text-gray-500 dark:text-gray-400">{link.desc}</span>
-                      </div>
+                      <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{link.label}</span>
                     </>
                   );
 
                   if (link.external) {
                     return (
-                      <a key={link.key} href={link.href} target="_blank" rel="noopener noreferrer" className={base} onClick={() => setMobileMenuOpen(false)}>
+                      <a key={link.key} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/[0.04] transition-colors" onClick={() => setMobileMenuOpen(false)}>
                         {inner}
                       </a>
                     );
                   }
                   return (
-                    <Link key={link.key} href={link.href} className={base} onClick={handleNavigation}>
+                    <Link key={link.key} href={link.href} className="flex flex-col items-center py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/[0.04] transition-colors" onClick={handleNavigation}>
                       {inner}
                     </Link>
                   );
@@ -542,24 +597,26 @@ export default function Header() {
               </div>
 
               {/* Auth */}
-              <div className="pt-4 space-y-2.5">
-                <div className="p-3.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg dark:from-blue-950/50 dark:to-indigo-950/50">
-                  <div className="flex items-center mb-2.5">
-                    <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center mr-2 dark:bg-blue-900/50">
-                      <User className="h-3.5 w-3.5 text-primary dark:text-blue-400" />
+              <div className="pt-1">
+                <div className="rounded-2xl bg-gradient-to-b from-blue-50 to-indigo-50/60 p-4 dark:from-blue-950/40 dark:to-indigo-950/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 dark:bg-gray-800/80 shadow-sm">
+                      <User className="h-4 w-4 text-primary dark:text-blue-400" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">账户中心</span>
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">账户中心</span>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">登录注册享受更多服务</p>
+                    </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer">
-                      <button className="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium rounded-lg transition-all duration-200 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 text-sm py-2.5 px-4">
-                        <User className="h-4 w-4 mr-1.5 inline" />
+                  <div className="flex gap-2.5">
+                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <button className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-all hover:border-primary hover:text-primary dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-blue-400">
                         登录
                       </button>
                     </Link>
-                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer">
-                      <button className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-all duration-200 text-sm py-2.5 px-4">
-                        <Sparkles className="h-4 w-4 mr-1.5 inline" />
+                    <Link href={URL_MERCH} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <button className="w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-primary/90 shadow-sm shadow-primary/20">
+                        <Sparkles className="h-4 w-4 mr-1.5 inline-block" />
                         注册
                       </button>
                     </Link>
