@@ -31,7 +31,7 @@ export const PAGE_SEO_CONFIG = {
   },
   "/about": {
     title: "关于我们 - PaYphp团队与企业愿景",
-    description: "了解PaYphp团队的发展历程、企业文化和技术愿景。我们致力于为用户提供最专业、最安全的支付解决方案，推动支付行业的创新发展。",
+    description: "了解PaYphp团队的发展历程、企业文化和技术愿景。我们致力于为用户提供专业、安全的支付解决方案，推动支付行业的创新发展。",
     keywords: ["PaYphp团队", "企业介绍", "公司文化", "支付行业", "技术愿景"],
   },
   "/industry": {

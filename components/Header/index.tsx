@@ -65,7 +65,7 @@ const NAV_ITEMS: NavItem[] = [
     items: [
       { name: "智言AIGC", path: "https://aigc.cnai.art/", icon: <Sparkles className="h-5 w-5" />, description: "一站式AIGC智能创作平台", external: true, url: "https://aigc.cnai.art/" },
       { name: "艺创AI", path: "https://urlnet.cn/", icon: <Sparkles className="h-5 w-5" />, description: "用一套源码系统承载你的 AI 应用业务", external: true, url: "https://urlnet.cn/" },
-      { name: "优刻云计算", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, description: "上云特惠-4核4G云服务器38元/年-限时秒杀官方", external: true, url: "https://www.cloudcvm.com/" },
+      { name: "优刻云计算", path: "https://www.cloudcvm.com/", icon: <Cloud className="h-5 w-5" />, description: "上云特惠-4核4G云服务器38元/年", external: true, url: "https://www.cloudcvm.com/" },
       { name: "免费领流量卡", path: "https://www.urlka.cn/", icon: <Smartphone className="h-5 w-5" />, description: "全国超值流量卡免费领，顺丰包邮到家", external: true, url: "https://www.urlka.cn/" },
     ],
   },
@@ -206,7 +206,7 @@ const HIGHLIGHTS: Record<string, HighlightItem[]> = {
     },
     {
       title: "优刻云 — 高性能云服务器",
-      description: "4核4G云服务器仅38元/年，限时秒杀，为企业提供稳定可靠的云计算服务。",
+      description: "4核4G云服务器仅38元/年，为企业提供稳定可靠的云计算服务。",
       href: "https://www.cloudcvm.com/",
       category: "云服务",
       image: "/images/pay/foreign-trade-b2b.svg",

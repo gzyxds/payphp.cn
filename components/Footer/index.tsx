@@ -77,7 +77,7 @@ const Footer = () => {
                 <Image width={110} height={80} src="/images/logo/logo-dark.svg" alt="Logo" className="hidden dark:block" />
               </a>
               <p className="mb-6 mt-5 text-sm sm:text-base leading-relaxed">
-                我们致力于为用户提供最优质的产品和服务体验。
+                我们致力于为用户提供优质的产品和服务体验。
               </p>
               <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">联系我们</p>
               <a href="#" className="text-itemtitle font-medium text-black dark:text-white break-all">

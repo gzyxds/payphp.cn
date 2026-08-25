@@ -27,7 +27,7 @@ const PRICING_PLANS = [
     title: "季度会员",
     price: "¥199",
     period: "/90天",
-    desc: "超低费率，适合大流量商户",
+    desc: "低费率，适合大流量商户",
     features: ["费率 0.20%", "每日限额无限制", "每月限额无限制", "通道数无限制", "通道账号无限制"],
     recommended: false,
     href: "https://merch.PaYphp.cn/login",
@@ -62,7 +62,7 @@ const Pricing = () => {
             <span className="text-primary dark:text-blue-400">支付费率</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-gray-500 dark:text-gray-400">
-            选择最适合您业务的支付方案，无隐藏费用，按需付费
+            选择适合您业务的支付方案，无隐藏费用，按需付费
           </p>
         </motion.div>
 

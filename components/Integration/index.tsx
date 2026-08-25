@@ -28,7 +28,7 @@ const PAYMENT_METHODS = [
   { id: "wechat", name: "微信支付", desc: "国民级社交支付", Icon: MessageCircle, bg: "bg-green-500", text: "text-white" },
   { id: "alipay", name: "支付宝", desc: "全场景支付平台", Icon: Wallet, bg: "bg-blue-500", text: "text-white" },
   { id: "unionpay", name: "银联支付", desc: "银行卡支付网络", Icon: CreditCard, bg: "bg-red-500", text: "text-white" },
-  { id: "qq", name: "QQ钱包", desc: "年轻用户首选", Icon: MessagesSquare, bg: "bg-sky-500", text: "text-white" },
+  { id: "qq", name: "QQ钱包", desc: "年轻用户优选", Icon: MessagesSquare, bg: "bg-sky-500", text: "text-white" },
   { id: "bank", name: "网银支付", desc: "企业大额支付", Icon: Building2, bg: "bg-slate-700", text: "text-white" },
   { id: "cloud", name: "云闪付", desc: "银联移动支付", Icon: Cloud, bg: "bg-rose-500", text: "text-white" },
   { id: "dcash", name: "数字人民币", desc: "法定数字货币", Icon: Banknote, bg: "bg-orange-500", text: "text-white" },

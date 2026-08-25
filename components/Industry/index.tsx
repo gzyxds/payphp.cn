@@ -86,7 +86,7 @@ const CORE_FUNCTIONS = [
 const PRODUCT_ADVANTAGES = [
   { title: "银行级安全", stat: "99.99%", statLabel: "安全保障", description: "采用金融级安全标准，多重加密保护，确保每一笔交易的安全可靠", features: ["SSL/TLS加密传输", "多重身份验证", "实时风险监控", "PCI DSS认证"] },
   { title: "高可用性", stat: "99.9%", statLabel: "系统可用性", description: "7×24小时不间断服务，99.9%的系统可用性，保障您的业务持续运行", features: ["分布式架构", "自动故障切换", "负载均衡", "实时监控告警"] },
-  { title: "极速响应", stat: "<100ms", statLabel: "响应时间", description: "毫秒级响应速度，秒级到账结算，为用户提供极致的支付体验", features: ["毫秒级响应", "秒级到账", "智能路由", "缓存优化"] },
+  { title: "极速响应", stat: "<100ms", statLabel: "响应时间", description: "毫秒级响应速度，秒级到账结算，为用户提供流畅的支付体验", features: ["毫秒级响应", "秒级到账", "智能路由", "缓存优化"] },
   { title: "简单集成", stat: "5分钟", statLabel: "快速集成", description: "提供完整的SDK和API文档，5分钟快速集成，降低开发成本", features: ["RESTful API", "多语言SDK", "详细文档", "在线调试"] },
 ];
 
@@ -104,7 +104,7 @@ const PARTNERS = [
 
 const SUPPORT_CARDS = [
   { title: "技术支持", description: "7×24 小时在线响应，快速定位并解决接入与交易问题。", linkText: "获取支持", href: "/support" },
-  { title: "商务合作", description: "专属商务经理一对一服务，定制最适合的支付解决方案。", linkText: "联系我们", href: "/support" },
+  { title: "商务合作", description: "专属商务经理一对一服务，定制合适的支付解决方案。", linkText: "联系我们", href: "/support" },
   { title: "开发文档", description: "完整 API 文档、多语言 SDK 与在线调试工具，5 分钟上手。", linkText: "查看文档", href: "/docs" },
 ];
 

@@ -44,7 +44,7 @@ const PaymentAuth = () => {
         </svg>
       ),
       title: "微信云端",
-      description: "独家UOS桌面版微信云端不会异地冻结，站长无需挂任何软件"
+      description: "专属 UOS 桌面版微信云端不会异地冻结，站长无需挂任何软件"
     },
     {
       icon: (
@@ -132,7 +132,7 @@ const PaymentAuth = () => {
     {
       name: "王站长",
       company: "个人站长",
-      comment: "作为个人站长，PaYphp让我轻松实现了知识付费，操作简单，收益稳定，强烈推荐！"
+      comment: "作为个人站长，PaYphp让我轻松实现了知识付费，操作简单，回款顺畅，强烈推荐！"
     }
   ];
 
@@ -601,7 +601,7 @@ const PaymentAuth = () => {
               技术优势
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
-              极致的性能体验，完善的安全保障
+              出色的性能体验，完善的安全保障
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               专业的技术支持，持续创新的产品理念，不断进化的系统功能，始终走在行业前沿

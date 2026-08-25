@@ -31,7 +31,7 @@ const Testimonial = () => {
             <span className="text-primary dark:text-blue-400">真实反馈</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-gray-500 dark:text-gray-400">
-            他们的成功就是我们服务质量的最好证明，专业的支付解决方案助力企业增长
+            他们的成功就是我们服务质量的有力证明，专业的支付解决方案助力企业增长
           </p>
         </motion.div>
 

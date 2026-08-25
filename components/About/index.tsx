@@ -282,7 +282,7 @@ const About = () => {
             >
               {[
                 { icon: Code2, title: "技术创新", desc: "探索支付边界" },
-                { icon: Users, title: "开发者优先", desc: "极致接入体验" },
+                { icon: Users, title: "开发者优先", desc: "流畅接入体验" },
                 { icon: Github, title: "开源文化", desc: "共建繁荣生态" },
                 { icon: ShieldCheck, title: "安全保障", desc: "金融级风控" }
               ].map((item, index) => (
@@ -582,7 +582,7 @@ const About = () => {
                 技术栈
               </h2>
               <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-c-1450 mx-auto">
-                与行业领先企业携手，共同打造支付生态
+                与业内企业携手，共同打造支付生态
               </p>
             </div>
 

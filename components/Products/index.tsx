@@ -180,7 +180,7 @@ export default function Products() {
     {
       id: "free-upgrade",
       title: "免费升级",
-      description: "持续修复程序bug和更新功能，提供免费升级服务，让您永远享受最新的PaYphp2.0体验。",
+      description: "持续修复程序bug和更新功能，提供免费升级服务，让您持续享受 PaYphp 2.0 体验。",
       icon: <ArrowRight className="w-6 h-6 text-blue-600" />
     },
     {
