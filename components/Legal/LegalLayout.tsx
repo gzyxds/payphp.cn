@@ -25,9 +25,9 @@ export function LegalPage({ title, intro, children }: LegalPageProps) {
           {title}
         </h1>
         {intro ? (
-          <p className="mt-6 text-base leading-relaxed text-gray-600 dark:text-gray-300">
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">
             {intro}
-          </p>
+          </div>
         ) : null}
         <div className="mt-10 border-t border-stroke dark:border-strokedark">{children}</div>
       </div>
