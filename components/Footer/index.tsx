@@ -207,9 +207,11 @@ const Footer = () => {
             className="animate_top"
           >
             <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+              <li><a href="/privacy" className="hover:text-primary text-sm sm:text-base">隐私政策</a></li>
+              <li><a href="/legal" className="hover:text-primary text-sm sm:text-base">法律声明</a></li>
+              <li><a href="/terms" className="hover:text-primary text-sm sm:text-base">服务条款</a></li>
+              <li><a href="/support" className="hover:text-primary text-sm sm:text-base">支持</a></li>
               <li><a href="#" className="hover:text-primary text-sm sm:text-base">中文</a></li>
-              <li><a href="#" className="hover:text-primary text-sm sm:text-base">隐私政策</a></li>
-              <li><a href="#" className="hover:text-primary text-sm sm:text-base">支持</a></li>
             </ul>
           </motion.div>
 
